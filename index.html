@@ -2086,7 +2086,7 @@ function submitForm(){
   const program=(document.querySelector("[onclick*=\"'prog'\"].sel")||{}).textContent||''
   const btn=document.getElementById('nb3')
   btn.disabled=true;btn.textContent='Sending...'
-  fetch('/api/lead',{
+  fetch('https://api.stridephysiohealth.com.au/lead',{
     method:'POST',
     headers:{'Content-Type':'application/json'},
     body:JSON.stringify({name,phone,email,sport,injury,urgency,program})
@@ -2238,7 +2238,7 @@ function submitForm(){
   const program=(document.querySelector("[onclick*=\"'prog'\"].sel")||{}).textContent||''
   const btn=document.getElementById('nb3')
   btn.disabled=true;btn.textContent='Sending...'
-  fetch('/api/lead',{
+  fetch('https://api.stridephysiohealth.com.au/lead',{
     method:'POST',
     headers:{'Content-Type':'application/json'},
     body:JSON.stringify({name,phone,email,sport,injury,urgency,program})
