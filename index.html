@@ -2077,12 +2077,27 @@ function chk3(){
   document.getElementById('nb3').disabled=!(p.length>=8&&e.includes('@'))
 }
 function submitForm(){
-  document.getElementById('fs3').classList.remove('active')
-  document.getElementById('fs-done').classList.add('active')
-  document.getElementById('m-eye').textContent='✓ Confirmed'
-  document.getElementById('m-h').textContent=''
-  document.getElementById('m-sub').textContent=''
-  document.querySelector('.step-dots').style.display='none'
+  const name=document.getElementById('fi-name').value.trim()
+  const phone=document.getElementById('fi-ph').value.trim()
+  const email=document.getElementById('fi-em').value.trim()
+  const sport=(document.querySelector("[onclick*=\"'sport'\"].sel")||{}).textContent||''
+  const injury=(document.querySelector("[onclick*=\"'injury'\"].sel")||{}).textContent||''
+  const urgency=(document.querySelector("[onclick*=\"'urgency'\"].sel")||{}).textContent||''
+  const program=(document.querySelector("[onclick*=\"'prog'\"].sel")||{}).textContent||''
+  const btn=document.getElementById('nb3')
+  btn.disabled=true;btn.textContent='Sending...'
+  fetch('/api/lead',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({name,phone,email,sport,injury,urgency,program})
+  }).catch(()=>{}).finally(()=>{
+    document.getElementById('fs3').classList.remove('active')
+    document.getElementById('fs-done').classList.add('active')
+    document.getElementById('m-eye').textContent='✓ Confirmed'
+    document.getElementById('m-h').textContent=''
+    document.getElementById('m-sub').textContent=''
+    document.querySelector('.step-dots').style.display='none'
+  })
 }
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',e=>{
@@ -2214,12 +2229,27 @@ function chk3(){
   document.getElementById('nb3').disabled=!(p.length>=8&&e.includes('@'))
 }
 function submitForm(){
-  document.getElementById('fs3').classList.remove('active')
-  document.getElementById('fs-done').classList.add('active')
-  document.getElementById('m-eye').textContent='✓ Confirmed'
-  document.getElementById('m-h').textContent=''
-  document.getElementById('m-sub').textContent=''
-  document.querySelector('.step-dots').style.display='none'
+  const name=document.getElementById('fi-name').value.trim()
+  const phone=document.getElementById('fi-ph').value.trim()
+  const email=document.getElementById('fi-em').value.trim()
+  const sport=(document.querySelector("[onclick*=\"'sport'\"].sel")||{}).textContent||''
+  const injury=(document.querySelector("[onclick*=\"'injury'\"].sel")||{}).textContent||''
+  const urgency=(document.querySelector("[onclick*=\"'urgency'\"].sel")||{}).textContent||''
+  const program=(document.querySelector("[onclick*=\"'prog'\"].sel")||{}).textContent||''
+  const btn=document.getElementById('nb3')
+  btn.disabled=true;btn.textContent='Sending...'
+  fetch('/api/lead',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({name,phone,email,sport,injury,urgency,program})
+  }).catch(()=>{}).finally(()=>{
+    document.getElementById('fs3').classList.remove('active')
+    document.getElementById('fs-done').classList.add('active')
+    document.getElementById('m-eye').textContent='✓ Confirmed'
+    document.getElementById('m-h').textContent=''
+    document.getElementById('m-sub').textContent=''
+    document.querySelector('.step-dots').style.display='none'
+  })
 }
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',e=>{
