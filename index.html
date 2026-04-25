@@ -3,6 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<!-- Google Ads Global Site Tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-753839414"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-753839414');
+</script>
 <title>Stride Sports Physio — Sports Injury Management | Melbourne</title>
 <meta name="description" content="Melbourne sports injury specialists. Sport-specific rehab — AFL, netball, rugby, BJJ, MMA. Return to sport faster with a written plan from day one. 13 Puckle St, Moonee Ponds.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1157,6 +1165,19 @@ footer{
 }
 .q-restart:hover{color:rgba(255,255,255,0.48)}
 
+/* ── CAPTURE STEP ── */
+.q-capture-heading{color:#fff;font-size:0.95rem;font-weight:700;margin-bottom:6px}
+.q-capture-sub{color:rgba(255,255,255,0.5);font-size:0.78rem;line-height:1.5;margin-bottom:18px}
+.q-capture-input{display:block;width:100%;padding:10px 14px;margin-bottom:10px;background:#1a1a2e;color:#fff;border:1px solid rgba(255,255,255,0.09);border-radius:8px;font-family:'Inter',sans-serif;font-size:0.82rem;outline:none;transition:border .2s}
+.q-capture-input::placeholder{color:rgba(255,255,255,0.3)}
+.q-capture-input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(27,144,245,0.18)}
+.q-capture-btn{display:block;width:100%;padding:11px 0;margin-top:14px;background:var(--blue);color:#fff;border:none;border-radius:8px;font-family:'Inter',sans-serif;font-size:0.82rem;font-weight:600;cursor:pointer;transition:opacity .2s}
+.q-capture-btn:hover{opacity:0.9}
+.q-capture-btn:disabled{opacity:0.5;cursor:not-allowed}
+.q-capture-skip{display:block;width:100%;text-align:center;background:none;border:none;font-family:'Inter',sans-serif;font-size:0.68rem;color:rgba(255,255,255,0.18);cursor:pointer;margin-top:10px;transition:color .2s}
+.q-capture-skip:hover{color:rgba(255,255,255,0.48)}
+.q-capture-privacy{font-size:0.62rem;color:rgba(255,255,255,0.22);line-height:1.6;margin-top:14px;font-style:italic}
+
 /* ─────────────────────────────────────────
    RESPONSIVE
 ───────────────────────────────────────── */
@@ -1756,7 +1777,7 @@ footer{
   <div class="footer-bottom">
     <div class="footer-copy">© 2025 Stride Sports Physiotherapy &amp; Performance. All rights reserved.</div>
     <div class="footer-legal">
-      <a href="#">Privacy Policy</a>
+      <a href="/privacy-policy.html">Privacy Policy</a>
       <a href="#">Terms</a>
       <a href="#">AHPRA</a>
     </div>
@@ -1855,6 +1876,18 @@ footer{
           <button class="q-opt" onclick="pickQ(this,4,0)"><div class="q-radio"></div>Not at all — no real plan</button>
         </div>
         <button class="q-next" id="qn4" disabled onclick="showScore()">See my score →</button>
+      </div>
+
+      <!-- CAPTURE STEP -->
+      <div class="q-step" id="qs-capture">
+        <div class="q-capture-heading">Almost there — where should we send your results?</div>
+        <div class="q-capture-sub">Get your personalised score and action plan straight to your inbox.</div>
+        <input type="email" class="q-capture-input" id="cap-email" placeholder="Email address *" required>
+        <input type="text" class="q-capture-input" id="cap-name" placeholder="Name (optional)">
+        <input type="tel" class="q-capture-input" id="cap-phone" placeholder="Mobile (optional)">
+        <button class="q-capture-btn" id="cap-btn" onclick="submitCapture()">See my results →</button>
+        <button class="q-capture-skip" onclick="skipCapture()">Skip — just show my score</button>
+        <div class="q-capture-privacy">We'll only use this to send your results. No spam, ever. <a href="/privacy-policy.html" style="color:rgba(255,255,255,0.35)">Privacy Policy</a></div>
       </div>
 
       <!-- RESULT -->
@@ -1983,6 +2016,12 @@ function nextQ(to){
 }
 
 function showScore(){
+  document.getElementById('qs4').classList.remove('active')
+  document.getElementById('qs-capture').classList.add('active')
+  document.querySelectorAll('.q-dot').forEach(d=>{d.classList.add('done');d.classList.remove('active')})
+}
+
+function showScoreInternal(){
   document.querySelectorAll('.q-step').forEach(s=>s.classList.remove('active'))
   document.querySelectorAll('.q-dot').forEach(d=>{d.classList.add('done');d.classList.remove('active')})
   const total=qScores.reduce((a,b)=>a+b,0)
@@ -2009,157 +2048,50 @@ function showScore(){
   document.getElementById('score-insight').innerHTML=insight
 }
 
-function restartQuiz(){
-  for(let i=0;i<5;i++) qScores[i]=0
-  document.querySelectorAll('.q-step').forEach(s=>s.classList.remove('active'))
-  document.getElementById('qs0').classList.add('active')
-  document.getElementById('q-result').className='q-result'
-  document.querySelectorAll('.q-opt').forEach(b=>b.classList.remove('picked'))
-  document.querySelectorAll('.q-next').forEach(b=>b.disabled=true)
-  for(let i=0;i<5;i++){
-    const d=document.getElementById('qd'+i)
-    d.classList.remove('done','active')
-    if(i===0) d.classList.add('active')
-  }
-}
-
-/* ── BOOKING MODAL ───────────────────────── */
-
-// Sticky CTA
-const stickyCta=document.getElementById('sticky-cta')
-let stickyShown=false
-window.addEventListener('scroll',()=>{
-  const heroH=document.querySelector('.hero').offsetHeight
-  if(!stickyShown&&window.scrollY>heroH*0.5){
-    stickyCta.classList.add('visible')
-    stickyShown=true
-  }
-},{passive:true})
-
-let cur=1
-function openModal(){document.getElementById('modal').classList.add('open');document.body.style.overflow='hidden'}
-function closeModal(){document.getElementById('modal').classList.remove('open');document.body.style.overflow=''}
-
-function openQuizModal(){
-  document.getElementById('quiz-overlay').style.display='flex'
-  document.body.style.overflow='hidden'
-}
-function closeQuizModal(){
-  document.getElementById('quiz-overlay').style.display='none'
-  document.body.style.overflow=''
-}
-
-function overlayClose(e){if(e.target.id==='modal')closeModal()}
-
-function pick(el,group,btnId){
-  document.querySelectorAll(`[onclick*="'${group}'"]`).forEach(b=>b.classList.remove('sel'))
-  el.classList.add('sel')
-  checkReady(btnId)
-}
-function checkReady(btnId){
-  let ok=false
-  if(cur===1) ok=!!(document.querySelector('[onclick*="\'sport\'"].sel')&&document.querySelector('[onclick*="\'injury\'"].sel'))
-  else if(cur===2) ok=!!(document.querySelector('[onclick*="\'urgency\'"].sel')&&document.querySelector('[onclick*="\'prog\'"].sel'))
-  const b=document.getElementById(btnId);if(b)b.disabled=!ok
-}
-function goStep(to,eye,h,sub){
-  document.getElementById('fs'+cur).classList.remove('active')
-  cur=to
-  document.getElementById('fs'+to).classList.add('active')
-  document.getElementById('m-eye').textContent=eye
-  document.getElementById('m-h').textContent=h
-  document.getElementById('m-sub').textContent=sub||''
-  ;[1,2,3].forEach(i=>document.getElementById('sd'+i).classList.toggle('on',i<=to))
-}
-function chk3(){
-  const p=document.getElementById('fi-ph').value
-  const e=document.getElementById('fi-em').value
-  document.getElementById('nb3').disabled=!(p.length>=8&&e.includes('@'))
-}
-function submitForm(){
-  const name=document.getElementById('fi-name').value.trim()
-  const phone=document.getElementById('fi-ph').value.trim()
-  const email=document.getElementById('fi-em').value.trim()
-  const sport=(document.querySelector("[onclick*=\"'sport'\"].sel")||{}).textContent||''
-  const injury=(document.querySelector("[onclick*=\"'injury'\"].sel")||{}).textContent||''
-  const urgency=(document.querySelector("[onclick*=\"'urgency'\"].sel")||{}).textContent||''
-  const program=(document.querySelector("[onclick*=\"'prog'\"].sel")||{}).textContent||''
-  const btn=document.getElementById('nb3')
-  btn.disabled=true;btn.textContent='Sending...'
+function submitCapture(){
+  const email=document.getElementById('cap-email').value.trim()
+  if(!email||!email.includes('@')){document.getElementById('cap-email').focus();return}
+  const name=document.getElementById('cap-name').value.trim()
+  const phone=document.getElementById('cap-phone').value.trim()
+  const total=qScores.reduce((a,b)=>a+b,0)
+  let bandName
+  if(total<=24) bandName='red'
+  else if(total<=48) bandName='amber'
+  else if(total<=72) bandName='green'
+  else bandName='strong'
+  const btn=document.getElementById('cap-btn')
+  btn.disabled=true;btn.textContent='Loading...'
   fetch('https://api.stridephysiohealth.com.au/lead',{
     method:'POST',
     headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({name,phone,email,sport,injury,urgency,program})
-  }).catch(()=>{}).finally(()=>{
-    document.getElementById('fs3').classList.remove('active')
-    document.getElementById('fs-done').classList.add('active')
-    document.getElementById('m-eye').textContent='✓ Confirmed'
-    document.getElementById('m-h').textContent=''
-    document.getElementById('m-sub').textContent=''
-    document.querySelector('.step-dots').style.display='none'
-  })
-}
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',e=>{
-    const t=a.getAttribute('href')
-    if(t==='#')return
-    const el=document.querySelector(t)
-    if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'})}
-  })
-})
-</script>
-
-</body>
-</html>
-
-<script>
-/* ── READINESS QUIZ ──────────────────────── */
-const qScores=[0,0,0,0,0]
-
-function pickQ(el,qIdx,pts){
-  el.parentNode.querySelectorAll('.q-opt').forEach(b=>b.classList.remove('picked'))
-  el.classList.add('picked')
-  qScores[qIdx]=pts
-  document.getElementById('qn'+qIdx).disabled=false
+    body:JSON.stringify({source:'self-check',name,email,phone,quiz_score:total,quiz_band:bandName,quiz_answers:qScores})
+  }).catch(()=>{})
+  showScoreInternal()
 }
 
-function nextQ(to){
-  document.getElementById('qs'+(to-1)).classList.remove('active')
-  document.getElementById('qs'+to).classList.add('active')
-  for(let i=0;i<5;i++){
-    const d=document.getElementById('qd'+i)
-    d.classList.remove('done','active')
-    if(i<to) d.classList.add('done')
-    else if(i===to) d.classList.add('active')
-  }
+function skipCapture(){
+  showScoreInternal()
 }
 
-function showScore(){
-  document.querySelectorAll('.q-step').forEach(s=>s.classList.remove('active'))
-  document.querySelectorAll('.q-dot').forEach(d=>{d.classList.add('done');d.classList.remove('active')})
-  const total=qScores.reduce((a,b)=>a+b,0)
-  const result=document.getElementById('q-result')
-
-  let band,icon,heading,insight
-  if(total<=24){
-    band='band-consider';icon='⚠️';heading='Several gaps identified'
-    insight='Your answers suggest a number of areas in your current rehab approach that may be worth discussing with a physiotherapist — particularly around planning, diagnosis and return-to-sport testing. <strong>A professional assessment can help clarify where you stand and what a structured plan looks like.</strong>'
-  } else if(total<=48){
-    band='band-gaps';icon='📋';heading='Some gaps to explore'
-    insight='Your rehab has some structure, but there are a few areas — like objective testing and sport-specific programming — that are worth reviewing with a physio. <strong>A conversation with a specialist can help fill those gaps before you return to training.</strong>'
-  } else if(total<=72){
-    band='band-good';icon='✅';heading='Progressing well'
-    insight='Your approach to rehab aligns with good practice in most areas. To complete the picture, consider whether you\'ve had an objective return-to-sport clearance. <strong>Even athletes with solid programs benefit from a professional verification before stepping back on the field.</strong>'
-  } else {
-    band='band-good';icon='✅';heading='Strong approach'
-    insight='Your answers reflect a structured, evidence-informed approach to rehab. One final step worth considering: formal return-to-sport clearance testing with an objective clinical assessment. <strong>It\'s the safest way to confirm what your instincts are already telling you.</strong>'
-  }
-
-  result.className='q-result active '+band
-  document.getElementById('q-result-icon').textContent=icon
-  document.getElementById('q-result-band').textContent=heading
-  document.getElementById('score-insight').innerHTML=insight
-}
+// Google Ads conversion tracking
+document.addEventListener('DOMContentLoaded', function() {
+  // Phone click → Website Phone Click (Booking Intent)
+  document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      if(typeof gtag !== 'undefined') {
+        gtag('event', 'conversion', {'send_to': 'AW-753839414/-PE5CITshpscELbauucC'});
+      }
+    });
+  });
+  // Booking modal open → Booking Form Submission (Cliniko)
+  document.querySelectorAll('[onclick*="openModal"]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      if(typeof gtag !== 'undefined') {
+        gtag('event', 'conversion', {'send_to': 'AW-753839414/OXjOCO_rhpscELbauucC'});
+      }
+    });
+  });
+});
 
 function restartQuiz(){
   for(let i=0;i<5;i++) qScores[i]=0
