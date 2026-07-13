@@ -1,0 +1,26 @@
+backend:
+  name: StrideWebsiteAi
+  repo: ctandy-ai/Stride-Website
+  branch: main
+
+media_folder: images
+
+collections:
+  - name: pages
+    label: Pages
+    files:
+      - name: home
+        label: Home Page
+        file: index.html
+        fields:
+          - { label: Hero Headline, name: hero_h, widget: string }
+          - { label: Hero Motto, name: hero_motto, widget: string }
+          - { label: Hero Sub Copy, name: hero_sub, widget: text }
+          - { label: Pricing — Assessment Total, name: price_assessment_total, widget: string }
+          - { label: Pricing — Assessment Part 1 Rate, name: price_assessment_part1, widget: string }
+          - { label: Pricing — Assessment Part 2 Rate, name: price_assessment_part2, widget: string }
+          - { label: Pricing — Standard Consult Rate, name: price_consult_standard, widget: string }
+          - { label: Pricing — Extended Consult Rate, name: price_consult_extended, widget: string }
+          - { label: Pricing — Accelerator Weekly Rate, name: price_accelerator_weekly, widget: string }
+          - { label: Address Line, name: address, widget: string }
+          - { label: Phone Number, name: phone, widget: string }
