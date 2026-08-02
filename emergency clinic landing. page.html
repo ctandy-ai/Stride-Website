@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunday Acute Sports Injury Clinic | Stride Sports Physio</title>
+  <!-- Tailwind CSS CDN for rapid rendering -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            strideBlue: '#21A5DE',
+            strideDark: '#0F172A',
+            strideLight: '#F8FAFC'
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-strideLight text-slate-800 font-sans antialiased">
+
+  <!-- TOP ANNOUNCEMENT BAR (ADS TARGETING) -->
+  <div class="bg-strideDark text-white text-xs md:text-sm py-2 px-4 text-center font-medium border-b border-slate-700">
+    ⚡ <span class="text-strideBlue font-bold">SUNDAY SPORTS URGENT CARE:</span> Injured on the field today? Skip the 6-hour ED wait. Walk-Ins & Online Bookings Open This Sunday.
+  </div>
+
+  <!-- NAVIGATION / HEADER -->
+  <header class="bg-white sticky top-0 z-50 shadow-sm border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <!-- STRIDE LOGO STYLING -->
+        <span class="text-3xl font-extrabold tracking-tighter text-slate-900 italic">STR<span class="text-strideBlue not-italic">i</span>DE</span>
+        <span class="text-xs uppercase tracking-widest font-semibold bg-slate-100 px-2 py-1 rounded text-slate-600">Sports Physio</span>
+      </div>
+      <div class="flex items-center space-x-4">
+        <a href="tel:0393700345" class="hidden sm:flex items-center text-sm font-semibold text-slate-700 hover:text-strideBlue">
+          <i class="fa-solid font-bold fa-phone mr-2 text-strideBlue"></i> (03) 9370 0345
+        </a>
+        <a href="#book" class="bg-strideBlue hover:bg-sky-500 text-white font-bold text-sm px-5 py-2.5 rounded-lg shadow-md hover:shadow-lg transition">
+          Book Sunday Triage
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION (GOOGLE ADS LANDING ZONE) -->
+  <section class="relative bg-slate-900 text-white py-16 lg:py-24 overflow-hidden">
+    <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#21A5DE_1px,transparent_1px)] [background-size:16px_16px]"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- HERO TEXT -->
+      <div class="lg:col-span-7 space-y-6">
+        <div class="inline-flex items-center space-x-2 bg-slate-800 border border-slate-700 rounded-full px-3 py-1 text-xs text-strideBlue font-semibold">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Lead Practitioner: Jordan Schorel (Sports Physio)</span>
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+          Sunday Acute Sports <br>
+          <span class="text-strideBlue">Injury & Urgent Care</span>
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl">
+          Rapid-access assessment, diagnostic imaging referrals, and acute boot & brace fitting for community and sub-elite athletes. Get diagnosed today—not next week.
+        </p>
+
+        <!-- QUICK VALUE BULLETS -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+          <div class="flex items-center space-x-3 text-sm font-medium text-slate-200">
+            <i class="fa-solid fa-circle-check text-strideBlue"></i>
+            <span>Walk-Ins & Online Bookings</span>
+          </div>
+          <div class="flex items-center space-x-3 text-sm font-medium text-slate-200">
+            <i class="fa-solid fa-circle-check text-strideBlue"></i>
+            <span>Same-Day X-Ray/MRI Referrals</span>
+          </div>
+          <div class="flex items-center space-x-3 text-sm font-medium text-slate-200">
+            <i class="fa-solid fa-circle-check text-strideBlue"></i>
+            <span>On-Site Boot, Brace & Crutch Fitting</span>
+          </div>
+          <div class="flex items-center space-x-3 text-sm font-medium text-slate-200">
+            <i class="fa-solid fa-circle-check text-strideBlue"></i>
+            <span>Injuries Under 2-3 Weeks Old</span>
+          </div>
+        </div>
+
+        <div class="pt-4 flex flex-col sm:flex-row gap-4">
+          <a href="#book" class="bg-strideBlue text-center hover:bg-sky-500 text-white font-black text-lg px-8 py-4 rounded-xl shadow-lg transition">
+            Book Sunday Slot Online
+          </a>
+          <a href="#ai-triage" class="bg-slate-800 text-center hover:bg-slate-700 text-slate-200 border border-slate-700 font-bold text-lg px-6 py-4 rounded-xl transition">
+            Check Injury Eligibility
+          </a>
+        </div>
+      </div>
+
+      <!-- AI INTAKE / QUICK BOOKING CARD -->
+      <div class="lg:col-span-5 bg-white text-slate-900 p-8 rounded-2xl shadow-2xl border border-slate-100">
+        <div class="text-center pb-6 border-b border-slate-100">
+          <span class="text-xs font-bold text-strideBlue uppercase tracking-wider">Fast-Track Triage</span>
+          <h3 class="text-2xl font-black mt-1">Sunday Urgent Care Intake</h3>
+          <p class="text-xs text-slate-500 mt-1">Instant AI assistant fields questions & reserves your slot</p>
+        </div>
+
+        <form class="space-y-4 mt-6">
+          <div>
+            <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Athlete Name</label>
+            <input type="text" placeholder="e.g. Nate Smith" class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-strideBlue">
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Phone Number</label>
+            <input type="tel" placeholder="0400 000 000" class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-strideBlue">
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Suspected Injury</label>
+            <select class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-strideBlue">
+              <option>Ankle Sprain / Suspected Fracture</option>
+              <option>Knee Ligament (ACL / MCL / Meniscus)</option>
+              <option>Hamstring / Quadricep Muscle Tear</option>
+              <option>Wrist / Shoulder / Upper Limb Trauma</option>
+              <option>Other Acute Injury (&lt; 21 Days)</option>
+            </select>
+          </div>
+          <button type="submit" class="w-full bg-strideDark hover:bg-slate-800 text-white font-bold py-4 rounded-xl shadow-lg transition">
+            Continue to Available Sunday Times →
+          </button>
+        </form>
+        <p class="text-[11px] text-slate-400 text-center mt-3">
+          🔒 Private Health Insurance rebates applicable on-site.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SCOPE OF PRACTICE SECTION -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-xs font-bold text-strideBlue uppercase tracking-widest">Targeted Musculoskeletal Care</h2>
+        <p class="text-3xl font-black text-slate-900 mt-2">What We Treat & Manage On Sundays</p>
+        <p class="text-slate-600 mt-3 text-sm">Our Sports Physio & Osteo urgent care clinic is tailored specifically for sports injuries sustained inside 2–3 weeks.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        
+        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-strideBlue transition">
+          <div class="w-12 h-12 bg-sky-100 rounded-xl flex items-center justify-center text-strideBlue font-bold text-xl mb-4">
+            <i class="fa-solid fa-x-ray"></i>
+          </div>
+          <h4 class="font-bold text-lg text-slate-900">Imaging Referrals</h4>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">Direct allied health referral pathways for X-Ray, Ultrasound, and MRI scans with priority Monday morning follow-up.</p>
+        </div>
+
+        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-strideBlue transition">
+          <div class="w-12 h-12 bg-sky-100 rounded-xl flex items-center justify-center text-strideBlue font-bold text-xl mb-4">
+            <i class="fa-solid fa-boot-wearing"></i>
+          </div>
+          <h4 class="font-bold text-lg text-slate-900">Boot & Brace Fitting</h4>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">Immediate on-site fitting for CAM Walker moon boots, hinged knee braces, ankle immobilizers, and crutches.</p>
+        </div>
+
+        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-strideBlue transition">
+          <div class="w-12 h-12 bg-sky-100 rounded-xl flex items-center justify-center text-strideBlue font-bold text-xl mb-4">
+            <i class="fa-solid fa-bandage"></i>
+          </div>
+          <h4 class="font-bold text-lg text-slate-900">Acute Triage & Strapping</h4>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">Rigid joint strapping, swelling protocols, and immediate pain relief management to protect the damaged tissue.</p>
+        </div>
+
+        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-strideBlue transition">
+          <div class="w-12 h-12 bg-sky-100 rounded-xl flex items-center justify-center text-strideBlue font-bold text-xl mb-4">
+            <i class="fa-solid fa-dumbbell"></i>
+          </div>
+          <h4 class="font-bold text-lg text-slate-900">Gym Rehab On-Ramp</h4>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">Seamlessly transition from Sunday emergency triage straight into structured rehabilitation inside Stride's gym space.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RED FLAG / TRIAGE DISCLAIMER -->
+  <section class="bg-amber-50 border-y border-amber-200 py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center space-x-3">
+        <span class="text-amber-600 text-2xl"><i class="fa-solid fa-triangle-exclamation"></i></span>
+        <div>
+          <h5 class="text-xs font-bold uppercase text-amber-900">Medical Triage & Safety Boundary</h5>
+          <p class="text-xs text-amber-800">Stride Urgent Care is Allied Health-led (Physio/Osteo). Open bone fractures, joint dislocations requiring reduction, head trauma, or concussions must present directly to a hospital Emergency Department.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEAD PRACTITIONER HIGHLIGHT -->
+  <section class="py-16 bg-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+      <div class="md:col-span-5">
+        <div class="bg-slate-800 rounded-2xl p-4 border border-slate-700 text-center">
+          <div class="w-32 h-32 bg-strideBlue rounded-full mx-auto flex items-center justify-center text-white text-4xl font-bold mb-4">
+            JS
+          </div>
+          <h3 class="text-xl font-bold">Jordan Schorel</h3>
+          <p class="text-xs text-strideBlue font-semibold uppercase tracking-wider mt-1">Lead Urgent Care Practitioner</p>
+          <p class="text-xs text-slate-400 mt-3">Sports Physiotherapist specializing in acute lower/upper limb trauma, rapid diagnostics, and return-to-sport pathways.</p>
+        </div>
+      </div>
+      <div class="md:col-span-7 space-y-4">
+        <h3 class="text-3xl font-black">Athlete-Centric Care. <br><span class="text-strideBlue">Built for Local Sport.</span></h3>
+        <p class="text-sm text-slate-300 leading-relaxed">
+          "When you get hurt on the weekend, waiting until Tuesday for an appointment causes unnecessary anxiety and delays proper healing. Our Sunday Acute Clinic ensures you leave with a clear diagnosis, protective equipment, and an imaging referral on the exact day of injury."
+        </p>
+        <div class="pt-2">
+          <a href="#book" class="inline-block bg-strideBlue hover:bg-sky-500 text-white font-bold text-sm px-6 py-3 rounded-lg shadow-md transition">
+            Book With Jordan This Sunday
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 text-slate-400 text-xs py-8 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-2">
+      <p class="font-bold text-white">STRIDE SPORTS PHYSIOTHERAPY & PERFORMANCE SPACE</p>
+      <p>Moonee Ponds | Ascot Vale | Surrounding Suburbs</p>
+      <p class="text-slate-500 pt-2">© 2026 Stride Health Group. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
