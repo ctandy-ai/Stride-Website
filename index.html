@@ -1657,6 +1657,106 @@ footer{background:#080F17;border-top:1px solid rgba(255,255,255,0.06);padding:52
   .split-copy{padding:36px var(--px-m)}
   .cta-content .btn-primary{font-size:0.82rem;letter-spacing:0.08em}
 }
+
+/* ═══════════════════════════════════════════════════
+   MOBILE TARGETED FIXES — based on real screenshots
+═══════════════════════════════════════════════════ */
+
+/* ── 1. CHECKLIST — replace giant tick with refined dot ── */
+.cklist li{
+  display:flex;align-items:flex-start;gap:14px;
+  font-size:0.97rem;line-height:1.6;color:#3a5568;
+  padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.055);
+}
+.cklist li:last-child{border-bottom:none}
+.cklist li .ck{
+  flex-shrink:0;
+  width:20px;height:20px;
+  border-radius:50%;
+  background:var(--blue);
+  display:flex;align-items:center;justify-content:center;
+  margin-top:2px;
+  font-size:0.55rem;
+  color:#fff;
+  font-weight:900;
+}
+.cklist-inv li{color:rgba(255,255,255,0.78)}
+.cklist-inv li .ck{background:rgba(27,144,245,0.9)}
+
+/* ── 2. TEAM CARD — mobile rethink ──────────────────────── */
+@media(max-width:960px){
+  .team-card{
+    grid-template-columns:1fr;
+  }
+  .team-photo{
+    position:relative;
+    height:260px;
+    overflow:hidden;
+  }
+  .team-photo img{
+    width:100%;height:100%;
+    object-fit:cover;object-position:center top;
+  }
+  /* Gradient fade bottom of photo into the card */
+  .team-photo::after{
+    content:'';
+    position:absolute;
+    bottom:0;left:0;right:0;
+    height:100px;
+    background:linear-gradient(to bottom, transparent, var(--navy-light));
+  }
+  .team-info{
+    padding:24px 22px 28px;
+    border-top:none;
+  }
+  .team-name{
+    font-size:clamp(1.8rem,7vw,2.4rem);
+    margin-bottom:10px;
+  }
+  .team-bio{
+    font-size:0.92rem;line-height:1.68;
+  }
+}
+
+/* ── 3. TEAM CARD desktop — wider photo ─────────────────── */
+@media(min-width:961px){
+  .team-card{grid-template-columns:220px 1fr}
+  .team-info{padding:40px 36px}
+}
+
+/* ── 4. BODY TEXT — combat/split section mobile ─────────── */
+@media(max-width:480px){
+  .bt,.bt-inv{font-size:1rem;line-height:1.68}
+  .split-copy{padding:36px 20px}
+  .split-copy .cklist li{font-size:0.93rem}
+  /* More breathing room above CTAs */
+  .split-copy .btn-primary{margin-top:8px}
+}
+
+/* ── 5. STICKY BAR — hide when page CTA is in view ──────── */
+/* JS handles the show/hide — CSS ensures smooth transition */
+.sticky-cta{
+  transition:transform .3s ease, opacity .3s ease;
+}
+.sticky-cta.cta-in-view{
+  transform:translateY(100%);
+  opacity:0;
+  pointer-events:none;
+}
+
+/* ── 6. SECTION BODY SPACING — more air between text+CTA ── */
+.split-copy ul.cklist{margin-bottom:28px}
+.prob-copy ul.cklist{margin-bottom:32px}
+
+/* ── 7. TEAM SECTION TAG LINE ────────────────────────────── */
+.team-role{
+  font-size:0.58rem;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.45);
+  margin-bottom:6px;
+  line-height:1.5;
+}
 </style>
 </head>
 <body>
@@ -2754,6 +2854,21 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     initProbCards();
     initCursorGlow();
   }
+
+  /* ── STICKY CTA HIDE WHEN BUTTON IN VIEW ─── */
+  function initStickyHide(){
+    var sticky = document.querySelector('.sticky-cta');
+    if(!sticky) return;
+    var btns = document.querySelectorAll('.btn-primary:not(.sticky-btn), .booking-btn-call');
+    if(!btns.length) return;
+    var io = new IntersectionObserver(function(entries){
+      var anyVisible = entries.some(function(e){ return e.isIntersecting; });
+      sticky.classList.toggle('cta-in-view', anyVisible);
+    }, {threshold: 0.5});
+    btns.forEach(function(b){ io.observe(b); });
+  }
+  initStickyHide();
+
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init);
   else init();
 })();
