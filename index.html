@@ -1330,6 +1330,72 @@ footer{
   .quiz-modal{padding:28px 20px}
 }
 
+
+@media(max-width:480px){
+  /* Hero — sports ticker single line */
+  .hero-sports{
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    font-size:0.58rem;
+    letter-spacing:0.08em;
+    display:block;
+  }
+  /* Hero headline — tighter on small screens */
+  .hero-h{font-size:clamp(3rem,16vw,4.8rem);line-height:.86;margin-bottom:18px}
+  /* Motto bar full width */
+  .hero-motto{font-size:0.82rem;line-height:1.4}
+  /* CTAs — stack vertically, full width */
+  .hero-ctas{flex-direction:column;gap:8px}
+  .btn-primary,.btn-ghost{width:100%;text-align:center;justify-content:center}
+  .btn-quiz{
+    width:100%;min-width:0;
+    flex-direction:row;align-items:center;gap:10px;
+    padding:13px 18px;
+  }
+  .btn-quiz-sub{font-size:0.9rem}
+  /* Hero note — smaller and stacked */
+  .hero-note{font-size:0.68rem;gap:4px}
+  /* Stats — last odd item full width */
+  .stat-item{flex:0 0 50%}
+  .stat-item:last-child:nth-child(odd){flex:0 0 100%;border-right:none}
+  .stat-num{font-size:2.4rem}
+  .stat-lbl{font-size:0.72rem}
+  /* Logos — smaller, tighter */
+  .logos-row{gap:20px}
+  .logo-item img{height:44px;max-width:110px}
+  .logo-item span{font-size:0.42rem}
+  /* Problem section text */
+  .prob-copy{padding:36px var(--px-m)}
+  /* Accelerator checklist */
+  .acc-item-title{font-size:0.95rem}
+  /* Pricing card */
+  .price-val{font-size:2.6rem}
+  /* Booking call button — full width */
+  .booking-btn-call{
+    width:100%;
+    text-align:center;
+    justify-content:center;
+    font-size:0.88rem;
+    padding:14px 16px;
+    white-space:normal;
+  }
+  /* Sticky bar */
+  .sticky-cta{padding:8px var(--px-m)}
+  /* Nav */
+  nav{padding:0 var(--px-m)}
+  /* Section section headings */
+  .sec-label{font-size:0.5rem}
+  /* Guarantee section */
+  .guarantee-inner{padding:0}
+  /* Team card tighter */
+  .team-card{grid-template-columns:100px 1fr;gap:16px}
+  /* Testimonial */
+  .testi-body{font-size:0.9rem}
+  /* Modal */
+  .modal,.quiz-modal{padding:24px 16px;border-radius:4px}
+}
+
 </style>
 </head>
 <body>
