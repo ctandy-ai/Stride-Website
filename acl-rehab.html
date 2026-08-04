@@ -1633,6 +1633,306 @@ footer{
   .hero-sports{font-size:0.56rem;letter-spacing:0.1em}
 }
 
+
+/* ═══════════════════════════════════════════════════════════════
+   PREMIUM DESIGN UPGRADE — $10K+ QUALITY PASS
+   Typography · Visual depth · Editorial treatments · Micro-detail
+═══════════════════════════════════════════════════════════════ */
+
+/* ── 1. TYPOGRAPHY SCALE ─────────────────────────────────────── */
+/* Tighten display tracking, sharpen contrast, editorial feel */
+.hero-h{
+  font-size: clamp(4.2rem, 9.5vw, 9.5rem);
+  line-height: .84;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+}
+.hero-h .hl-stroke{
+  -webkit-text-stroke: 1.5px rgba(255,255,255,0.28);
+  color: transparent;
+  letter-spacing: -0.01em;
+}
+/* Section display headings — more aggressive sizing */
+.split-h{
+  font-size: clamp(2.8rem, 5.5vw, 5.8rem);
+  line-height: .86;
+  letter-spacing: -0.01em;
+}
+.acc-title{
+  font-size: clamp(3.2rem, 5.8vw, 6rem);
+  line-height: .86;
+  letter-spacing: -0.01em;
+}
+/* Body text — more readable */
+.bt, .bt-inv{
+  font-size: 1.05rem;
+  line-height: 1.72;
+  letter-spacing: 0.01em;
+}
+/* Eyebrow labels — sharper mono */
+.ey{
+  font-size: 0.6rem;
+  letter-spacing: 0.26em;
+  gap: 14px;
+}
+.ey::before{ width: 28px; }
+/* Stats — editorial numbers */
+.stat-num{
+  font-size: clamp(3.2rem, 6vw, 4.8rem);
+  letter-spacing: -0.02em;
+  line-height: .9;
+}
+.stat-lbl{
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  line-height: 1.5;
+}
+
+/* ── 2. NOISE TEXTURE ON DARK SECTIONS ───────────────────────── */
+/* SVG noise filter for depth — like high-end print design */
+.hero::after,
+.stats-bar::after,
+.accelerator::after,
+.team::after,
+.cta-bleed::after{
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  mix-blend-mode: overlay;
+}
+.hero, .stats-bar, .accelerator, .team, .cta-bleed{
+  position: relative;
+}
+/* Ensure content stays above the noise layer */
+.hero-inner, .stats-inner, .acc-wrap, .team-grid, .cta-content{ position: relative; z-index: 2; }
+
+/* ── 3. HERO GRADIENT GLOW ───────────────────────────────────── */
+/* Blue radial glow behind the headline area */
+.hero-inner::before{
+  content: '';
+  position: absolute;
+  top: -60px; left: -40px;
+  width: 600px; height: 500px;
+  background: radial-gradient(ellipse at 30% 40%, rgba(27,144,245,0.18) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+  animation: glow-breathe 6s ease-in-out infinite;
+}
+@keyframes glow-breathe{
+  0%,100%{ opacity: 0.8; transform: scale(1); }
+  50%{ opacity: 1; transform: scale(1.08); }
+}
+.hero-sports-wrap, .hero-motto-wrap, .hero-h, .hero-ctas, .hero-quiz-proof, .hero-note{
+  position: relative; z-index: 2;
+}
+
+/* ── 4. NAV — FROSTED GLASS PREMIUM ──────────────────────────── */
+nav{
+  background: rgba(13,27,42,0.88);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+/* Nav logo treatment */
+.nav-logo img{ height: 28px; }
+/* Nav CTA — sharper */
+.nav-cta{
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  padding: 10px 22px;
+  border-radius: 2px;
+  box-shadow: 0 0 20px rgba(27,144,245,0.25);
+  transition: box-shadow .2s, background .2s;
+}
+.nav-cta:hover{
+  box-shadow: 0 0 32px rgba(27,144,245,0.45);
+}
+
+/* ── 5. EDITORIAL THIN RULE DIVIDERS ─────────────────────────── */
+/* Horizontal rule as a design element between major sections */
+.logos{ border-top: 1px solid var(--brd-i); }
+.problem{ border-top: 1px solid var(--brd); }
+.cta-bleed{ border-top: 1px solid var(--brd-i); }
+
+/* Stats separator lines — bolder */
+.stats-sep{ background: rgba(255,255,255,0.12); }
+
+/* ── 6. STATS — BIG NUMBER EDITORIAL MOMENT ──────────────────── */
+.stats-bar{
+  background: linear-gradient(180deg, #0D1B2A 0%, #112236 100%);
+}
+.stat-item{ 
+  padding: 44px 24px;
+  transition: background .22s;
+}
+.stat-item:hover{ background: rgba(27,144,245,0.05); }
+/* Accent line above hovered stat */
+.stat-item::before{
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--blue);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .3s ease;
+}
+.stat-item{ position: relative; }
+.stat-item:hover::before{ transform: scaleX(1); }
+
+/* ── 7. PRIMARY BUTTON — PREMIUM TREATMENT ───────────────────── */
+.btn-primary{
+  background: var(--blue);
+  box-shadow: 0 0 0 0 rgba(27,144,245,0);
+  position: relative;
+  overflow: hidden;
+  padding: 20px 44px;
+  font-size: 0.88rem;
+  letter-spacing: 0.1em;
+  transition: background .22s, box-shadow .22s, transform .18s;
+}
+.btn-primary::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity .22s;
+}
+.btn-primary:hover{
+  background: #1580e0;
+  box-shadow: 0 8px 32px rgba(27,144,245,0.40), 0 0 0 1px rgba(27,144,245,0.3);
+  transform: translateY(-2px);
+}
+.btn-primary:hover::before{ opacity: 1; }
+
+/* ── 8. GHOST BUTTON — REFINED ───────────────────────────────── */
+.btn-ghost{
+  border: 1.5px solid rgba(255,255,255,0.22);
+  font-size: 0.88rem;
+  letter-spacing: 0.1em;
+  padding: 20px 40px;
+  transition: border-color .22s, background .22s, transform .18s;
+}
+.btn-ghost:hover{
+  border-color: rgba(27,144,245,0.6);
+  background: rgba(27,144,245,0.08);
+  transform: translateY(-2px);
+}
+
+/* ── 9. PROBLEM CARDS — EDITORIAL TREATMENT ──────────────────── */
+.prob-num-wrap{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.prob-card{
+  padding: 36px 32px;
+  border-top: 2px solid transparent;
+  transition: border-color .25s, transform .25s;
+  cursor: default;
+}
+.prob-card:hover{
+  border-color: var(--blue);
+  transform: translateY(-4px);
+}
+/* Large background number — editorial depth */
+.prob-card{ position: relative; overflow: hidden; }
+.prob-card::after{
+  content: attr(data-num);
+  position: absolute;
+  right: -8px; bottom: -24px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 9rem;
+  line-height: 1;
+  color: rgba(0,0,0,0.04);
+  pointer-events: none;
+  letter-spacing: -0.03em;
+  user-select: none;
+}
+
+/* ── 10. PRICING CARD — PREMIUM FEATURED STATE ───────────────── */
+.price-card-featured{
+  background: var(--navy);
+  border: 1px solid rgba(27,144,245,0.3);
+  box-shadow: 0 0 60px rgba(27,144,245,0.12), 0 24px 48px rgba(0,0,0,0.3);
+}
+.price-card{
+  transition: transform .28s ease, box-shadow .28s ease;
+}
+.price-card:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.2);
+}
+
+/* ── 11. SPLIT IMAGE — PARALLAX HINT ────────────────────────── */
+.split-img img{
+  transition: transform .65s cubic-bezier(.22,1,.36,1);
+  transform-origin: center;
+}
+.split:hover .split-img img{ transform: scale(1.05); }
+
+/* ── 12. FOOTER — EDITORIAL TREATMENT ───────────────────────── */
+footer{
+  background: #080F17;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 52px var(--px) 28px;
+}
+.footer-grid{ gap: 56px; }
+footer a:hover{ color: rgba(255,255,255,0.9); }
+
+/* ── 13. STICKY CTA — SHARPER ────────────────────────────────── */
+.sticky-cta{
+  background: rgba(8,15,23,0.96);
+  backdrop-filter: blur(24px);
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+.sticky-btn{
+  box-shadow: 0 0 20px rgba(27,144,245,0.3);
+}
+.sticky-btn:hover{
+  box-shadow: 0 0 32px rgba(27,144,245,0.5);
+}
+
+/* ── 14. SECTION LABELS — MORE REFINED ───────────────────────── */
+.sec-label, .logos-lbl{
+  font-size: 0.52rem;
+  letter-spacing: 0.28em;
+  opacity: 0.5;
+}
+
+/* ── 15. TESTIMONIAL CARDS — DEPTH ───────────────────────────── */
+.testi-card{
+  border: 1px solid var(--brd);
+  transition: border-color .25s, transform .25s, box-shadow .25s;
+}
+.testi-card:hover{
+  border-color: rgba(27,144,245,0.25);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.07);
+}
+
+/* ── 16. MARQUEE — BOLDER ────────────────────────────────────── */
+.hero-sports{
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  opacity: 0.5;
+}
+
+/* ── 17. MOBILE REFINEMENTS ──────────────────────────────────── */
+@media(max-width:480px){
+  .hero-inner::before{ display: none; } /* glow off on mobile */
+  .btn-primary, .btn-ghost{ padding: 17px 28px; font-size: 0.82rem; }
+  .stat-num{ font-size: 2.6rem; }
+  .hero-h{ letter-spacing: -0.005em; }
+}
+
 </style>
 </head>
 <body>
@@ -2378,6 +2678,147 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }, {threshold:0.08, rootMargin:'0px 0px -40px 0px'});
   targets.forEach(function(el){ io.observe(el); });
+})();
+</script>
+
+
+<script>
+(function(){
+  /* ── WORD-BY-WORD HEADLINE ANIMATION ─────────────────────── */
+  function animateHeadline(){
+    var h1 = document.querySelector('.hero-h');
+    if(!h1) return;
+    // Split by words preserving HTML tags
+    var html = h1.innerHTML;
+    // Wrap each text word in a span (skip HTML tags)
+    var result = html.replace(/(<[^>]+>)|([^\s<]+)/g, function(match, tag, word){
+      if(tag) return tag;
+      return '<span class="word-wrap"><span class="word-inner">'+word+'</span></span>';
+    });
+    h1.innerHTML = result;
+    h1.style.overflow = 'visible';
+    // Animate each word in
+    var words = h1.querySelectorAll('.word-inner');
+    words.forEach(function(w, i){
+      w.style.cssText = 'display:inline-block;transform:translateY(110%);opacity:0;transition:transform 0.65s cubic-bezier(.22,1,.36,1) '+((i*0.09)+0.2)+'s, opacity 0.4s ease '+((i*0.09)+0.2)+'s';
+    });
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){
+        words.forEach(function(w){
+          w.style.transform = 'translateY(0)';
+          w.style.opacity = '1';
+        });
+      });
+    });
+  }
+
+  /* ── COUNTER ANIMATION ON STATS ──────────────────────────── */
+  function animateCounter(el, target, duration){
+    var start = 0;
+    var startTime = null;
+    var isFloat = String(target).includes('.');
+    var suffix = el.dataset.suffix || '';
+    function step(ts){
+      if(!startTime) startTime = ts;
+      var prog = Math.min((ts - startTime)/duration, 1);
+      var ease = 1 - Math.pow(1-prog, 3);
+      var val = start + (target - start)*ease;
+      el.textContent = (isFloat ? val.toFixed(1) : Math.floor(val)) + suffix;
+      if(prog < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  function initCounters(){
+    var nums = document.querySelectorAll('.stat-num');
+    var observed = false;
+    if(!nums.length) return;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting && !observed){
+          observed = true;
+          nums.forEach(function(n){
+            var text = n.textContent.trim();
+            var val = parseFloat(text.replace(/[^0-9.]/g,''));
+            var suffix = text.replace(/[0-9.]/g,'').trim();
+            n.dataset.suffix = suffix;
+            if(!isNaN(val)) animateCounter(n, val, 1800);
+          });
+        }
+      });
+    }, {threshold: 0.3});
+    io.observe(nums[0]);
+  }
+
+  /* ── ADD data-num TO PROBLEM CARDS ───────────────────────── */
+  function initProbCards(){
+    document.querySelectorAll('.prob-card').forEach(function(card, i){
+      card.setAttribute('data-num', '0'+(i+1));
+    });
+  }
+
+  /* ── CURSOR GLOW ON DARK SECTIONS ───────────────────────── */
+  function initCursorGlow(){
+    var hero = document.querySelector('.hero');
+    if(!hero) return;
+    var glow = document.createElement('div');
+    glow.style.cssText = 'position:absolute;pointer-events:none;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(27,144,245,0.12) 0%,transparent 70%);transform:translate(-50%,-50%);transition:opacity .3s;z-index:1;opacity:0';
+    hero.appendChild(glow);
+    hero.addEventListener('mousemove', function(e){
+      var r = hero.getBoundingClientRect();
+      glow.style.left = (e.clientX - r.left)+'px';
+      glow.style.top = (e.clientY - r.top)+'px';
+      glow.style.opacity = '1';
+    });
+    hero.addEventListener('mouseleave', function(){ glow.style.opacity = '0'; });
+  }
+
+  /* ── SMOOTH ACTIVE NAV LINK INDICATOR ───────────────────── */
+  function initNavIndicator(){
+    var links = document.querySelectorAll('.nav-link');
+    var sections = [];
+    links.forEach(function(l){
+      var href = l.getAttribute('href');
+      if(href && href.startsWith('#')){
+        var sec = document.querySelector(href);
+        if(sec) sections.push({link:l, sec:sec});
+      }
+    });
+    if(!sections.length) return;
+    window.addEventListener('scroll', function(){
+      var scrollY = window.scrollY + 100;
+      sections.forEach(function(s){
+        var top = s.sec.offsetTop;
+        var bot = top + s.sec.offsetHeight;
+        if(scrollY >= top && scrollY < bot){
+          links.forEach(function(l){ l.style.color=''; });
+          s.link.style.color = '#fff';
+        }
+      });
+    }, {passive:true});
+  }
+
+  /* ── WORD WRAP STYLE INJECTION ───────────────────────────── */
+  var style = document.createElement('style');
+  style.textContent = '.word-wrap{display:inline-block;overflow:hidden;vertical-align:bottom}.word-inner{display:inline-block}';
+  document.head.appendChild(style);
+
+  /* ── INIT ────────────────────────────────────────────────── */
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', function(){
+      animateHeadline();
+      initCounters();
+      initProbCards();
+      initCursorGlow();
+      initNavIndicator();
+    });
+  } else {
+    animateHeadline();
+    initCounters();
+    initProbCards();
+    initCursorGlow();
+    initNavIndicator();
+  }
 })();
 </script>
 
