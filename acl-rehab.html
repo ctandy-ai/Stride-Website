@@ -1265,674 +1265,332 @@ footer{
 }
 
 
-@media(max-width:480px){
-  /* Hero — sports ticker single line */
-  .hero-sports{
-    overflow:hidden;
-    white-space:nowrap;
-    text-overflow:ellipsis;
-    font-size:0.58rem;
-    letter-spacing:0.08em;
-    display:block;
-  }
-  /* Hero headline — tighter on small screens */
-  .hero-h{font-size:clamp(3rem,16vw,4.8rem);line-height:.86;margin-bottom:18px}
-  /* Motto bar full width */
-  .hero-motto{font-size:0.82rem;line-height:1.4}
-  /* CTAs — stack vertically, full width */
-  .hero-ctas{flex-direction:column;gap:8px}
-  .btn-primary,.btn-ghost{width:100%;text-align:center;justify-content:center}
-  .btn-quiz{
-    width:100%;min-width:0;
-    flex-direction:row;align-items:center;gap:10px;
-    padding:13px 18px;
-  }
-  .btn-quiz-sub{font-size:0.9rem}
-  /* Hero note — smaller and stacked */
-  .hero-note{font-size:0.68rem;gap:4px}
-  /* Stats — last odd item full width */
-  .stat-item{flex:0 0 50%}
-  .stat-item:last-child:nth-child(odd){flex:0 0 100%;border-right:none}
-  .stat-num{font-size:2.4rem}
-  .stat-lbl{font-size:0.72rem}
-  /* Logos — smaller, tighter */
-  .logos-row{gap:20px}
-  .logo-item img{height:44px;max-width:110px}
-  .logo-item span{font-size:0.42rem}
-  /* Problem section text */
-  .prob-copy{padding:36px var(--px-m)}
-  /* Accelerator checklist */
-  .acc-item-title{font-size:0.95rem}
-  /* Pricing card */
-  .price-val{font-size:2.6rem}
-  /* Booking call button — full width */
-  .booking-btn-call{
-    width:100%;
-    text-align:center;
-    justify-content:center;
-    font-size:0.88rem;
-    padding:14px 16px;
-    white-space:normal;
-  }
-  /* Sticky bar */
-  .sticky-cta{padding:8px var(--px-m)}
-  /* Nav */
-  nav{padding:0 var(--px-m)}
-  /* Section section headings */
-  .sec-label{font-size:0.5rem}
-  /* Guarantee section */
-  .guarantee-inner{padding:0}
-  /* Team card tighter */
-  .team-card{grid-template-columns:100px 1fr;gap:16px}
-  /* Testimonial */
-  .testi-body{font-size:0.9rem}
-  /* Modal */
-  .modal,.quiz-modal{padding:24px 16px;border-radius:4px}
-}
+/* ═══════════════════════════════════════════════════════════
+   STRIDE DESIGN UPGRADE — SINGLE CLEAN INJECTION
+   Mobile-first · Typography · Visual depth · Motion · SEO
+═══════════════════════════════════════════════════════════ */
 
-
-/* ═══════════════════════════════════════════
-   PASS 2 — VERTICAL RHYTHM
-   Double whitespace between major sections
-═══════════════════════════════════════════ */
-:root{
-  --sp-2x: 120px;
-  --sp-xl:  96px;
-}
-/* Section intros more breathing room */
-.acc-intro{ margin-bottom:64px; }
-.pricing-head{ margin-bottom:64px; }
-.testi-head{ margin-bottom:64px; }
-.team-grid{ margin-top:64px; }
-
-/* Problem cards breathing room */
-.prob-cards{ gap:2px; }
-.prob-card{ padding:32px 32px; }
-
-/* Accelerator item rows */
-.acc-item{ padding:24px 28px; }
-.acc-promise-col{ padding:36px 32px; }
-.acc-steps{ gap:20px; }
-.acc-step{ gap:18px; }
-
-/* Guarantee inner breathing */
-.guar-img{ margin-bottom:48px; }
-
-/* Testimonials grid */
-.testi-grid{ gap:3px; }
-.testi-card{ padding:36px 32px; }
-
-/* CTA section copy */
-.cta-content > *+*{ margin-top:20px; }
-
-/* Footer columns */
-.footer-grid{ gap:48px; }
-
-/* Stats bar taller on desktop */
-.stats-copy{ padding:48px var(--px) 28px; }
-.stat-item{ padding:40px 20px; }
-
-/* Logo section */
-.logos{ padding:60px var(--px); }
-.logos-lbl{ margin-bottom:52px; }
-
-/* ═══════════════════════════════════════════
-   PASS 3 — SCROLL REVEAL + HOVER STATES
-═══════════════════════════════════════════ */
-
-/* Reveal base */
-.reveal{
-  opacity:0;
-  transform:translateY(22px);
-  transition:opacity .55s cubic-bezier(.22,1,.36,1), transform .55s cubic-bezier(.22,1,.36,1);
-}
-.reveal.visible{
-  opacity:1;
-  transform:none;
-}
-.reveal.d1{ transition-delay:.06s }
-.reveal.d2{ transition-delay:.14s }
-.reveal.d3{ transition-delay:.22s }
-.reveal.d4{ transition-delay:.30s }
-.reveal.d5{ transition-delay:.38s }
-
-/* Problem cards */
-.prob-card{
-  transition:background .22s ease, border-left-color .22s ease, transform .22s ease;
-}
-.prob-card:hover{
-  background:#F0F4F7;
-  border-left-color:var(--blue);
-  transform:translateX(4px);
-}
-
-/* Accelerator items */
-.acc-item{
-  transition:background .22s ease;
-}
-.acc-item:hover{
-  background:rgba(255,255,255,0.05);
-}
-
-/* Pricing cards */
-.price-card{
-  transition:transform .25s ease, box-shadow .25s ease;
-}
-.price-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 24px 48px rgba(0,0,0,0.24);
-}
-
-/* Team cards */
-.team-card{
-  transition:background .22s ease, transform .22s ease;
-}
-.team-card:hover{
-  transform:translateY(-3px);
-}
-
-/* Testimonial cards */
-.testi-card{
-  transition:box-shadow .25s ease, transform .25s ease;
-}
-.testi-card:hover{
-  box-shadow:0 8px 32px rgba(0,0,0,0.08);
-  transform:translateY(-3px);
-}
-
-/* Logo items */
-.logo-item{
-  transition:opacity .22s ease, transform .22s ease;
-}
-.logo-item:hover{
-  opacity:1;
-  transform:translateY(-4px) scale(1.05);
-}
-
-/* Stat items */
-.stat-item{
-  transition:background .22s ease;
-}
-.stat-item:hover{
-  background:rgba(255,255,255,0.04);
-}
-
-/* Primary / ghost buttons */
-.btn-primary, .btn-ghost, .booking-btn-call, .nav-cta{
-  transition:background .2s ease, border-color .2s ease, transform .18s ease, box-shadow .2s ease;
-}
-.btn-primary:hover{
-  transform:translateY(-2px);
-  box-shadow:0 8px 24px rgba(24,144,255,0.28);
-}
-.btn-ghost:hover{
-  transform:translateY(-2px);
-}
-
-/* Sticky CTA button */
-.sticky-btn{
-  transition:background .18s ease, transform .18s ease;
-}
-.sticky-btn:hover{
-  transform:translateY(-1px);
-}
-
-/* Split image subtle zoom */
-.split-img img{
-  transition:transform .55s cubic-bezier(.22,1,.36,1);
-}
-.split:hover .split-img img{
-  transform:scale(1.04);
-}
-
-
-/* ═══════════════════════════════════════════
-   375px AUDIT FIXES
-═══════════════════════════════════════════ */
-@media(max-width:390px){
-  /* Reduce the big section padding on smallest phones */
-  :root{
-    --sp-2x: 72px;
-    --sp-xl:  56px;
-  }
-  /* Acc promise col — less top padding */
-  .acc-promise-col{ padding:24px 20px; }
-  /* Pricing card — less padding */
-  .price-card{ padding:36px 28px; }
-  /* Guarantee inner */
-  .guarantee-inner{ padding:0 4px; }
-  /* Split copy */
-  .split-copy{ padding:36px var(--px-m); }
-  /* Team card — tighter on 375 */
-  .team-card{ grid-template-columns:88px 1fr; }
-  .team-info{ padding:28px 20px; }
-  /* CTA button text — prevent orphan on tiny screen */
-  .cta-content .btn-primary{ font-size:0.82rem; letter-spacing:0.1em; }
-  /* Hero note — hide some separator dots */
-  .hero-note span.dot{ display:none; }
-}
-
-
-/* ═══════════════════════════════════════════
-   HERO UPGRADE — CTAs, QUIZ PROMINENCE, MARQUEE
-═══════════════════════════════════════════ */
-
-/* Marquee sports ticker */
+/* ─── SPORTS MARQUEE TICKER ─────────────────────────────── */
 .hero-sports-wrap{
   overflow:hidden;
-  mask-image:linear-gradient(to right, transparent 0, #000 10%, #000 90%, transparent 100%);
-  -webkit-mask-image:linear-gradient(to right, transparent 0, #000 10%, #000 90%, transparent 100%);
+  mask-image:linear-gradient(to right,transparent 0,#000 8%,#000 92%,transparent 100%);
+  -webkit-mask-image:linear-gradient(to right,transparent 0,#000 8%,#000 92%,transparent 100%);
   margin-bottom:14px;
 }
 .hero-sports{
-  display:flex;
-  white-space:nowrap;
+  display:flex;white-space:nowrap;
   animation:marquee 28s linear infinite;
   font-family:'DM Mono',monospace;
-  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
-  color:rgba(255,255,255,0.45);
-  margin-bottom:0;
-  line-height:1.6;
+  font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:rgba(255,255,255,0.45);margin-bottom:0;line-height:1.6;
 }
-.hero-sports-inner{
-  display:flex;flex-shrink:0;gap:32px;padding-right:32px;
+.hero-sports-inner{display:flex;flex-shrink:0;gap:28px;padding-right:28px}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ─── TYPOGRAPHY SCALE ──────────────────────────────────── */
+.hero-h{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(4rem,9vw,9.2rem);
+  line-height:.84;letter-spacing:-0.01em;
+  color:#fff;margin-bottom:28px;
 }
-@keyframes marquee{
-  0%{transform:translateX(0)}
-  100%{transform:translateX(-50%)}
+.hero-h .hl-stroke{
+  -webkit-text-stroke:1.5px rgba(255,255,255,0.28);
+  color:transparent;
+}
+.split-h{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(2.8rem,5.5vw,5.6rem);
+  line-height:.86;letter-spacing:-0.01em;
+}
+.acc-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(3rem,5.5vw,5.8rem);
+  line-height:.86;letter-spacing:-0.01em;
+  color:#fff;margin-bottom:14px;
+}
+.stat-num{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(3rem,5.5vw,4.6rem);
+  letter-spacing:-0.02em;line-height:.9;
+  color:var(--blue);margin-bottom:8px;
+}
+.stat-lbl{
+  font-size:0.68rem;font-weight:500;line-height:1.5;
+  color:rgba(255,255,255,0.65);
+  text-transform:uppercase;letter-spacing:0.1em;
+}
+.bt,.bt-inv{font-size:1.05rem;line-height:1.72;letter-spacing:0.005em}
+.ey{font-size:0.6rem;letter-spacing:0.26em;gap:14px;margin-bottom:18px}
+.ey::before{width:28px}
+
+/* ─── NAV — FROSTED GLASS ───────────────────────────────── */
+nav{
+  background:rgba(13,27,42,0.88);
+  backdrop-filter:blur(28px) saturate(180%);
+  -webkit-backdrop-filter:blur(28px) saturate(180%);
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.nav-cta{
+  font-size:0.76rem;letter-spacing:0.1em;
+  padding:10px 22px;border-radius:2px;
+  box-shadow:0 0 20px rgba(27,144,245,0.22);
+  transition:box-shadow .2s,background .2s;
+}
+.nav-cta:hover{box-shadow:0 0 32px rgba(27,144,245,0.45)}
+
+/* ─── HERO GLOW ─────────────────────────────────────────── */
+.hero-inner{position:relative}
+.hero-inner::before{
+  content:'';position:absolute;
+  top:-60px;left:-40px;width:580px;height:480px;
+  background:radial-gradient(ellipse at 30% 40%,rgba(27,144,245,0.16) 0%,transparent 65%);
+  pointer-events:none;z-index:0;
+  animation:glow-breathe 7s ease-in-out infinite;
+}
+@keyframes glow-breathe{
+  0%,100%{opacity:.75;transform:scale(1)}
+  50%{opacity:1;transform:scale(1.07)}
+}
+.hero-sports-wrap,.hero-motto-wrap,.hero-h,.hero-ctas,.hero-quiz-proof,.hero-note{
+  position:relative;z-index:2
 }
 
-/* Primary book button — bigger, more presence */
+/* ─── NOISE TEXTURE ON DARK SECTIONS ────────────────────── */
+.hero,.stats-bar,.accelerator,.team,.cta-bleed{position:relative;overflow:hidden}
+.hero::after,.stats-bar::after,.accelerator::after,.team::after,.cta-bleed::after{
+  content:'';position:absolute;inset:0;pointer-events:none;z-index:1;
+  opacity:0.032;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:160px 160px;mix-blend-mode:overlay;
+}
+.hero-inner,.stats-inner,.acc-wrap,.team-grid,.cta-content{position:relative;z-index:2}
+
+/* ─── BUTTONS ────────────────────────────────────────────── */
 .btn-primary{
-  padding:20px 44px;font-size:1.05rem;
-  box-shadow:0 0 0 0 rgba(24,144,255,0);
-  animation:none;
+  background:var(--blue);color:#fff;
+  padding:20px 44px;font-size:0.88rem;letter-spacing:0.08em;
+  position:relative;overflow:hidden;
+  transition:background .22s,box-shadow .22s,transform .18s;
 }
+.btn-primary::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,0.14) 0%,transparent 55%);
+  opacity:0;transition:opacity .22s;
+}
+.btn-primary:hover{
+  background:#1580e0;
+  box-shadow:0 8px 32px rgba(27,144,245,0.38),0 0 0 1px rgba(27,144,245,0.25);
+  transform:translateY(-2px);
+}
+.btn-primary:hover::before{opacity:1}
+.btn-ghost{
+  background:transparent;color:#fff;
+  border:1.5px solid rgba(255,255,255,0.22);
+  padding:20px 40px;font-size:0.88rem;letter-spacing:0.08em;
+  transition:border-color .22s,background .22s,transform .18s;
+}
+.btn-ghost:hover{
+  border-color:rgba(27,144,245,0.55);
+  background:rgba(27,144,245,0.08);
+  transform:translateY(-2px);
+}
+.arr{display:inline-block;transition:transform .2s}
+.btn-primary:hover .arr,.btn-ghost:hover .arr{transform:translateX(5px)}
 
-/* Quiz CTA — elevated from ghost to warm accent */
+/* ─── QUIZ CTA — AMBER HIGHLIGHT ───────────────────────── */
 .btn-quiz{
-  background:rgba(255,255,255,0.08);
-  border:1.5px solid rgba(255,255,255,0.35);
-  position:relative;
-  overflow:hidden;
+  display:inline-flex;flex-direction:column;
+  align-items:flex-start;justify-content:center;gap:3px;
+  background:rgba(255,255,255,0.06);
+  border:1.5px solid rgba(255,255,255,0.28);
+  padding:16px 26px;border-radius:2px;cursor:pointer;
+  min-width:185px;position:relative;overflow:hidden;
+  transition:background .22s,border-color .22s,transform .18s;
 }
 .btn-quiz::before{
-  content:'';
-  position:absolute;inset:0;
-  background:linear-gradient(135deg, rgba(255,200,50,0.08), rgba(255,160,30,0.04));
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(245,197,24,0.07),rgba(245,150,24,0.03));
   opacity:0;transition:opacity .25s;
 }
+.btn-quiz:hover{border-color:rgba(245,197,24,0.6);background:rgba(245,197,24,0.06)}
 .btn-quiz:hover::before{opacity:1}
-.btn-quiz:hover{
-  border-color:rgba(255,200,50,0.7);
-  background:rgba(255,200,50,0.08);
-}
+.btn-quiz:hover{transform:translateY(-2px)}
 .btn-quiz-label{
-  font-size:0.62rem;font-weight:800;
-  letter-spacing:0.14em;
-  color:#FFC832;
+  font-family:'Inter',sans-serif;font-size:0.6rem;font-weight:800;
+  letter-spacing:0.14em;text-transform:uppercase;
+  color:#FFC832;line-height:1;
   display:flex;align-items:center;gap:5px;
 }
 .btn-quiz-label::before{
-  content:'✓';
-  font-size:0.7rem;
-  background:#FFC832;
-  color:#000;
-  border-radius:50%;
-  width:14px;height:14px;
+  content:'✓';font-size:0.66rem;
+  background:#FFC832;color:#000;
+  border-radius:50%;width:13px;height:13px;
   display:inline-flex;align-items:center;justify-content:center;
   font-weight:900;flex-shrink:0;
 }
 .btn-quiz-sub{
-  color:rgba(255,255,255,0.88);
-  font-size:0.95rem;font-weight:600;
+  font-family:'Inter',sans-serif;font-size:0.92rem;font-weight:600;
+  color:rgba(255,255,255,0.85);line-height:1;
 }
-/* Subtle attention pulse on the quiz button */
 @keyframes quiz-pulse{
-  0%,100%{box-shadow:0 0 0 0 rgba(255,200,50,0)}
-  50%{box-shadow:0 0 0 6px rgba(255,200,50,0.15)}
+  0%,100%{box-shadow:0 0 0 0 rgba(245,197,24,0)}
+  50%{box-shadow:0 0 0 7px rgba(245,197,24,0.13)}
 }
 .btn-quiz{animation:quiz-pulse 3.5s ease-in-out 2.5s 3}
-
-/* Social proof line under quiz */
 .hero-quiz-proof{
-  font-family:'DM Mono',monospace;
-  font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;
-  color:rgba(255,255,255,0.28);
-  margin-top:8px;
+  font-family:'DM Mono',monospace;font-size:0.58rem;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:rgba(255,255,255,0.28);margin-top:8px;
 }
 
-/* CTAs layout */
-.hero-ctas{
-  display:flex;align-items:stretch;gap:14px;
-  flex-wrap:wrap;margin-bottom:16px;
-}
-
-/* Mobile hero upgrades */
-@media(max-width:960px){
-  .hero-sports{animation-duration:20s}
-  .btn-quiz{padding:14px 20px}
-}
-@media(max-width:480px){
-  /* Full-width stacked CTAs on mobile */
-  .hero-ctas{flex-direction:column;gap:10px}
-  .btn-primary,.btn-ghost{
-    width:100%;text-align:center;justify-content:center;
-    padding:18px 24px;
-  }
-  .btn-quiz{
-    width:100%;
-    flex-direction:row;align-items:center;
-    padding:15px 20px;gap:12px;
-    min-width:0;
-  }
-  .btn-quiz-label::before{width:16px;height:16px;font-size:0.72rem}
-  .btn-quiz-sub{font-size:0.88rem}
-  .hero-quiz-proof{text-align:center}
-  /* Ticker stays contained on mobile */
-  .hero-sports{font-size:0.56rem;letter-spacing:0.1em}
-}
-
-
-/* ═══════════════════════════════════════════════════════════════
-   PREMIUM DESIGN UPGRADE — $10K+ QUALITY PASS
-   Typography · Visual depth · Editorial treatments · Micro-detail
-═══════════════════════════════════════════════════════════════ */
-
-/* ── 1. TYPOGRAPHY SCALE ─────────────────────────────────────── */
-/* Tighten display tracking, sharpen contrast, editorial feel */
-.hero-h{
-  font-size: clamp(4.2rem, 9.5vw, 9.5rem);
-  line-height: .84;
-  letter-spacing: -0.01em;
-  font-weight: 400;
-}
-.hero-h .hl-stroke{
-  -webkit-text-stroke: 1.5px rgba(255,255,255,0.28);
-  color: transparent;
-  letter-spacing: -0.01em;
-}
-/* Section display headings — more aggressive sizing */
-.split-h{
-  font-size: clamp(2.8rem, 5.5vw, 5.8rem);
-  line-height: .86;
-  letter-spacing: -0.01em;
-}
-.acc-title{
-  font-size: clamp(3.2rem, 5.8vw, 6rem);
-  line-height: .86;
-  letter-spacing: -0.01em;
-}
-/* Body text — more readable */
-.bt, .bt-inv{
-  font-size: 1.05rem;
-  line-height: 1.72;
-  letter-spacing: 0.01em;
-}
-/* Eyebrow labels — sharper mono */
-.ey{
-  font-size: 0.6rem;
-  letter-spacing: 0.26em;
-  gap: 14px;
-}
-.ey::before{ width: 28px; }
-/* Stats — editorial numbers */
-.stat-num{
-  font-size: clamp(3.2rem, 6vw, 4.8rem);
-  letter-spacing: -0.02em;
-  line-height: .9;
-}
-.stat-lbl{
-  font-size: 0.68rem;
-  letter-spacing: 0.14em;
-  line-height: 1.5;
-}
-
-/* ── 2. NOISE TEXTURE ON DARK SECTIONS ───────────────────────── */
-/* SVG noise filter for depth — like high-end print design */
-.hero::after,
-.stats-bar::after,
-.accelerator::after,
-.team::after,
-.cta-bleed::after{
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  background-size: 180px 180px;
-  mix-blend-mode: overlay;
-}
-.hero, .stats-bar, .accelerator, .team, .cta-bleed{
-  position: relative;
-}
-/* Ensure content stays above the noise layer */
-.hero-inner, .stats-inner, .acc-wrap, .team-grid, .cta-content{ position: relative; z-index: 2; }
-
-/* ── 3. HERO GRADIENT GLOW ───────────────────────────────────── */
-/* Blue radial glow behind the headline area */
-.hero-inner::before{
-  content: '';
-  position: absolute;
-  top: -60px; left: -40px;
-  width: 600px; height: 500px;
-  background: radial-gradient(ellipse at 30% 40%, rgba(27,144,245,0.18) 0%, transparent 65%);
-  pointer-events: none;
-  z-index: 0;
-  animation: glow-breathe 6s ease-in-out infinite;
-}
-@keyframes glow-breathe{
-  0%,100%{ opacity: 0.8; transform: scale(1); }
-  50%{ opacity: 1; transform: scale(1.08); }
-}
-.hero-sports-wrap, .hero-motto-wrap, .hero-h, .hero-ctas, .hero-quiz-proof, .hero-note{
-  position: relative; z-index: 2;
-}
-
-/* ── 4. NAV — FROSTED GLASS PREMIUM ──────────────────────────── */
-nav{
-  background: rgba(13,27,42,0.88);
-  backdrop-filter: blur(28px) saturate(180%);
-  -webkit-backdrop-filter: blur(28px) saturate(180%);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-/* Nav logo treatment */
-.nav-logo img{ height: 28px; }
-/* Nav CTA — sharper */
-.nav-cta{
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  padding: 10px 22px;
-  border-radius: 2px;
-  box-shadow: 0 0 20px rgba(27,144,245,0.25);
-  transition: box-shadow .2s, background .2s;
-}
-.nav-cta:hover{
-  box-shadow: 0 0 32px rgba(27,144,245,0.45);
-}
-
-/* ── 5. EDITORIAL THIN RULE DIVIDERS ─────────────────────────── */
-/* Horizontal rule as a design element between major sections */
-.logos{ border-top: 1px solid var(--brd-i); }
-.problem{ border-top: 1px solid var(--brd); }
-.cta-bleed{ border-top: 1px solid var(--brd-i); }
-
-/* Stats separator lines — bolder */
-.stats-sep{ background: rgba(255,255,255,0.12); }
-
-/* ── 6. STATS — BIG NUMBER EDITORIAL MOMENT ──────────────────── */
-.stats-bar{
-  background: linear-gradient(180deg, #0D1B2A 0%, #112236 100%);
-}
-.stat-item{ 
-  padding: 44px 24px;
-  transition: background .22s;
-}
-.stat-item:hover{ background: rgba(27,144,245,0.05); }
-/* Accent line above hovered stat */
+/* ─── STATS ──────────────────────────────────────────────── */
+.stats-bar{background:linear-gradient(180deg,#0D1B2A 0%,#112236 100%)}
+.stat-item{padding:42px 22px;position:relative;transition:background .22s}
 .stat-item::before{
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: var(--blue);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform .3s ease;
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:var(--blue);transform:scaleX(0);transform-origin:left;
+  transition:transform .3s ease;
 }
-.stat-item{ position: relative; }
-.stat-item:hover::before{ transform: scaleX(1); }
+.stat-item:hover::before{transform:scaleX(1)}
+.stat-item:hover{background:rgba(27,144,245,0.04)}
+.stat-item:last-child{border-right:none}
 
-/* ── 7. PRIMARY BUTTON — PREMIUM TREATMENT ───────────────────── */
-.btn-primary{
-  background: var(--blue);
-  box-shadow: 0 0 0 0 rgba(27,144,245,0);
-  position: relative;
-  overflow: hidden;
-  padding: 20px 44px;
-  font-size: 0.88rem;
-  letter-spacing: 0.1em;
-  transition: background .22s, box-shadow .22s, transform .18s;
-}
-.btn-primary::before{
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 60%);
-  opacity: 0;
-  transition: opacity .22s;
-}
-.btn-primary:hover{
-  background: #1580e0;
-  box-shadow: 0 8px 32px rgba(27,144,245,0.40), 0 0 0 1px rgba(27,144,245,0.3);
-  transform: translateY(-2px);
-}
-.btn-primary:hover::before{ opacity: 1; }
-
-/* ── 8. GHOST BUTTON — REFINED ───────────────────────────────── */
-.btn-ghost{
-  border: 1.5px solid rgba(255,255,255,0.22);
-  font-size: 0.88rem;
-  letter-spacing: 0.1em;
-  padding: 20px 40px;
-  transition: border-color .22s, background .22s, transform .18s;
-}
-.btn-ghost:hover{
-  border-color: rgba(27,144,245,0.6);
-  background: rgba(27,144,245,0.08);
-  transform: translateY(-2px);
-}
-
-/* ── 9. PROBLEM CARDS — EDITORIAL TREATMENT ──────────────────── */
-.prob-num-wrap{
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 20px;
-}
-.prob-card{
-  padding: 36px 32px;
-  border-top: 2px solid transparent;
-  transition: border-color .25s, transform .25s;
-  cursor: default;
-}
-.prob-card:hover{
-  border-color: var(--blue);
-  transform: translateY(-4px);
-}
-/* Large background number — editorial depth */
-.prob-card{ position: relative; overflow: hidden; }
+/* ─── PROBLEM CARDS ─────────────────────────────────────── */
+.prob-card{padding:34px 30px;position:relative;overflow:hidden;
+  border-top:2px solid transparent;transition:border-color .25s,transform .25s}
 .prob-card::after{
-  content: attr(data-num);
-  position: absolute;
-  right: -8px; bottom: -24px;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 9rem;
-  line-height: 1;
-  color: rgba(0,0,0,0.04);
-  pointer-events: none;
-  letter-spacing: -0.03em;
-  user-select: none;
+  content:attr(data-num);position:absolute;
+  right:-8px;bottom:-20px;
+  font-family:'Bebas Neue',sans-serif;font-size:8rem;line-height:1;
+  color:rgba(0,0,0,0.038);pointer-events:none;letter-spacing:-0.03em;user-select:none;
+}
+.prob-card:hover{border-color:var(--blue);transform:translateY(-4px)}
+
+/* ─── SECTION SPACING ───────────────────────────────────── */
+.acc-intro{margin-bottom:62px;max-width:700px}
+.pricing-head{max-width:640px;margin-bottom:62px}
+.testi-head{margin-bottom:62px}
+.team-grid{margin-top:62px}
+
+/* ─── PRICE CARDS ───────────────────────────────────────── */
+.price-card{transition:transform .28s ease,box-shadow .28s ease}
+.price-card:hover{transform:translateY(-8px);box-shadow:0 20px 48px rgba(0,0,0,0.22)}
+
+/* ─── TESTIMONIALS ──────────────────────────────────────── */
+.testi-card{border:1px solid var(--brd);transition:border-color .25s,transform .25s,box-shadow .25s}
+.testi-card:hover{border-color:rgba(27,144,245,0.22);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.07)}
+
+/* ─── SPLIT IMAGE ───────────────────────────────────────── */
+.split-img img{transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.split:hover .split-img img{transform:scale(1.045)}
+
+/* ─── FOOTER ─────────────────────────────────────────────── */
+footer{background:#080F17;border-top:1px solid rgba(255,255,255,0.06);padding:52px var(--px) 28px}
+.footer-grid{gap:52px}
+
+/* ─── STICKY ─────────────────────────────────────────────── */
+.sticky-cta{background:rgba(8,15,23,0.96);backdrop-filter:blur(24px);border-top:1px solid rgba(255,255,255,0.07)}
+.sticky-btn{box-shadow:0 0 18px rgba(27,144,245,0.28);transition:background .18s,box-shadow .18s,transform .18s}
+.sticky-btn:hover{box-shadow:0 0 30px rgba(27,144,245,0.5);transform:translateY(-1px)}
+
+/* ─── SCROLL REVEAL ─────────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1)}
+.reveal.visible{opacity:1;transform:none}
+.reveal.d1{transition-delay:.07s}.reveal.d2{transition-delay:.15s}
+.reveal.d3{transition-delay:.23s}.reveal.d4{transition-delay:.31s}
+
+/* ─── HOVER STATES ───────────────────────────────────────── */
+.prob-card,.acc-item,.acc-step,.price-card,.testi-card,.team-card,.logo-item,.stat-item{
+  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease,background .22s ease;
+}
+.logo-item:hover{opacity:1;transform:translateY(-4px) scale(1.04)}
+.team-card:hover{background:#1A3350}
+
+/* ─── CSC CROSS-PROMO ────────────────────────────────────── */
+.csc-callout{margin:24px 0 20px;border-left:3px solid var(--blue);background:rgba(27,144,245,0.05);border-radius:0 4px 4px 0}
+.csc-callout-inner{padding:18px 20px}
+.csc-callout-label{font-family:'DM Mono',monospace;font-size:0.52rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--blue);margin-bottom:8px;font-weight:600}
+.csc-callout-text{font-size:0.9rem;line-height:1.6;color:#2d4a60;margin:0 0 12px}
+.csc-link{color:var(--blue);text-decoration:underline;text-underline-offset:2px;font-weight:600}
+.csc-external-btn{display:inline-flex;align-items:center;gap:6px;font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--blue);text-decoration:none;transition:gap .2s}
+.csc-external-btn:hover{gap:10px}
+.team-brand-link{display:inline-block;font-family:'DM Mono',monospace;font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);text-decoration:none;margin-bottom:10px;border:1px solid rgba(27,144,245,0.35);padding:3px 8px;border-radius:2px;transition:background .2s,border-color .2s}
+.team-brand-link:hover{background:rgba(27,144,245,0.08);border-color:var(--blue)}
+
+/* ─── TABLET BREAKPOINT ─────────────────────────────────── */
+@media(max-width:960px){
+  :root{--px:var(--px-m)}
+  nav{padding:0 var(--px-m)}
+  .nav-links{display:none}
+  .hero-inner{padding:0 var(--px-m) 52px}
+  .hero-sports{animation-duration:20s}
+  .hero-ctas{gap:9px}
+  .btn-quiz{min-width:155px}
+  .stats-inner{grid-template-columns:1fr;min-height:auto}
+  .stats-sep{display:none}
+  .stats-copy{padding:28px var(--px-m) 18px}
+  .stats-tag{font-size:1.5rem}
+  .stats-nums{flex-wrap:wrap}
+  .stat-item{flex:0 0 50%;border-right:none;border-bottom:1px solid var(--brd-i);padding:24px 14px}
+  .stat-item:nth-last-child(-n+2){border-bottom:none}
+  .logos{padding:40px var(--px-m)}
+  .logos-row{gap:28px}
+  .logo-item img{height:52px}
+  .problem{grid-template-columns:1fr}
+  .prob-img{min-height:260px}
+  .prob-copy{padding:48px var(--px-m)}
+  .accelerator{padding:56px var(--px-m)}
+  .acc-cols{grid-template-columns:1fr;gap:0}
+  .acc-promise-col{border-left:1px solid var(--brd-i);border-top:3px solid var(--blue);margin-top:2px}
+  .split{grid-template-columns:1fr}
+  .split-img{min-height:280px}
+  .split-copy{padding:44px var(--px-m)}
+  .pricing{padding:56px var(--px-m)}
+  .price-cards{grid-template-columns:1fr}
+  .guarantee{padding:52px var(--px-m)}
+  .testimonials{padding:56px var(--px-m)}
+  .testi-head{flex-direction:column;align-items:flex-start}
+  .testi-grid{grid-template-columns:1fr}
+  .team{padding:56px var(--px-m)}
+  .team-grid{grid-template-columns:1fr}
+  .team-card{grid-template-columns:130px 1fr}
+  .cta-bleed{padding:52px var(--px-m)}
+  footer{padding:40px var(--px-m) 20px}
+  .footer-grid{grid-template-columns:1fr;gap:24px}
+  .sticky-cta{padding:10px var(--px-m)}
+  .sticky-text{display:none}
+  .sticky-btn{flex:1;text-align:center;justify-content:center}
+  .modal{padding:32px 24px}
+  .quiz-modal{padding:28px 20px}
 }
 
-/* ── 10. PRICING CARD — PREMIUM FEATURED STATE ───────────────── */
-.price-card-featured{
-  background: var(--navy);
-  border: 1px solid rgba(27,144,245,0.3);
-  box-shadow: 0 0 60px rgba(27,144,245,0.12), 0 24px 48px rgba(0,0,0,0.3);
-}
-.price-card{
-  transition: transform .28s ease, box-shadow .28s ease;
-}
-.price-card:hover{
-  transform: translateY(-8px);
-  box-shadow: 0 20px 48px rgba(0,0,0,0.2);
-}
-
-/* ── 11. SPLIT IMAGE — PARALLAX HINT ────────────────────────── */
-.split-img img{
-  transition: transform .65s cubic-bezier(.22,1,.36,1);
-  transform-origin: center;
-}
-.split:hover .split-img img{ transform: scale(1.05); }
-
-/* ── 12. FOOTER — EDITORIAL TREATMENT ───────────────────────── */
-footer{
-  background: #080F17;
-  border-top: 1px solid rgba(255,255,255,0.06);
-  padding: 52px var(--px) 28px;
-}
-.footer-grid{ gap: 56px; }
-footer a:hover{ color: rgba(255,255,255,0.9); }
-
-/* ── 13. STICKY CTA — SHARPER ────────────────────────────────── */
-.sticky-cta{
-  background: rgba(8,15,23,0.96);
-  backdrop-filter: blur(24px);
-  border-top: 1px solid rgba(255,255,255,0.07);
-}
-.sticky-btn{
-  box-shadow: 0 0 20px rgba(27,144,245,0.3);
-}
-.sticky-btn:hover{
-  box-shadow: 0 0 32px rgba(27,144,245,0.5);
-}
-
-/* ── 14. SECTION LABELS — MORE REFINED ───────────────────────── */
-.sec-label, .logos-lbl{
-  font-size: 0.52rem;
-  letter-spacing: 0.28em;
-  opacity: 0.5;
-}
-
-/* ── 15. TESTIMONIAL CARDS — DEPTH ───────────────────────────── */
-.testi-card{
-  border: 1px solid var(--brd);
-  transition: border-color .25s, transform .25s, box-shadow .25s;
-}
-.testi-card:hover{
-  border-color: rgba(27,144,245,0.25);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.07);
-}
-
-/* ── 16. MARQUEE — BOLDER ────────────────────────────────────── */
-.hero-sports{
-  font-size: 0.62rem;
-  letter-spacing: 0.2em;
-  opacity: 0.5;
-}
-
-/* ── 17. MOBILE REFINEMENTS ──────────────────────────────────── */
+/* ─── MOBILE 480PX ───────────────────────────────────────── */
 @media(max-width:480px){
-  .hero-inner::before{ display: none; } /* glow off on mobile */
-  .btn-primary, .btn-ghost{ padding: 17px 28px; font-size: 0.82rem; }
-  .stat-num{ font-size: 2.6rem; }
-  .hero-h{ letter-spacing: -0.005em; }
+  .hero-inner::before{display:none}
+  .hero-sports{font-size:0.56rem;letter-spacing:0.1em}
+  .hero-ctas{flex-direction:column;gap:10px}
+  .btn-primary,.btn-ghost{width:100%;text-align:center;justify-content:center;padding:18px 24px}
+  .btn-quiz{width:100%;flex-direction:row;align-items:center;padding:15px 20px;gap:12px;min-width:0}
+  .hero-quiz-proof{text-align:center}
+  .stat-item{flex:0 0 50%}
+  .stat-item:last-child:nth-child(odd){flex:0 0 100%;border-right:none}
+  .stat-num{font-size:2.6rem}
+  .logos-row{gap:18px}
+  .logo-item img{height:42px;max-width:100px}
+  .booking-btn-call{width:100%;text-align:center;justify-content:center;font-size:0.88rem;padding:14px 16px;white-space:normal}
+  .acc-promise-col{padding:24px 20px}
+  .price-card{padding:36px 28px}
+  .team-card{grid-template-columns:88px 1fr}
+  .team-info{padding:28px 20px}
 }
 
+/* ─── 375PX ─────────────────────────────────────────────── */
+@media(max-width:390px){
+  :root{--sp-2x:72px;--sp-xl:56px}
+  .split-copy{padding:36px var(--px-m)}
+  .cta-content .btn-primary{font-size:0.82rem;letter-spacing:0.08em}
+}
 </style>
 </head>
 <body>
@@ -1958,10 +1616,8 @@ footer a:hover{ color: rgba(255,255,255,0.9); }
   </video>
   <div class="hero-overlay"></div>
   <div class="hero-inner">
-    <div class="hero-sports-wrap anim d1">
-      <div class="hero-sports">
-        <div class="hero-sports-inner">ACL REHAB  ·  HIP  ·  KNEE  ·  SHOULDER  ·  ANKLE  ·  HAMSTRING  ·  GROIN  ·  RETURN TO SPORT  ·  ACL REHAB  ·  HIP  ·  KNEE  ·  SHOULDER  ·  ANKLE  ·  HAMSTRING  ·  GROIN  ·  RETURN TO SPORT</div>
-      </div>
+    <div class="hero-sports anim d1">
+      AFL &nbsp;·&nbsp; Netball &nbsp;·&nbsp; Soccer &nbsp;·&nbsp; Rugby &nbsp;·&nbsp; Running
     </div>
     <div class="hero-motto-wrap anim d2">
       <span class="hero-motto">ACL Rehab Built Around Your Sport. Not a Calendar Date.</span>
@@ -2660,167 +2316,105 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <script>
 (function(){
-  var els = document.querySelectorAll('.reveal-watch, section > *, .prob-card, .acc-item, .testi-card, .team-card, .price-card, .logo-item, .stat-item, .acc-step');
-  var targets = [];
-  // Only add reveal to specific block-level elements
-  var revealSels = '.prob-card, .acc-item, .acc-step, .testi-card, .team-card, .price-card, .split, .guarantee-inner, .cta-content';
-  document.querySelectorAll(revealSels).forEach(function(el, i){
-    el.classList.add('reveal');
-    if(i % 5 === 1) el.classList.add('d1');
-    else if(i % 5 === 2) el.classList.add('d2');
-    else if(i % 5 === 3) el.classList.add('d3');
-    targets.push(el);
-  });
-  if(!targets.length) return;
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
-    });
-  }, {threshold:0.08, rootMargin:'0px 0px -40px 0px'});
-  targets.forEach(function(el){ io.observe(el); });
-})();
-</script>
-
-
-<script>
-(function(){
-  /* ── WORD-BY-WORD HEADLINE ANIMATION ─────────────────────── */
+  /* ── WORD-BY-WORD HEADLINE REVEAL ────────────────────── */
   function animateHeadline(){
     var h1 = document.querySelector('.hero-h');
-    if(!h1) return;
-    // Split by words preserving HTML tags
-    var html = h1.innerHTML;
-    // Wrap each text word in a span (skip HTML tags)
-    var result = html.replace(/(<[^>]+>)|([^\s<]+)/g, function(match, tag, word){
-      if(tag) return tag;
-      return '<span class="word-wrap"><span class="word-inner">'+word+'</span></span>';
+    if(!h1||h1._animated) return;
+    h1._animated = true;
+    var s = document.createElement('style');
+    s.textContent = '.word-wrap{display:inline-block;overflow:hidden;vertical-align:bottom}.word-inner{display:inline-block}';
+    document.head.appendChild(s);
+    h1.innerHTML = h1.innerHTML.replace(/(<[^>]+>)|([^\s<]+)/g, function(m,tag,word){
+      return tag ? tag : '<span class="word-wrap"><span class="word-inner">'+word+'</span></span>';
     });
-    h1.innerHTML = result;
-    h1.style.overflow = 'visible';
-    // Animate each word in
     var words = h1.querySelectorAll('.word-inner');
-    words.forEach(function(w, i){
-      w.style.cssText = 'display:inline-block;transform:translateY(110%);opacity:0;transition:transform 0.65s cubic-bezier(.22,1,.36,1) '+((i*0.09)+0.2)+'s, opacity 0.4s ease '+((i*0.09)+0.2)+'s';
+    words.forEach(function(w,i){
+      w.style.cssText = 'display:inline-block;transform:translateY(110%);opacity:0;transition:transform 0.65s cubic-bezier(.22,1,.36,1) '+((i*0.09)+0.25)+'s,opacity 0.4s ease '+((i*0.09)+0.25)+'s';
     });
-    requestAnimationFrame(function(){
-      requestAnimationFrame(function(){
-        words.forEach(function(w){
-          w.style.transform = 'translateY(0)';
-          w.style.opacity = '1';
-        });
-      });
-    });
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){
+      words.forEach(function(w){ w.style.transform='translateY(0)'; w.style.opacity='1'; });
+    }); });
   }
 
-  /* ── COUNTER ANIMATION ON STATS ──────────────────────────── */
-  function animateCounter(el, target, duration){
-    var start = 0;
-    var startTime = null;
-    var isFloat = String(target).includes('.');
-    var suffix = el.dataset.suffix || '';
-    function step(ts){
-      if(!startTime) startTime = ts;
-      var prog = Math.min((ts - startTime)/duration, 1);
-      var ease = 1 - Math.pow(1-prog, 3);
-      var val = start + (target - start)*ease;
-      el.textContent = (isFloat ? val.toFixed(1) : Math.floor(val)) + suffix;
-      if(prog < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  }
-
-  function initCounters(){
+  /* ── COUNTER ANIMATION ───────────────────────────────── */
+  function animateCounters(){
     var nums = document.querySelectorAll('.stat-num');
-    var observed = false;
     if(!nums.length) return;
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting && !observed){
-          observed = true;
-          nums.forEach(function(n){
-            var text = n.textContent.trim();
-            var val = parseFloat(text.replace(/[^0-9.]/g,''));
-            var suffix = text.replace(/[0-9.]/g,'').trim();
-            n.dataset.suffix = suffix;
-            if(!isNaN(val)) animateCounter(n, val, 1800);
-          });
+    var done = false;
+    var io = new IntersectionObserver(function(e){
+      if(done||!e[0].isIntersecting) return;
+      done = true;
+      nums.forEach(function(n){
+        var text = n.textContent.trim();
+        var val = parseFloat(text.replace(/[^0-9.]/g,''));
+        var suffix = text.replace(/[0-9.]/g,'').trim();
+        if(isNaN(val)) return;
+        var isFloat = text.includes('.');
+        var start = performance.now();
+        var dur = 1800;
+        function step(now){
+          var p = Math.min((now-start)/dur,1);
+          var ease = 1-Math.pow(1-p,3);
+          n.textContent = (isFloat ? (val*ease).toFixed(1) : Math.floor(val*ease)) + suffix;
+          if(p<1) requestAnimationFrame(step);
         }
+        requestAnimationFrame(step);
       });
-    }, {threshold: 0.3});
+    },{threshold:0.3});
     io.observe(nums[0]);
   }
 
-  /* ── ADD data-num TO PROBLEM CARDS ───────────────────────── */
-  function initProbCards(){
-    document.querySelectorAll('.prob-card').forEach(function(card, i){
-      card.setAttribute('data-num', '0'+(i+1));
+  /* ── SCROLL REVEAL ───────────────────────────────────── */
+  function initReveal(){
+    var sel = '.prob-card,.acc-item,.acc-step,.testi-card,.team-card,.price-card,.split,.guarantee-inner,.cta-content';
+    var els = document.querySelectorAll(sel);
+    els.forEach(function(el,i){
+      el.classList.add('reveal');
+      if(i%4===1) el.classList.add('d1');
+      else if(i%4===2) el.classList.add('d2');
+      else if(i%4===3) el.classList.add('d3');
     });
+    if(!els.length) return;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    },{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){ io.observe(el); });
   }
 
-  /* ── CURSOR GLOW ON DARK SECTIONS ───────────────────────── */
+  /* ── PROBLEM CARD NUMBERS ────────────────────────────── */
+  function initProbCards(){
+    document.querySelectorAll('.prob-card').forEach(function(c,i){ c.setAttribute('data-num','0'+(i+1)); });
+  }
+
+  /* ── CURSOR GLOW ON HERO ─────────────────────────────── */
   function initCursorGlow(){
     var hero = document.querySelector('.hero');
-    if(!hero) return;
-    var glow = document.createElement('div');
-    glow.style.cssText = 'position:absolute;pointer-events:none;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(27,144,245,0.12) 0%,transparent 70%);transform:translate(-50%,-50%);transition:opacity .3s;z-index:1;opacity:0';
-    hero.appendChild(glow);
-    hero.addEventListener('mousemove', function(e){
-      var r = hero.getBoundingClientRect();
-      glow.style.left = (e.clientX - r.left)+'px';
-      glow.style.top = (e.clientY - r.top)+'px';
-      glow.style.opacity = '1';
+    if(!hero||window.matchMedia('(max-width:768px)').matches) return;
+    var g = document.createElement('div');
+    g.style.cssText = 'position:absolute;pointer-events:none;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(27,144,245,0.11) 0%,transparent 70%);transform:translate(-50%,-50%);z-index:1;opacity:0;transition:opacity .3s;';
+    hero.appendChild(g);
+    hero.addEventListener('mousemove',function(e){
+      var r=hero.getBoundingClientRect();
+      g.style.left=(e.clientX-r.left)+'px';
+      g.style.top=(e.clientY-r.top)+'px';
+      g.style.opacity='1';
     });
-    hero.addEventListener('mouseleave', function(){ glow.style.opacity = '0'; });
+    hero.addEventListener('mouseleave',function(){ g.style.opacity='0'; });
   }
 
-  /* ── SMOOTH ACTIVE NAV LINK INDICATOR ───────────────────── */
-  function initNavIndicator(){
-    var links = document.querySelectorAll('.nav-link');
-    var sections = [];
-    links.forEach(function(l){
-      var href = l.getAttribute('href');
-      if(href && href.startsWith('#')){
-        var sec = document.querySelector(href);
-        if(sec) sections.push({link:l, sec:sec});
-      }
-    });
-    if(!sections.length) return;
-    window.addEventListener('scroll', function(){
-      var scrollY = window.scrollY + 100;
-      sections.forEach(function(s){
-        var top = s.sec.offsetTop;
-        var bot = top + s.sec.offsetHeight;
-        if(scrollY >= top && scrollY < bot){
-          links.forEach(function(l){ l.style.color=''; });
-          s.link.style.color = '#fff';
-        }
-      });
-    }, {passive:true});
-  }
-
-  /* ── WORD WRAP STYLE INJECTION ───────────────────────────── */
-  var style = document.createElement('style');
-  style.textContent = '.word-wrap{display:inline-block;overflow:hidden;vertical-align:bottom}.word-inner{display:inline-block}';
-  document.head.appendChild(style);
-
-  /* ── INIT ────────────────────────────────────────────────── */
-  if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', function(){
-      animateHeadline();
-      initCounters();
-      initProbCards();
-      initCursorGlow();
-      initNavIndicator();
-    });
-  } else {
+  /* ── INIT ────────────────────────────────────────────── */
+  function init(){
     animateHeadline();
-    initCounters();
+    animateCounters();
+    initReveal();
     initProbCards();
     initCursorGlow();
-    initNavIndicator();
   }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init);
+  else init();
 })();
 </script>
-
 </body>
 </html>
