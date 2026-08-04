@@ -1330,6 +1330,188 @@ footer{
   .modal,.quiz-modal{padding:24px 16px;border-radius:4px}
 }
 
+
+/* ═══════════════════════════════════════════
+   PASS 2 — VERTICAL RHYTHM
+   Double whitespace between major sections
+═══════════════════════════════════════════ */
+:root{
+  --sp-2x: 120px;
+  --sp-xl:  96px;
+}
+/* Section intros more breathing room */
+.acc-intro{ margin-bottom:64px; }
+.pricing-head{ margin-bottom:64px; }
+.testi-head{ margin-bottom:64px; }
+.team-grid{ margin-top:64px; }
+
+/* Problem cards breathing room */
+.prob-cards{ gap:2px; }
+.prob-card{ padding:32px 32px; }
+
+/* Accelerator item rows */
+.acc-item{ padding:24px 28px; }
+.acc-promise-col{ padding:36px 32px; }
+.acc-steps{ gap:20px; }
+.acc-step{ gap:18px; }
+
+/* Guarantee inner breathing */
+.guar-img{ margin-bottom:48px; }
+
+/* Testimonials grid */
+.testi-grid{ gap:3px; }
+.testi-card{ padding:36px 32px; }
+
+/* CTA section copy */
+.cta-content > *+*{ margin-top:20px; }
+
+/* Footer columns */
+.footer-grid{ gap:48px; }
+
+/* Stats bar taller on desktop */
+.stats-copy{ padding:48px var(--px) 28px; }
+.stat-item{ padding:40px 20px; }
+
+/* Logo section */
+.logos{ padding:60px var(--px); }
+.logos-lbl{ margin-bottom:52px; }
+
+/* ═══════════════════════════════════════════
+   PASS 3 — SCROLL REVEAL + HOVER STATES
+═══════════════════════════════════════════ */
+
+/* Reveal base */
+.reveal{
+  opacity:0;
+  transform:translateY(22px);
+  transition:opacity .55s cubic-bezier(.22,1,.36,1), transform .55s cubic-bezier(.22,1,.36,1);
+}
+.reveal.visible{
+  opacity:1;
+  transform:none;
+}
+.reveal.d1{ transition-delay:.06s }
+.reveal.d2{ transition-delay:.14s }
+.reveal.d3{ transition-delay:.22s }
+.reveal.d4{ transition-delay:.30s }
+.reveal.d5{ transition-delay:.38s }
+
+/* Problem cards */
+.prob-card{
+  transition:background .22s ease, border-left-color .22s ease, transform .22s ease;
+}
+.prob-card:hover{
+  background:#F0F4F7;
+  border-left-color:var(--blue);
+  transform:translateX(4px);
+}
+
+/* Accelerator items */
+.acc-item{
+  transition:background .22s ease;
+}
+.acc-item:hover{
+  background:rgba(255,255,255,0.05);
+}
+
+/* Pricing cards */
+.price-card{
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.price-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 24px 48px rgba(0,0,0,0.24);
+}
+
+/* Team cards */
+.team-card{
+  transition:background .22s ease, transform .22s ease;
+}
+.team-card:hover{
+  transform:translateY(-3px);
+}
+
+/* Testimonial cards */
+.testi-card{
+  transition:box-shadow .25s ease, transform .25s ease;
+}
+.testi-card:hover{
+  box-shadow:0 8px 32px rgba(0,0,0,0.08);
+  transform:translateY(-3px);
+}
+
+/* Logo items */
+.logo-item{
+  transition:opacity .22s ease, transform .22s ease;
+}
+.logo-item:hover{
+  opacity:1;
+  transform:translateY(-4px) scale(1.05);
+}
+
+/* Stat items */
+.stat-item{
+  transition:background .22s ease;
+}
+.stat-item:hover{
+  background:rgba(255,255,255,0.04);
+}
+
+/* Primary / ghost buttons */
+.btn-primary, .btn-ghost, .booking-btn-call, .nav-cta{
+  transition:background .2s ease, border-color .2s ease, transform .18s ease, box-shadow .2s ease;
+}
+.btn-primary:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(24,144,255,0.28);
+}
+.btn-ghost:hover{
+  transform:translateY(-2px);
+}
+
+/* Sticky CTA button */
+.sticky-btn{
+  transition:background .18s ease, transform .18s ease;
+}
+.sticky-btn:hover{
+  transform:translateY(-1px);
+}
+
+/* Split image subtle zoom */
+.split-img img{
+  transition:transform .55s cubic-bezier(.22,1,.36,1);
+}
+.split:hover .split-img img{
+  transform:scale(1.04);
+}
+
+
+/* ═══════════════════════════════════════════
+   375px AUDIT FIXES
+═══════════════════════════════════════════ */
+@media(max-width:390px){
+  /* Reduce the big section padding on smallest phones */
+  :root{
+    --sp-2x: 72px;
+    --sp-xl:  56px;
+  }
+  /* Acc promise col — less top padding */
+  .acc-promise-col{ padding:24px 20px; }
+  /* Pricing card — less padding */
+  .price-card{ padding:36px 28px; }
+  /* Guarantee inner */
+  .guarantee-inner{ padding:0 4px; }
+  /* Split copy */
+  .split-copy{ padding:36px var(--px-m); }
+  /* Team card — tighter on 375 */
+  .team-card{ grid-template-columns:88px 1fr; }
+  .team-info{ padding:28px 20px; }
+  /* CTA button text — prevent orphan on tiny screen */
+  .cta-content .btn-primary{ font-size:0.82rem; letter-spacing:0.1em; }
+  /* Hero note — hide some separator dots */
+  .hero-note span.dot{ display:none; }
+}
+
 </style>
 </head>
 <body>
@@ -2106,6 +2288,30 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+</script>
+
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.reveal-watch, section > *, .prob-card, .acc-item, .testi-card, .team-card, .price-card, .logo-item, .stat-item, .acc-step');
+  var targets = [];
+  // Only add reveal to specific block-level elements
+  var revealSels = '.prob-card, .acc-item, .acc-step, .testi-card, .team-card, .price-card, .split, .guarantee-inner, .cta-content';
+  document.querySelectorAll(revealSels).forEach(function(el, i){
+    el.classList.add('reveal');
+    if(i % 5 === 1) el.classList.add('d1');
+    else if(i % 5 === 2) el.classList.add('d2');
+    else if(i % 5 === 3) el.classList.add('d3');
+    targets.push(el);
+  });
+  if(!targets.length) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.08, rootMargin:'0px 0px -40px 0px'});
+  targets.forEach(function(el){ io.observe(el); });
+})();
 </script>
 
 </body>
