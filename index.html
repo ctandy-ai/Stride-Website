@@ -1578,6 +1578,127 @@ footer{
   .hero-note span.dot{ display:none; }
 }
 
+
+/* ═══════════════════════════════════════════
+   HERO UPGRADE — CTAs, QUIZ PROMINENCE, MARQUEE
+═══════════════════════════════════════════ */
+
+/* Marquee sports ticker */
+.hero-sports-wrap{
+  overflow:hidden;
+  mask-image:linear-gradient(to right, transparent 0, #000 10%, #000 90%, transparent 100%);
+  -webkit-mask-image:linear-gradient(to right, transparent 0, #000 10%, #000 90%, transparent 100%);
+  margin-bottom:14px;
+}
+.hero-sports{
+  display:flex;
+  white-space:nowrap;
+  animation:marquee 28s linear infinite;
+  font-family:'DM Mono',monospace;
+  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:rgba(255,255,255,0.45);
+  margin-bottom:0;
+  line-height:1.6;
+}
+.hero-sports-inner{
+  display:flex;flex-shrink:0;gap:32px;padding-right:32px;
+}
+@keyframes marquee{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
+
+/* Primary book button — bigger, more presence */
+.btn-primary{
+  padding:20px 44px;font-size:1.05rem;
+  box-shadow:0 0 0 0 rgba(24,144,255,0);
+  animation:none;
+}
+
+/* Quiz CTA — elevated from ghost to warm accent */
+.btn-quiz{
+  background:rgba(255,255,255,0.08);
+  border:1.5px solid rgba(255,255,255,0.35);
+  position:relative;
+  overflow:hidden;
+}
+.btn-quiz::before{
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(135deg, rgba(255,200,50,0.08), rgba(255,160,30,0.04));
+  opacity:0;transition:opacity .25s;
+}
+.btn-quiz:hover::before{opacity:1}
+.btn-quiz:hover{
+  border-color:rgba(255,200,50,0.7);
+  background:rgba(255,200,50,0.08);
+}
+.btn-quiz-label{
+  font-size:0.62rem;font-weight:800;
+  letter-spacing:0.14em;
+  color:#FFC832;
+  display:flex;align-items:center;gap:5px;
+}
+.btn-quiz-label::before{
+  content:'✓';
+  font-size:0.7rem;
+  background:#FFC832;
+  color:#000;
+  border-radius:50%;
+  width:14px;height:14px;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-weight:900;flex-shrink:0;
+}
+.btn-quiz-sub{
+  color:rgba(255,255,255,0.88);
+  font-size:0.95rem;font-weight:600;
+}
+/* Subtle attention pulse on the quiz button */
+@keyframes quiz-pulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(255,200,50,0)}
+  50%{box-shadow:0 0 0 6px rgba(255,200,50,0.15)}
+}
+.btn-quiz{animation:quiz-pulse 3.5s ease-in-out 2.5s 3}
+
+/* Social proof line under quiz */
+.hero-quiz-proof{
+  font-family:'DM Mono',monospace;
+  font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;
+  color:rgba(255,255,255,0.28);
+  margin-top:8px;
+}
+
+/* CTAs layout */
+.hero-ctas{
+  display:flex;align-items:stretch;gap:14px;
+  flex-wrap:wrap;margin-bottom:16px;
+}
+
+/* Mobile hero upgrades */
+@media(max-width:960px){
+  .hero-sports{animation-duration:20s}
+  .btn-quiz{padding:14px 20px}
+}
+@media(max-width:480px){
+  /* Full-width stacked CTAs on mobile */
+  .hero-ctas{flex-direction:column;gap:10px}
+  .btn-primary,.btn-ghost{
+    width:100%;text-align:center;justify-content:center;
+    padding:18px 24px;
+  }
+  .btn-quiz{
+    width:100%;
+    flex-direction:row;align-items:center;
+    padding:15px 20px;gap:12px;
+    min-width:0;
+  }
+  .btn-quiz-label::before{width:16px;height:16px;font-size:0.72rem}
+  .btn-quiz-sub{font-size:0.88rem}
+  .hero-quiz-proof{text-align:center}
+  /* Ticker stays contained on mobile */
+  .hero-sports{font-size:0.56rem;letter-spacing:0.1em}
+}
+
 </style>
 </head>
 <body>
@@ -1607,9 +1728,10 @@ footer{
   <div class="hero-overlay"></div>
   <div class="hero-inner">
 
-    <div class="hero-sports anim d1">
-      AFL &nbsp;·&nbsp; Netball &nbsp;·&nbsp; Rugby &nbsp;·&nbsp; Soccer &nbsp;·&nbsp;
-      BJJ &nbsp;·&nbsp; MMA &nbsp;·&nbsp; Boxing &nbsp;·&nbsp; Wrestling
+    <div class="hero-sports-wrap anim d1">
+      <div class="hero-sports">
+        <div class="hero-sports-inner">AFL  ·  NETBALL  ·  RUGBY  ·  SOCCER  ·  BJJ  ·  MMA  ·  BOXING  ·  WRESTLING  ·  AFL  ·  NETBALL  ·  RUGBY  ·  SOCCER  ·  BJJ  ·  MMA  ·  BOXING  ·  WRESTLING</div>
+      </div>
     </div>
 
     <div class="hero-motto-wrap anim d2">
@@ -1628,6 +1750,7 @@ footer{
         <span class="btn-quiz-sub">Am I ready to return? →</span>
       </button>
     </div>
+    <p class="hero-quiz-proof anim d5">Free · 2 min · 1,847 athletes assessed</p>
 
     <div class="hero-note anim d5">
       <strong>Melbourne Sports Physio &amp; Performance</strong>
