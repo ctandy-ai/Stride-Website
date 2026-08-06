@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Injury Score — Stride Sports Physio</title>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue: #1b90f5;
+      --navy: #091421;
+      --navy-light: #0d1c2e;
+      --amber: #f5c518;
+      --red: #e84545;
+      --green: #22c55e;
+      --text: #e8edf2;
+      --text-muted: rgba(232,237,242,0.55);
+      --border: rgba(255,255,255,0.08);
+      --radius: 12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--navy);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(9,20,33,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      letter-spacing: 0.08em;
+      color: #fff;
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--blue); }
+    .nav-cta {
+      background: var(--blue);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 9px 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: #0d7de8; }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--navy);
+      padding: 80px 24px 60px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-inner { max-width: 760px; margin: 0 auto; }
+
+    .score-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 8px 20px;
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      letter-spacing: 0.04em;
+    }
+    .score-badge .band-icon { font-size: 18px; }
+
+    .hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(40px, 8vw, 72px);
+      line-height: 1.05;
+      letter-spacing: 0.02em;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .hero h1 .hl { color: var(--blue); }
+
+    .hero-sub {
+      font-size: clamp(16px, 2.5vw, 19px);
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      background: var(--blue);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 10px;
+      padding: 16px 36px;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .hero-cta:hover { background: #0d7de8; transform: translateY(-2px); }
+
+    .hero-note {
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* ── BAND COLOURS ── */
+    body.band-red .hero { border-bottom-color: rgba(232,69,69,0.3); }
+    body.band-red .score-badge { border-color: rgba(232,69,69,0.4); color: #f87171; }
+    body.band-amber .score-badge { border-color: rgba(245,197,24,0.4); color: var(--amber); }
+    body.band-green .score-badge { border-color: rgba(34,197,94,0.4); color: var(--green); }
+
+    /* ── SECTION COMMON ── */
+    section { padding: 72px 24px; }
+    .section-inner { max-width: 900px; margin: 0 auto; }
+    .section-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+    .section-h {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(30px, 5vw, 48px);
+      letter-spacing: 0.02em;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .section-sub {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 640px;
+      line-height: 1.7;
+    }
+
+    /* ── ASSESSMENT BREAKDOWN ── */
+    .assessment-section {
+      background: var(--navy-light);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .assessment-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 40px;
+    }
+    @media (max-width: 640px) { .assessment-grid { grid-template-columns: 1fr; } }
+
+    .assessment-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+    .assessment-card-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 10px;
+    }
+    .assessment-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .assessment-card-duration {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .assessment-card-duration .price {
+      margin-left: auto;
+      font-family: 'DM Mono', monospace;
+      font-size: 16px;
+      color: var(--amber);
+      font-weight: 500;
+    }
+    .assessment-card ul {
+      list-style: none;
+      padding: 0;
+    }
+    .assessment-card ul li {
+      font-size: 14px;
+      color: var(--text-muted);
+      padding: 5px 0;
+      padding-left: 18px;
+      position: relative;
+    }
+    .assessment-card ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+    }
+
+    .total-strip {
+      margin-top: 24px;
+      background: rgba(27,144,245,0.1);
+      border: 1px solid rgba(27,144,245,0.25);
+      border-radius: var(--radius);
+      padding: 20px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .total-strip-label {
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+    }
+    .total-strip-amount {
+      font-family: 'DM Mono', monospace;
+      font-size: 22px;
+      color: var(--amber);
+    }
+    .total-strip-note {
+      width: 100%;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* ── LEAVES WITH ── */
+    .leaves-section { border-bottom: 1px solid var(--border); }
+    .leaves-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+    @media (max-width: 700px) {
+      .leaves-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 400px) {
+      .leaves-grid { grid-template-columns: 1fr; }
+    }
+    .leaves-item {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      text-align: center;
+    }
+    .leaves-icon { font-size: 28px; margin-bottom: 10px; }
+    .leaves-title { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .leaves-desc { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+
+    /* ── SOCIAL PROOF ── */
+    .proof-section {
+      background: var(--navy-light);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 40px 24px;
+      text-align: center;
+    }
+    .proof-inner { max-width: 700px; margin: 0 auto; }
+    .proof-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+    }
+    .proof-dot {
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: var(--text-muted);
+      display: inline-block;
+    }
+    .proof-headline {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-top: 16px;
+      line-height: 1.6;
+    }
+
+    /* ── CTA SECTION ── */
+    .cta-section {
+      text-align: center;
+      padding: 80px 24px;
+    }
+    .cta-section .section-h { margin-bottom: 12px; }
+    .cta-section .section-sub { margin: 0 auto 36px; }
+    .cta-btn {
+      display: inline-block;
+      background: var(--blue);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 10px;
+      padding: 18px 48px;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .cta-btn:hover { background: #0d7de8; transform: translateY(-2px); }
+    .cta-sub-note {
+      margin-top: 14px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* ── FAQ ── */
+    .faq-section {
+      background: var(--navy-light);
+      border-top: 1px solid var(--border);
+    }
+    .faq-list {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .faq-q {
+      width: 100%;
+      background: rgba(255,255,255,0.03);
+      border: none;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 20px 24px;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      transition: background 0.2s;
+    }
+    .faq-q:hover { background: rgba(255,255,255,0.06); }
+    .faq-q .faq-chevron {
+      font-size: 18px;
+      color: var(--blue);
+      transition: transform 0.25s;
+      flex-shrink: 0;
+    }
+    .faq-item.open .faq-chevron { transform: rotate(45deg); }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-item.open .faq-a { max-height: 300px; }
+    .faq-a-inner {
+      padding: 0 24px 20px;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .footer-inner { max-width: 900px; margin: 0 auto; }
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 20px;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .footer-logo span { color: var(--blue); }
+    .footer-text {
+      font-size: 12px;
+      color: rgba(232,237,242,0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">STRIDE <span>SPORTS PHYSIO</span></a>
+      <a href="https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings" class="nav-cta" target="_blank">Book Assessment →</a>
+    </div>
+  </nav>
+
+  <!-- HERO (content injected by JS) -->
+  <section class="hero" id="hero-section">
+    <div class="hero-inner">
+      <div class="score-badge" id="score-badge">
+        <span class="band-icon" id="band-icon">🟡</span>
+        <span id="badge-text">Your Injury Self-Check Result</span>
+      </div>
+      <h1 id="hero-h1">Your score suggests<br><span class="hl">some gaps to address</span><br>before return.</h1>
+      <p class="hero-sub" id="hero-sub">The next step is a proper objective assessment — so you know exactly where you stand and what it takes to return safely and stay there.</p>
+      <a href="https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings" class="hero-cta" target="_blank">Book my Initial Athlete Assessment →</a>
+      <p class="hero-note">Part 1 + Part 2 · $330 across two sessions · HICAPS &amp; Medicare EPC accepted</p>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF BAR -->
+  <div class="proof-section">
+    <div class="proof-inner">
+      <div class="proof-logos">
+        <span>11 years Melbourne Storm NRL</span>
+        <span class="proof-dot"></span>
+        <span>Oak Park FC</span>
+        <span class="proof-dot"></span>
+        <span>West Footscray FC</span>
+      </div>
+      <p class="proof-headline">Stride has worked with elite athletes and community clubs for over a decade.<br>We bring the same rigour to every individual assessment.</p>
+    </div>
+  </div>
+
+  <!-- ASSESSMENT BREAKDOWN -->
+  <section class="assessment-section">
+    <div class="section-inner">
+      <div class="section-tag">The Initial Athlete Assessment</div>
+      <div class="section-h">What your two sessions cover</div>
+      <p class="section-sub">Designed for athletes returning from injury. Two focused sessions. One clear roadmap.</p>
+
+      <div class="assessment-grid">
+        <div class="assessment-card">
+          <div class="assessment-card-tag">Part 1</div>
+          <h3>Consult &amp; Athlete Profile</h3>
+          <div class="assessment-card-duration">
+            <span>⏱ 45 min</span>
+            <span class="price">$145</span>
+          </div>
+          <ul>
+            <li>Full injury history &amp; mechanism</li>
+            <li>Movement screening</li>
+            <li>Provisional diagnosis</li>
+            <li>What you can keep doing right now</li>
+            <li>Roadmap for Part 2 testing</li>
+          </ul>
+        </div>
+        <div class="assessment-card">
+          <div class="assessment-card-tag">Part 2</div>
+          <h3>Testing &amp; Program Build</h3>
+          <div class="assessment-card-duration">
+            <span>⏱ 90 min (gym)</span>
+            <span class="price">$185</span>
+          </div>
+          <ul>
+            <li>Objective strength testing</li>
+            <li>Jump &amp; hop testing</li>
+            <li>Sport-specific movement analysis</li>
+            <li>Written return-to-sport program</li>
+            <li>Target return date &amp; milestones</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="total-strip">
+        <span class="total-strip-label">Total across both sessions</span>
+        <span class="total-strip-amount">$330</span>
+        <span class="total-strip-note">HICAPS private health accepted · Medicare EPC (GP referral) accepted · Book both at once or schedule Part 2 after Part 1</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU LEAVE WITH -->
+  <section class="leaves-section">
+    <div class="section-inner">
+      <div class="section-tag">Outcomes</div>
+      <div class="section-h">What you leave with</div>
+      <div class="leaves-grid">
+        <div class="leaves-item">
+          <div class="leaves-icon">📋</div>
+          <div class="leaves-title">Written Program</div>
+          <div class="leaves-desc">A structured, sport-specific plan — not a generic sheet</div>
+        </div>
+        <div class="leaves-item">
+          <div class="leaves-icon">📅</div>
+          <div class="leaves-title">Target Return Date</div>
+          <div class="leaves-desc">An objective timeframe based on your test data</div>
+        </div>
+        <div class="leaves-item">
+          <div class="leaves-icon">🔍</div>
+          <div class="leaves-title">Clear Diagnosis</div>
+          <div class="leaves-desc">Know exactly what you're dealing with and why</div>
+        </div>
+        <div class="leaves-item">
+          <div class="leaves-icon">💪</div>
+          <div class="leaves-title">Keep Training</div>
+          <div class="leaves-desc">Understand what you can keep doing while you recover</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CTA -->
+  <section class="cta-section">
+    <div class="section-inner">
+      <div class="section-tag">Ready to get clarity?</div>
+      <div class="section-h">Book your Initial Athlete Assessment</div>
+      <p class="section-sub">Two sessions. Objective data. A written plan. Know exactly where you stand.</p>
+      <a href="https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings" class="cta-btn" target="_blank">Book my Initial Athlete Assessment →</a>
+      <p class="cta-sub-note">13 Puckle St, Moonee Ponds · Mon–Fri 7:30am–7:30pm · Sat 7:30am–1pm</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="section-inner">
+      <div class="section-tag">Questions</div>
+      <div class="section-h">Common questions</div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>What do I bring to the assessment?</span>
+            <span class="faq-chevron">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              Bring any relevant scans or imaging (MRI, X-ray), your Medicare card, and any previous physio notes if you have them. Wear comfortable training gear you can move in for Part 2. If you have a GP referral for Medicare EPC, bring that too. Everything else we take care of.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Can I claim on private health?</span>
+            <span class="faq-chevron">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              Yes — we're HICAPS-enabled, so you can swipe your private health card on the day and only pay the gap (if any). The rebate depends on your level of cover. We also accept Medicare EPC referrals for eligible patients — ask your GP about a referral if you're unsure. Call us if you'd like help figuring out what applies to you.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>What if I'm not injured — I just want to improve performance?</span>
+            <span class="faq-chevron">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              The Initial Athlete Assessment is also excellent for performance screening. Many athletes use Part 2 testing to identify strength asymmetries, movement deficits, or return-to-training readiness even without an active injury. If that's your goal, just mention it when you book and we'll tailor the session accordingly.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">STRIDE <span>SPORTS PHYSIO</span></div>
+      <div class="footer-text">13 Puckle St, Moonee Ponds VIC 3039 · info@stridephysiohealth.com.au<br>© 2025 Stride Physiotherapy &amp; Health Group</div>
+    </div>
+  </footer>
+
+  <script>
+    // ── Band-personalised content ──
+    const bandContent = {
+      red: {
+        bodyClass: 'band-red',
+        badgeText: '🔴 Score: Not ready to return',
+        h1: 'Your score suggests you\'re not ready<br>to return <span class="hl">— yet.</span>',
+        sub: 'That\'s not a bad thing — it means there\'s a clear problem to solve. The Initial Athlete Assessment gives you objective data on exactly where the gaps are, so you can return safely and stay there.',
+      },
+      amber: {
+        bodyClass: 'band-amber',
+        badgeText: '🟡 Score: Some gaps to address',
+        h1: 'Your score suggests some gaps<br>to address <span class="hl">before return.</span>',
+        sub: 'Most athletes in your position feel okay — but "feeling okay" and "being ready" are different things. Objective testing clarifies the difference. Two sessions. Written plan. Target return date.',
+      },
+      green: {
+        bodyClass: 'band-green',
+        badgeText: '✅ Score: Tracking well',
+        h1: 'Your score suggests you\'re<br>tracking well — <span class="hl">let\'s confirm it.</span>',
+        sub: 'You\'re doing a lot of things right. The final step is objective confirmation — strength testing, hop testing, movement screening — so you return with evidence behind you, not just a feeling.',
+      },
+    };
+
+    function getParam(name) {
+      return new URLSearchParams(window.location.search).get(name);
+    }
+
+    (function init() {
+      const band = getParam('band') || 'amber';
+      const content = bandContent[band] || bandContent.amber;
+
+      document.body.classList.add(content.bodyClass);
+      document.getElementById('band-icon').textContent = content.badgeText.split(' ')[0];
+      document.getElementById('badge-text').textContent = content.badgeText.replace(/^[^\s]+\s/, '');
+      document.getElementById('hero-h1').innerHTML = content.h1;
+      document.getElementById('hero-sub').textContent = content.sub;
+      document.title = content.badgeText.replace(/^[^\s]+\s/, '') + ' — Stride Sports Physio';
+    })();
+
+    // ── FAQ accordion ──
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+  </script>
+
+</body>
+</html>
