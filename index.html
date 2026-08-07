@@ -2442,13 +2442,10 @@ footer{background:#080F17;border-top:1px solid rgba(255,255,255,0.06);padding:52
 
       <!-- CAPTURE STEP -->
       <div class="q-step" id="qs-capture">
-        <div class="q-capture-heading">Almost there — where should we send your results?</div>
-        <div class="q-capture-sub">Get your personalised score and action plan straight to your inbox.</div>
+        <div class="q-capture-heading">Your result is ready — get it in your inbox</div>
+        <div class="q-capture-sub">Your free injury readiness score + what it means for your return to play.</div>
         <input type="email" class="q-capture-input" id="cap-email" placeholder="Email address *" required>
-        <input type="text" class="q-capture-input" id="cap-name" placeholder="Name (optional)">
-        <input type="tel" class="q-capture-input" id="cap-phone" placeholder="Mobile (optional)">
-        <button class="q-capture-btn" id="cap-btn" onclick="submitCapture()">See my results →</button>
-        <button class="q-capture-skip" onclick="skipCapture()">Skip — just show my score</button>
+        <button class="q-capture-btn" id="cap-btn" onclick="submitCapture()">Send my result →</button>
         <div class="q-capture-privacy">We'll only use this to send your results. No spam, ever. <a href="/privacy-policy.html" style="color:rgba(255,255,255,0.35)">Privacy Policy</a></div>
       </div>
 
@@ -2613,8 +2610,6 @@ function showScoreInternal(){
 function submitCapture(){
   const email=document.getElementById('cap-email').value.trim()
   if(!email||!email.includes('@')){document.getElementById('cap-email').focus();return}
-  const name=document.getElementById('cap-name').value.trim()
-  const phone=document.getElementById('cap-phone').value.trim()
   const total=qScores.reduce((a,b)=>a+b,0)
   let bandName
   if(total<=24) bandName='red'
@@ -2626,14 +2621,18 @@ function submitCapture(){
   fetch('https://api.stridephysiohealth.com.au/lead',{
     method:'POST',
     headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({source:'self-check',name,email,phone,quiz_score:total,quiz_band:bandName,quiz_answers:qScores})
+    body:JSON.stringify({source:'self-check',email,quiz_score:total,quiz_band:bandName,quiz_answers:qScores})
   }).catch(()=>{})
   showScoreInternal()
+  const selectedSport = document.querySelector('.q-opt.picked')?.textContent || 'General'
+  setTimeout(() => { window.location.href = '/score.html?band=' + encodeURIComponent(bandName) + '&sport=' + encodeURIComponent(selectedSport); }, 1500);
 }
 
 function skipCapture(){
   showScoreInternal()
 }
+
+// Note: skipCapture removed from UI per Phase 1 — users must provide email
 
 // Google Ads conversion tracking
 document.addEventListener('DOMContentLoaded', function() {

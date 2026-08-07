@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Your Injury Readiness Score | Stride Sports Physio</title>
+  <meta name="description" content="Get your personalised injury readiness score from Stride Sports Physio. See what your score means and what to do next.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:#0D1B2A;color:#fff;font-family:'Inter',sans-serif;line-height:1.6}
+    
+    :root{
+      --navy: #0D1B2A;
+      --navy-light: #1A3350;
+      --blue: #1B90F5;
+      --amber: #F5C518;
+      --text: rgba(255,255,255,0.85);
+      --text-muted: rgba(255,255,255,0.55);
+      --px: 52px;
+      --px-m: 20px;
+    }
+    
+    /* Nav */
+    nav{
+      position:fixed;top:0;left:0;right:0;z-index:300;
+      height:66px;display:flex;align-items:center;justify-content:space-between;
+      padding:0 var(--px);background:rgba(11,23,36,0.97);
+      backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06);
+    }
+    .nav-logo img{height:32px;width:auto;display:block}
+    .nav-cta{
+      background:var(--blue);color:#fff;border:none;padding:12px 26px;
+      font-family:'Inter',sans-serif;font-size:0.88rem;font-weight:700;
+      letter-spacing:0.04em;text-transform:uppercase;cursor:pointer;
+      transition:background .2s;white-space:nowrap;text-decoration:none;border-radius:2px;
+    }
+    .nav-cta:hover{background:#0d7de8}
+    
+    /* Hero section */
+    .hero{
+      margin-top:66px;padding:var(--px) 0;background:linear-gradient(135deg,#0D1B2A 0%,#1A3350 100%);
+      text-align:center;min-height:460px;display:flex;align-items:center;justify-content:center;
+    }
+    .hero-inner{max-width:680px;padding:0 var(--px)}
+    .hero-h{
+      font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,5vw,3.8rem);
+      line-height:1;letter-spacing:0.02em;margin-bottom:16px;color:#fff;
+    }
+    .hero-sub{font-size:1.1rem;color:var(--text);line-height:1.8;margin-bottom:32px}
+    
+    /* Score band display */
+    .score-band{
+      background:var(--navy-light);border:1px solid rgba(255,255,255,0.12);
+      border-top:3px solid var(--blue);padding:48px;margin:48px 0;
+      text-align:center;border-radius:2px;
+    }
+    .score-band.band-red{border-top-color:#e84545}
+    .score-band.band-amber{border-top-color:var(--amber)}
+    .score-band.band-green{border-top-color:#4CAF7D}
+    
+    .band-icon{font-size:3.2rem;margin-bottom:14px}
+    .band-title{
+      font-family:'Bebas Neue',sans-serif;font-size:2.2rem;
+      letter-spacing:0.02em;margin-bottom:12px;line-height:1;
+    }
+    .band-desc{font-size:1.05rem;color:var(--text);line-height:1.7;margin-bottom:12px}
+    .band-action{font-size:0.95rem;color:var(--text-muted);font-style:italic;line-height:1.6}
+    
+    /* Assessment covers */
+    .covers-section{padding:var(--px);background:rgba(0,0,0,0.2);border-bottom:1px solid rgba(255,255,255,0.08)}
+    .covers-h{
+      font-family:'Bebas Neue',sans-serif;font-size:2rem;margin-bottom:28px;
+      letter-spacing:0.02em;text-align:left;
+    }
+    .covers-list{
+      display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:900px;
+    }
+    .cover-item{display:flex;align-items:flex-start;gap:14px}
+    .cover-icon{
+      font-size:1.4rem;flex-shrink:0;width:28px;text-align:center;margin-top:2px;
+    }
+    .cover-text{font-size:1.02rem;color:var(--text);line-height:1.6}
+    
+    /* Social proof */
+    .proof-section{padding:var(--px);background:rgba(27,144,245,0.08);border-bottom:1px solid rgba(255,255,255,0.08)}
+    .proof-h{
+      font-family:'Bebas Neue',sans-serif;font-size:1.8rem;margin-bottom:20px;
+      letter-spacing:0.02em;
+    }
+    .proof-body{
+      font-size:1.02rem;color:var(--text);line-height:1.8;margin-bottom:12px;
+    }
+    .proof-body strong{color:#fff;font-weight:700}
+    
+    /* FAQ */
+    .faq-section{padding:var(--px);background:rgba(0,0,0,0.2);border-bottom:1px solid rgba(255,255,255,0.08)}
+    .faq-h{
+      font-family:'Bebas Neue',sans-serif;font-size:2rem;margin-bottom:28px;
+      letter-spacing:0.02em;text-align:left;
+    }
+    .faq-item{margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,0.08)}
+    .faq-item:last-child{border-bottom:none}
+    .faq-q{font-weight:700;font-size:1.05rem;color:#fff;margin-bottom:8px;line-height:1.5}
+    .faq-a{font-size:1rem;color:var(--text);line-height:1.7}
+    
+    /* CTA */
+    .cta-section{
+      padding:48px var(--px);text-align:center;
+      background:linear-gradient(135deg,rgba(27,144,245,0.12) 0%,rgba(27,144,245,0.06) 100%);
+      border-top:1px solid rgba(27,144,245,0.2);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+    .cta-h{
+      font-family:'Bebas Neue',sans-serif;font-size:clamp(1.8rem,4vw,2.6rem);
+      margin-bottom:16px;letter-spacing:0.02em;
+    }
+    .cta-sub{font-size:1.05rem;color:var(--text);margin-bottom:32px;line-height:1.7}
+    .cta-btn{
+      display:inline-flex;align-items:center;gap:10px;
+      background:var(--blue);color:#fff;border:none;padding:18px 40px;
+      font-family:'Inter',sans-serif;font-size:0.95rem;font-weight:700;
+      letter-spacing:0.04em;text-transform:uppercase;cursor:pointer;
+      text-decoration:none;transition:background .2s,transform .2s;border-radius:2px;
+    }
+    .cta-btn:hover{background:#0d7de8;transform:translateY(-2px)}
+    .arr{display:inline-block;transition:transform .2s}
+    .cta-btn:hover .arr{transform:translateX(4px)}
+    
+    /* Footer */
+    footer{
+      background:rgba(0,0,0,0.3);border-top:1px solid rgba(255,255,255,0.06);
+      padding:32px var(--px);text-align:center;font-size:0.88rem;color:var(--text-muted);
+    }
+    
+    /* Responsive */
+    @media(max-width:960px){
+      :root{--px:var(--px-m)}
+      nav{padding:0 var(--px-m)}
+      .hero-inner{padding:0 var(--px-m)}
+      .score-band{padding:32px 24px}
+      .covers-list{grid-template-columns:1fr;gap:18px}
+      .faq-section{padding:var(--px-m)}
+      .cta-section{padding:32px var(--px-m)}
+    }
+    @media(max-width:480px){
+      .hero-h{font-size:1.8rem}
+      .band-icon{font-size:2.4rem}
+      .band-title{font-size:1.6rem}
+      .covers-h,.faq-h{font-size:1.4rem}
+      .faq-q{font-size:0.95rem}
+      .cta-btn{padding:14px 28px;font-size:0.85rem}
+    }
+  </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="https://assets.cdn.filesafe.space/uGjKGDMcGryVhkZ0uDcj/media/65d412163c4a574adb19516f.png" alt="Stride">
+  </a>
+  <button class="nav-cta" onclick="bookAssessment()">Book my assessment →</button>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1 class="hero-h">Based on your <span id="sport-name">answers</span> — here's what we recommend</h1>
+    <p class="hero-sub">Your personalised injury readiness score and next steps</p>
+  </div>
+</section>
+
+<!-- Score Band -->
+<div class="score-band" id="score-band">
+  <div class="band-icon" id="band-icon">✓</div>
+  <h2 class="band-title" id="band-title">On Track</h2>
+  <p class="band-desc" id="band-desc">Your rehab is progressing well across most areas.</p>
+  <p class="band-action" id="band-action">Consider a professional return-to-sport clearance to confirm you're ready.</p>
+</div>
+
+<!-- What Assessment Covers -->
+<section class="covers-section">
+  <h2 class="covers-h">What the Initial Athlete Assessment Covers</h2>
+  <div class="covers-list">
+    <div class="cover-item">
+      <div class="cover-icon">📏</div>
+      <div class="cover-text"><strong>Movement Screening</strong> — Identify restrictions or imbalances in your movement patterns</div>
+    </div>
+    <div class="cover-item">
+      <div class="cover-icon">📊</div>
+      <div class="cover-text"><strong>Objective Performance Testing</strong> — Sport-specific strength and power benchmarks</div>
+    </div>
+    <div class="cover-item">
+      <div class="cover-icon">🔍</div>
+      <div class="cover-text"><strong>Injury Mechanism Analysis</strong> — How and why your injury happened; prevention strategies</div>
+    </div>
+    <div class="cover-item">
+      <div class="cover-icon">📋</div>
+      <div class="cover-text"><strong>Written Program</strong> — Personalised return-to-sport rehab plan tailored to your sport</div>
+    </div>
+    <div class="cover-item">
+      <div class="cover-icon">🎯</div>
+      <div class="cover-text"><strong>Target Return Date</strong> — Realistic timeline based on your assessment findings</div>
+    </div>
+  </div>
+</section>
+
+<!-- Social Proof -->
+<section class="proof-section">
+  <h2 class="proof-h">Trusted by Athletes & Clubs</h2>
+  <p class="proof-body">
+    Over <strong>11 years partnering with Melbourne Storm NRL</strong>, we've built the rehab expertise that helps athletes come back stronger and faster.
+  </p>
+  <p class="proof-body">
+    <strong>Club partners include:</strong> Oak Park FC · West Footscray FC — and dozens of individual athletes across AFL, netball, rugby, BJJ, and MMA.
+  </p>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <h2 class="faq-h">Common Questions</h2>
+  
+  <div class="faq-item">
+    <div class="faq-q">What do I bring to my appointment?</div>
+    <div class="faq-a">
+      Bring any recent scans or imaging (X-ray, MRI, ultrasound), your training diary or workload notes, and comfortable clothes you can move in. If you've been seeing another physio, bring their notes too.
+    </div>
+  </div>
+  
+  <div class="faq-item">
+    <div class="faq-q">Do you bulk bill or accept Medicare?</div>
+    <div class="faq-a">
+      Yes — we accept Medicare with valid referrals from your GP. We can process HICAPS directly, so there's no out-of-pocket cost if you're eligible. If you don't have a referral, we can still see you privately.
+    </div>
+  </div>
+  
+  <div class="faq-item">
+    <div class="faq-q">Where are you located?</div>
+    <div class="faq-a">
+      We're at 13 Puckle Street, Moonee Ponds VIC 3039. Free on-site and street parking available. We're 10 minutes from the city and close to public transport.
+    </div>
+  </div>
+  
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2 class="cta-h">Ready to Return Stronger?</h2>
+  <p class="cta-sub">Book your Initial Athlete Assessment and get a personalized return-to-sport plan from one of our specialists.</p>
+  <button class="cta-btn" onclick="bookAssessment()">Book my Initial Athlete Assessment <span class="arr">→</span></button>
+</section>
+
+<!-- Footer -->
+<footer>
+  Stride Physiotherapy & Health Group · 13 Puckle St, Moonee Ponds VIC 3039 · <a href="tel:+61398786233" style="color:inherit;text-decoration:none">(03) 9878 6233</a>
+</footer>
+
+<script>
+// Parse URL params
+const urlParams = new URLSearchParams(window.location.search);
+const band = urlParams.get('band') || 'green';
+const sport = urlParams.get('sport') || 'AFL';
+
+// Map band to display config
+const bandConfig = {
+  red: {
+    icon: '🔴',
+    title: 'Not Ready to Return',
+    desc: 'Your assessment shows several areas that need attention before returning to play.',
+    action: 'A professional assessment will help clarify the gaps and create a structured path forward.',
+    class: 'band-red',
+  },
+  amber: {
+    icon: '🟡',
+    title: 'Some Gaps to Explore',
+    desc: 'Your rehab has good structure, but a few areas—like objective testing—are worth reviewing.',
+    action: 'Work with a specialist to fill the gaps and confirm you\'re truly ready to return.',
+    class: 'band-amber',
+  },
+  green: {
+    icon: '🟢',
+    title: 'On Track',
+    desc: 'Your rehab approach is progressing well across most areas.',
+    action: 'Consider a professional return-to-sport clearance to confirm you\'re ready.',
+    class: 'band-green',
+  },
+};
+
+// Sanitize sport name
+const sanitizedSport = sport
+  .replace(/[^a-zA-Z\s]/g, '')
+  .trim()
+  .substring(0, 50) || 'your sport';
+
+// Update page
+const config = bandConfig[band] || bandConfig.green;
+document.getElementById('sport-name').textContent = sanitizedSport;
+document.getElementById('band-icon').textContent = config.icon;
+document.getElementById('band-title').textContent = config.title;
+document.getElementById('band-desc').textContent = config.desc;
+document.getElementById('band-action').textContent = config.action;
+document.getElementById('score-band').className = 'score-band ' + config.class;
+
+// CTA handler
+function bookAssessment() {
+  window.location.href = 'https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings';
+}
+</script>
+
+</body>
+</html>
