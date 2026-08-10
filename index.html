@@ -1785,6 +1785,57 @@ footer{background:#080F17;border-top:1px solid rgba(255,255,255,0.06);padding:52
   margin-bottom:6px;
   line-height:1.5;
 }
+
+/* ══ ACUTE SPORTS INJURY CLINIC PROMO ══ */
+.asic-promo{
+  background:linear-gradient(135deg, #0D1B2A 0%, #112236 100%);
+  padding:96px var(--px);
+  border-top:4px solid #E84545;
+}
+.asic-promo-inner{
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;
+}
+.asic-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(232,69,69,0.15);border:1px solid rgba(232,69,69,0.3);
+  border-radius:100px;padding:7px 16px;margin-bottom:20px;
+}
+.asic-badge-dot{
+  width:7px;height:7px;border-radius:50%;background:#E84545;flex-shrink:0;
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:0.5;transform:scale(0.8)}
+}
+.asic-badge-text{
+  font-family:'DM Mono',monospace;font-size:0.62rem;letter-spacing:0.14em;
+  text-transform:uppercase;color:rgba(255,255,255,0.65);
+}
+.asic-promo-stats{
+  display:grid;grid-template-columns:1fr 1fr;gap:16px;
+}
+.asic-stat-card{
+  background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);
+  border-radius:6px;padding:24px 20px 26px;
+}
+.asic-stat-card--wide{grid-column:1/-1}
+.asic-stat-num{
+  font-family:'Bebas Neue',sans-serif;font-size:3rem;color:#1B90F5;
+  letter-spacing:0.02em;line-height:1;margin-bottom:6px;
+}
+.asic-stat-label{font-size:0.88rem;font-weight:700;color:#fff;margin-bottom:4px}
+.asic-stat-sub{font-size:0.78rem;color:rgba(255,255,255,0.4);line-height:1.45}
+
+@media(max-width:900px){
+  .asic-promo-inner{grid-template-columns:1fr;gap:40px}
+  .asic-promo-stats{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .asic-promo-stats{grid-template-columns:1fr}
+  .asic-stat-card--wide{grid-column:auto}
+}
 </style>
 </head>
 <body>
@@ -2123,6 +2174,47 @@ footer{background:#080F17;border-top:1px solid rgba(255,255,255,0.06);padding:52
   </div>
 </div>
 
+
+<!-- ══ ACUTE SPORTS INJURY CLINIC ══ -->
+<section class="asic-promo" id="sunday-clinic">
+  <div class="asic-promo-inner">
+    <div class="asic-promo-copy">
+      <div class="asic-badge">
+        <span class="asic-badge-dot"></span>
+        <span class="asic-badge-text">Opening Soon — Sundays 8am–1pm</span>
+      </div>
+      <h2 class="sh sh-white" style="margin-bottom:20px">Injured Sunday?<br><span class="orange">We're Open.</span></h2>
+      <p class="bt-inv" style="margin-bottom:24px">
+        <strong>Skip the ED wait.</strong> Stride's Acute Sports Injury Clinic runs every Sunday morning — assessment, treatment, strapping, bracing and imaging referrals. Same morning.
+      </p>
+      <ul class="cklist cklist-inv" style="margin-bottom:28px">
+        <li><span class="ck">✓</span>Fixed fee $239 — private health claimable</li>
+        <li><span class="ck">✓</span>Sports insurance covers ~95% for most club athletes</li>
+        <li><span class="ck">✓</span>Walk-in or booked slots — max 1hr wait</li>
+        <li><span class="ck">✓</span>Walker boots, bracing, strapping, imaging referrals</li>
+        <li><span class="ck">✓</span>Chris Tandy (Physio) + Jordan Schorel (Osteopath)</li>
+      </ul>
+      <a href="/acute-sports-injury-clinic.html" class="btn btn-primary">Register Your Interest <span class="arr">→</span></a>
+    </div>
+    <div class="asic-promo-stats">
+      <div class="asic-stat-card">
+        <div class="asic-stat-num">$239</div>
+        <div class="asic-stat-label">Fixed fee</div>
+        <div class="asic-stat-sub">Private health claimable on day</div>
+      </div>
+      <div class="asic-stat-card">
+        <div class="asic-stat-num">95%</div>
+        <div class="asic-stat-label">Back on average</div>
+        <div class="asic-stat-sub">Via sports + private health insurance</div>
+      </div>
+      <div class="asic-stat-card asic-stat-card--wide">
+        <div class="asic-stat-num" style="font-size:2.2rem">Sunday 8am – 1pm</div>
+        <div class="asic-stat-label">Moonee Ponds</div>
+        <div class="asic-stat-sub">Saturday afternoons coming soon</div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ══ PRICING ══ -->
 <div class="pricing" id="pricing">

@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Acute Sports Injury Clinic — Sunday Morning | Stride Sports Physio Melbourne</title>
+<meta name="description" content="Injured over the weekend? Stride's Acute Sports Injury Clinic is open Sundays 8am–1pm in Moonee Ponds. Skip the ED. Get assessed and treated same morning. $239 fixed fee — private health claimable.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+/* ─────────────────────────────────────────
+   RESET
+───────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#F5F4F0;color:#0C1A27;font-family:'Inter',sans-serif;overflow-x:hidden;line-height:1}
+
+/* ─────────────────────────────────────────
+   DESIGN TOKENS
+───────────────────────────────────────── */
+:root{
+  --navy:       #0D1B2A;
+  --navy-mid:   #112236;
+  --navy-light: #1A3350;
+  --blue:       #1B90F5;
+  --blue-dim:   rgba(27,144,245,0.10);
+  --blue-glow:  rgba(27,144,245,0.22);
+  --off:        #F5F4F0;
+  --stone:      #E8E6E0;
+  --muted:      #7A8F9E;
+  --gold:       #F5C518;
+  --red:        #E84545;
+  --brd:        rgba(12,26,39,0.10);
+  --brd-i:      rgba(255,255,255,0.09);
+  --brd-im:     rgba(255,255,255,0.16);
+  --px: 52px;
+  --px-m: 20px;
+}
+
+/* ─────────────────────────────────────────
+   TYPE
+───────────────────────────────────────── */
+.display{font-family:'Bebas Neue',sans-serif;line-height:.9;letter-spacing:0.02em}
+.mono{font-family:'DM Mono',monospace;font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase}
+.orange{color:var(--blue)}
+.red{color:var(--red)}
+
+.ey{display:flex;align-items:center;gap:10px;font-family:'DM Mono',monospace;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:16px}
+.ey::before{content:'';width:22px;height:1px;flex-shrink:0}
+.ey-blue{color:var(--blue)}.ey-blue::before{background:var(--blue)}
+.ey-white{color:rgba(255,255,255,0.45)}.ey-white::before{background:rgba(255,255,255,0.3)}
+.ey-red{color:var(--red)}.ey-red::before{background:var(--red)}
+.ey-muted{color:var(--muted)}.ey-muted::before{background:var(--muted)}
+
+.sh{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,5vw,5rem);line-height:.9;letter-spacing:0.02em}
+.sh-white{color:#fff}.sh-navy{color:var(--navy)}
+
+.bt{font-size:1.05rem;font-weight:400;line-height:1.92;color:#4A6070}
+.bt strong{color:var(--navy);font-weight:700}
+.bt-inv{font-size:1.05rem;font-weight:400;line-height:1.85;color:rgba(255,255,255,0.72)}
+.bt-inv strong{color:#fff;font-weight:700}
+
+.cklist{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.cklist li{font-size:1.05rem;line-height:1.72;display:flex;align-items:flex-start;gap:12px;color:#4A6070}
+.cklist li .ck{color:var(--blue);flex-shrink:0;font-weight:700;font-size:1.2rem;margin-top:2px}
+.cklist-inv li{color:rgba(255,255,255,0.72)}
+.cklist-inv li .ck{color:var(--blue)}
+
+/* ─────────────────────────────────────────
+   BUTTONS
+───────────────────────────────────────── */
+.btn{border:none;cursor:pointer;font-family:'Inter',sans-serif;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;text-decoration:none;transition:all .2s;border-radius:2px}
+.btn-primary{background:var(--blue);color:#fff;padding:18px 40px;font-size:1.02rem}
+.btn-primary:hover{background:#0d7de8;transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.25);padding:18px 36px;font-size:1.02rem;font-weight:500}
+.btn-ghost:hover{border-color:var(--blue);background:var(--blue-dim);transform:translateY(-2px)}
+.btn-outline-dark{background:transparent;color:var(--navy);border:2px solid var(--navy);padding:16px 32px;font-size:0.95rem}
+.btn-outline-dark:hover{background:var(--navy);color:#fff;transform:translateY(-2px)}
+.arr{display:inline-block;transition:transform .2s}
+.btn:hover .arr{transform:translateX(4px)}
+
+/* Animations */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.anim{animation:fadeUp .65s ease forwards;opacity:0}
+.d1{animation-delay:.05s}.d2{animation-delay:.17s}.d3{animation-delay:.29s}.d4{animation-delay:.41s}.d5{animation-delay:.53s}
+
+/* ─────────────────────────────────────────
+   NAV
+───────────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:300;
+  height:66px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 var(--px);
+  background:rgba(11,23,36,0.97);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--brd-i);
+}
+.nav-logo img{height:32px;width:auto;display:block}
+.nav-cta{
+  background:var(--blue);color:#fff;border:none;padding:12px 26px;
+  font-family:'Inter',sans-serif;font-size:0.88rem;font-weight:700;
+  letter-spacing:0.04em;text-transform:uppercase;cursor:pointer;
+  transition:background .2s;white-space:nowrap;text-decoration:none;border-radius:2px;
+}
+.nav-cta:hover{background:#0d7de8}
+
+/* ─────────────────────────────────────────
+   HERO
+───────────────────────────────────────── */
+.hero-asic{
+  position:relative;min-height:100vh;
+  background:var(--navy);
+  display:flex;align-items:flex-end;
+  overflow:hidden;
+}
+.hero-asic-bg{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(135deg, rgba(232,69,69,0.08) 0%, transparent 50%),
+    linear-gradient(to bottom, rgba(9,20,33,0.5) 0%, rgba(9,20,33,0.95) 70%);
+}
+.hero-asic-grid{
+  position:absolute;inset:0;opacity:0.04;
+  background-image:linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);
+  background-size:60px 60px;
+}
+.hero-asic-inner{
+  position:relative;z-index:5;
+  padding:120px var(--px) 64px;
+  max-width:900px;
+}
+.hero-asic-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(232,69,69,0.15);
+  border:1px solid rgba(232,69,69,0.3);
+  border-radius:100px;padding:8px 18px;margin-bottom:24px;
+}
+.hero-asic-badge-dot{width:8px;height:8px;border-radius:50%;background:var(--red);flex-shrink:0}
+.hero-asic-badge span{font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.7)}
+
+.hero-asic-h{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(4.5rem,9vw,9rem);
+  line-height:.88;letter-spacing:0.01em;color:#fff;
+  margin-bottom:28px;
+}
+.hero-asic-h .hl-accent{color:var(--red)}
+
+.hero-asic-sub{
+  font-size:1.2rem;font-weight:400;line-height:1.72;
+  color:rgba(255,255,255,0.65);
+  max-width:560px;margin-bottom:40px;
+}
+.hero-asic-sub strong{color:#fff;font-weight:600}
+
+.hero-asic-ctas{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:56px}
+
+.hero-asic-meta{
+  display:flex;align-items:center;gap:32px;flex-wrap:wrap;
+  padding-top:32px;border-top:1px solid var(--brd-i);
+}
+.hero-meta-item{display:flex;flex-direction:column;gap:4px}
+.hero-meta-label{font-family:'DM Mono',monospace;font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.35)}
+.hero-meta-value{font-size:1.05rem;font-weight:600;color:#fff}
+.hero-meta-value.price-big{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--blue);letter-spacing:0.02em;line-height:1}
+.hero-meta-sub{font-size:0.78rem;color:rgba(255,255,255,0.45);margin-top:1px}
+.hero-meta-divider{width:1px;height:48px;background:var(--brd-i)}
+
+/* Coming soon pill */
+.coming-soon-pill{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(245,197,24,0.12);border:1px solid rgba(245,197,24,0.25);
+  border-radius:100px;padding:8px 16px;
+  font-family:'DM Mono',monospace;font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:rgba(255,255,255,0.6);
+}
+.coming-soon-pill .cs-dot{width:7px;height:7px;border-radius:50%;background:#F5C518}
+
+/* ─────────────────────────────────────────
+   INSTEAD OF
+───────────────────────────────────────── */
+.instead{
+  background:var(--navy-mid);
+  padding:64px var(--px);
+  border-top:1px solid var(--brd-i);border-bottom:1px solid var(--brd-i);
+}
+.instead-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px}
+.instead-card{
+  background:rgba(255,255,255,0.04);
+  border:1px solid var(--brd-i);border-radius:6px;
+  padding:28px 28px 32px;position:relative;overflow:hidden;
+}
+.instead-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.instead-card.red-top::before{background:var(--red)}
+.instead-card.blue-top::before{background:var(--blue)}
+.instead-card.green-top::before{background:#22c55e}
+.instead-label{font-family:'DM Mono',monospace;font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:12px}
+.instead-title{font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:12px;line-height:1.3}
+.instead-desc{font-size:0.92rem;line-height:1.75;color:rgba(255,255,255,0.55)}
+
+/* ─────────────────────────────────────────
+   WHAT WE DO
+───────────────────────────────────────── */
+.scope{
+  background:var(--off);
+  padding:96px var(--px);
+}
+.scope-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.scope-copy{padding-right:24px}
+.scope-copy .sh{margin-bottom:24px}
+.scope-copy .bt{margin-bottom:28px}
+.scope-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.scope-item{
+  background:#fff;border:1px solid var(--brd);border-radius:6px;
+  padding:20px 20px 22px;
+}
+.scope-item-icon{font-size:1.5rem;margin-bottom:10px}
+.scope-item-title{font-size:0.9rem;font-weight:700;color:var(--navy);margin-bottom:4px}
+.scope-item-desc{font-size:0.82rem;color:var(--muted);line-height:1.55}
+
+.scope-out{
+  background:var(--navy);border-radius:8px;padding:32px 32px 36px;
+}
+.scope-out-title{font-size:0.72rem;font-family:'DM Mono',monospace;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:16px}
+.scope-out-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.scope-out-list li{display:flex;align-items:flex-start;gap:12px;font-size:0.9rem;line-height:1.6;color:rgba(255,255,255,0.55)}
+.scope-out-list li::before{content:'—';color:rgba(255,255,255,0.2);flex-shrink:0;margin-top:1px}
+.scope-out-note{margin-top:20px;font-size:0.82rem;color:rgba(255,255,255,0.35);line-height:1.6;border-top:1px solid var(--brd-i);padding-top:16px}
+
+/* ─────────────────────────────────────────
+   PRICING / INSURANCE HIGHLIGHT
+───────────────────────────────────────── */
+.price-section{
+  background:var(--navy);
+  padding:96px var(--px);
+}
+.price-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.price-card{
+  background:rgba(255,255,255,0.04);
+  border:1px solid var(--brd-i);border-radius:8px;
+  padding:40px 40px 44px;
+}
+.price-main{
+  display:flex;align-items:flex-end;gap:12px;margin-bottom:8px;
+}
+.price-big{font-family:'Bebas Neue',sans-serif;font-size:5rem;color:#fff;letter-spacing:0.02em;line-height:1}
+.price-label{font-size:0.88rem;color:rgba(255,255,255,0.4);margin-bottom:10px;line-height:1.4}
+.price-divider{height:1px;background:var(--brd-i);margin:24px 0}
+.price-extras{font-size:0.9rem;color:rgba(255,255,255,0.5);line-height:1.75}
+.price-extras strong{color:rgba(255,255,255,0.8);font-weight:600}
+
+.insurance-card{
+  background:linear-gradient(135deg, rgba(27,144,245,0.15) 0%, rgba(27,144,245,0.05) 100%);
+  border:1px solid rgba(27,144,245,0.25);border-radius:8px;
+  padding:36px 36px 40px;
+}
+.insurance-stat{
+  display:flex;align-items:baseline;gap:8px;margin-bottom:8px;
+}
+.insurance-pct{font-family:'Bebas Neue',sans-serif;font-size:4.5rem;color:var(--blue);letter-spacing:0.02em;line-height:1}
+.insurance-pct-label{font-size:1rem;color:rgba(255,255,255,0.5);font-weight:500}
+.insurance-title{font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:12px}
+.insurance-desc{font-size:0.9rem;line-height:1.75;color:rgba(255,255,255,0.55);margin-bottom:20px}
+.insurance-types{display:flex;flex-direction:column;gap:10px}
+.insurance-type{display:flex;align-items:center;gap:12px;padding:12px 16px;background:rgba(255,255,255,0.05);border-radius:4px}
+.insurance-type-icon{font-size:1.1rem;flex-shrink:0}
+.insurance-type-text{font-size:0.88rem;color:rgba(255,255,255,0.65);line-height:1.4}
+.insurance-type-text strong{color:#fff;font-weight:600}
+
+/* ─────────────────────────────────────────
+   HOW IT WORKS
+───────────────────────────────────────── */
+.how{
+  background:var(--off);
+  padding:96px var(--px);
+}
+.how-inner{max-width:1100px;margin:0 auto}
+.how-head{text-align:center;margin-bottom:56px}
+.how-head .sh{margin-bottom:16px}
+.how-head .bt{max-width:500px;margin:0 auto}
+.how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative}
+.how-steps::before{
+  content:'';position:absolute;
+  top:28px;left:10%;right:10%;height:1px;
+  background:linear-gradient(to right, transparent, var(--stone), var(--stone), transparent);
+  pointer-events:none;
+}
+.how-step{background:#fff;border:1px solid var(--brd);border-radius:6px;padding:28px 24px 32px;position:relative}
+.how-step-num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:48px;height:48px;border-radius:50%;
+  background:var(--blue);
+  font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:#fff;letter-spacing:0.04em;
+  margin-bottom:16px;position:relative;z-index:1;
+}
+.how-step-title{font-size:0.98rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+.how-step-desc{font-size:0.85rem;color:var(--muted);line-height:1.65}
+
+/* ─────────────────────────────────────────
+   TEAM
+───────────────────────────────────────── */
+.asic-team{
+  background:var(--navy);
+  padding:96px var(--px);
+}
+.asic-team-inner{max-width:1200px;margin:0 auto}
+.asic-team-head{margin-bottom:48px}
+.asic-team-head .sh{color:#fff;margin-bottom:12px}
+.asic-team-head .bt-inv{max-width:520px}
+.asic-team-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.asic-team-card{
+  background:rgba(255,255,255,0.04);
+  border:1px solid var(--brd-i);border-radius:6px;
+  padding:28px 28px 32px;display:flex;gap:20px;
+}
+.asic-team-avatar{
+  width:64px;height:64px;border-radius:50%;
+  background:var(--blue-dim);border:2px solid rgba(27,144,245,0.2);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+  font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--blue);letter-spacing:0.06em;
+}
+.asic-team-name{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:4px}
+.asic-team-role{font-family:'DM Mono',monospace;font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:12px}
+.asic-team-bio{font-size:0.9rem;color:rgba(255,255,255,0.55);line-height:1.65}
+
+/* ─────────────────────────────────────────
+   REGISTER INTEREST FORM
+───────────────────────────────────────── */
+.register{
+  background:var(--off);
+  padding:96px var(--px);
+  scroll-margin-top:80px;
+}
+.register-inner{max-width:900px;margin:0 auto}
+.register-head{margin-bottom:48px}
+.register-head .sh{margin-bottom:12px}
+.register-head .bt{max-width:560px}
+
+.register-form{
+  background:#fff;border:1px solid var(--brd);border-radius:8px;
+  padding:48px 48px 52px;
+}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
+.form-group{display:flex;flex-direction:column;gap:8px}
+.form-group.full{grid-column:1/-1}
+.form-label{font-size:0.82rem;font-weight:600;color:var(--navy);letter-spacing:0.02em;text-transform:uppercase}
+.form-label span{font-weight:400;color:var(--muted);text-transform:none;letter-spacing:0}
+.form-input,.form-select,.form-textarea{
+  background:var(--off);border:1.5px solid var(--stone);border-radius:4px;
+  padding:14px 16px;font-family:'Inter',sans-serif;font-size:0.95rem;color:var(--navy);
+  transition:border-color .2s;outline:none;width:100%;
+}
+.form-input::placeholder,.form-textarea::placeholder{color:var(--muted)}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--blue)}
+.form-select{cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237A8F9E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.form-textarea{resize:vertical;min-height:96px}
+
+.form-submit-row{margin-top:28px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.form-note{font-size:0.82rem;color:var(--muted);line-height:1.55}
+.form-note strong{color:var(--navy)}
+
+.form-success{
+  display:none;text-align:center;padding:40px 24px;
+}
+.form-success-icon{font-size:3rem;margin-bottom:16px}
+.form-success-title{font-size:1.3rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+.form-success-desc{font-size:0.95rem;color:var(--muted);line-height:1.65}
+
+/* ─────────────────────────────────────────
+   LOCATION STRIP
+───────────────────────────────────────── */
+.location-strip{
+  background:var(--navy);
+  padding:28px var(--px);
+  border-top:1px solid var(--brd-i);
+}
+.location-strip-inner{
+  max-width:1200px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+}
+.location-item{display:flex;align-items:center;gap:12px}
+.location-item-icon{font-size:1.2rem;opacity:0.6}
+.location-item-text{font-size:0.9rem;color:rgba(255,255,255,0.55);line-height:1.4}
+.location-item-text strong{color:#fff;font-weight:600;display:block}
+
+/* ─────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────── */
+footer{
+  background:var(--navy);border-top:1px solid var(--brd-i);
+  padding:40px var(--px) 28px;
+}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+.footer-logo img{height:28px;width:auto;opacity:0.6}
+.footer-links{display:flex;gap:24px}
+.footer-link{font-size:0.8rem;color:rgba(255,255,255,0.3);text-decoration:none;transition:color .2s}
+.footer-link:hover{color:rgba(255,255,255,0.7)}
+.footer-copy{font-size:0.78rem;color:rgba(255,255,255,0.2);width:100%;text-align:center;margin-top:16px;padding-top:16px;border-top:1px solid var(--brd-i)}
+
+/* ─────────────────────────────────────────
+   STICKY REGISTER CTA
+───────────────────────────────────────── */
+.sticky-cta{
+  position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
+  z-index:200;
+  display:flex;align-items:center;gap:12px;
+  background:rgba(13,27,42,0.95);backdrop-filter:blur(16px);
+  border:1px solid var(--brd-im);border-radius:100px;
+  padding:12px 20px 12px 16px;
+  box-shadow:0 8px 32px rgba(0,0,0,0.4);
+  transition:all .3s;
+}
+.sticky-cta-text{font-size:0.88rem;color:rgba(255,255,255,0.7)}
+.sticky-cta-text strong{color:#fff}
+.sticky-cta-btn{
+  background:var(--blue);color:#fff;
+  font-family:'Inter',sans-serif;font-weight:700;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;
+  border:none;border-radius:100px;padding:10px 20px;
+  cursor:pointer;text-decoration:none;transition:background .2s;white-space:nowrap;
+}
+.sticky-cta-btn:hover{background:#0d7de8}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────── */
+@media(max-width:900px){
+  :root{--px:var(--px-m)}
+  nav{padding:0 var(--px-m)}
+  .hero-asic-inner{padding:110px var(--px-m) 56px}
+  .hero-asic-h{font-size:clamp(3.5rem,12vw,5rem)}
+  .hero-asic-meta{gap:20px}
+  .hero-meta-divider{display:none}
+  .instead-inner{grid-template-columns:1fr}
+  .scope-inner{grid-template-columns:1fr}
+  .scope-copy{padding-right:0}
+  .scope-grid{grid-template-columns:1fr 1fr}
+  .price-inner{grid-template-columns:1fr}
+  .how-steps{grid-template-columns:1fr 1fr;gap:16px}
+  .how-steps::before{display:none}
+  .asic-team-grid{grid-template-columns:1fr}
+  .register-form{padding:32px 24px 36px}
+  .form-grid{grid-template-columns:1fr}
+  .footer-inner{flex-direction:column;align-items:flex-start;gap:12px}
+  .footer-links{flex-wrap:wrap;gap:16px}
+}
+@media(max-width:600px){
+  .scope-grid{grid-template-columns:1fr}
+  .hero-asic-ctas{flex-direction:column;align-items:flex-start}
+  .btn-primary,.btn-ghost{width:100%;justify-content:center}
+  .asic-team-card{flex-direction:column}
+  .form-submit-row{flex-direction:column;align-items:flex-start}
+  .sticky-cta{bottom:16px;left:16px;right:16px;transform:none;justify-content:space-between}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <a class="nav-logo" href="/">
+    <img src="https://assets.cdn.filesafe.space/uGjKGDMcGryVhkZ0uDcj/media/679c5bd52fe41dd4b9c4e96f.webp" alt="Stride Sports Physio & Performance">
+  </a>
+  <a href="#register" class="nav-cta">Register Interest</a>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero-asic">
+  <div class="hero-asic-bg"></div>
+  <div class="hero-asic-grid"></div>
+  <div class="hero-asic-inner">
+
+    <div class="hero-asic-badge anim d1">
+      <div class="hero-asic-badge-dot"></div>
+      <span>Opening Soon · Moonee Ponds</span>
+    </div>
+
+    <h1 class="hero-asic-h anim d2">
+      Injured<br>
+      <span class="hl-accent">Sunday?</span><br>
+      We're Open.
+    </h1>
+
+    <p class="hero-asic-sub anim d3">
+      <strong>Skip the emergency department.</strong> Stride's Acute Sports Injury Clinic is open Sunday mornings in Moonee Ponds — same-morning assessment, treatment, and a clear plan.
+    </p>
+
+    <div class="hero-asic-ctas anim d4">
+      <a href="#register" class="btn btn-primary">Register Your Interest <span class="arr">→</span></a>
+      <div class="coming-soon-pill">
+        <div class="cs-dot"></div>
+        <span>Launching Soon — Sunday 8am–1pm</span>
+      </div>
+    </div>
+
+    <div class="hero-asic-meta anim d5">
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Fixed Fee</span>
+        <span class="hero-meta-value price-big">$239</span>
+        <span class="hero-meta-sub">Private health claimable</span>
+      </div>
+      <div class="hero-meta-divider"></div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">When</span>
+        <span class="hero-meta-value">Sunday</span>
+        <span class="hero-meta-sub">8:00am – 1:00pm</span>
+      </div>
+      <div class="hero-meta-divider"></div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Where</span>
+        <span class="hero-meta-value">Moonee Ponds</span>
+        <span class="hero-meta-sub">13 Puckle St, VIC 3039</span>
+      </div>
+      <div class="hero-meta-divider"></div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Capacity</span>
+        <span class="hero-meta-value">15 patients</span>
+        <span class="hero-meta-sub">Booked + walk-in spots</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ INSTEAD OF ══ -->
+<section class="instead">
+  <div class="instead-inner">
+
+    <div class="instead-card red-top">
+      <div class="instead-label">❌ Instead of this</div>
+      <div class="instead-title">The Emergency Department</div>
+      <div class="instead-desc">4–8 hour waits. Triage nurses who haven't played a sport since high school. Walk out with a tensor bandage and "see a GP Monday."</div>
+    </div>
+
+    <div class="instead-card red-top">
+      <div class="instead-label">❌ Instead of this</div>
+      <div class="instead-title">Waiting Until Monday</div>
+      <div class="instead-desc">48+ hours of uncertainty. Swelling sets in. You don't know if you can train Tuesday. You've already missed the best window for early management.</div>
+    </div>
+
+    <div class="instead-card blue-top">
+      <div class="instead-label">✓ This is what you do</div>
+      <div class="instead-title">Stride Acute Sports Clinic</div>
+      <div class="instead-desc">Sunday morning. Booked in advance or walk-in. Assessed by a physio and osteopath who understand sport. Leave with a diagnosis, plan, and referrals if needed.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ SCOPE ══ -->
+<section class="scope">
+  <div class="scope-inner">
+
+    <div class="scope-copy">
+      <div class="ey ey-blue">What we treat</div>
+      <h2 class="sh sh-navy">Acute injuries.<br><span class="orange">Within 3–4 weeks.</span></h2>
+      <p class="bt">Everything a competitive athlete needs on a Sunday morning — without waiting for a GP, an ED queue, or Monday's first available appointment.</p>
+      <div class="scope-grid">
+        <div class="scope-item">
+          <div class="scope-item-icon">🦵</div>
+          <div class="scope-item-title">Soft Tissue Injuries</div>
+          <div class="scope-item-desc">Ankle sprains, knee, hamstring, hip flexor, shoulder, calf</div>
+        </div>
+        <div class="scope-item">
+          <div class="scope-item-icon">🩹</div>
+          <div class="scope-item-title">Strapping & Bracing</div>
+          <div class="scope-item-desc">Walker boots, knee braces, elbow supports, joint strapping</div>
+        </div>
+        <div class="scope-item">
+          <div class="scope-item-icon">🧠</div>
+          <div class="scope-item-title">Concussion Assessment</div>
+          <div class="scope-item-desc">Early management support — SCAT screening, return-to-play guidance</div>
+        </div>
+        <div class="scope-item">
+          <div class="scope-item-icon">📋</div>
+          <div class="scope-item-title">Letters & Referrals</div>
+          <div class="scope-item-desc">Imaging referrals, work certificates, specialist referrals</div>
+        </div>
+        <div class="scope-item">
+          <div class="scope-item-icon">🔍</div>
+          <div class="scope-item-title">Imaging Referrals</div>
+          <div class="scope-item-desc">X-ray, MRI, ultrasound referrals when clinically indicated</div>
+        </div>
+        <div class="scope-item">
+          <div class="scope-item-icon">⚡</div>
+          <div class="scope-item-title">Return-to-Play Guidance</div>
+          <div class="scope-item-desc">Realistic timelines and what you can safely keep doing right now</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="scope-out">
+        <div class="scope-out-title">What we don't manage</div>
+        <ul class="scope-out-list">
+          <li>Fractures requiring surgical management</li>
+          <li>Dislocation reductions requiring IV pain relief</li>
+          <li>Severe trauma or multi-system injury</li>
+          <li>High acuity presentations (possible spinal, pelvic, internal injury)</li>
+          <li>Very unwell or drowsy patients</li>
+          <li>Non-sporting injuries (falls, MVAs)</li>
+          <li>Chronic injuries older than 3–4 weeks</li>
+        </ul>
+        <div class="scope-out-note">If you're unsure, call the clinic before presenting. If you have a suspected serious injury — go straight to the emergency department.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ PRICING & INSURANCE ══ -->
+<section class="price-section">
+  <div class="price-inner">
+
+    <div>
+      <div class="ey ey-white">Transparent pricing</div>
+      <h2 class="sh sh-white" style="margin-bottom:32px">One fixed fee.<br><span class="orange">No surprises.</span></h2>
+      <div class="price-card">
+        <div class="price-main">
+          <div class="price-big">$239</div>
+        </div>
+        <div class="price-label">Acute Sports Injury Clinic — standard consultation</div>
+        <div class="price-divider"></div>
+        <div class="price-extras">
+          <strong>What's included:</strong> Full injury assessment · Triage and diagnosis · Treatment (taping, mobilisation, soft tissue) · Written plan and return-to-play guidance · Imaging and specialist referral letters if needed
+          <br><br>
+          <strong>Extra charges may apply:</strong> Walker boots, knee braces, elbow supports, and other physical aids are charged separately at cost.
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="ey ey-blue">The reason most people say yes</div>
+      <h2 class="sh sh-white" style="margin-bottom:32px">Most athletes get<br><span class="orange">~95% back.</span></h2>
+      <div class="insurance-card">
+        <div class="insurance-stat">
+          <div class="insurance-pct">95%</div>
+          <div class="insurance-pct-label">back on average</div>
+        </div>
+        <div class="insurance-title">Private health insurance and sports insurance both cover this.</div>
+        <div class="insurance-desc">Most club sports athletes have sports insurance through their association. Combined with private health, the out-of-pocket is minimal — and often zero. We'll help you understand your position at the time of consultation.</div>
+        <div class="insurance-types">
+          <div class="insurance-type">
+            <div class="insurance-type-icon">🏥</div>
+            <div class="insurance-type-text"><strong>Private Health Insurance</strong> — HICAPS on the day. Most extras cover physio and osteo.</div>
+          </div>
+          <div class="insurance-type">
+            <div class="insurance-type-icon">⚽</div>
+            <div class="insurance-type-text"><strong>Club / Association Sports Insurance</strong> — AFL, netball, rugby, soccer, BJJ and combat sports all have injury insurance coverage. Ask your club.</div>
+          </div>
+          <div class="insurance-type">
+            <div class="insurance-type-icon">💳</div>
+            <div class="insurance-type-text"><strong>No insurance?</strong> The $239 fixed fee is still significantly less than most out-of-pocket ED costs — and you leave with a real plan, same morning.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ HOW IT WORKS ══ -->
+<section class="how">
+  <div class="how-inner">
+    <div class="how-head">
+      <div class="ey ey-blue" style="justify-content:center">How it works</div>
+      <h2 class="sh sh-navy">Simple. Fast. <span class="orange">On a Sunday.</span></h2>
+      <p class="bt" style="margin-top:16px">Hybrid model — book in advance or walk in. Max 1-hour wait for walk-in patients.</p>
+    </div>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="how-step-num">1</div>
+        <div class="how-step-title">Book or walk in</div>
+        <div class="how-step-desc">Reserve a 20-min slot online (recommended), or arrive as a walk-in. 1 walk-in spot held per hour — max wait 1 hour.</div>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">2</div>
+        <div class="how-step-title">Triage on arrival</div>
+        <div class="how-step-desc">Brief triage — sport, club, insurance details, nature of injury. Helps us prepare and process your claim correctly.</div>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">3</div>
+        <div class="how-step-title">Assessment & treatment</div>
+        <div class="how-step-desc">Full injury assessment by Chris Tandy (Physio) or Jordan Schorel (Osteopath). Diagnosis, treatment, strapping, bracing as needed.</div>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">4</div>
+        <div class="how-step-title">Leave with a plan</div>
+        <div class="how-step-desc">Clear diagnosis. Return-to-play timeline. Referrals and letters if needed. You know exactly what to do next — before you leave.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TEAM ══ -->
+<section class="asic-team">
+  <div class="asic-team-inner">
+    <div class="asic-team-head">
+      <div class="ey ey-white">Your clinicians</div>
+      <h2 class="sh sh-white">Clinicians who<br><span class="orange">understand sport.</span></h2>
+      <p class="bt-inv" style="margin-top:16px">Not a GP you've never met. Not a walk-in centre junior. Experienced sports clinicians who've worked at the highest level.</p>
+    </div>
+    <div class="asic-team-grid">
+      <div class="asic-team-card">
+        <div class="asic-team-avatar">CT</div>
+        <div>
+          <div class="asic-team-name">Chris Tandy</div>
+          <div class="asic-team-role">Director · Senior Sports Physiotherapist</div>
+          <div class="asic-team-bio">Masters of Sports Physiotherapy (La Trobe). 11 years embedded at Melbourne Storm NRL as Senior Physiotherapist — two NRL premierships. The same assessment rigour applied to every athlete, regardless of level.</div>
+        </div>
+      </div>
+      <div class="asic-team-card">
+        <div class="asic-team-avatar">JS</div>
+        <div>
+          <div class="asic-team-name">Jordan Schorel</div>
+          <div class="asic-team-role">Sports Osteopath</div>
+          <div class="asic-team-bio">Experienced sports osteopath with a background in acute and musculoskeletal injury management. Adds complementary assessment and treatment skills alongside the physiotherapy team.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ REGISTER INTEREST ══ -->
+<section class="register" id="register">
+  <div class="register-inner">
+    <div class="register-head">
+      <div class="ey ey-blue">Coming Soon</div>
+      <h2 class="sh sh-navy">Register your<br><span class="orange">interest now.</span></h2>
+      <p class="bt" style="margin-top:16px">We're putting the finishing touches on booking. Register below and you'll be first to know when Sunday slots open — we'll reach out directly to confirm your spot.</p>
+    </div>
+
+    <div class="register-form" id="register-form-wrap">
+      <form id="asic-form" onsubmit="submitForm(event)">
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label" for="asic-name">Name <span>*</span></label>
+            <input class="form-input" id="asic-name" type="text" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="asic-phone">Phone <span>*</span></label>
+            <input class="form-input" id="asic-phone" type="tel" placeholder="0400 000 000" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="asic-email">Email <span>*</span></label>
+            <input class="form-input" id="asic-email" type="email" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="asic-sport">Sport <span>*</span></label>
+            <select class="form-select" id="asic-sport" required>
+              <option value="" disabled selected>Select your sport</option>
+              <option>AFL / Australian Rules</option>
+              <option>Rugby Union / League</option>
+              <option>Soccer / Football</option>
+              <option>Netball</option>
+              <option>Basketball</option>
+              <option>BJJ / Grappling</option>
+              <option>MMA / Boxing / Combat</option>
+              <option>Running / Athletics</option>
+              <option>Cricket</option>
+              <option>Hockey</option>
+              <option>Cycling</option>
+              <option>CrossFit / Gym</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="asic-club">Club / Team <span style="color:var(--muted);font-weight:400;text-transform:none">(optional)</span></label>
+            <input class="form-input" id="asic-club" type="text" placeholder="e.g. Oak Park FC">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="asic-urgency">How soon do you need to be seen?</label>
+            <select class="form-select" id="asic-urgency">
+              <option value="" disabled selected>Select timeframe</option>
+              <option>This Sunday — urgent</option>
+              <option>Next Sunday</option>
+              <option>Within 2 weeks</option>
+              <option>Just want to be on the list</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label class="form-label" for="asic-injury">Injury / What happened <span style="color:var(--muted);font-weight:400;text-transform:none">(brief description)</span></label>
+            <textarea class="form-textarea" id="asic-injury" placeholder="e.g. Rolled ankle Saturday footy, significant swelling, can weight bear but painful..."></textarea>
+          </div>
+        </div>
+        <div class="form-submit-row">
+          <button type="submit" class="btn btn-primary">Register My Interest <span class="arr">→</span></button>
+          <p class="form-note">We'll contact you within <strong>24 hours</strong> to confirm and provide booking details once we launch.</p>
+        </div>
+      </form>
+
+      <div class="form-success" id="asic-form-success">
+        <div class="form-success-icon">✅</div>
+        <div class="form-success-title">You're on the list.</div>
+        <div class="form-success-desc">We'll be in touch within 24 hours. We'll reach out with booking details as soon as Sunday slots are live — and you'll be among the first to secure a spot.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ LOCATION STRIP ══ -->
+<div class="location-strip">
+  <div class="location-strip-inner">
+    <div class="location-item">
+      <div class="location-item-icon">📍</div>
+      <div class="location-item-text"><strong>13 Puckle Street, Moonee Ponds</strong>VIC 3039</div>
+    </div>
+    <div class="location-item">
+      <div class="location-item-icon">🕗</div>
+      <div class="location-item-text"><strong>Sunday 8:00am – 1:00pm</strong>Saturday afternoons coming soon</div>
+    </div>
+    <div class="location-item">
+      <div class="location-item-icon">📞</div>
+      <div class="location-item-text"><strong>0483 918 427</strong>Call for urgent enquiries</div>
+    </div>
+    <div class="location-item">
+      <div class="location-item-icon">🅿️</div>
+      <div class="location-item-text"><strong>Parking available</strong>On-site and street parking nearby</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="https://assets.cdn.filesafe.space/uGjKGDMcGryVhkZ0uDcj/media/679c5bd52fe41dd4b9c4e96f.webp" alt="Stride Sports Physio">
+    </div>
+    <div class="footer-links">
+      <a href="/" class="footer-link">Back to Main Site</a>
+      <a href="/privacy-policy" class="footer-link">Privacy Policy</a>
+      <a href="tel:0483918427" class="footer-link">0483 918 427</a>
+    </div>
+  </div>
+  <div class="footer-copy">© 2025 Stride Physiotherapy &amp; Health Group. All rights reserved. This service is managed by physiotherapists and osteopaths — not a medical emergency service. If you have a serious or life-threatening injury, call 000 or present to an emergency department.</div>
+</footer>
+
+<!-- ══ STICKY CTA ══ -->
+<div class="sticky-cta" id="sticky-cta">
+  <span class="sticky-cta-text"><strong>Acute Sports Clinic</strong> — Sundays 8am–1pm</span>
+  <a href="#register" class="sticky-cta-btn">Register Interest</a>
+</div>
+
+<script>
+function submitForm(e) {
+  e.preventDefault();
+  const name    = document.getElementById('asic-name').value.trim();
+  const phone   = document.getElementById('asic-phone').value.trim();
+  const email   = document.getElementById('asic-email').value.trim();
+  const sport   = document.getElementById('asic-sport').value;
+  const club    = document.getElementById('asic-club').value.trim();
+  const urgency = document.getElementById('asic-urgency').value;
+  const injury  = document.getElementById('asic-injury').value.trim();
+
+  const btn = e.target.querySelector('button[type="submit"]');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  fetch('https://api.stridephysiohealth.com.au/lead', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      source: 'acute-clinic-interest',
+      name, phone, email, sport,
+      injury: (club ? '[Club: ' + club + '] ' : '') + injury,
+      urgency,
+    })
+  }).catch(() => {});
+
+  document.getElementById('asic-form').style.display = 'none';
+  document.getElementById('asic-form-success').style.display = 'block';
+}
+
+// Hide sticky CTA when register section is visible
+const observer = new IntersectionObserver((entries) => {
+  const sticky = document.getElementById('sticky-cta');
+  if (entries[0].isIntersecting) {
+    sticky.style.opacity = '0';
+    sticky.style.pointerEvents = 'none';
+  } else {
+    sticky.style.opacity = '1';
+    sticky.style.pointerEvents = '';
+  }
+}, { threshold: 0.2 });
+observer.observe(document.getElementById('register'));
+
+// Smooth scroll for all anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = a.getAttribute('href');
+    if (t === '#') return;
+    const el = document.querySelector(t);
+    if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
+</script>
+
+</body>
+</html>
