@@ -1788,11 +1788,27 @@ footer{background:#080F17;border-top:1px solid rgba(255,255,255,0.06);padding:52
 
 /* ══ ACUTE SPORTS INJURY CLINIC PROMO ══ */
 .asic-promo{
-  background:linear-gradient(135deg, #0D1B2A 0%, #112236 100%);
+  position:relative;
+  background:#0D1B2A;
   padding:96px var(--px);
   border-top:4px solid #E84545;
+  overflow:hidden;
+}
+.asic-promo-img{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;object-position:center 35%;
+  z-index:0;
+  filter:saturate(0.5) brightness(0.45);
+}
+.asic-promo-overlay{
+  position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(to right, rgba(9,20,33,0.96) 0%, rgba(9,20,33,0.82) 50%, rgba(9,20,33,0.55) 100%),
+    linear-gradient(135deg, rgba(232,69,69,0.08) 0%, transparent 55%);
 }
 .asic-promo-inner{
+  position:relative;z-index:2;
   max-width:1200px;margin:0 auto;
   display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;
 }
@@ -2177,6 +2193,8 @@ footer{background:#080F17;border-top:1px solid rgba(255,255,255,0.06);padding:52
 
 <!-- ══ ACUTE SPORTS INJURY CLINIC ══ -->
 <section class="asic-promo" id="sunday-clinic">
+  <img class="asic-promo-img" src="https://images.pexels.com/photos/5473177/pexels-photo-5473177.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Sports injury assessment and treatment" loading="lazy">
+  <div class="asic-promo-overlay"></div>
   <div class="asic-promo-inner">
     <div class="asic-promo-copy">
       <div class="asic-badge">
