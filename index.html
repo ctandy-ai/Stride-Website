@@ -222,7 +222,7 @@ nav{
 }
 /* CTAs */
 .hero-ctas{
-  display:flex;align-items:stretch;gap:12px;
+  display:flex;flex-direction:column;align-items:flex-start;gap:12px;
   flex-wrap:wrap;margin-bottom:20px;
 }
 /* Quiz button — distinct treatment */
@@ -1501,9 +1501,37 @@ nav{
 }
 @keyframes quiz-pulse{
   0%,100%{box-shadow:0 0 0 0 rgba(245,197,24,0)}
-  50%{box-shadow:0 0 0 7px rgba(245,197,24,0.13)}
+  50%{box-shadow:0 0 0 10px rgba(245,197,24,0.18)}
 }
-.btn-quiz{animation:quiz-pulse 3.5s ease-in-out 2.5s 3}
+.btn-quiz{animation:quiz-pulse 3s ease-in-out infinite}
+/* Hero quiz lead block */
+.hero-quiz-lead{
+  display:flex;flex-direction:column;align-items:flex-start;gap:8px;
+}
+.hero-quiz-hook{
+  font-family:'DM Mono',monospace;font-size:0.6rem;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:#FFC832;opacity:0.85;
+}
+.btn-quiz-hero{
+  padding:20px 30px !important;
+  border:2px solid rgba(245,197,24,0.55) !important;
+  background:rgba(245,197,24,0.07) !important;
+  min-width:260px !important;
+}
+.btn-quiz-hero .btn-quiz-sub{
+  font-size:1.05rem !important;
+}
+.hero-cta-divider{
+  display:flex;align-items:center;
+  color:rgba(255,255,255,0.25);
+  font-size:0.72rem;letter-spacing:0.1em;
+  white-space:nowrap;
+  align-self:center;
+}
+.hero-cta-divider span{
+  padding:0 8px;
+}
 .hero-quiz-proof{
   font-family:'DM Mono',monospace;font-size:0.58rem;
   letter-spacing:0.1em;text-transform:uppercase;
@@ -1801,11 +1829,16 @@ footer{background:#080F17;border-top:1px solid rgba(255,255,255,0.06);padding:52
     </h1>
 
     <div class="hero-ctas anim d4">
-      <button class="btn btn-primary" onclick="openModal()">Book my assessment <span class="arr">→</span></button>
-      <button class="btn-quiz" onclick="openQuizModal()">
-        <span class="btn-quiz-label">FREE INJURY SELF-CHECK</span>
-        <span class="btn-quiz-sub">Am I ready to return? →</span>
-      </button>
+      <div class="hero-quiz-lead">
+        <div class="hero-quiz-hook">Not sure if you're ready to return?</div>
+        <button class="btn-quiz btn-quiz-hero" onclick="openQuizModal()">
+          <span class="btn-quiz-label">FREE INJURY SELF-CHECK</span>
+          <span class="btn-quiz-sub">Find out in 60 seconds →</span>
+        </button>
+        <div class="hero-quiz-proof">60 sec &nbsp;·&nbsp; No booking needed &nbsp;·&nbsp; Instant score</div>
+      </div>
+      <div class="hero-cta-divider"><span>or</span></div>
+      <button class="btn btn-ghost" onclick="openModal()">Book my assessment <span class="arr">→</span></button>
     </div>
 
     <div class="hero-note anim d5">
