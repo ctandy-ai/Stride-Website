@@ -87,8 +87,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;height:66px;display:flex;ali
 /* ─── HERO ─────────────────────────────── */
 .hero{position:relative;width:100%;min-height:720px;overflow:hidden;display:flex;align-items:flex-end}
 .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%;z-index:0;will-change:transform}
-.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(to right,rgba(7,17,28,0.97) 0%,rgba(7,17,28,0.82) 45%,rgba(7,17,28,0.25) 80%,transparent 100%),linear-gradient(to top,rgba(7,17,28,0.90) 0%,rgba(7,17,28,0.30) 45%,transparent 70%)}
+.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(to right,rgba(7,17,28,0.98) 0%,rgba(7,17,28,0.92) 55%,rgba(7,17,28,0.55) 80%,rgba(7,17,28,0.25) 100%),linear-gradient(to top,rgba(7,17,28,0.95) 0%,rgba(7,17,28,0.50) 50%,rgba(7,17,28,0.15) 100%)}
 .hero-inner{position:relative;z-index:2;padding:0 var(--px) 72px;max-width:700px;width:100%}
+.hero-inner .sh,.hero-inner .hero-sub,.hero-inner .ey{text-shadow:0 2px 20px rgba(0,0,0,0.45)}
 .hero-prices{display:flex;gap:16px;margin-top:28px;margin-bottom:36px;flex-wrap:wrap}
 .hero-price-chip{background:rgba(27,144,245,0.10);border:1px solid rgba(27,144,245,0.28);padding:14px 22px;border-radius:2px;min-width:160px}
 .hero-price-chip .prog-name{font-family:'DM Mono',monospace;font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:6px}
@@ -371,7 +372,7 @@ footer a:hover{color:#fff}
   nav{padding:0 var(--px-m)}
   .hero{min-height:580px}
   .hero-bg{object-position:70% 25%}
-  .hero-overlay{background:linear-gradient(to right,rgba(7,17,28,0.97) 0%,rgba(7,17,28,0.90) 60%,rgba(7,17,28,0.55) 100%),linear-gradient(to top,rgba(7,17,28,0.80) 0%,transparent 55%)}
+  .hero-overlay{background:linear-gradient(to right,rgba(7,17,28,0.99) 0%,rgba(7,17,28,0.95) 65%,rgba(7,17,28,0.70) 100%),linear-gradient(to top,rgba(7,17,28,0.95) 0%,rgba(7,17,28,0.30) 60%,transparent 100%)}
   .hero-inner{padding:0 var(--px-m) 56px}
   .hero-price-chip{flex:1;min-width:130px}
   .hero-scroll{display:none}
@@ -408,7 +409,7 @@ footer a:hover{color:#fff}
   </a>
   <div class="nav-links">
     <a href="/" class="nav-link">Home</a>
-    <a href="https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings?business_id=76801&appointment_type_id=363029" class="nav-cta" target="_blank" rel="noopener">Book Assessment</a>
+    <a href="https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings?business_id=76801&appointment_type_id=363029" class="nav-cta" target="_blank" rel="noopener">Book Blueprint Session</a>
   </div>
 </nav>
 
@@ -420,20 +421,11 @@ footer a:hover{color:#fff}
     <p class="ey ey-blue anim d1">Performance Programs · Moonee Ponds</p>
     <h1 class="sh sh-white anim d2">Training hard<br>is easy.<br><span style="color:var(--blue)">Training the right<br>thing is the hard part.</span></h1>
     <p class="hero-sub anim d3">Most athletes are following a program nobody can fully explain. We will tell you exactly what is holding you back, why every exercise in your program is there, and which of our two programs you actually need. Sometimes that is the cheaper one.</p>
-    <div class="hero-prices anim d3">
-      <div class="hero-price-chip">
-        <div class="prog-name">Athlete Performance</div>
-        <div class="prog-price">$145<span class="prog-unit">/ week</span></div>
-      </div>
-      <div class="hero-price-chip">
-        <div class="prog-name">S&amp;C Performance</div>
-        <div class="prog-price">$90<span class="prog-unit">/ week</span></div>
-      </div>
-    </div>
     <div class="hero-actions anim d4">
-      <a href="https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings?business_id=76801&appointment_type_id=363029" class="btn btn-primary" target="_blank" rel="noopener">Book your initial assessment <span class="arr">→</span></a>
-      <a href="#compare" class="btn-ghost-dark">Compare programs <span class="arr">↓</span></a>
+      <a href="https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings?business_id=76801&appointment_type_id=363029" class="btn btn-primary" target="_blank" rel="noopener">Book a Blueprint Testing Session <span class="arr">→</span></a>
+      <a href="https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings?business_id=76801&appointment_type_id=363029" class="btn-ghost-dark" target="_blank" rel="noopener">Book a Call</a>
     </div>
+    <p class="anim d4" style="margin-top:16px;font-family:'DM Mono',monospace;font-size:0.60rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.38)">Athlete Performance $145/wk &nbsp;·&nbsp; S&amp;C Performance $90/wk &nbsp;·&nbsp; Both in six week blocks</p>
   </div>
   <div class="hero-scroll">
     <div class="hero-scroll-line"></div>
@@ -833,12 +825,12 @@ footer a:hover{color:#fff}
     <div>
       <p class="kicker kicker-white" style="margin-bottom:16px">How to start</p>
       <h2 class="sec-h sec-h-white reveal">Nobody gets a program<br>before we have seen<br>them move</h2>
-      <p class="bt-inv reveal" style="margin-top:20px;max-width:440px">We will not recommend a program off a website, and we will not sell you the more expensive one because you asked nicely. The recommendation gets made in the room, after we have assessed you.</p>
+      <p class="bt-inv reveal" style="margin-top:20px;max-width:440px">We will not recommend a program off a website, and we will not sell you the more expensive one because you asked nicely. The recommendation gets made in the room, after the Blueprint session.</p>
       <div class="coach-chip reveal">
         <img src="https://assets.cdn.filesafe.space/uGjKGDMcGryVhkZ0uDcj/media/66f50afea0a6fb0523531782.webp" alt="Stride coach" loading="lazy">
         <div>
-          <div class="coach-chip-h">The assessment happens first</div>
-          <div class="coach-chip-b">No program recommendation without seeing you move.</div>
+          <div class="coach-chip-h">Blueprint Testing Session — $279</div>
+          <div class="coach-chip-b">Your starting point. The session every program is built from.</div>
         </div>
       </div>
     </div>
@@ -847,17 +839,17 @@ footer a:hover{color:#fff}
         <li class="start-step reveal">
           <div class="start-connector"></div>
           <div>
-            <div class="start-step-h">Book your initial assessment</div>
-            <div class="start-step-b">45 minutes. Movement screen, athlete profile, goals. This is where the picture gets built.</div>
-            <span class="start-price-num">$145</span>
-            <div class="start-price-label">initial assessment</div>
+            <div class="start-step-h">Book a Blueprint Testing Session</div>
+            <div class="start-step-b">Your starting point. Full movement assessment, athlete profile and sport-specific grading. Everything your program is built from.</div>
+            <span class="start-price-num">$279</span>
+            <div class="start-price-label">Blueprint Testing Session</div>
           </div>
         </li>
         <li class="start-step reveal d1">
           <div class="start-connector"></div>
           <div>
             <div class="start-step-h">We tell you which program fits</div>
-            <div class="start-step-b">Including when that is the $90 one. We would rather have you for three years on the right program than three months on the wrong one.</div>
+            <div class="start-step-b">Based on what we measured — not what sounds good. Including when the right answer is the $90 program.</div>
           </div>
         </li>
         <li class="start-step reveal d2">
@@ -875,7 +867,7 @@ footer a:hover{color:#fff}
         </li>
       </ol>
       <div style="margin-top:28px" class="reveal">
-        <a href="https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings?business_id=76801&appointment_type_id=363029" class="btn btn-primary" target="_blank" rel="noopener">Book your initial assessment <span class="arr">→</span></a>
+        <a href="https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings?business_id=76801&appointment_type_id=363029" class="btn btn-primary" target="_blank" rel="noopener">Book a Blueprint Testing Session <span class="arr">→</span></a>
       </div>
     </div>
   </div>
@@ -944,12 +936,13 @@ footer a:hover{color:#fff}
   <div class="cta-content reveal">
     <p class="kicker kicker-white" style="justify-content:center;margin-bottom:16px">Ready to start</p>
     <h2 class="cta-h">Find out what is actually<br>holding you back</h2>
-    <p class="cta-sub">45 minutes. We assess how you move, build your athlete profile, and tell you which program fits — including if that is the cheaper one or neither. Then you decide.</p>
+    <p class="cta-sub">One session. We measure what your sport demands, grade where you currently sit against it, and tell you exactly what is holding you back. Then you decide what to do with that.</p>
     <div class="cta-actions">
-      <a href="https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings?business_id=76801&appointment_type_id=363029" class="cta-btn-white" target="_blank" rel="noopener">Book your initial assessment · $145 <span class="arr" style="color:var(--blue)">→</span></a>
+      <a href="https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings?business_id=76801&appointment_type_id=363029" class="cta-btn-white" target="_blank" rel="noopener">Book a Blueprint Testing Session · $279 <span class="arr" style="color:var(--blue)">→</span></a>
+      <a href="https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings?business_id=76801&appointment_type_id=363029" class="btn-ghost-dark" target="_blank" rel="noopener">Book a Call</a>
       <a href="tel:+61483918427" class="btn-ghost-dark">Call us</a>
     </div>
-    <p class="cta-detail">13 Puckle St, Moonee Ponds</p>
+    <p class="cta-detail">13 Puckle St, Moonee Ponds · Blueprint Testing Session $279</p>
   </div>
 </section>
 
@@ -962,7 +955,7 @@ footer a:hover{color:#fff}
 <!-- STICKY CTA -->
 <div class="sticky-cta" id="stickyCta">
   <span class="sticky-text"><strong>Performance Programs</strong> — from $90/week · Moonee Ponds</span>
-  <a href="https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings?business_id=76801&appointment_type_id=363029" class="sticky-btn" target="_blank" rel="noopener">Book your initial assessment →</a>
+  <a href="https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings?business_id=76801&appointment_type_id=363029" class="sticky-btn" target="_blank" rel="noopener">Book a Blueprint Testing Session →</a>
 </div>
 
 <script>
