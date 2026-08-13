@@ -152,12 +152,19 @@ nav{
   padding:130px var(--px) 80px;
   position:relative;
   overflow:hidden;
+  min-height:680px;
 }
-.hero::before{
-  content:'';
+.hero-bg{
   position:absolute;inset:0;
-  background:radial-gradient(ellipse at 70% 40%, rgba(27,144,245,0.10) 0%, transparent 65%);
-  pointer-events:none;
+  width:100%;height:100%;
+  object-fit:cover;object-position:center 30%;
+  z-index:0;
+}
+.hero-overlay{
+  position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(to right, rgba(9,20,33,0.96) 0%, rgba(9,20,33,0.75) 50%, rgba(9,20,33,0.30) 100%),
+    linear-gradient(to top, rgba(9,20,33,0.70) 0%, transparent 55%);
 }
 .hero-inner{
   max-width:860px;
@@ -433,18 +440,28 @@ nav{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:64px;
-  align-items:start;
+  align-items:center;
 }
 .testing-copy{}
 .testing-visual{
-  background:rgba(255,255,255,0.04);
+  position:relative;
   border:1px solid var(--brd-im);
-  padding:32px 28px;
+  overflow:hidden;
+}
+.testing-img{
+  width:100%;display:block;
+  object-fit:cover;
+}
+.testing-stat-overlay{
+  position:absolute;bottom:0;left:0;right:0;
+  background:linear-gradient(to top, rgba(9,20,33,0.96) 0%, rgba(9,20,33,0.60) 60%, transparent 100%);
+  padding:24px;
+  display:flex;gap:20px;
+  flex-wrap:wrap;
 }
 .testing-stat{
-  margin-bottom:24px;
-  padding-bottom:24px;
-  border-bottom:1px solid var(--brd-i);
+  flex:1;
+  min-width:80px;
 }
 .testing-stat:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
 .testing-stat-num{
@@ -798,9 +815,13 @@ footer a:hover{color:#fff}
   :root{--px:var(--px-m)}
   nav{padding:0 var(--px-m)}
 
-  .hero{padding:100px var(--px-m) 56px}
+  .hero{padding:100px var(--px-m) 56px;min-height:560px}
+  .hero-bg{object-position:70% 30%}
+  .hero-overlay{background:linear-gradient(to right, rgba(9,20,33,0.97) 0%, rgba(9,20,33,0.88) 60%, rgba(9,20,33,0.50) 100%), linear-gradient(to top, rgba(9,20,33,0.70) 0%, transparent 55%)}
   .hero-prices{gap:12px}
   .hero-price-chip{flex:1;min-width:140px}
+  .testing-inner{grid-template-columns:1fr;gap:36px}
+  .testing-stat-overlay{gap:14px}
 
   .sec-light,.sec-dark,.sec-mid,.sec-stone{padding:56px var(--px-m)}
 
@@ -852,7 +873,9 @@ footer a:hover{color:#fff}
      HERO
 ─────────────────────────────────────── -->
 <section class="hero">
-  <div class="hero-inner">
+  <img class="hero-bg" src="https://assets.cdn.filesafe.space/uGjKGDMcGryVhkZ0uDcj/media/68a65fb5821cc72a3b013e0f.jpeg" alt="" aria-hidden="true" loading="eager">
+  <div class="hero-overlay"></div>
+  <div class="hero-inner" style="position:relative;z-index:2">
     <p class="ey ey-blue anim d1">Performance Programs · Moonee Ponds</p>
     <h1 class="sh sh-white anim d2">
       Two programs.<br>
@@ -1130,17 +1153,20 @@ footer a:hover{color:#fff}
       </p>
     </div>
     <div class="testing-visual reveal d1">
-      <div class="testing-stat">
-        <div class="testing-stat-num">6–8</div>
-        <div class="testing-stat-label">Weeks between testing rounds<br>Built into Athlete Performance</div>
-      </div>
-      <div class="testing-stat">
-        <div class="testing-stat-num">$279</div>
-        <div class="testing-stat-label">Standard testing value per round<br>Included in Athlete Performance</div>
-      </div>
-      <div class="testing-stat">
-        <div class="testing-stat-num">$195</div>
-        <div class="testing-stat-label">S&C member rate<br>30% member discount</div>
+      <img class="testing-img" src="https://assets.cdn.filesafe.space/uGjKGDMcGryVhkZ0uDcj/media/68a662752e6d103fe5fda2e9.jpeg" alt="Performance testing movement analysis" loading="lazy">
+      <div class="testing-stat-overlay">
+        <div class="testing-stat">
+          <div class="testing-stat-num">6–8</div>
+          <div class="testing-stat-label">Weeks between<br>testing rounds</div>
+        </div>
+        <div class="testing-stat">
+          <div class="testing-stat-num">$279</div>
+          <div class="testing-stat-label">Standard value<br>per round</div>
+        </div>
+        <div class="testing-stat">
+          <div class="testing-stat-num">$195</div>
+          <div class="testing-stat-label">S&C member<br>rate</div>
+        </div>
       </div>
     </div>
   </div>
@@ -1272,6 +1298,13 @@ footer a:hover{color:#fff}
       <p class="bt-inv reveal" style="margin-top:20px;max-width:460px">
         Nobody goes straight into a program. The initial assessment is where we find out what you actually need — and which program is the right fit. That recommendation gets made in the room, not from a website.
       </p>
+      <div class="reveal" style="display:flex;align-items:center;gap:14px;margin-top:28px;padding:16px 20px;background:rgba(255,255,255,0.05);border:1px solid var(--brd-im);border-radius:2px;max-width:380px">
+        <img src="https://assets.cdn.filesafe.space/uGjKGDMcGryVhkZ0uDcj/media/66f50afea0a6fb0523531782.webp" alt="Stride coach" loading="lazy" style="width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid var(--blue)">
+        <div>
+          <div style="font-size:0.82rem;font-weight:700;color:#fff">Your coach assesses you first</div>
+          <div style="font-size:0.76rem;color:rgba(255,255,255,0.45);line-height:1.5">No program recommendation without seeing you move.</div>
+        </div>
+      </div>
     </div>
     <div>
       <ol class="start-steps">
