@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<!-- Google Ads Global Site Tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-753839414"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-753839414');
+</script>
+<title>Performance Programs Moonee Ponds | Stride Sports Physio</title>
+<meta name="description" content="Two coached performance programs in Moonee Ponds. Athlete Performance $145/week — individualised programming, gym, field sessions and testing. S&C Performance $90/week — coached programming and gym access. Compare and find the right fit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+/* ─────────────────────────────────────────
+   RESET
+───────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#F5F4F0;color:#0C1A27;font-family:'Inter',sans-serif;overflow-x:hidden;line-height:1}
+
+/* ─────────────────────────────────────────
+   DESIGN TOKENS
+───────────────────────────────────────── */
+:root{
+  --navy:       #0D1B2A;
+  --navy-mid:   #112236;
+  --navy-light: #1A3350;
+  --blue:       #1B90F5;
+  --blue-dim:   rgba(27,144,245,0.10);
+  --blue-glow:  rgba(27,144,245,0.22);
+  --off:        #F5F4F0;
+  --stone:      #E8E6E0;
+  --muted:      #7A8F9E;
+
+  --brd:        rgba(12,26,39,0.10);
+  --brd-i:      rgba(255,255,255,0.09);
+  --brd-im:     rgba(255,255,255,0.16);
+
+  --px:    52px;
+  --px-m:  20px;
+}
+
+/* ─────────────────────────────────────────
+   TYPE HELPERS
+───────────────────────────────────────── */
+.ey{
+  display:flex;align-items:center;gap:10px;
+  font-family:'DM Mono',monospace;
+  font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;
+  margin-bottom:16px;
+}
+.ey::before{content:'';width:22px;height:1px;flex-shrink:0}
+.ey-blue{color:var(--blue)}.ey-blue::before{background:var(--blue)}
+.ey-white{color:rgba(255,255,255,0.45)}.ey-white::before{background:rgba(255,255,255,0.3)}
+.ey-navy{color:var(--navy)}.ey-navy::before{background:var(--navy)}
+.ey-muted{color:var(--muted)}.ey-muted::before{background:var(--muted)}
+
+.sh{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(3rem,5vw,5rem);
+  line-height:.92;letter-spacing:0.02em;
+}
+.sh-white{color:#fff}
+.sh-navy{color:var(--navy)}
+
+.bt{font-size:1.05rem;font-weight:400;line-height:1.9;color:#4A6070}
+.bt strong{color:var(--navy);font-weight:700}
+.bt-inv{font-size:1.05rem;font-weight:400;line-height:1.85;color:rgba(255,255,255,0.72)}
+.bt-inv strong{color:#fff;font-weight:700}
+
+/* ─────────────────────────────────────────
+   BUTTONS
+───────────────────────────────────────── */
+.btn{
+  border:none;cursor:pointer;
+  font-family:'Inter',sans-serif;font-weight:700;
+  letter-spacing:0.04em;text-transform:uppercase;
+  display:inline-flex;align-items:center;gap:8px;
+  text-decoration:none;transition:all .2s;
+  border-radius:2px;
+}
+.btn-primary{
+  background:var(--blue);color:#fff;
+  padding:18px 40px;font-size:1.02rem;
+}
+.btn-primary:hover{background:#0d7de8;transform:translateY(-2px)}
+.btn-ghost{
+  background:transparent;color:#fff;
+  border:1px solid rgba(255,255,255,0.25);
+  padding:18px 36px;font-size:1.02rem;font-weight:500;
+}
+.btn-ghost:hover{border-color:var(--blue);background:var(--blue-dim);transform:translateY(-2px)}
+.arr{display:inline-block;transition:transform .2s}
+.btn-primary:hover .arr,.btn-ghost:hover .arr{transform:translateX(4px)}
+
+/* ─────────────────────────────────────────
+   ANIMATIONS
+───────────────────────────────────────── */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.anim{animation:fadeUp .65s ease forwards;opacity:0}
+.d1{animation-delay:.08s}.d2{animation-delay:.18s}
+.d3{animation-delay:.28s}.d4{animation-delay:.38s}
+
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* ─────────────────────────────────────────
+   NAV
+───────────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:300;
+  height:66px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 var(--px);
+  background:rgba(11,23,36,0.97);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--brd-i);
+}
+.nav-logo img{height:32px;width:auto;display:block}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-link{
+  color:rgba(255,255,255,0.5);
+  font-size:0.82rem;font-weight:500;letter-spacing:0.02em;
+  text-decoration:none;transition:color .2s;
+}
+.nav-link:hover{color:#fff}
+.nav-cta{
+  background:var(--blue);color:#fff;
+  border:none;padding:12px 26px;
+  font-family:'Inter',sans-serif;font-size:0.88rem;font-weight:700;
+  letter-spacing:0.04em;text-transform:uppercase;
+  cursor:pointer;transition:background .2s;
+  white-space:nowrap;text-decoration:none;
+  border-radius:2px;
+}
+.nav-cta:hover{background:#0d7de8}
+
+/* ─────────────────────────────────────────
+   HERO
+───────────────────────────────────────── */
+.hero{
+  background:var(--navy);
+  padding:130px var(--px) 80px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse at 70% 40%, rgba(27,144,245,0.10) 0%, transparent 65%);
+  pointer-events:none;
+}
+.hero-inner{
+  max-width:860px;
+  position:relative;z-index:1;
+}
+.hero-prices{
+  display:flex;gap:24px;margin-top:32px;margin-bottom:36px;
+  flex-wrap:wrap;
+}
+.hero-price-chip{
+  background:rgba(27,144,245,0.10);
+  border:1px solid rgba(27,144,245,0.25);
+  padding:12px 20px;border-radius:2px;
+}
+.hero-price-chip .prog-name{
+  font-family:'DM Mono',monospace;
+  font-size:0.60rem;letter-spacing:0.18em;text-transform:uppercase;
+  color:rgba(255,255,255,0.45);
+  margin-bottom:4px;
+}
+.hero-price-chip .prog-price{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:2.0rem;letter-spacing:0.03em;
+  color:#fff;line-height:1;
+}
+.hero-price-chip .prog-unit{
+  font-size:0.78rem;font-weight:400;color:rgba(255,255,255,0.45);
+  margin-left:4px;
+}
+.hero-sub{
+  font-size:1.1rem;font-weight:400;line-height:1.8;
+  color:rgba(255,255,255,0.62);
+  max-width:600px;
+  margin-bottom:36px;
+}
+/* Placeholder image block */
+.img-placeholder{
+  background:rgba(255,255,255,0.04);
+  border:1px dashed rgba(255,255,255,0.14);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'DM Mono',monospace;
+  font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:rgba(255,255,255,0.22);
+  border-radius:2px;
+}
+
+/* ─────────────────────────────────────────
+   SECTIONS — light / dark alternation
+───────────────────────────────────────── */
+.sec-light{background:var(--off);padding:80px var(--px)}
+.sec-dark{background:var(--navy);padding:80px var(--px)}
+.sec-mid{background:var(--navy-mid);padding:80px var(--px)}
+.sec-stone{background:var(--stone);padding:80px var(--px)}
+
+.sec-head{margin-bottom:52px}
+.sec-head.center{text-align:center}
+.sec-head .kicker{
+  font-family:'DM Mono',monospace;
+  font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;
+  margin-bottom:12px;
+}
+.kicker-blue{color:var(--blue)}
+.kicker-muted{color:var(--muted)}
+.kicker-white{color:rgba(255,255,255,0.4)}
+.sec-h{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(2.4rem,4vw,4rem);
+  line-height:.92;letter-spacing:0.02em;
+}
+.sec-h-navy{color:var(--navy)}
+.sec-h-white{color:#fff}
+.sec-sub{
+  font-size:1.05rem;line-height:1.82;color:#4A6070;
+  margin-top:14px;max-width:640px;
+}
+.sec-sub.center{margin-left:auto;margin-right:auto}
+.sec-sub-inv{
+  font-size:1.05rem;line-height:1.82;
+  color:rgba(255,255,255,0.58);
+  margin-top:14px;max-width:640px;
+}
+.sec-sub-inv.center{margin-left:auto;margin-right:auto}
+
+/* ─────────────────────────────────────────
+   WHAT BOTH SHARE
+───────────────────────────────────────── */
+.shared-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  background:var(--brd);
+  border:1px solid var(--brd);
+}
+.shared-item{
+  background:var(--off);
+  padding:28px 24px;
+}
+.shared-item-icon{
+  font-size:1.6rem;margin-bottom:12px;
+}
+.shared-item-h{
+  font-size:0.88rem;font-weight:700;color:var(--navy);
+  margin-bottom:6px;letter-spacing:0.01em;
+}
+.shared-item-b{
+  font-size:0.84rem;line-height:1.65;color:#4A6070;
+}
+
+/* ─────────────────────────────────────────
+   PROGRAM CARDS — side by side
+───────────────────────────────────────── */
+.prog-cards{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+.prog-card{
+  background:#fff;
+  border:1px solid var(--brd);
+  padding:36px 32px;
+  position:relative;
+}
+.prog-card.featured{
+  border-color:var(--blue);
+  border-top:3px solid var(--blue);
+}
+.prog-card-badge{
+  position:absolute;top:-1px;right:24px;
+  background:var(--blue);color:#fff;
+  font-family:'DM Mono',monospace;
+  font-size:0.56rem;letter-spacing:0.16em;text-transform:uppercase;
+  padding:5px 10px;
+  display:none;
+}
+.prog-card.featured .prog-card-badge{display:block}
+.prog-card-name{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:2.2rem;letter-spacing:0.02em;
+  color:var(--navy);line-height:1;
+  margin-bottom:6px;
+}
+.prog-card-price{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:3.2rem;color:var(--blue);
+  line-height:1;margin-bottom:4px;
+}
+.prog-card-unit{
+  font-size:0.8rem;font-weight:500;color:var(--muted);
+  margin-bottom:16px;
+}
+.prog-card-desc{
+  font-size:0.96rem;line-height:1.75;color:#4A6070;
+  margin-bottom:20px;
+  border-top:1px solid var(--brd);
+  padding-top:16px;
+}
+.prog-card-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:'DM Mono',monospace;
+  font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--muted);
+  margin-top:8px;
+}
+
+/* ─────────────────────────────────────────
+   INCLUSIONS TABLE
+───────────────────────────────────────── */
+.inc-wrap{max-width:900px;margin:0 auto}
+
+/* Desktop table */
+.inc-table{width:100%;border-collapse:collapse;table-layout:fixed}
+.inc-table thead tr{background:var(--navy)}
+.inc-table th{
+  padding:18px 20px;
+  text-align:left;
+  font-family:'DM Mono',monospace;
+  font-size:0.60rem;letter-spacing:0.16em;text-transform:uppercase;
+  color:rgba(255,255,255,0.55);
+  font-weight:400;
+  border-right:1px solid var(--brd-i);
+}
+.inc-table th:first-child{width:38%;color:rgba(255,255,255,0.35)}
+.inc-table th.th-prog{color:#fff;font-size:0.72rem}
+.inc-table th:last-child{border-right:none}
+
+.inc-table tbody tr{border-bottom:1px solid rgba(255,255,255,0.07)}
+.inc-table tbody tr:nth-child(even){background:rgba(255,255,255,0.02)}
+.inc-table tbody tr:hover{background:rgba(27,144,245,0.04)}
+.inc-table td{
+  padding:18px 20px;
+  vertical-align:top;
+  border-right:1px solid var(--brd-i);
+  font-size:0.92rem;
+  line-height:1.6;
+}
+.inc-table td:last-child{border-right:none}
+.inc-table td:first-child{
+  font-weight:600;color:rgba(255,255,255,0.80);
+  font-size:0.90rem;
+}
+.inc-val{color:rgba(255,255,255,0.62);font-weight:400;font-size:0.88rem}
+.inc-yes{color:#fff;font-weight:500;font-size:0.88rem}
+.inc-dash{color:rgba(255,255,255,0.22);font-size:1.1rem}
+.inc-tick{color:#34d399;font-size:1.0rem;margin-right:4px}
+.inc-addon{
+  color:var(--blue);font-weight:600;font-size:0.88rem;
+}
+.inc-soon{
+  display:inline-flex;align-items:center;gap:5px;
+  background:rgba(232,131,58,0.15);
+  border:1px solid rgba(232,131,58,0.3);
+  color:#E8833A;
+  font-family:'DM Mono',monospace;
+  font-size:0.52rem;letter-spacing:0.14em;text-transform:uppercase;
+  padding:3px 8px;border-radius:2px;
+}
+
+/* Mobile comparison cards — hidden on desktop */
+.inc-mobile{display:none}
+.inc-cards{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.inc-card{
+  background:rgba(255,255,255,0.04);
+  border:1px solid var(--brd-i);
+  border-radius:2px;
+  overflow:hidden;
+}
+.inc-card.card-featured{border-color:rgba(27,144,245,0.4)}
+.inc-card-head{
+  background:var(--navy-light);
+  padding:14px 16px;
+  border-bottom:1px solid var(--brd-i);
+}
+.inc-card-head.featured-head{background:rgba(27,144,245,0.15);border-bottom-color:rgba(27,144,245,0.25)}
+.inc-card-name{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.05rem;letter-spacing:0.02em;
+  color:#fff;line-height:1;margin-bottom:3px;
+}
+.inc-card-price{
+  font-family:'DM Mono',monospace;
+  font-size:0.7rem;letter-spacing:0.08em;
+  color:var(--blue);
+}
+.inc-row{
+  padding:10px 14px;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+  display:flex;flex-direction:column;gap:3px;
+}
+.inc-row:last-child{border-bottom:none}
+.inc-row-feature{
+  font-size:0.68rem;font-weight:600;
+  color:rgba(255,255,255,0.45);
+  letter-spacing:0.01em;
+  line-height:1.4;
+}
+.inc-row-val{
+  font-size:0.78rem;
+  color:rgba(255,255,255,0.72);
+  line-height:1.4;
+}
+.inc-row-val.is-addon{color:var(--blue)}
+.inc-row-val.is-dash{color:rgba(255,255,255,0.2)}
+.inc-row-val.is-soon{color:#E8833A;font-size:0.70rem}
+
+/* ─────────────────────────────────────────
+   TESTING SECTION
+───────────────────────────────────────── */
+.testing-inner{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:64px;
+  align-items:start;
+}
+.testing-copy{}
+.testing-visual{
+  background:rgba(255,255,255,0.04);
+  border:1px solid var(--brd-im);
+  padding:32px 28px;
+}
+.testing-stat{
+  margin-bottom:24px;
+  padding-bottom:24px;
+  border-bottom:1px solid var(--brd-i);
+}
+.testing-stat:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.testing-stat-num{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:3rem;color:var(--blue);
+  line-height:1;margin-bottom:4px;
+}
+.testing-stat-label{
+  font-size:0.82rem;font-weight:400;
+  color:rgba(255,255,255,0.45);
+  line-height:1.5;
+}
+
+/* ─────────────────────────────────────────
+   WHICH ONE IS YOU
+───────────────────────────────────────── */
+.routing-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+.routing-card{
+  background:#fff;
+  border:1px solid var(--brd);
+  padding:36px 32px;
+}
+.routing-card.r-full{border-top:3px solid var(--blue)}
+.routing-card.r-sc{border-top:3px solid var(--navy)}
+.routing-head{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.6rem;letter-spacing:0.02em;
+  color:var(--navy);line-height:1;
+  margin-bottom:6px;
+}
+.routing-price{
+  font-family:'DM Mono',monospace;
+  font-size:0.68rem;letter-spacing:0.12em;
+  color:var(--blue);
+  margin-bottom:20px;
+}
+.routing-list{
+  list-style:none;
+  display:flex;flex-direction:column;
+  gap:10px;
+}
+.routing-list li{
+  font-size:0.95rem;line-height:1.65;
+  color:#4A6070;
+  display:flex;align-items:flex-start;gap:10px;
+}
+.routing-list li::before{
+  content:'→';
+  color:var(--blue);
+  font-weight:700;
+  flex-shrink:0;
+  margin-top:1px;
+}
+.routing-card.r-sc .routing-list li::before{color:var(--navy)}
+.routing-neither{
+  margin-top:24px;
+  padding:20px 24px;
+  background:rgba(12,26,39,0.04);
+  border-left:3px solid var(--muted);
+}
+.routing-neither p{
+  font-size:0.92rem;line-height:1.7;color:#4A6070;
+}
+.routing-neither strong{color:var(--navy)}
+
+/* ─────────────────────────────────────────
+   VALUE COMPARISON
+───────────────────────────────────────── */
+.value-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  margin-bottom:36px;
+}
+.value-card{
+  background:rgba(255,255,255,0.04);
+  border:1px solid var(--brd-i);
+  padding:28px 24px;
+}
+.value-card.v-featured{
+  border-color:rgba(27,144,245,0.3);
+  background:rgba(27,144,245,0.06);
+}
+.value-card-name{
+  font-family:'DM Mono',monospace;
+  font-size:0.60rem;letter-spacing:0.18em;text-transform:uppercase;
+  color:rgba(255,255,255,0.38);
+  margin-bottom:8px;
+}
+.value-card-price{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:2.6rem;color:#fff;
+  line-height:1;margin-bottom:4px;
+}
+.value-card-price span{font-size:1.1rem;font-weight:300;color:rgba(255,255,255,0.5);margin-left:4px}
+.value-card-items{
+  margin-top:16px;
+  padding-top:16px;
+  border-top:1px solid var(--brd-i);
+  display:flex;flex-direction:column;
+  gap:7px;
+}
+.value-item{
+  display:flex;justify-content:space-between;
+  align-items:center;
+  gap:8px;
+}
+.value-item-label{
+  font-size:0.82rem;color:rgba(255,255,255,0.50);
+}
+.value-item-val{
+  font-size:0.82rem;font-weight:600;color:rgba(255,255,255,0.75);
+  white-space:nowrap;
+}
+.value-item-val.included{color:#34d399}
+.value-conclusion{
+  background:rgba(255,255,255,0.06);
+  border:1px solid var(--brd-im);
+  padding:24px 28px;
+  font-size:1.05rem;line-height:1.82;
+  color:rgba(255,255,255,0.72);
+}
+.value-conclusion strong{color:#fff}
+
+/* ─────────────────────────────────────────
+   ADD-ONS
+───────────────────────────────────────── */
+.addon-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+.addon-card{
+  background:#fff;
+  border:1px solid var(--brd);
+  padding:28px 24px;
+}
+.addon-card-label{
+  font-family:'DM Mono',monospace;
+  font-size:0.58rem;letter-spacing:0.16em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:10px;
+}
+.addon-card-name{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.5rem;letter-spacing:0.02em;
+  color:var(--navy);line-height:1;margin-bottom:6px;
+}
+.addon-card-price{
+  font-size:1.5rem;font-weight:800;color:var(--blue);
+  margin-bottom:12px;
+}
+.addon-card-desc{
+  font-size:0.88rem;line-height:1.68;color:#4A6070;
+}
+.addon-soon-wrap{
+  display:flex;align-items:center;gap:8px;
+  margin-top:10px;
+}
+
+/* ─────────────────────────────────────────
+   HOW TO START
+───────────────────────────────────────── */
+.start-inner{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:64px;
+  align-items:center;
+}
+.start-steps{
+  counter-reset:step;
+  list-style:none;
+  display:flex;flex-direction:column;
+  gap:0;
+  margin-top:28px;
+}
+.start-step{
+  counter-increment:step;
+  display:flex;gap:20px;
+  position:relative;
+  padding-bottom:28px;
+}
+.start-step:last-child{padding-bottom:0}
+.start-step::before{
+  content:counter(step);
+  width:32px;height:32px;
+  background:var(--blue);
+  color:#fff;
+  font-family:'DM Mono',monospace;
+  font-size:0.72rem;font-weight:500;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;border-radius:2px;
+  margin-top:2px;
+}
+.start-step-connector{
+  position:absolute;left:15px;top:34px;bottom:0;
+  width:1px;background:var(--brd-im);
+}
+.start-step:last-child .start-step-connector{display:none}
+.start-step-body{}
+.start-step-h{
+  font-weight:700;color:#fff;
+  font-size:0.98rem;margin-bottom:4px;
+}
+.start-step-b{
+  font-size:0.88rem;color:rgba(255,255,255,0.52);line-height:1.65;
+}
+.start-price{
+  display:inline-flex;align-items:baseline;gap:6px;
+  margin-top:6px;
+}
+.start-price-num{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:2.4rem;color:var(--blue);line-height:1;
+}
+.start-price-label{
+  font-size:0.80rem;color:rgba(255,255,255,0.45);
+}
+.start-cta{margin-top:24px}
+
+/* ─────────────────────────────────────────
+   FAQ
+───────────────────────────────────────── */
+.faq-list{
+  max-width:720px;margin:0 auto;
+  display:flex;flex-direction:column;
+  gap:0;
+  border-top:1px solid var(--brd);
+}
+.faq-item{border-bottom:1px solid var(--brd)}
+.faq-q{
+  width:100%;text-align:left;
+  background:none;border:none;cursor:pointer;
+  padding:22px 0;
+  display:flex;justify-content:space-between;align-items:center;
+  gap:16px;
+  font-family:'Inter',sans-serif;
+  font-size:1.02rem;font-weight:600;
+  color:var(--navy);
+  line-height:1.45;
+  transition:color .2s;
+}
+.faq-q:hover{color:var(--blue)}
+.faq-q-icon{
+  font-size:1.4rem;color:var(--blue);flex-shrink:0;
+  transition:transform .25s;line-height:1;
+}
+.faq-item.open .faq-q-icon{transform:rotate(45deg)}
+.faq-a{
+  max-height:0;overflow:hidden;
+  transition:max-height .3s ease, padding .3s ease;
+}
+.faq-item.open .faq-a{max-height:400px}
+.faq-a-inner{
+  padding:0 0 22px;
+  font-size:0.97rem;line-height:1.82;
+  color:#4A6070;
+}
+.faq-a-inner strong{color:var(--navy)}
+
+/* ─────────────────────────────────────────
+   FINAL CTA
+───────────────────────────────────────── */
+.cta-section{
+  background:var(--blue);
+  padding:80px var(--px);
+  text-align:center;
+}
+.cta-section .sh{color:#fff}
+.cta-section .sec-sub-inv{color:rgba(255,255,255,0.75);margin:0 auto 36px}
+.cta-btn-white{
+  background:#fff;color:var(--blue);
+  border:none;padding:18px 44px;
+  font-family:'Inter',sans-serif;
+  font-size:1.02rem;font-weight:700;
+  letter-spacing:0.04em;text-transform:uppercase;
+  cursor:pointer;border-radius:2px;
+  text-decoration:none;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:all .2s;
+}
+.cta-btn-white:hover{background:#EFF8FC;transform:translateY(-2px)}
+
+/* ─────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────── */
+footer{
+  background:var(--navy);
+  border-top:1px solid var(--brd-i);
+  padding:32px var(--px);
+  text-align:center;
+}
+footer img{height:28px;opacity:0.65;margin-bottom:12px;display:block;margin-left:auto;margin-right:auto;}
+footer p{font-size:0.80rem;color:rgba(255,255,255,0.30);line-height:1.7}
+footer a{color:rgba(255,255,255,0.45);text-decoration:none;transition:color .2s}
+footer a:hover{color:#fff}
+
+/* ─────────────────────────────────────────
+   STICKY CTA BAR
+───────────────────────────────────────── */
+.sticky-cta{
+  position:fixed;bottom:0;left:0;right:0;
+  z-index:200;
+  background:rgba(9,20,33,0.97);
+  backdrop-filter:blur(16px);
+  border-top:1px solid var(--brd-i);
+  padding:14px var(--px);
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;
+  transform:translateY(100%);
+  transition:transform .3s ease;
+}
+.sticky-cta.show{transform:translateY(0)}
+.sticky-cta.cta-in-view{transform:translateY(100%)}
+.sticky-cta-text{
+  font-size:0.85rem;font-weight:500;color:rgba(255,255,255,0.6);
+}
+.sticky-cta-text strong{color:#fff}
+.sticky-btn{
+  background:var(--blue);color:#fff;
+  border:none;padding:12px 26px;
+  font-family:'Inter',sans-serif;
+  font-size:0.85rem;font-weight:700;
+  letter-spacing:0.04em;text-transform:uppercase;
+  cursor:pointer;border-radius:2px;
+  text-decoration:none;
+  white-space:nowrap;
+  transition:background .2s;
+}
+.sticky-btn:hover{background:#0d7de8}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE — TABLET
+───────────────────────────────────────── */
+@media(max-width:960px){
+  :root{--px:32px}
+  .shared-grid{grid-template-columns:1fr 1fr}
+  .testing-inner{grid-template-columns:1fr;gap:40px}
+  .start-inner{grid-template-columns:1fr;gap:40px}
+  .addon-grid{grid-template-columns:1fr 1fr}
+  .sticky-cta{padding:14px var(--px-m)}
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE — MOBILE
+───────────────────────────────────────── */
+@media(max-width:680px){
+  :root{--px:var(--px-m)}
+  nav{padding:0 var(--px-m)}
+
+  .hero{padding:100px var(--px-m) 56px}
+  .hero-prices{gap:12px}
+  .hero-price-chip{flex:1;min-width:140px}
+
+  .sec-light,.sec-dark,.sec-mid,.sec-stone{padding:56px var(--px-m)}
+
+  .shared-grid{grid-template-columns:1fr}
+
+  .prog-cards{grid-template-columns:1fr}
+
+  /* Hide desktop table, show mobile cards */
+  .inc-table{display:none}
+  .inc-mobile{display:block}
+
+  .routing-grid{grid-template-columns:1fr}
+
+  .value-grid{grid-template-columns:1fr}
+
+  .addon-grid{grid-template-columns:1fr}
+
+  .start-inner{grid-template-columns:1fr;gap:36px}
+
+  .cta-section{padding:56px var(--px-m)}
+
+  footer{padding:28px var(--px-m) 20px}
+
+  .sticky-cta{
+    flex-direction:column;gap:10px;padding:14px var(--px-m);
+    align-items:stretch;text-align:center;
+  }
+  .sticky-btn{text-align:center}
+}
+
+</style>
+</head>
+<body>
+
+<!-- ───────────────────────────────────────
+     NAV
+─────────────────────────────────────── -->
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="https://assets.cdn.filesafe.space/uGjKGDMcGryVhkZ0uDcj/media/65d412163c4a574adb19516f.png" alt="Stride Sports Physio & Performance">
+  </a>
+  <div class="nav-links">
+    <a href="/" class="nav-link">Home</a>
+    <a href="https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings?business_id=76801&appointment_type_id=363029" class="nav-cta" target="_blank" rel="noopener">Book Assessment</a>
+  </div>
+</nav>
+
+<!-- ───────────────────────────────────────
+     HERO
+─────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-inner">
+    <p class="ey ey-blue anim d1">Performance Programs · Moonee Ponds</p>
+    <h1 class="sh sh-white anim d2">
+      Two programs.<br>
+      <span style="color:var(--blue)">One gym.</span><br>
+      You pick the fit.
+    </h1>
+    <p class="hero-sub anim d3">
+      Coached, individualised training built for athletes who want to get faster, stronger and more resilient. Compare both programs below and book your initial assessment when you're ready.
+    </p>
+    <div class="hero-prices anim d3">
+      <div class="hero-price-chip">
+        <div class="prog-name">Athlete Performance</div>
+        <div class="prog-price">$145<span class="prog-unit">/ week</span></div>
+      </div>
+      <div class="hero-price-chip">
+        <div class="prog-name">S&C Performance</div>
+        <div class="prog-price">$90<span class="prog-unit">/ week</span></div>
+      </div>
+    </div>
+    <div class="anim d4">
+      <a href="https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings?business_id=76801&appointment_type_id=363029"
+         class="btn btn-primary" target="_blank" rel="noopener">
+        Book your initial assessment <span class="arr">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────────────────────
+     WHAT BOTH SHARE
+─────────────────────────────────────── -->
+<section class="sec-light">
+  <div class="sec-head center reveal">
+    <p class="kicker kicker-blue">Both programs include</p>
+    <h2 class="sec-h sec-h-navy">The same foundation</h2>
+    <p class="sec-sub center">
+      Whichever program you choose, the core approach doesn't change. Both are coached, individually built, and progressed on real data — not guesswork.
+    </p>
+  </div>
+  <div class="shared-grid">
+    <div class="shared-item reveal">
+      <div class="shared-item-icon">🎯</div>
+      <div class="shared-item-h">Individualised programming</div>
+      <p class="shared-item-b">Your program is built around your assessment — your movement, your history, your goals. Not a template with your name on it.</p>
+    </div>
+    <div class="shared-item reveal d1">
+      <div class="shared-item-icon">🏋️</div>
+      <div class="shared-item-h">Gym access and coaching</div>
+      <p class="shared-item-b">Access to the full gym facility with a coach on the floor. You're not training alone.</p>
+    </div>
+    <div class="shared-item reveal d2">
+      <div class="shared-item-icon">📈</div>
+      <div class="shared-item-h">Review and progression</div>
+      <p class="shared-item-b">Your program is reviewed and updated as you progress. What you're doing in week five is not what you were doing in week one.</p>
+    </div>
+    <div class="shared-item reveal d3">
+      <div class="shared-item-icon">📅</div>
+      <div class="shared-item-h">Six week block structure</div>
+      <p class="shared-item-b">Commitment runs in six week blocks. Pauses are available on request with reasonable notice.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────────────────────
+     TWO PROGRAMS SIDE BY SIDE
+─────────────────────────────────────── -->
+<section class="sec-stone">
+  <div class="sec-head center reveal">
+    <p class="kicker kicker-muted">The two options</p>
+    <h2 class="sec-h sec-h-navy">Choose what you need</h2>
+    <p class="sec-sub center">
+      The difference comes down to how much of the training picture you want us to manage — and how much testing you want built in.
+    </p>
+  </div>
+  <div class="prog-cards">
+    <div class="prog-card featured reveal">
+      <div class="prog-card-badge">All-inclusive</div>
+      <div class="prog-card-name">Athlete Performance</div>
+      <div class="prog-card-price">$145</div>
+      <div class="prog-card-unit">per week · six week blocks</div>
+      <p class="prog-card-desc">
+        The full picture. Individualised programming, gym and coaching, field sessions for speed and running, and performance testing every six to eight weeks — all in one plan. Nothing is an add-on. The only decision you make is showing up.
+      </p>
+      <div class="prog-card-tag">→ Best for athletes who want every variable managed</div>
+    </div>
+    <div class="prog-card reveal d1">
+      <div class="prog-card-name">S&C Performance</div>
+      <div class="prog-card-price">$90</div>
+      <div class="prog-card-unit">per week · six week blocks</div>
+      <p class="prog-card-desc">
+        Coached, individualised strength and conditioning with full gym access. Field sessions, recovery and performance testing are available separately if you need them. If what you mainly need is a coach and a structured program, this is the right option.
+      </p>
+      <div class="prog-card-tag">→ Best for athletes who need direction and structure</div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────────────────────
+     INCLUSIONS TABLE
+─────────────────────────────────────── -->
+<section class="sec-dark">
+  <div class="sec-head center reveal">
+    <p class="kicker kicker-white">What's included</p>
+    <h2 class="sec-h sec-h-white">Everything, side by side</h2>
+  </div>
+  <div class="inc-wrap">
+
+    <!-- Desktop table -->
+    <table class="inc-table reveal">
+      <thead>
+        <tr>
+          <th></th>
+          <th class="th-prog">Athlete Performance<br><span style="color:var(--blue);font-size:0.85rem">$145 / week</span></th>
+          <th class="th-prog">S&C Performance<br><span style="color:rgba(255,255,255,0.5);font-size:0.85rem">$90 / week</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Individualised program</td>
+          <td>
+            <span class="inc-tick">✓</span>
+            <span class="inc-yes">Included</span><br>
+            <span class="inc-val">Built from your testing</span>
+          </td>
+          <td>
+            <span class="inc-tick">✓</span>
+            <span class="inc-yes">Included</span><br>
+            <span class="inc-val">Built from templates and your assessment</span>
+          </td>
+        </tr>
+        <tr>
+          <td>Gym access and coaching</td>
+          <td><span class="inc-tick">✓</span><span class="inc-yes">Included</span></td>
+          <td><span class="inc-tick">✓</span><span class="inc-yes">Included</span></td>
+        </tr>
+        <tr>
+          <td>Program review and progression</td>
+          <td><span class="inc-tick">✓</span><span class="inc-yes">Included</span></td>
+          <td><span class="inc-tick">✓</span><span class="inc-yes">Included</span></td>
+        </tr>
+        <tr>
+          <td>Field sessions<br><span style="font-size:0.80rem;color:rgba(255,255,255,0.35);font-weight:400">Running, acceleration, speed</span></td>
+          <td><span class="inc-tick">✓</span><span class="inc-yes">Included</span></td>
+          <td><span class="inc-addon">Add $20 / week</span></td>
+        </tr>
+        <tr>
+          <td>Recovery<br><span style="font-size:0.80rem;color:rgba(255,255,255,0.35);font-weight:400">Compression, ice baths</span></td>
+          <td>
+            <span class="inc-tick" style="color:#E8833A">●</span>
+            <span class="inc-soon">Coming soon</span>
+          </td>
+          <td>
+            <span class="inc-soon">Coming soon</span><br>
+            <span style="font-size:0.80rem;color:rgba(255,255,255,0.30)">Will add at $10 / week</span>
+          </td>
+        </tr>
+        <tr>
+          <td>Performance testing<br><span style="font-size:0.80rem;color:rgba(255,255,255,0.35);font-weight:400">Every 6–8 weeks</span></td>
+          <td>
+            <span class="inc-tick">✓</span>
+            <span class="inc-yes">Included</span><br>
+            <span class="inc-val">$279 value each round</span>
+          </td>
+          <td>
+            <span class="inc-addon">$195 per test</span><br>
+            <span class="inc-val">30% member discount</span>
+          </td>
+        </tr>
+        <tr>
+          <td>Six week block structure</td>
+          <td><span class="inc-tick">✓</span><span class="inc-yes">Yes</span></td>
+          <td><span class="inc-tick">✓</span><span class="inc-yes">Yes</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Mobile cards -->
+    <div class="inc-mobile">
+      <div class="inc-cards">
+
+        <!-- Athlete Performance card -->
+        <div class="inc-card card-featured">
+          <div class="inc-card-head featured-head">
+            <div class="inc-card-name">Athlete Performance</div>
+            <div class="inc-card-price">$145 / week</div>
+          </div>
+          <div class="inc-row">
+            <div class="inc-row-feature">Individualised program</div>
+            <div class="inc-row-val">✓ From your testing</div>
+          </div>
+          <div class="inc-row">
+            <div class="inc-row-feature">Gym + coaching</div>
+            <div class="inc-row-val">✓ Included</div>
+          </div>
+          <div class="inc-row">
+            <div class="inc-row-feature">Review + progression</div>
+            <div class="inc-row-val">✓ Included</div>
+          </div>
+          <div class="inc-row">
+            <div class="inc-row-feature">Field sessions</div>
+            <div class="inc-row-val">✓ Included</div>
+          </div>
+          <div class="inc-row">
+            <div class="inc-row-feature">Recovery</div>
+            <div class="inc-row-val is-soon">Coming soon</div>
+          </div>
+          <div class="inc-row">
+            <div class="inc-row-feature">Performance testing</div>
+            <div class="inc-row-val">✓ Included<br><span style="font-size:0.72rem;color:rgba(255,255,255,0.4)">$279 value each</span></div>
+          </div>
+          <div class="inc-row">
+            <div class="inc-row-feature">6 week blocks</div>
+            <div class="inc-row-val">✓ Yes</div>
+          </div>
+        </div>
+
+        <!-- S&C Performance card -->
+        <div class="inc-card">
+          <div class="inc-card-head">
+            <div class="inc-card-name">S&C Performance</div>
+            <div class="inc-card-price">$90 / week</div>
+          </div>
+          <div class="inc-row">
+            <div class="inc-row-feature">Individualised program</div>
+            <div class="inc-row-val">✓ Templates + assessment</div>
+          </div>
+          <div class="inc-row">
+            <div class="inc-row-feature">Gym + coaching</div>
+            <div class="inc-row-val">✓ Included</div>
+          </div>
+          <div class="inc-row">
+            <div class="inc-row-feature">Review + progression</div>
+            <div class="inc-row-val">✓ Included</div>
+          </div>
+          <div class="inc-row">
+            <div class="inc-row-feature">Field sessions</div>
+            <div class="inc-row-val is-addon">+$20 / week</div>
+          </div>
+          <div class="inc-row">
+            <div class="inc-row-feature">Recovery</div>
+            <div class="inc-row-val is-soon">Coming soon (+$10/wk)</div>
+          </div>
+          <div class="inc-row">
+            <div class="inc-row-feature">Performance testing</div>
+            <div class="inc-row-val is-addon">$195 / test<br><span style="font-size:0.72rem;color:rgba(255,255,255,0.4)">30% member discount</span></div>
+          </div>
+          <div class="inc-row">
+            <div class="inc-row-feature">6 week blocks</div>
+            <div class="inc-row-val">✓ Yes</div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- end inc-mobile -->
+
+  </div>
+</section>
+
+<!-- ───────────────────────────────────────
+     PERFORMANCE TESTING EXPLAINED
+─────────────────────────────────────── -->
+<section class="sec-mid">
+  <div class="testing-inner">
+    <div class="testing-copy reveal">
+      <p class="kicker kicker-white" style="margin-bottom:16px">Performance testing explained</p>
+      <h2 class="sec-h sec-h-white" style="margin-bottom:24px">Why testing<br>changes the plan</h2>
+      <p class="bt-inv">
+        A coach can see a lot just by watching you train: your technique, whether you're holding position under load, whether you're getting stronger on the bar. What a coach can't see is how fast you produce force, how well you use elastic energy, or whether one side is quietly doing less than the other. Those things need measuring.
+      </p>
+      <p class="bt-inv" style="margin-top:16px">
+        That matters because they're usually what's holding an athlete back. You can train hard for six weeks on what's visible and never touch the thing that's actually capping you.
+      </p>
+      <p class="bt-inv" style="margin-top:16px">
+        Testing every six to eight weeks is how we re-anchor the plan objectively. It's built into Athlete Performance. S&C members access it at $195 per round — a 30% discount off the standard rate.
+      </p>
+    </div>
+    <div class="testing-visual reveal d1">
+      <div class="testing-stat">
+        <div class="testing-stat-num">6–8</div>
+        <div class="testing-stat-label">Weeks between testing rounds<br>Built into Athlete Performance</div>
+      </div>
+      <div class="testing-stat">
+        <div class="testing-stat-num">$279</div>
+        <div class="testing-stat-label">Standard testing value per round<br>Included in Athlete Performance</div>
+      </div>
+      <div class="testing-stat">
+        <div class="testing-stat-num">$195</div>
+        <div class="testing-stat-label">S&C member rate<br>30% member discount</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────────────────────
+     WHICH ONE IS YOU
+─────────────────────────────────────── -->
+<section class="sec-light">
+  <div class="sec-head center reveal">
+    <p class="kicker kicker-blue">Self-select</p>
+    <h2 class="sec-h sec-h-navy">Which one is you?</h2>
+    <p class="sec-sub center">
+      Read these as situations, not descriptions. Pick the one that sounds like your week.
+    </p>
+  </div>
+  <div class="routing-grid">
+    <div class="routing-card r-full reveal">
+      <div class="routing-head">Athlete Performance</div>
+      <div class="routing-price">$145 / week · everything included</div>
+      <ul class="routing-list">
+        <li>You compete and want to know objectively whether you're improving</li>
+        <li>You've plateaued and can't tell why</li>
+        <li>Your sport asks for speed, repeat efforts or change of direction</li>
+        <li>You want running, gym and recovery handled as one plan</li>
+      </ul>
+    </div>
+    <div class="routing-card r-sc reveal d1">
+      <div class="routing-head">S&C Performance</div>
+      <div class="routing-price" style="color:var(--navy)">$90 / week · add what you need</div>
+      <ul class="routing-list">
+        <li style="color:#4A6070">
+          <span style="color:var(--navy);font-weight:700;margin-right:2px">→</span>
+          You have a training base and mainly need direction, structure and accountability
+        </li>
+        <li>What's holding you back is technique or general strength — not something hidden</li>
+        <li>You do your own running, or your sport doesn't ask much of it</li>
+        <li>You want quality coaching without the full package</li>
+      </ul>
+    </div>
+  </div>
+  <div class="routing-neither reveal" style="margin-top:24px">
+    <p><strong>Neither, yet?</strong> If you're currently injured or in pain, start with an initial assessment. We'll work out what you need first before pointing you toward either program.</p>
+  </div>
+</section>
+
+<!-- ───────────────────────────────────────
+     VALUE COMPARISON
+─────────────────────────────────────── -->
+<section class="sec-dark">
+  <div class="sec-head center reveal">
+    <p class="kicker kicker-white">Cost per six week block</p>
+    <h2 class="sec-h sec-h-white">The honest numbers</h2>
+    <p class="sec-sub-inv center" style="margin-bottom:52px">
+      Six weeks is how people actually commit. Here's what you're paying either way.
+    </p>
+  </div>
+  <div class="value-grid reveal">
+    <div class="value-card v-featured">
+      <div class="value-card-name">Athlete Performance</div>
+      <div class="value-card-price">$870<span>/ block</span></div>
+      <div class="value-card-items">
+        <div class="value-item"><span class="value-item-label">Programming + gym + coaching</span><span class="value-item-val included">Included</span></div>
+        <div class="value-item"><span class="value-item-label">Field sessions</span><span class="value-item-val included">Included</span></div>
+        <div class="value-item"><span class="value-item-label">Recovery</span><span class="value-item-val" style="color:rgba(255,255,255,0.35)">Coming soon</span></div>
+        <div class="value-item"><span class="value-item-label">Performance testing ($279 value)</span><span class="value-item-val included">Included</span></div>
+      </div>
+    </div>
+    <div class="value-card">
+      <div class="value-card-name">S&C Performance — options</div>
+      <div class="value-card-price">$540<span>base / block</span></div>
+      <div class="value-card-items">
+        <div class="value-item"><span class="value-item-label">Base (programming + gym)</span><span class="value-item-val">$540</span></div>
+        <div class="value-item"><span class="value-item-label">+ Field sessions ($20/wk)</span><span class="value-item-val">$660</span></div>
+        <div class="value-item"><span class="value-item-label">+ Recovery when live ($10/wk)</span><span class="value-item-val">$720</span></div>
+        <div class="value-item"><span class="value-item-label">+ Testing ($195/round)</span><span class="value-item-val">$915</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="value-conclusion reveal">
+    <strong>If you want the full package, Athlete Performance is the cheaper way to get it.</strong> If you only need coached programming, $90 a week is genuinely the right answer — and we'd rather you took it.
+  </div>
+</section>
+
+<!-- ───────────────────────────────────────
+     ADD-ONS
+─────────────────────────────────────── -->
+<section class="sec-stone">
+  <div class="sec-head reveal">
+    <p class="kicker kicker-muted">S&C Performance add-ons</p>
+    <h2 class="sec-h sec-h-navy">Build the program<br>you actually need</h2>
+    <p class="sec-sub">
+      S&C members can add any of the following. Nothing is automatic — you add what you want when you want it.
+    </p>
+  </div>
+  <div class="addon-grid">
+    <div class="addon-card reveal">
+      <div class="addon-card-label">Add-on</div>
+      <div class="addon-card-name">Field Sessions</div>
+      <div class="addon-card-price">$20 <span style="font-size:0.9rem;font-weight:400;color:var(--muted)">/ week</span></div>
+      <p class="addon-card-desc">Running, acceleration and speed work on the field. Complements your gym sessions rather than replacing them. Built into your program, not a separate group session.</p>
+    </div>
+    <div class="addon-card reveal d1">
+      <div class="addon-card-label">Add-on · Coming soon</div>
+      <div class="addon-card-name">Recovery</div>
+      <div class="addon-card-price" style="color:var(--muted)">$10 <span style="font-size:0.9rem;font-weight:400">/ week</span></div>
+      <p class="addon-card-desc">Compression and ice baths as a structured part of your week. Not available yet — mark yourself as interested at your initial assessment.</p>
+      <div class="addon-soon-wrap">
+        <span class="inc-soon">Coming soon</span>
+      </div>
+    </div>
+    <div class="addon-card reveal d2">
+      <div class="addon-card-label">Add-on</div>
+      <div class="addon-card-name">Performance Testing</div>
+      <div class="addon-card-price">$195 <span style="font-size:0.9rem;font-weight:400;color:var(--muted)">/ round</span></div>
+      <p class="addon-card-desc">Full performance testing for S&C members at a 30% member discount. Standard rate is $279. Run every six to eight weeks when you want an objective read on where you're at.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────────────────────
+     HOW TO START
+─────────────────────────────────────── -->
+<section class="sec-dark">
+  <div class="start-inner">
+    <div>
+      <p class="kicker kicker-white" style="margin-bottom:16px">How to start</p>
+      <h2 class="sec-h sec-h-white reveal">Everyone starts<br>with an assessment</h2>
+      <p class="bt-inv reveal" style="margin-top:20px;max-width:460px">
+        Nobody goes straight into a program. The initial assessment is where we find out what you actually need — and which program is the right fit. That recommendation gets made in the room, not from a website.
+      </p>
+    </div>
+    <div>
+      <ol class="start-steps">
+        <li class="start-step reveal">
+          <div class="start-step-connector"></div>
+          <div class="start-step-body">
+            <div class="start-step-h">Book your initial assessment</div>
+            <div class="start-step-b">45 minutes. Movement screen, athlete profile, goals. This is where we build the picture.</div>
+            <div class="start-price">
+              <span class="start-price-num">$145</span>
+              <span class="start-price-label">initial assessment</span>
+            </div>
+          </div>
+        </li>
+        <li class="start-step reveal d1">
+          <div class="start-step-connector"></div>
+          <div class="start-step-body">
+            <div class="start-step-h">We recommend a program</div>
+            <div class="start-step-b">Based on your assessment, we'll recommend Athlete Performance or S&C — and be honest about which one makes sense for you.</div>
+          </div>
+        </li>
+        <li class="start-step reveal d2">
+          <div class="start-step-connector"></div>
+          <div class="start-step-body">
+            <div class="start-step-h">Program build (if applicable)</div>
+            <div class="start-step-b">If your assessment indicates Athlete Performance, a second 90 minute session covers full testing and program build. $185.</div>
+          </div>
+        </li>
+        <li class="start-step reveal d3">
+          <div class="start-step-body">
+            <div class="start-step-h">Start your first six week block</div>
+            <div class="start-step-b">Your program is ready. You're in.</div>
+          </div>
+        </li>
+      </ol>
+      <div class="start-cta reveal">
+        <a href="https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings?business_id=76801&appointment_type_id=363029"
+           class="btn btn-primary" target="_blank" rel="noopener">
+          Book your initial assessment <span class="arr">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────────────────────
+     FAQ
+─────────────────────────────────────── -->
+<section class="sec-light">
+  <div class="sec-head center reveal">
+    <p class="kicker kicker-blue">Questions</p>
+    <h2 class="sec-h sec-h-navy">Common questions</h2>
+  </div>
+  <div class="faq-list reveal">
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        What happens after six weeks?
+        <span class="faq-q-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          At the end of a block, you sit down with your coach to review progress and decide what the next block looks like. Most athletes continue — but that conversation happens every time, not automatically. You're not locked into anything beyond the block you're in.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Can I pause?
+        <span class="faq-q-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          Yes. Pauses are available on request with reasonable notice. We understand seasons, travel and life. If something comes up, let us know early and we'll work it out.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        What if I'm injured?
+        <span class="faq-q-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          Start with an initial assessment. If you're in pain or carrying an injury, the performance programs aren't the right first step — rehab is. The assessment is where we work out what's going on and point you in the right direction. If you're ready for performance training once you've cleared rehab, we'll get you into a program from there.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Do I have to take the add-ons in the S&C program?
+        <span class="faq-q-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          No. Field sessions, recovery and performance testing are all optional extras for S&C members. Take none of them and pay $90 a week. Add the ones that are relevant to you. Nothing is automatically included or automatically charged.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        How is this different from a gym membership?
+        <span class="faq-q-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          A gym membership gives you access to equipment. These programs give you a coach, a program built specifically for you, regular review and progression, and — in Athlete Performance — objective performance testing. You're not writing your own sessions or figuring out what to do when something isn't working. That's what the coaching component is for.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        What actually happens at a testing session?
+        <span class="faq-q-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          Testing measures things that training alone can't tell you: how fast you produce force, how well you use the stretch-shortening cycle, whether there's a meaningful difference between your left and right sides. It's a structured session, not a general fitness test. The results feed directly back into your program. For Athlete Performance members, testing runs every six to eight weeks as part of the block. S&C members access it at $195 per round.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Can I move between programs?
+        <span class="faq-q-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          Yes. If you start on S&C and want to move to Athlete Performance for the next block — or vice versa — that's a straightforward conversation at your block review. We're not trying to lock you into anything.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Do I need to be a competitive athlete?
+        <span class="faq-q-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          No. These programs are for anyone who trains seriously and wants to do it properly — competitive athletes, recreational athletes, people who play sport on weekends and want to stay in the game longer. The level of competition doesn't matter. The quality of the work does.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ───────────────────────────────────────
+     FINAL CTA
+─────────────────────────────────────── -->
+<section class="cta-section">
+  <p class="kicker kicker-white" style="justify-content:center;margin-bottom:16px">Ready to start</p>
+  <h2 class="sh sh-white reveal" style="font-size:clamp(3rem,6vw,5.5rem);margin-bottom:20px">
+    Start with<br>an assessment
+  </h2>
+  <p class="sec-sub-inv" style="text-align:center;margin-bottom:36px;max-width:520px;margin-left:auto;margin-right:auto">
+    45 minutes. We'll assess your movement, build your athlete profile and tell you which program is the right fit. Then you decide.
+  </p>
+  <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;align-items:center">
+    <a href="https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings?business_id=76801&appointment_type_id=363029"
+       class="cta-btn-white" target="_blank" rel="noopener">
+      Book your initial assessment <span class="arr" style="color:var(--blue)">→</span>
+    </a>
+    <a href="tel:+61483918427" class="btn-ghost" style="border-color:rgba(255,255,255,0.35);color:#fff;padding:18px 32px;font-size:1.0rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;border-radius:2px;display:inline-flex;align-items:center;gap:8px;text-decoration:none;transition:all .2s">
+      Call us
+    </a>
+  </div>
+  <p style="margin-top:24px;font-size:0.80rem;color:rgba(255,255,255,0.50)">
+    13 Puckle St, Moonee Ponds · Initial assessment $145
+  </p>
+</section>
+
+<!-- ───────────────────────────────────────
+     FOOTER
+─────────────────────────────────────── -->
+<footer>
+  <img src="https://assets.cdn.filesafe.space/uGjKGDMcGryVhkZ0uDcj/media/65d412163c4a574adb19516f.png" alt="Stride Sports Physio">
+  <p>13 Puckle St, Moonee Ponds · <a href="tel:+61483918427">Call us</a> · <a href="/privacy-policy">Privacy Policy</a></p>
+</footer>
+
+<!-- ───────────────────────────────────────
+     STICKY CTA
+─────────────────────────────────────── -->
+<div class="sticky-cta" id="stickyCta">
+  <span class="sticky-cta-text"><strong>Performance Programs</strong> — from $90/week</span>
+  <a href="https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings?business_id=76801&appointment_type_id=363029"
+     class="sticky-btn" target="_blank" rel="noopener">
+    Book your initial assessment →
+  </a>
+</div>
+
+<!-- ───────────────────────────────────────
+     JS
+─────────────────────────────────────── -->
+<script>
+/* FAQ accordion */
+function toggleFaq(btn){
+  var item = btn.parentElement;
+  var isOpen = item.classList.contains('open');
+  // close all
+  document.querySelectorAll('.faq-item.open').forEach(function(el){ el.classList.remove('open'); });
+  if(!isOpen) item.classList.add('open');
+}
+
+/* Scroll reveal */
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if(!els.length) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  },{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(el){ io.observe(el); });
+})();
+
+/* Sticky CTA — show after hero, hide when final CTA is visible */
+(function(){
+  var sticky = document.getElementById('stickyCta');
+  var hero = document.querySelector('.hero');
+  var finalCta = document.querySelector('.cta-section');
+  if(!sticky||!hero) return;
+
+  var heroObs = new IntersectionObserver(function(e){
+    sticky.classList.toggle('show', !e[0].isIntersecting);
+  },{threshold:0.1});
+  heroObs.observe(hero);
+
+  if(finalCta){
+    var ctaObs = new IntersectionObserver(function(e){
+      sticky.classList.toggle('cta-in-view', e[0].isIntersecting);
+    },{threshold:0.2});
+    ctaObs.observe(finalCta);
+  }
+})();
+
+/* GA4 conversion tracking */
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('a[href*="cliniko"]').forEach(function(el){
+    el.addEventListener('click', function(){
+      if(typeof gtag !== 'undefined'){
+        gtag('event','conversion',{send_to:'AW-753839414/OXjOCO_rhpscELbauucC'});
+      }
+    });
+  });
+  document.querySelectorAll('a[href^="tel:"]').forEach(function(el){
+    el.addEventListener('click', function(){
+      if(typeof gtag !== 'undefined'){
+        gtag('event','conversion',{send_to:'AW-753839414/-PE5CITshpscELbauucC'});
+      }
+    });
+  });
+});
+</script>
+
+</body>
+</html>
