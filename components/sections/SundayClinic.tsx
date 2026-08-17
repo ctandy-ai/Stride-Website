@@ -66,7 +66,7 @@ export default function SundayClinic() {
       {/* Copy — right */}
       <div>
         <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(27,144,245,0.15)", border: "1px solid rgba(27,144,245,0.35)", borderRadius: 20, padding: "5px 14px", marginBottom: 20 }}>
-          <span style={{ fontSize: "0.9rem", lineHeight: 1 }}>⚕️</span>
+          <Image src="/medical-symbol.png" alt="Medical" width={18} height={18} style={{ opacity: 0.85 }} />
           <span style={{ color: "#68b4ff", fontSize: "0.78rem", fontWeight: 600 }}>Now open Sundays · 9am–2pm</span>
         </div>
         <div className="ey ey-blue">Acute Sports Injury Clinic</div>
