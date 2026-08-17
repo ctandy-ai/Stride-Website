@@ -124,8 +124,8 @@ export default function CombatSports() {
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/gym-section.jpg"
-          alt="Combat sports physio training at Stride Sports Physio Melbourne"
+          src="/combat-sports.jpg"
+          alt="Tom Yeung treating a combat athlete — Stride Sports Physio Melbourne"
           style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", position: "absolute", inset: 0 }}
         />
         <div style={{
