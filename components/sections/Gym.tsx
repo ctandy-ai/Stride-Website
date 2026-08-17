@@ -88,12 +88,16 @@ export default function Gym() {
             position: "relative",
           }}
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="https://assets.cdn.filesafe.space/uGjKGDMcGryVhkZ0uDcj/media/68a662752e6d103fe5fda2e9.jpeg"
-            alt="Supervised gym and group training sessions at Stride Sports Physio Melbourne"
-            style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}
-          />
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster="/gym-training-landscape.jpg"
+            style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }}
+          >
+            <source src="/gym-training.mp4" type="video/mp4" />
+          </video>
           <div style={{
             position: "absolute", bottom: 0, left: 0, right: 0,
             background: "linear-gradient(to top, rgba(9,20,33,0.7) 0%, transparent 60%)",
