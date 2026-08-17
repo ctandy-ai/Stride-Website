@@ -1,20 +1,22 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import BookingModal from "@/components/BookingModal";
 
 export default function PerformancePrograms() {
-  const [modalOpen, setModalOpen] = useState(false);
   const heroRef = useRef(null);
   const prog1Ref = useRef(null);
   const prog2Ref = useRef(null);
   const inView1 = useInView(prog1Ref, { once: true, margin: "-60px" });
   const inView2 = useInView(prog2Ref, { once: true, margin: "-60px" });
 
-  const openModal = () => setModalOpen(true);
+  const openModal = () => {
+    const event = new CustomEvent("stride:openModal");
+    window.dispatchEvent(event);
+  };
 
   const athleteIncludes = [
     "Blueprint Testing Session — movement analysis & sport-specific benchmarks",
@@ -302,9 +304,7 @@ export default function PerformancePrograms() {
 
       <Footer />
 
-      {modalOpen && (
-        <BookingModal onClose={() => setModalOpen(false)} />
-      )}
+      <BookingModal />
     </>
   );
 }
