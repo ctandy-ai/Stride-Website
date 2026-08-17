@@ -140,73 +140,52 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.41, duration: 0.6 }}
-          style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 12 }}
+          style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 10, width: "100%", maxWidth: 380 }}
         >
-          {/* Quiz lead */}
-          <div
+          {/* Primary */}
+          <button
+            onClick={openModal}
             style={{
-              border: "1px solid rgba(255,255,255,0.16)",
-              borderRadius: 12,
-              padding: "14px 20px",
-              marginBottom: 4,
+              width: "100%", background: "var(--blue)", color: "#fff",
+              border: "none", borderRadius: 4, padding: "16px 28px",
+              fontFamily: "var(--font-inter)", fontWeight: 700,
+              fontSize: "0.9rem", letterSpacing: "0.04em", textTransform: "uppercase",
+              cursor: "pointer", textAlign: "left",
             }}
           >
-            <div style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.88rem", marginBottom: 10 }}>
-              Not sure if you&apos;re ready to return?
-            </div>
-            <button
-              onClick={openQuizModal}
-              style={{
-                background: "var(--blue)",
-                color: "#fff",
-                border: "none",
-                borderRadius: 8,
-                padding: "12px 20px",
-                cursor: "pointer",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "flex-start",
-              }}
-            >
-              <span style={{ fontWeight: 700, fontSize: "0.82rem", letterSpacing: "0.08em", textTransform: "uppercase" }}>
-                FREE INJURY SELF-CHECK
-              </span>
-              <span style={{ fontSize: "0.85rem", fontWeight: 400, marginTop: 2 }}>
-                Find out in 60 seconds →
-              </span>
-            </button>
-            <div style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.75rem", marginTop: 8 }}>
-              60 sec &nbsp;·&nbsp; No booking needed &nbsp;·&nbsp; Instant score
-            </div>
-          </div>
-
-          <div style={{ color: "rgba(255,255,255,0.3)", fontSize: "0.8rem" }}>or</div>
-          <button
-            className="btn btn-ghost"
-            onClick={openModal}
-          >
-            Book my assessment <span className="arr">→</span>
+            Book my assessment →
           </button>
-          <div style={{ color: "rgba(255,255,255,0.3)", fontSize: "0.8rem" }}>existing patient?</div>
+
+          {/* Secondary */}
+          <button
+            onClick={openQuizModal}
+            style={{
+              width: "100%", background: "#fff", color: "var(--navy)",
+              border: "none", borderRadius: 4, padding: "16px 28px",
+              fontFamily: "var(--font-inter)", fontWeight: 700,
+              fontSize: "0.9rem", letterSpacing: "0.04em", textTransform: "uppercase",
+              cursor: "pointer", textAlign: "left",
+            }}
+          >
+            Free injury self-check →
+          </button>
+
+          {/* Tertiary */}
           <a
             href="https://booking.clinic1.com/online-booking/qPzrwR2A"
-            target="_blank"
-            rel="noopener"
+            target="_blank" rel="noopener"
             style={{
+              display: "block", width: "100%",
               background: "transparent",
-              border: "1.5px solid rgba(104,180,255,.5)",
-              color: "#68b4ff",
-              padding: "11px 22px",
-              borderRadius: 8,
-              fontWeight: 600,
-              textDecoration: "none",
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 6,
-              fontSize: "0.95rem",
+              border: "1.5px solid rgba(255,255,255,0.3)",
+              color: "rgba(255,255,255,0.75)",
+              borderRadius: 4, padding: "15px 28px",
+              fontFamily: "var(--font-inter)", fontWeight: 600,
+              fontSize: "0.9rem", letterSpacing: "0.04em", textTransform: "uppercase",
+              textDecoration: "none", textAlign: "left", boxSizing: "border-box",
             }}
           >
-            Existing Client — Book Appointment <span style={{ color: "#68b4ff" }}>→</span>
+            Existing client →
           </a>
         </motion.div>
 
