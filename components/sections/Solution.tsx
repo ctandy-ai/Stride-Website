@@ -64,6 +64,7 @@ function TeamCard({ member, i, inView }: { member: typeof team[0]; i: number; in
       transition={{ delay: i * 0.15, duration: 0.55 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      className="team-card-wrap"
       style={{
         position: "relative",
         borderRadius: 16,
@@ -220,7 +221,7 @@ export default function Solution() {
             </h2>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 20 }}>
+          <div className="team-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 20 }}>
             {team.map((member, i) => (
               <TeamCard key={i} member={member} i={i} inView={inViewTeam} />
             ))}

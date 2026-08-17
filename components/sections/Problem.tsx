@@ -30,6 +30,7 @@ export default function Problem() {
     <div
       ref={ref}
       id="method"
+      className="section-grid"
       style={{
         background: "var(--off)",
         padding: "96px var(--px)",

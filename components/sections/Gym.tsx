@@ -10,6 +10,7 @@ export default function Gym() {
   return (
     <div
       ref={ref}
+      className="section-grid"
       style={{
         background: "var(--off)",
         padding: "96px var(--px)",

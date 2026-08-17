@@ -20,6 +20,7 @@ export default function ACLRehab() {
   return (
     <div
       ref={ref}
+      className="section-grid"
       style={{
         background: "var(--off)",
         padding: "96px var(--px)",

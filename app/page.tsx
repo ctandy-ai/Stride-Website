@@ -48,7 +48,7 @@ export default function Home() {
 
       {/* Performance Programs callout */}
       <section id="performance" style={{ background: "var(--navy)", padding: "80px var(--px)" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
+        <div className="section-grid" style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
           <div>
             <div className="ey ey-blue" style={{ marginBottom: 16 }}>Not injured? Still want to get better.</div>
             <h2 style={{ fontFamily: "var(--font-bebas)", fontSize: "clamp(2.8rem, 5vw, 4.5rem)", lineHeight: 0.9, color: "#fff", letterSpacing: "0.02em", marginBottom: 20 }}>

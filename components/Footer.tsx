@@ -13,7 +13,7 @@ export default function Footer() {
       }}
     >
       <div
-        className="footer-grid"
+        className="footer-grid footer-grid-inner"
         style={{
           display: "grid",
           gridTemplateColumns: "1fr 1fr 1fr",
@@ -104,6 +104,7 @@ export default function Footer() {
         </div>
       </div>
       <div
+        className="footer-bottom-inner"
         style={{
           maxWidth: 1200,
           margin: "0 auto",

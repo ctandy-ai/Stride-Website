@@ -22,6 +22,7 @@ export default function SundayClinic() {
     <div
       ref={ref}
       id="sunday-clinic"
+      className="section-grid"
       style={{
         background: "var(--navy)",
         padding: "96px var(--px)",

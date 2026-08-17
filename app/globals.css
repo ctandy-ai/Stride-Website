@@ -217,3 +217,143 @@ nav {
     padding: 0 16px;
   }
 }
+
+/* ═══════════════════════════════════════════
+   MOBILE RESPONSIVE — max-width: 768px
+   Desktop layout unchanged above this point
+   ═══════════════════════════════════════════ */
+
+/* Shared: 2-col section grids → single column */
+.section-grid {
+  display: grid;
+}
+@media (max-width: 768px) {
+  .section-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  /* Reverse stacking: when image is col-1 on desktop, it should come second on mobile */
+  .section-grid-img-first > *:first-child {
+    order: 2;
+  }
+  .section-grid-img-first > *:last-child {
+    order: 1;
+  }
+
+  /* Sticky positioning breaks on mobile stacked layout */
+  .section-grid > * {
+    position: static !important;
+  }
+
+  /* Sections: reduce padding */
+  [data-section] {
+    padding: 56px var(--px-m) !important;
+  }
+
+  /* Hero inner content */
+  .hero-inner-content {
+    max-width: 100% !important;
+    padding: 0 var(--px-m) 48px !important;
+  }
+
+  /* Hero CTAs — full width stack */
+  .hero-ctas {
+    width: 100% !important;
+    max-width: 100% !important;
+    align-items: stretch !important;
+  }
+  .hero-ctas > * {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  /* Team cards — single column */
+  .team-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  /* Team card aspect ratio — less tall on mobile */
+  .team-card-wrap {
+    aspect-ratio: 4/3 !important;
+  }
+
+  /* Stats bar */
+  .stats-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* Footer grid */
+  .footer-grid-inner {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  /* Pricing grid */
+  .pricing-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  /* Performance page program cards */
+  .prog-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  /* Accelerator inclusions grid */
+  .acc-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* Logos bar — tighter gap on mobile */
+  .logos-bar {
+    gap: 28px !important;
+  }
+
+  /* Sunday clinic stat chips */
+  .clinic-stats {
+    grid-template-columns: 1fr 1fr 1fr !important;
+    gap: 8px !important;
+  }
+
+  /* Performance page hero */
+  .perf-hero-inner {
+    max-width: 100% !important;
+    padding-bottom: 48px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .clinic-stats {
+    grid-template-columns: 1fr !important;
+  }
+  .team-card-wrap {
+    aspect-ratio: 3/2 !important;
+  }
+}
+
+/* Nav mobile */
+@media (max-width: 768px) {
+  .nav-desktop-links { display: none !important; }
+  .nav-desktop-cta { display: none !important; }
+  .nav-hamburger { display: block !important; }
+}
+
+@media (max-width: 768px) {
+  /* Stats outer — stack copy | divider | stats vertically */
+  .stats-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  /* Footer bottom — stack copyright and legal */
+  .footer-bottom-inner {
+    flex-direction: column !important;
+    gap: 12px !important;
+    text-align: center !important;
+  }
+}

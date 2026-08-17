@@ -429,6 +429,7 @@ export default function PerformancePrograms() {
 
         {/* Problem cards - 2-col grid: copy + standalone cards (Problem.tsx pattern) */}
         <div
+          className="prog-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
@@ -643,6 +644,7 @@ export default function PerformancePrograms() {
 
         {/* 2×2 step grid */}
         <div
+          className="prog-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
@@ -728,7 +730,7 @@ export default function PerformancePrograms() {
       {/* ⑤ TWO PROGRAMS */}
       <section
         ref={programsRef}
-        style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: 580 }}
+        className="prog-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: 580 }}
       >
         {/* Left: image */}
         <div style={{ position: "relative", overflow: "hidden" }}>
@@ -1328,6 +1330,7 @@ export default function PerformancePrograms() {
         style={{ background: "var(--navy-mid)", padding: "80px var(--px)" }}
       >
         <div
+          className="prog-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
@@ -1529,7 +1532,7 @@ export default function PerformancePrograms() {
           </motion.p>
 
           <div
-            style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}
+            className="prog-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}
           >
             {/* Athlete Performance */}
             <motion.div

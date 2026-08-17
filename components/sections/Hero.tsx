@@ -59,6 +59,7 @@ export default function Hero() {
           zIndex: 5,
           padding: "0 var(--px) 56px",
           maxWidth: "min(680px, 55vw)",
+          width: "100%",
         }}
       >
         {/* Sports list */}
@@ -140,6 +141,7 @@ Getting sports injury management right the first time.
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.41, duration: 0.6 }}
+          className="hero-ctas"
           style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 10, width: "100%", maxWidth: 380 }}
         >
           {/* Primary */}

@@ -21,6 +21,7 @@ export default function CombatSports() {
   return (
     <div
       ref={ref}
+      className="section-grid"
       style={{
         background: "var(--navy)",
         padding: "96px var(--px)",
