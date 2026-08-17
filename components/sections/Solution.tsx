@@ -33,8 +33,8 @@ const team = [
   {
     name: "Chris Tandy",
     role: "Senior Athletic Physiotherapist · Coach",
-    bio: "Masters of Sports Physiotherapy, La Trobe University. 11 years embedded at Melbourne Storm NRL — premierships in 2017 and 2020. Essendon Football Club VFL. Published researcher in warm-up protocols. The methodology that keeps elite athletes on the park now drives every program at Stride.",
-    boldBio: "11 years embedded at Melbourne Storm NRL",
+    bio: "Masters of Sports Physiotherapy. 10 years working in competitive elite and sub-elite sport across Melbourne Storm Rugby League Club and Essendon Football Club's VFL Program. Passionate about understanding the core drivers behind behaviour change and performance optimisation to help injured athletes and those wanting to maximise their sporting performance. Co-Director, Prepared to Play — improving ACL risk mitigation.",
+    boldBio: "Melbourne Storm Rugby League Club and Essendon Football Club's VFL Program",
     img: "https://assets.cdn.filesafe.space/uGjKGDMcGryVhkZ0uDcj/media/66f50afea0a6fb0523531782.webp",
   },
   {
