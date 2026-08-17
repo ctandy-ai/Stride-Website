@@ -14,8 +14,7 @@ export default function PerformancePrograms() {
   const inView2 = useInView(prog2Ref, { once: true, margin: "-60px" });
 
   const openModal = () => {
-    const event = new CustomEvent("stride:openModal");
-    window.dispatchEvent(event);
+    window.dispatchEvent(new Event("openModal"));
   };
 
   const athleteIncludes = [
