@@ -12,108 +12,108 @@ export default function SundayClinic() {
     if (typeof (window as any).openModal === "function") (window as any).openModal();
   };
 
+  const cards = [
+    { n: "01", title: "No GP referral needed", body: "Walk in, get assessed, leave with a diagnosis and a written plan. Same day answers — not an appointment in five days time." },
+    { n: "02", title: "$0 gap for eligible claims", body: "Via sports insurance and private health. Bring your card. We handle the claim on the spot." },
+    { n: "03", title: "Assessment designed for athletes", body: "Not a general practice model. Sport-specific assessment by physiotherapists who understand load, competition timelines, and what matters to an athlete." },
+  ];
+
   return (
-    <section
+    <div
       ref={ref}
       id="sunday-clinic"
       style={{
-        position: "relative",
-        minHeight: 600,
-        display: "flex",
-        alignItems: "flex-end",
-        overflow: "hidden",
+        background: "var(--navy)",
+        padding: "96px var(--px)",
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr",
+        gap: 80,
+        maxWidth: 1360,
+        margin: "0 auto",
+        alignItems: "start",
       }}
     >
-      <Image
-        src="/hero-asic.jpg"
-        alt="Athlete injured on field — Stride Acute Sports Injury Clinic"
-        fill
-        style={{ objectFit: "cover", objectPosition: "center" }}
-      />
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          background: "linear-gradient(to right, rgba(9,20,33,0.95) 0%, rgba(9,20,33,0.7) 50%, rgba(9,20,33,0.3) 100%)",
-        }}
-      />
-
+      {/* Standalone image card — left */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.7 }}
-        style={{
-          position: "relative",
-          zIndex: 5,
-          padding: "80px var(--px)",
-          maxWidth: 700,
-        }}
+        initial={{ opacity: 0, x: -30 }}
+        animate={inView ? { opacity: 1, x: 0 } : {}}
+        transition={{ delay: 0.2, duration: 0.6 }}
+        style={{ position: "sticky", top: 100 }}
       >
-        {/* Badge */}
-        <div
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: 8,
-            background: "rgba(27,144,245,0.2)",
-            border: "1px solid rgba(27,144,245,0.4)",
-            borderRadius: 20,
-            padding: "6px 14px",
-            marginBottom: 20,
-          }}
-        >
-          <span style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--blue)", display: "inline-block", animation: "pulse 2s infinite" }} />
-          <span style={{ color: "#68b4ff", fontSize: "0.8rem", fontWeight: 600 }}>
-            Now open Sundays · 9am–2pm
-          </span>
+        <div style={{ borderRadius: 16, overflow: "hidden", position: "relative" }}>
+          <Image
+            src="/hero-asic.jpg"
+            alt="Athlete assessed at Stride Acute Sports Injury Clinic — Sunday Moonee Ponds"
+            width={700}
+            height={520}
+            style={{ width: "100%", height: "auto", display: "block", objectFit: "cover" }}
+          />
         </div>
-
-        <div className="ey ey-blue" style={{ marginBottom: 12 }}>Acute Sports Injury Clinic</div>
-        <h2
-          style={{
-            fontFamily: "var(--font-bebas)",
-            fontSize: "clamp(2.5rem, 6vw, 5rem)",
-            lineHeight: 0.9,
-            letterSpacing: "0.02em",
-            color: "#fff",
-            marginBottom: 20,
-          }}
-        >
-          Hurt on the weekend?<br />
-          <span className="orange">Don&apos;t wait till Monday.</span>
-        </h2>
-        <p style={{ color: "rgba(255,255,255,0.72)", fontSize: "1.05rem", lineHeight: 1.8, marginBottom: 24 }}>
-          Our Sunday Acute Sports Injury Clinic is designed for athletes who got hurt over the weekend — and can&apos;t afford to wait days to find out what&apos;s actually wrong.
-          Walk in, get assessed, get your plan. No GP referral needed.
-        </p>
-
-        {/* Stats */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16, marginBottom: 32 }}>
+        <div style={{ marginTop: 16, display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10 }}>
           {[
-            { num: "$0", label: "Gap for eligible sports injury claims", sub: "Via sports + private health insurance" },
-            { num: "Same day", label: "Assessment & diagnosis", sub: "No waiting days for answers" },
-            { num: "Sunday 9am–2pm", label: "Moonee Ponds", sub: "Saturday afternoons coming soon" },
-          ].map((stat, i) => (
-            <div
-              key={i}
-              style={{
-                background: "rgba(255,255,255,0.08)",
-                border: "1px solid rgba(255,255,255,0.15)",
-                borderRadius: 12,
-                padding: "16px 20px",
-              }}
-            >
-              <div style={{ fontFamily: "var(--font-bebas)", fontSize: "1.8rem", color: "#fff", lineHeight: 1 }}>{stat.num}</div>
-              <div style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.82rem", fontWeight: 600, marginTop: 4 }}>{stat.label}</div>
-              <div style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.72rem", marginTop: 3 }}>{stat.sub}</div>
+            { num: "$0", label: "Gap eligible claims" },
+            { num: "Same day", label: "Diagnosis" },
+            { num: "Sun 9–2", label: "Moonee Ponds" },
+          ].map((s, i) => (
+            <div key={i} style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.09)", borderRadius: 10, padding: "14px 16px" }}>
+              <div style={{ fontFamily: "var(--font-bebas)", fontSize: "1.4rem", color: "#fff", lineHeight: 1 }}>{s.num}</div>
+              <div style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.72rem", marginTop: 4 }}>{s.label}</div>
             </div>
           ))}
         </div>
+      </motion.div>
 
+      {/* Copy — right */}
+      <div>
+        <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(27,144,245,0.15)", border: "1px solid rgba(27,144,245,0.35)", borderRadius: 20, padding: "5px 14px", marginBottom: 20 }}>
+          <span style={{ width: 7, height: 7, borderRadius: "50%", background: "var(--blue)", display: "inline-block" }} />
+          <span style={{ color: "#68b4ff", fontSize: "0.78rem", fontWeight: 600 }}>Now open Sundays · 9am–2pm</span>
+        </div>
+        <div className="ey ey-blue">Acute Sports Injury Clinic</div>
+        <h2
+          style={{
+            fontFamily: "var(--font-bebas)",
+            fontSize: "clamp(2.5rem, 5vw, 4rem)",
+            lineHeight: 0.9,
+            letterSpacing: "0.02em",
+            color: "#fff",
+            marginBottom: 24,
+          }}
+        >
+          Hurt on the weekend?<br /><span className="orange">Don&apos;t wait till Monday.</span>
+        </h2>
+        <p className="bt-inv" style={{ marginBottom: 32 }}>
+          Our Sunday Acute Sports Injury Clinic is built for athletes who got hurt over the weekend and can&apos;t afford to wait days for answers. Walk in, get assessed, get your plan.
+        </p>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: 16, marginBottom: 32 }}>
+          {cards.map((card, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: 20 }}
+              animate={inView ? { opacity: 1, x: 0 } : {}}
+              transition={{ delay: i * 0.15 + 0.2, duration: 0.5 }}
+              style={{
+                display: "flex", gap: 20, padding: 20,
+                background: "rgba(255,255,255,0.04)",
+                borderRadius: 12,
+                border: "1px solid rgba(255,255,255,0.08)",
+              }}
+            >
+              <div style={{ fontFamily: "var(--font-dm-mono)", fontSize: "0.65rem", letterSpacing: "0.1em", color: "var(--blue)", flex: "0 0 28px", paddingTop: 4 }}>
+                {card.n}
+              </div>
+              <div>
+                <h4 style={{ fontWeight: 700, color: "#fff", marginBottom: 6, fontSize: "1rem" }}>{card.title}</h4>
+                <p style={{ color: "rgba(255,255,255,0.55)", lineHeight: 1.7, fontSize: "0.92rem" }}>{card.body}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
         <button className="btn btn-primary" onClick={openModal}>
           Book Sunday Assessment <span className="arr">→</span>
         </button>
-      </motion.div>
-    </section>
+      </div>
+    </div>
   );
 }
