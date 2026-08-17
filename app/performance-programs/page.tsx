@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import BookingModal from "@/components/BookingModal";
+import PerformanceModal from "@/components/PerformanceModal";
 
 export default function PerformancePrograms() {
   const heroRef = useRef(null);
@@ -303,7 +303,7 @@ export default function PerformancePrograms() {
 
       <Footer />
 
-      <BookingModal />
+      <PerformanceModal />
     </>
   );
 }
