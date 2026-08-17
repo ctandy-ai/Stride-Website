@@ -28,6 +28,7 @@ export default function Hero() {
         overflow: "hidden",
         display: "flex",
         alignItems: "flex-end",
+        paddingTop: 66, /* clear fixed nav */
       }}
     >
       {/* Overlay */}
@@ -56,7 +57,7 @@ export default function Hero() {
         style={{
           position: "relative",
           zIndex: 5,
-          padding: "80px var(--px) 56px", /* 80px top accounts for fixed nav */
+          padding: "0 var(--px) 56px",
           maxWidth: "min(680px, 55vw)",
         }}
       >
