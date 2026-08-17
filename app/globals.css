@@ -357,3 +357,79 @@ nav {
     text-align: center !important;
   }
 }
+
+/* ═══════════════════════════════════
+   MOBILE FIXES — targeted overrides
+   ═══════════════════════════════════ */
+@media (max-width: 768px) {
+  /* Hero inner content — override 55vw constraint */
+  .hero-inner-content {
+    max-width: 100% !important;
+    padding: 0 var(--px-m) 48px !important;
+  }
+
+  /* Hero CTAs stretch full width */
+  .hero-ctas {
+    max-width: 100% !important;
+    align-items: stretch !important;
+  }
+
+  /* Prevent any element from overflowing horizontally */
+  body, main, section, div {
+    max-width: 100vw;
+  }
+
+  /* Section grids — force single column */
+  .section-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+    max-width: 100% !important;
+  }
+
+  /* Accelerator inner 2-col grid */
+  [id="program"] > div > div[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Pricing cards */
+  #pricing .pricing-grid,
+  #pricing > div > div[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Remove sticky positioning on mobile — breaks stacked layout */
+  .section-grid [style*="position:sticky"],
+  .section-grid [style*="position: sticky"] {
+    position: static !important;
+  }
+
+  /* Navigation */
+  .nav-desktop-links { display: none !important; }
+  .nav-desktop-cta { display: none !important; }
+  .nav-hamburger { display: block !important; }
+
+  /* Team grid */
+  .team-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 360px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Footer */
+  .footer-grid-inner {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column !important;
+    text-align: center !important;
+  }
+
+  /* Stats */
+  .stats-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+}

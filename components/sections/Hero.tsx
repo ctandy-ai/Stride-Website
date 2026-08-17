@@ -54,6 +54,7 @@ export default function Hero() {
       </video>
 
       <div
+        className="hero-inner-content"
         style={{
           position: "relative",
           zIndex: 5,
