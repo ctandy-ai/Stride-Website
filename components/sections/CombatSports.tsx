@@ -115,25 +115,23 @@ export default function CombatSports() {
         </div>
       </motion.div>
 
-      {/* Image placeholder */}
+      {/* Training image */}
       <motion.div
         initial={{ opacity: 0, x: 30 }}
         animate={inView ? { opacity: 1, x: 0 } : {}}
         transition={{ delay: 0.2, duration: 0.7 }}
-        style={{
-          background: "var(--navy)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          minHeight: 500,
-        }}
+        style={{ position: "relative", overflow: "hidden", minHeight: 500 }}
       >
-        <div style={{ color: "rgba(255,255,255,0.2)", textAlign: "center" }}>
-          <div style={{ fontSize: "4rem", marginBottom: 12 }}>🥋</div>
-          <div style={{ fontFamily: "var(--font-bebas)", fontSize: "1.5rem", letterSpacing: "0.1em" }}>
-            COMBAT SPORTS PHYSIO
-          </div>
-        </div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/gym-section.jpg"
+          alt="Combat sports physio training at Stride Sports Physio Melbourne"
+          style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", position: "absolute", inset: 0 }}
+        />
+        <div style={{
+          position: "absolute", inset: 0,
+          background: "linear-gradient(to right, rgba(9,20,33,0.4) 0%, transparent 60%)",
+        }} />
       </motion.div>
     </div>
   );

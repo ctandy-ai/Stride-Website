@@ -93,7 +93,7 @@ export default function Gym() {
             muted
             loop
             playsInline
-            poster="/gym-training-landscape.jpg"
+            poster="/gym-section.jpg"
             style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }}
           >
             <source src="/gym-training.mp4" type="video/mp4" />
