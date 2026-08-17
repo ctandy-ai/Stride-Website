@@ -95,7 +95,7 @@ export default function Hero() {
               textTransform: "uppercase",
             }}
           >
-            We Get Sports Injury Management Right the First Time.
+            Sports Injury Rehab Built for Competitive Athletes.
           </span>
         </motion.div>
 
@@ -113,14 +113,15 @@ export default function Hero() {
             marginBottom: 28,
           }}
         >
-          Return Faster.<br />
+          Know Exactly
+          <br />
           <span
             style={{
               WebkitTextStroke: "2px #fff",
               color: "transparent",
             }}
           >
-            Return Stronger.
+            Where You Stand.
           </span>
         </motion.h1>
 

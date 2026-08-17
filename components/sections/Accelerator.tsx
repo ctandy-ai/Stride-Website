@@ -34,7 +34,7 @@ export default function Accelerator() {
       sub: "Access to a gym and program coaching when you need it — so you can exercise and progress between appointments",
     },
     {
-      title: "TeamBuildr Access",
+      title: "Programming Platform Access",
       sub: "Personalised training programs — exercise prescription, milestone tracking & progress visibility",
       featured: true,
     },
@@ -183,7 +183,7 @@ export default function Accelerator() {
               ))}
             </div>
 
-            {/* TeamBuildr */}
+            {/* Training Platform */}
             <div
               style={{
                 background: "rgba(255,255,255,0.04)",
@@ -193,17 +193,10 @@ export default function Accelerator() {
               }}
             >
               <div style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.7rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 8 }}>
-                Powered by
+                Training Platform
               </div>
-              <Image
-                src="/teambuildr-logo.jpg"
-                alt="TeamBuildr"
-                width={100}
-                height={32}
-                style={{ height: 32, width: "auto", borderRadius: 4, marginBottom: 10 }}
-              />
-              <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "0.85rem", lineHeight: 1.6 }}>
-                Individualised S&C programs built and tracked inside TeamBuildr — exercise prescription, load tracking, and live milestone progress updated every session.
+              <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "0.85rem", lineHeight: 1.6, marginTop: 8 }}>
+                Individualised programs built, tracked and updated every session — exercise prescription, load tracking, and live milestone progress.
               </p>
             </div>
           </motion.div>

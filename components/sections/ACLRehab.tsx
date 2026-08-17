@@ -67,17 +67,17 @@ export default function ACLRehab() {
         </h2>
         <p className="bt-inv" style={{ marginBottom: 18 }}>
           ACL rehabilitation is the most complex, highest-stakes injury in sport.{" "}
-          <strong>Done wrong, re-rupture rates exceed 25%.</strong> Done right, athletes return stronger than before — with data to prove it.
+          ACL rehab done without objective clearance testing carries significant re-injury risk. Done right — with structured, gate-by-gate testing — athletes return with data to prove they're ready.
         </p>
         <p className="bt-inv" style={{ marginBottom: 22 }}>
-          Stride is an accredited partner of the Prepared to Play ACL Program —
+          Our ACL pathway, Prepared to Play, was developed by our director Chris Tandy —
           AI-powered injury analysis and movement profiling to build a personalised, evidence-based pathway from surgery to full return-to-play clearance.
         </p>
         <ul className="cklist cklist-inv" style={{ marginBottom: 28 }}>
           {[
             "Phase-by-phase return-to-sport milestones — no guessing",
             "Objective movement testing at each clearance gate",
-            "Individualised S&C programming via TeamBuildr — updated weekly",
+            "Individualised S&C programming updated weekly",
             "Return-to-play confirmation backed by biomechanical data",
           ].map((item, i) => (
             <li key={i}><span className="ck">✓</span>{item}</li>

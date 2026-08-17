@@ -154,7 +154,7 @@ export default function Pricing() {
                 { item: "Gym & coaching access when you need it", val: "$70+/session elsewhere" },
                 { item: "Unlimited program revisions — updated every week", val: "" },
                 { item: "Return-to-sport testing & clearance", val: "" },
-                { item: "TeamBuildr access throughout", val: "" },
+                { item: "Programming platform access throughout", val: "" },
               ].map((row, i) => (
                 <li key={i} style={{ display: "flex", gap: 10, fontSize: "0.9rem", alignItems: "flex-start" }}>
                   <span style={{ color: "var(--blue)", fontWeight: 700, flexShrink: 0 }}>✓</span>

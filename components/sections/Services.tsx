@@ -21,7 +21,7 @@ export default function Services() {
             marginBottom: 28,
           }}
         >
-          Athletes from these clubs &amp; organisations train with us
+          Our director’s career experience — clubs and organisations he has worked with as a practitioner
         </div>
         <div
           style={{

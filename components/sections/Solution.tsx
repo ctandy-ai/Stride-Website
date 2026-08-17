@@ -42,14 +42,14 @@ const team = [
     role: "Senior Athletic Physiotherapist · Coach",
     bio: "Bachelor of Physiotherapy, La Trobe University, with additional training in Sports & Exercise Rehabilitation. Avid gym-goer with a background in combat training — Tom brings genuine understanding of the demands combat athletes face. He knows why a 12-week full rest prescription doesn't work for a competitor.",
     boldBio: "Avid gym-goer with a background in combat training",
-    img: null,
+    img: "/tom-yeung.jpg",
   },
   {
     name: "Conner Van Turnhout",
     role: "Athletic Physiotherapist · Coach",
     bio: "Bachelor of Physiotherapy and Postgraduate Certificate in Sports Physiotherapy, University of Otago — currently completing a Master of Sports Physiotherapy at La Trobe. Keen CrossFitter with a background in Rugby Union, Conner understands the physical demands of sport and the importance of staying active. Evidence-based care tailored to help you achieve your goals.",
     boldBio: "Keen CrossFitter with a background in Rugby Union",
-    img: null,
+    img: "/conner-van-turnhout.jpg",
   },
 ];
 
@@ -61,8 +61,8 @@ export default function Solution() {
 
   return (
     <>
-      {/* Testimonials */}
-      <div ref={refT} id="proof" style={{ background: "var(--off)", padding: "96px var(--px)" }}>
+      {/* Testimonials removed — pending AHPRA advertising advice */}
+      {false && <div ref={refT} id="proof" style={{ background: "var(--off)", padding: "96px var(--px)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 48, flexWrap: "wrap", gap: 20 }}>
             <div>
@@ -124,7 +124,7 @@ export default function Solution() {
             ))}
           </div>
         </div>
-      </div>
+      </div>}
 
       {/* Team */}
       <div ref={refTeam} style={{ background: "var(--navy)", padding: "96px var(--px)" }}>

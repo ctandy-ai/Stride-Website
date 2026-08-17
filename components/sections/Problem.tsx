@@ -47,7 +47,7 @@ export default function Problem() {
           className="sh sh-navy"
           style={{ marginBottom: 24 }}
         >
-          Old school physio{" "}
+          Generic rehab{" "}
           <span className="orange">wasn&apos;t built</span>{" "}
           for athletes.
         </h2>
