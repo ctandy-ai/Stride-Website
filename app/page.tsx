@@ -44,41 +44,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Clinic1 Patient App */}
-      <section style={{ background: "#0a1628", padding: "60px 24px", color: "#fff" }}>
-        <div style={{ maxWidth: 1000, margin: "0 auto", display: "flex", alignItems: "center", gap: 48, flexWrap: "wrap", justifyContent: "center" }}>
-          <div style={{ flexShrink: 0, position: "relative", width: 200 }}>
-            <div style={{ background: "#1a2a45", borderRadius: 36, padding: 12, boxShadow: "0 24px 60px rgba(0,0,0,.5)", border: "2px solid rgba(255,255,255,.1)" }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1b/89/34/1b893407-adb2-a3de-6923-1ee0e0f6821c/1.png/320x480bb.jpg"
-                alt="Clinic1 Patient App"
-                style={{ width: "100%", borderRadius: 24, display: "block" }}
-              />
-            </div>
-          </div>
-          <div style={{ flex: 1, minWidth: 260 }}>
-            <div style={{ display: "inline-block", background: "rgba(255,255,255,.1)", color: "#90c8ff", fontSize: ".75rem", fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase", padding: "4px 12px", borderRadius: 20, marginBottom: 12 }}>Patient App</div>
-            <h2 style={{ fontSize: "1.9rem", fontWeight: 800, lineHeight: 1.2, marginBottom: 12 }}>Manage your care<br /><span style={{ color: "#3b9eff" }}>from your phone.</span></h2>
-            <p style={{ color: "rgba(255,255,255,.7)", marginBottom: 20, lineHeight: 1.6 }}>Download the Clinic1 Patient App to book appointments, view your class schedule, make payments, and chat with our team — all in one place.</p>
-            <ul style={{ listStyle: "none", padding: 0, margin: "0 0 28px", display: "flex", flexDirection: "column", gap: 8 }}>
-              {["Book & manage appointments", "View class schedule & check in", "Secure payments & rebate claiming", "Message our team directly"].map((item) => (
-                <li key={item} style={{ color: "rgba(255,255,255,.85)", display: "flex", alignItems: "center", gap: 8 }}>
-                  <span style={{ color: "#3b9eff", fontSize: "1.1rem" }}>✓</span> {item}
-                </li>
-              ))}
-            </ul>
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <a href="https://apps.apple.com/au/app/clinic1-patient/id6751700928" target="_blank" rel="noopener" style={{ display: "inline-flex", alignItems: "center", gap: 10, background: "#fff", color: "#000", textDecoration: "none", borderRadius: 10, padding: "10px 18px", fontWeight: 700, fontSize: ".9rem" }}>
-                🍎 App Store
-              </a>
-              <a href="https://play.google.com/store/apps/details?id=com.clinic1.patient" target="_blank" rel="noopener" style={{ display: "inline-flex", alignItems: "center", gap: 10, background: "#fff", color: "#000", textDecoration: "none", borderRadius: 10, padding: "10px 18px", fontWeight: 700, fontSize: ".9rem" }}>
-                ▶ Google Play
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Performance Programs callout */}
       <section id="performance" style={{ background: "var(--navy)", padding: "80px var(--px)" }}>
