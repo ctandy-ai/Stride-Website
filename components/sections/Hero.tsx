@@ -40,14 +40,23 @@ export default function Hero() {
           zIndex: 1,
         }}
       />
-      {/* Background video placeholder - dark background */}
-      <div style={{ position: "absolute", inset: 0, background: "var(--navy)", zIndex: 0 }} />
+      {/* Background video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", zIndex: 0, filter: "blur(0.8px)" }}
+      >
+        <source src="/hero-loop.webm" type="video/webm" />
+        <source src="/hero-loop.mp4" type="video/mp4" />
+      </video>
 
       <div
         style={{
           position: "relative",
           zIndex: 5,
-          padding: "0 var(--px) 56px",
+          padding: "80px var(--px) 56px", /* 80px top accounts for fixed nav */
           maxWidth: "min(680px, 55vw)",
         }}
       >

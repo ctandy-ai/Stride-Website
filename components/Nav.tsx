@@ -28,7 +28,7 @@ export default function Nav() {
           unoptimized
         />
       </Link>
-      <div className="nav-links hidden md:flex items-center gap-7">
+      <div style={{ display: "flex", alignItems: "center", gap: 28 }}>
         <Link href="/#method" className="nav-link" style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.82rem", fontWeight: 500, textDecoration: "none", transition: "color .2s" }}>
           The Problem
         </Link>

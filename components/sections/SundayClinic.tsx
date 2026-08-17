@@ -64,7 +64,7 @@ export default function SundayClinic() {
         >
           <span style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--blue)", display: "inline-block", animation: "pulse 2s infinite" }} />
           <span style={{ color: "#68b4ff", fontSize: "0.8rem", fontWeight: 600 }}>
-            Opening Sunday 16 August · 9am–2pm
+            Now open Sundays · 9am–2pm
           </span>
         </div>
 
