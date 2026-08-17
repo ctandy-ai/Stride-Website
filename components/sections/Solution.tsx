@@ -32,7 +32,7 @@ const testimonials = [
 const team = [
   {
     name: "Chris Tandy",
-    role: "Director · Senior Athletic Physiotherapist · Coach",
+    role: "Senior Athletic Physiotherapist · Coach",
     bio: "Masters of Sports Physiotherapy, La Trobe University. 11 years embedded at Melbourne Storm NRL — premierships in 2017 and 2020. Essendon Football Club VFL. Published researcher in warm-up protocols. The methodology that keeps elite athletes on the park now drives every program at Stride.",
     boldBio: "11 years embedded at Melbourne Storm NRL",
     img: "https://assets.cdn.filesafe.space/uGjKGDMcGryVhkZ0uDcj/media/66f50afea0a6fb0523531782.webp",
