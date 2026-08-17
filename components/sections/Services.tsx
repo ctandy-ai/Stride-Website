@@ -26,7 +26,7 @@ export default function Services() {
           color: "var(--muted)",
           marginBottom: 28,
         }}>
-          Our director&apos;s career — clubs and organisations he has worked with as a practitioner
+          Organisations our team has worked with and are trusted by:
         </div>
         <div style={{
           display: "flex",
