@@ -34,7 +34,7 @@ export default function Footer() {
             />
           </div>
           <p style={{ fontSize: "0.9rem", lineHeight: 1.7, color: "rgba(255,255,255,0.45)" }}>
-            Melbourne&apos;s sports injury rehab specialists. One program. One standard: get you back to sport stronger than before.
+            Melbourne&apos;s sports injury rehab specialists. Structured, sport-specific rehabilitation from first appointment to return to play.
             <br /><br />
             <strong style={{ color: "rgba(255,255,255,0.45)" }}>13 Puckle Street, Moonee Ponds VIC 3039</strong><br />
             Mon–Fri 7:30am–7:30pm · Sat 7:30am–1pm
@@ -46,7 +46,7 @@ export default function Footer() {
             {[
               { href: "/#program", label: "Rehab Accelerator" },
               { href: "/#pricing", label: "Pricing" },
-              { href: "https://stridephysiohealth.com.au/app", label: "Athletic Performance" },
+              { href: "/performance-programs", label: "S\u0026C Performance" },
               { href: "#", label: "Book online", modal: true },
               { href: "https://booking.clinic1.com/online-booking/wZet4fM4", label: "Book Gym", external: true },
             ].map((item) => (
@@ -116,11 +116,10 @@ export default function Footer() {
           gap: 12,
         }}
       >
-        <div style={{ fontSize: "0.8rem" }}>© 2025 Stride Sports Physiotherapy & Performance. All rights reserved.</div>
+        <div style={{ fontSize: "0.8rem" }}>© 2026 Stride Sports Physiotherapy & Performance. All rights reserved.</div>
         <div style={{ display: "flex", gap: 20 }}>
           <Link href="/privacy-policy" style={{ color: "rgba(255,255,255,0.45)", textDecoration: "none", fontSize: "0.8rem" }}>Privacy Policy</Link>
-          <a href="#" style={{ color: "rgba(255,255,255,0.45)", textDecoration: "none", fontSize: "0.8rem" }}>Terms</a>
-          <a href="#" style={{ color: "rgba(255,255,255,0.45)", textDecoration: "none", fontSize: "0.8rem" }}>AHPRA</a>
+          <a href="https://www.ahpra.gov.au/Registration/Advertising-guidelines.aspx" target="_blank" rel="noopener" style={{ color: "rgba(255,255,255,0.45)", textDecoration: "none", fontSize: "0.8rem" }}>AHPRA Guidelines</a>
         </div>
       </div>
     </footer>

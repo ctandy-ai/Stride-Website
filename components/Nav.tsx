@@ -38,18 +38,15 @@ export default function Nav() {
         <Link href="/#pricing" className="nav-link" style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.82rem", fontWeight: 500, textDecoration: "none" }}>
           Pricing
         </Link>
-        <Link href="/#proof" className="nav-link" style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.82rem", fontWeight: 500, textDecoration: "none" }}>
-          Results
+        <Link href="/performance-programs" className="nav-link" style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.82rem", fontWeight: 500, textDecoration: "none" }}>
+          Performance
         </Link>
-        <a
-          href="https://booking.clinic1.com/online-booking/wZet4fM4"
-          className="nav-link"
-          target="_blank"
-          rel="noopener"
-          style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.82rem", fontWeight: 500, textDecoration: "none" }}
-        >
-          Book Gym Sessions
-        </a>
+        <Link href="/combat-sports-physio" className="nav-link" style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.82rem", fontWeight: 500, textDecoration: "none" }}>
+          Combat
+        </Link>
+        <Link href="/acl-rehab" className="nav-link" style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.82rem", fontWeight: 500, textDecoration: "none" }}>
+          ACL
+        </Link>
         <a
           href="https://booking.clinic1.com/online-booking/qPzrwR2A"
           className="nav-link"

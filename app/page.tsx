@@ -80,6 +80,58 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Performance Programs callout */}
+      <section id="performance" style={{ background: "var(--navy)", padding: "80px var(--px)" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
+          <div>
+            <div className="ey ey-blue" style={{ marginBottom: 16 }}>Not injured? Still want to get better.</div>
+            <h2 style={{ fontFamily: "var(--font-bebas)", fontSize: "clamp(2.8rem, 5vw, 4.5rem)", lineHeight: 0.9, color: "#fff", letterSpacing: "0.02em", marginBottom: 20 }}>
+              Performance programs<br /><span style={{ color: "var(--blue)" }}>built around your sport.</span>
+            </h2>
+            <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "1rem", lineHeight: 1.7, marginBottom: 28, maxWidth: 480 }}>
+              We measure what your sport actually demands, grade where you sit against it, and build a program around the gap. No generic templates. No guesswork.
+            </p>
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 24 }}>
+              <div style={{ background: "rgba(27,144,245,0.12)", border: "1px solid rgba(27,144,245,0.3)", borderRadius: 8, padding: "14px 20px" }}>
+                <div style={{ color: "var(--blue)", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 4 }}>Athlete Performance</div>
+                <div style={{ color: "#fff", fontWeight: 800, fontSize: "1.4rem" }}>$145<span style={{ fontSize: "0.85rem", fontWeight: 400, color: "rgba(255,255,255,0.5)" }}>/wk</span></div>
+              </div>
+              <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 8, padding: "14px 20px" }}>
+                <div style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 4 }}>S&amp;C Performance</div>
+                <div style={{ color: "#fff", fontWeight: 800, fontSize: "1.4rem" }}>$90<span style={{ fontSize: "0.85rem", fontWeight: 400, color: "rgba(255,255,255,0.5)" }}>/wk</span></div>
+              </div>
+            </div>
+            <a
+              href="/performance-programs"
+              style={{
+                display: "inline-flex", alignItems: "center", gap: 8,
+                background: "var(--blue)", color: "#fff", textDecoration: "none",
+                padding: "14px 28px", borderRadius: 2,
+                fontFamily: "var(--font-inter)", fontSize: "0.88rem", fontWeight: 700,
+                letterSpacing: "0.04em", textTransform: "uppercase",
+              }}
+            >
+              See both programs →
+            </a>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            {[
+              { n: "01", title: "Blueprint Testing Session", desc: "We test what your sport demands and grade where you currently sit. You leave with a written report and a program built around your actual gaps." },
+              { n: "02", title: "Six-week blocks", desc: "Programs run in six-week blocks. Coach-supervised, sport-specific, updated every session based on your data." },
+              { n: "03", title: "Tell you which one you need", desc: "Sometimes that\'s the cheaper program. We\'ll tell you honestly before you commit." },
+            ].map((item) => (
+              <div key={item.n} style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
+                <div style={{ color: "var(--blue)", fontFamily: "var(--font-mono)", fontSize: "0.7rem", fontWeight: 700, marginTop: 3, flexShrink: 0 }}>{item.n}</div>
+                <div>
+                  <div style={{ color: "#fff", fontWeight: 700, marginBottom: 4 }}>{item.title}</div>
+                  <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.88rem", lineHeight: 1.6, margin: 0 }}>{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <CombatSports />
       <ACLRehab />
       <SundayClinic />
