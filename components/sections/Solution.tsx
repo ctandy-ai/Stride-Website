@@ -33,7 +33,7 @@ const team = [
   {
     name: "Chris Tandy",
     role: "Senior Athletic Physiotherapist · Coach",
-    bio: "Masters of Sports Physiotherapy. 10 years working in competitive elite and sub-elite sport across Melbourne Storm Rugby League Club and Essendon Football Club's VFL Program. Passionate about understanding the core drivers behind behaviour change and performance optimisation to help injured athletes and those wanting to maximise their sporting performance. Co-Director, Prepared to Play — improving ACL risk mitigation.",
+    bio: "Masters of Sports Physiotherapy. 10 years working in competitive elite and sub-elite sport across Melbourne Storm Rugby League Club and Essendon Football Club's VFL Program. Passionate about understanding the core drivers behind behaviour change and performance optimisation to help injured athletes and those wanting to maximise their sporting performance.",
     boldBio: "Melbourne Storm Rugby League Club and Essendon Football Club's VFL Program",
     img: "https://assets.cdn.filesafe.space/uGjKGDMcGryVhkZ0uDcj/media/66f50afea0a6fb0523531782.webp",
   },

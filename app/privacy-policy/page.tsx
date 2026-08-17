@@ -104,7 +104,7 @@ Website: www.stridephysiohealth.com.au`,
             textAlign: "center",
           }}
         >
-          © 2025 Stride Sports Physiotherapy & Performance · ABN 99 632 016 016
+          © 2026 Stride Sports Physiotherapy & Performance · ABN 99 632 016 016
         </div>
       </div>
     </div>

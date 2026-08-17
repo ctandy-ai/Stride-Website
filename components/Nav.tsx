@@ -6,8 +6,7 @@ import { useCallback } from "react";
 
 export default function Nav() {
   const openModal = useCallback(() => {
-    const modal = document.getElementById("modal");
-    if (modal) modal.classList.add("open");
+    window.dispatchEvent(new Event("openModal"));
     // Google Ads conversion
     if (typeof (window as any).gtag !== "undefined") {
       (window as any).gtag("event", "conversion", {

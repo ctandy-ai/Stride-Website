@@ -54,7 +54,7 @@ export default function Footer() {
                 <a
                   key={item.label}
                   href="#"
-                  onClick={(e) => { e.preventDefault(); const m = document.getElementById("modal"); if (m) m.classList.add("open"); }}
+                  onClick={(e) => { e.preventDefault(); window.dispatchEvent(new Event("openModal")); }}
                   style={{ color: "rgba(255,255,255,0.45)", textDecoration: "none", fontSize: "0.9rem" }}
                 >
                   {item.label}
