@@ -105,7 +105,7 @@ export default function Hero() {
               textTransform: "uppercase",
             }}
           >
-            Sports Injury Rehab Built for Competitive Athletes.
+Getting sports injury management right the first time.
           </span>
         </motion.div>
 
