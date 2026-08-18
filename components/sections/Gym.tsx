@@ -30,7 +30,7 @@ export default function Gym() {
         </h2>
         <p className="bt" style={{ marginBottom: 20 }}>
           Group gym sessions designed for athletes — not generic fitness classes.{" "}
-          <strong>Led by Chris Tandy and Tom Yeung</strong>, every session is supervised by clinicians who understand your sport and your body.
+          Every session is supervised by our Athletic Physio and Coach team — clinicians who understand your sport and your body.
         </p>
         <p className="bt" style={{ marginBottom: 16 }}>
           Whether you&apos;re in active rehab or pushing your performance, our gym sessions bridge the gap between the treatment room and the field.

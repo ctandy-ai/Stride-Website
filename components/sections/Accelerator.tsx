@@ -19,7 +19,7 @@ export default function Accelerator() {
     },
     {
       title: "Unlimited Gym Access & Coached Sessions",
-      sub: "Train in our gym as often as you like, at no extra cost. That includes our coached small-group sessions run by Chris and Tom — up to 40 a week. Nothing extra to book, nothing extra to pay.",
+      sub: "Train in our gym as often as you like, at no extra cost. That includes our coached small-group sessions run by our Athletic Physio and Coach team — up to 40 a week. Nothing extra to book, nothing extra to pay.",
     },
     {
       title: "Sport-Specific S&C Program",
