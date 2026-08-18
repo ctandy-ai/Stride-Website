@@ -52,7 +52,7 @@ export default function CombatSports() {
           </div>
           <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.84rem", lineHeight: 1.6, margin: 0 }}>
             Dedicated combat sports physio service in partnership with{" "}
-            <a href="https://www.combatsportsconsulting.com.au" target="_blank" rel="noopener" style={{ color: "var(--blue)", textDecoration: "none" }}>
+            <a href="https://www.combatsportsconsulting.com" target="_blank" rel="noopener" style={{ color: "var(--blue)", textDecoration: "none" }}>
               Combat Sports Consulting
             </a>.
           </p>
