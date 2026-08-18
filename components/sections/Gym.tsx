@@ -32,14 +32,17 @@ export default function Gym() {
           Group gym sessions designed for athletes — not generic fitness classes.{" "}
           <strong>Led by Chris Tandy and Tom Yeung</strong>, every session is supervised by clinicians who understand your sport and your body.
         </p>
-        <p className="bt" style={{ marginBottom: 28 }}>
+        <p className="bt" style={{ marginBottom: 16 }}>
           Whether you&apos;re in active rehab or pushing your performance, our gym sessions bridge the gap between the treatment room and the field.
+        </p>
+        <p className="bt" style={{ marginBottom: 28, padding: "14px 18px", background: "rgba(27,144,245,0.08)", border: "1px solid rgba(27,144,245,0.2)", borderRadius: 8 }}>
+          <strong>Already on the Rehab Accelerator or a performance program?</strong> These sessions are included in your weekly fee. Book your spot like everyone else.
         </p>
         <div style={{ display: "flex", flexDirection: "column", gap: 16, marginBottom: 32 }}>
           {[
-            { n: "01", title: "Clinician-supervised every session", body: "Not a PT. A physiotherapist who knows your injury history, your sport, and exactly what you should and shouldn't be loading." },
+            { n: "01", title: "Clinician-supervised every session", body: "Not a PT. A physiotherapist who knows your injury history, your sport, and exactly what you should and shouldn\'t be loading." },
             { n: "02", title: "Built for competitive athletes", body: "Sessions are programmed for people with real training goals — not office workers looking to move better." },
-            { n: "03", title: "Limited spots — book online", body: "Small group format keeps quality high. Spots go fast. Book online to secure your place in the next block." },
+            { n: "03", title: "Four athletes per session — book ahead", body: "Access is unlimited. Sessions cap at four athletes so everyone gets coached properly. Book your spot ahead — it\'s included in your weekly fee if you\'re on the Accelerator or a performance program." },
           ].map((card, i) => (
             <motion.div
               key={i}

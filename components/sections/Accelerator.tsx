@@ -18,6 +18,10 @@ export default function Accelerator() {
       sub: "Full session + program review every week — not a 15-min check-in",
     },
     {
+      title: "Unlimited Gym Access & Coached Sessions",
+      sub: "Train in our gym as often as you like, at no extra cost. That includes our coached small-group sessions run by Chris and Tom — up to 40 a week. Nothing extra to book, nothing extra to pay.",
+    },
+    {
       title: "Sport-Specific S&C Program",
       sub: "Built for your sport, your position, your training demands",
     },
@@ -28,10 +32,6 @@ export default function Accelerator() {
     {
       title: "Return-to-Sport Clearance Testing",
       sub: "Objective confirmation — not a calendar date or gut feel",
-    },
-    {
-      title: "Gym & Coach Liaison Access",
-      sub: "Access to a gym and program coaching when you need it — so you can exercise and progress between appointments",
     },
     {
       title: "Programming Platform Access",
