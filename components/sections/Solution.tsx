@@ -36,6 +36,7 @@ const team = [
     bio: "Masters of Sports Physiotherapy. 10 years working in competitive elite and sub-elite sport across Melbourne Storm Rugby League Club and Essendon Football Club's VFL Program. Passionate about understanding the core drivers behind behaviour change and performance optimisation to help injured athletes and those wanting to maximise their sporting performance.",
     boldBio: "Melbourne Storm Rugby League Club and Essendon Football Club's VFL Program",
     img: "https://assets.cdn.filesafe.space/uGjKGDMcGryVhkZ0uDcj/media/66f50afea0a6fb0523531782.webp",
+    imgPosition: "top center",
   },
   {
     name: "Tom Yeung",
@@ -43,6 +44,7 @@ const team = [
     bio: "Bachelor of Physiotherapy, La Trobe University, with additional training in Sports & Exercise Rehabilitation. Avid gym-goer with a background in combat training — Tom brings genuine understanding of the demands combat athletes face. He knows why a 12-week full rest prescription doesn't work for a competitor.",
     boldBio: "Avid gym-goer with a background in combat training",
     img: "/tom-yeung.jpg",
+    imgPosition: "top center",
   },
   {
     name: "Conner Van Turnhout",
@@ -50,6 +52,7 @@ const team = [
     bio: "Bachelor of Physiotherapy and Postgraduate Certificate in Sports Physiotherapy, University of Otago — currently completing a Master of Sports Physiotherapy at La Trobe. Keen CrossFitter with a background in Rugby Union, Conner understands the physical demands of sport and the importance of staying active. Evidence-based care tailored to help you achieve your goals.",
     boldBio: "Keen CrossFitter with a background in Rugby Union",
     img: "/conner-van-turnhout.jpg",
+    imgPosition: "top center",
   },
   {
     name: "Jordan Schorel",
@@ -57,6 +60,7 @@ const team = [
     bio: "Bachelor of Health Science / Master of Osteopathy. Lead clinician for Stride's Sunday Acute Sports Injury Clinic — first-point-of-care assessment and management for athletes who can't wait. Bringing osteopathic expertise into Stride's sports injury rehabilitation programs, with a focus on restoring function and getting athletes back to the sport they love.",
     boldBio: "Lead clinician for Stride's Sunday Acute Sports Injury Clinic",
     img: "/jordan-schorel.jpg",
+    imgPosition: "center 40%",
   },
 ];
 
@@ -87,7 +91,7 @@ function TeamCard({ member, i, inView }: { member: typeof team[0]; i: number; in
           src={member.img}
           alt={member.name}
           fill
-          style={{ objectFit: "cover", objectPosition: "top center", transition: "transform 0.5s ease" }}
+          style={{ objectFit: "cover", objectPosition: member.imgPosition ?? "top center", transition: "transform 0.5s ease" }}
           unoptimized
         />
       )}
@@ -228,7 +232,7 @@ export default function Solution() {
             </h2>
           </div>
 
-          <div className="team-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 20 }}>
+          <div className="team-grid" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
             {team.map((member, i) => (
               <TeamCard key={i} member={member} i={i} inView={inViewTeam} />
             ))}
