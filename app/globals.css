@@ -267,15 +267,15 @@ nav {
     text-align: center !important;
   }
 
-  /* Team cards — single column */
+  /* Team cards — single column on mobile */
   .team-grid {
     grid-template-columns: 1fr !important;
-    max-width: 400px;
+    max-width: 420px;
     margin: 0 auto;
   }
-  /* Team card aspect ratio — less tall on mobile */
+  /* Team card aspect ratio — portrait on mobile */
   .team-card-wrap {
-    aspect-ratio: 4/3 !important;
+    aspect-ratio: 3/4 !important;
   }
 
   /* Stats bar */
@@ -411,7 +411,7 @@ nav {
   /* Team grid */
   .team-grid {
     grid-template-columns: 1fr !important;
-    max-width: 360px !important;
+    max-width: 420px !important;
     margin-left: auto !important;
     margin-right: auto !important;
   }

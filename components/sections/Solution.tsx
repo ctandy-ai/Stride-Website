@@ -67,50 +67,84 @@ const team = [
 
 // Hover-reveal team card
 function TeamCard({ member, i, inView }: { member: typeof team[0]; i: number; inView: boolean }) {
+  const [hovered, setHovered] = useState(false);
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ delay: i * 0.15, duration: 0.55 }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="team-card-wrap"
       style={{
+        position: "relative",
         borderRadius: 16,
         overflow: "hidden",
+        cursor: "default",
+        aspectRatio: "3/4",
         background: "var(--navy-light)",
-        border: "1px solid rgba(255,255,255,0.06)",
       }}
     >
-      {/* Photo — fixed height, consistent crop */}
-      <div style={{ position: "relative", height: 300, overflow: "hidden" }}>
-        {member.img && (
-          <Image
-            src={member.img}
-            alt={member.name}
-            fill
-            style={{ objectFit: "cover", objectPosition: member.imgPosition ?? "top center" }}
-            unoptimized
-          />
-        )}
-      </div>
+      {/* Full image */}
+      {member.img && (
+        <Image
+          src={member.img}
+          alt={member.name}
+          fill
+          style={{ objectFit: "cover", objectPosition: member.imgPosition ?? "top center", transition: "transform 0.5s ease" }}
+          unoptimized
+        />
+      )}
 
-      {/* Info */}
-      <div style={{ padding: "22px 26px 28px" }}>
-        <div style={{ fontFamily: "var(--font-bebas)", fontSize: "1.7rem", color: "#fff", letterSpacing: "0.02em", lineHeight: 1 }}>
+      {/* Always-visible name overlay at bottom */}
+      <motion.div
+        animate={{ opacity: hovered ? 0 : 1 }}
+        transition={{ duration: 0.25 }}
+        style={{
+          position: "absolute", bottom: 0, left: 0, right: 0,
+          background: "linear-gradient(to top, rgba(9,20,33,0.92) 0%, rgba(9,20,33,0.5) 60%, transparent 100%)",
+          padding: "48px 20px 20px",
+        }}
+      >
+        <div style={{ fontFamily: "var(--font-bebas)", fontSize: "1.4rem", color: "#fff", letterSpacing: "0.02em", lineHeight: 1 }}>
           {member.name}
         </div>
-        <div style={{ fontFamily: "var(--font-dm-mono)", fontSize: "0.58rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--blue)", marginTop: 6, marginBottom: 14 }}>
+        <div style={{ fontFamily: "var(--font-dm-mono)", fontSize: "0.55rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginTop: 5 }}>
+          {member.role.split(" · ")[0]}
+        </div>
+      </motion.div>
+
+      {/* Hover detail overlay */}
+      <motion.div
+        initial={false}
+        animate={{ opacity: hovered ? 1 : 0, y: hovered ? 0 : 12 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+        style={{
+          position: "absolute", inset: 0,
+          background: "rgba(9,20,33,0.92)",
+          backdropFilter: "blur(2px)",
+          display: "flex", flexDirection: "column", justifyContent: "flex-end",
+          padding: 22,
+          pointerEvents: hovered ? "auto" : "none",
+        }}
+      >
+        <div style={{ fontFamily: "var(--font-bebas)", fontSize: "1.5rem", color: "#fff", letterSpacing: "0.02em", lineHeight: 1, marginBottom: 4 }}>
+          {member.name}
+        </div>
+        <div style={{ fontFamily: "var(--font-dm-mono)", fontSize: "0.55rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--blue)", marginBottom: 12 }}>
           {member.role}
         </div>
-        <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "0.83rem", lineHeight: 1.7, margin: 0 }}>
+        <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "0.78rem", lineHeight: 1.65, margin: 0 }}>
           {member.bio.split(member.boldBio).map((part, pi) => (
             <span key={pi}>
               {part}
               {pi < member.bio.split(member.boldBio).length - 1 && (
-                <strong style={{ color: "rgba(255,255,255,0.85)" }}>{member.boldBio}</strong>
+                <strong style={{ color: "#fff" }}>{member.boldBio}</strong>
               )}
             </span>
           ))}
         </p>
-      </div>
+      </motion.div>
     </motion.div>
   );
 }
@@ -198,7 +232,7 @@ export default function Solution() {
             </h2>
           </div>
 
-          <div className="team-grid" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
+          <div className="team-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
             {team.map((member, i) => (
               <TeamCard key={i} member={member} i={i} inView={inViewTeam} />
             ))}
