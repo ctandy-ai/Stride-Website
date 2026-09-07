@@ -60,7 +60,7 @@ const team = [
     bio: "Bachelor of Health Science / Master of Osteopathy. Lead clinician for Stride's Sunday Acute Sports Injury Clinic — first-point-of-care assessment and management for athletes who can't wait. Bringing osteopathic expertise into Stride's sports injury rehabilitation programs, with a focus on restoring function and getting athletes back to the sport they love.",
     boldBio: "Lead clinician for Stride's Sunday Acute Sports Injury Clinic",
     img: "/jordan-schorel.jpg",
-    imgPosition: "center 40%",
+    imgPosition: "top center",
   },
 ];
 
