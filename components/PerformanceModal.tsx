@@ -236,7 +236,7 @@ export default function PerformanceModal() {
                 <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "0.88rem", lineHeight: 1.7, marginBottom: 24 }}>
                   Or book your Blueprint Testing Session now — we&apos;ll set your program up from there:
                 </p>
-                <a href="https://booking.clinic1.com/online-booking/wZet4fM4" target="_blank" rel="noopener"
+                <a href="https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings?business_id=76801" target="_blank" rel="noopener"
                   style={{ display: "block", background: "var(--blue)", color: "#fff", textDecoration: "none", borderRadius: 8, padding: "14px 18px", fontWeight: 700, fontSize: "0.86rem", letterSpacing: "0.04em", textTransform: "uppercase", marginBottom: 10 }}>
                   📅 Book Blueprint Testing Session
                 </a>

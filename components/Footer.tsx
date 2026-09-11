@@ -48,7 +48,7 @@ export default function Footer() {
               { href: "/#pricing", label: "Pricing" },
               { href: "/performance-programs", label: "S\u0026C Performance" },
               { href: "#", label: "Book online", modal: true },
-              { href: "https://booking.clinic1.com/online-booking/wZet4fM4", label: "Book Gym", external: true },
+              { href: "https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings?business_id=76801", label: "Book Now", external: true },
             ].map((item) => (
               item.modal ? (
                 <a

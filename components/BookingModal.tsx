@@ -278,7 +278,7 @@ export default function BookingModal() {
             <p style={{ color: "#7A8F9E", marginBottom: 24 }}>Choose how you&apos;d like to confirm your appointment:</p>
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               <a
-                href="https://booking.clinic1.com/online-booking/wZet4fM4"
+                href="https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings?business_id=76801"
                 target="_blank"
                 rel="noopener"
                 style={{ background: "var(--blue)", color: "#fff", padding: "14px 20px", borderRadius: 8, textDecoration: "none", fontWeight: 700, fontSize: "0.95rem" }}
@@ -286,7 +286,7 @@ export default function BookingModal() {
                 📅 &nbsp;New Client — Book Assessment
               </a>
               <a
-                href="https://booking.clinic1.com/online-booking/qPzrwR2A"
+                href="https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings?business_id=76801"
                 target="_blank"
                 rel="noopener"
                 style={{ background: "#0d7de8", color: "#fff", padding: "14px 20px", borderRadius: 8, textDecoration: "none", fontWeight: 700, fontSize: "0.95rem" }}

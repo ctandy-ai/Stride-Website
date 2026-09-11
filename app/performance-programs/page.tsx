@@ -138,7 +138,7 @@ const faqItems = [
   },
 ];
 
-const BOOKING_URL = "https://booking.clinic1.com/online-booking/wZet4fM4";
+const BOOKING_URL = "https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings?business_id=76801";
 
 /* ─── Page ───────────────────────────────── */
 

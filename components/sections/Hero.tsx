@@ -175,7 +175,7 @@ Getting sports injury management right the first time.
 
           {/* Tertiary */}
           <a
-            href="https://booking.clinic1.com/online-booking/qPzrwR2A"
+            href="https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings?business_id=76801"
             target="_blank" rel="noopener"
             style={{
               display: "block", width: "100%",

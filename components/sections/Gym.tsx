@@ -65,7 +65,7 @@ export default function Gym() {
           ))}
         </div>
         <a
-          href="https://booking.clinic1.com/online-booking/wZet4fM4"
+          href="https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings?business_id=76801"
           target="_blank" rel="noopener"
           className="btn btn-primary"
           style={{ display: "inline-flex", textDecoration: "none" }}
