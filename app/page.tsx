@@ -6,6 +6,7 @@ import Services from "@/components/sections/Services";
 import Problem from "@/components/sections/Problem";
 import Accelerator from "@/components/sections/Accelerator";
 import Gym from "@/components/sections/Gym";
+import GymSchedule from "@/components/sections/GymSchedule";
 import CombatSports from "@/components/sections/CombatSports";
 import ACLRehab from "@/components/sections/ACLRehab";
 import SundayClinic from "@/components/sections/SundayClinic";
@@ -27,22 +28,7 @@ export default function Home() {
       <Accelerator />
       <Gym />
 
-      {/* Class Timetable */}
-      <section style={{ background: "#f6f8fa", padding: "48px 24px", textAlign: "center" }}>
-        <div className="ey ey-blue" style={{ justifyContent: "center", marginBottom: 8 }}>Class Schedule</div>
-        <h2 style={{ fontSize: "1.8rem", marginBottom: 24, color: "var(--navy)" }}>Find a session that fits your week</h2>
-        <div style={{ maxWidth: 1000, margin: "0 auto", borderRadius: 12, overflow: "hidden", boxShadow: "0 2px 16px rgba(0,0,0,.08)" }}>
-          <iframe
-            src="https://booking.clinic1.com/class-timetable/STRDI-SPORS-PHYST/embed"
-            width="100%"
-            height="800"
-            style={{ border: 0, display: "block" }}
-            title="Class Timetable"
-            loading="lazy"
-            sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals"
-          />
-        </div>
-      </section>
+      <GymSchedule />
 
 
 
