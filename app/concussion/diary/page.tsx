@@ -31,82 +31,87 @@ const SYMPTOMS = [
 
 export default function ConcussionDiary() {
   return (
-    <div style={{ paddingTop: 66 }}>
-      <main className="min-h-screen bg-[var(--off)]">
-        <div className="max-w-3xl mx-auto px-6 py-12">
+    <div style={{ background: "var(--navy)", color: "rgba(255,255,255,0.82)", minHeight: "100vh", paddingTop: 66 }}>
+      <div style={{ maxWidth: 700, margin: "0 auto", padding: "64px 24px 80px" }}>
 
-          {/* Back */}
-          <Link href="/concussion" className="text-[var(--blue)] font-mono text-sm hover:underline mb-8 inline-block">
-            ← Concussion resources
-          </Link>
+        {/* Back */}
+        <Link href="/concussion" style={{ display: "inline-block", marginBottom: 36, fontSize: "0.82rem", color: "rgba(255,255,255,0.40)", textDecoration: "none" }}>
+          ← Concussion resources
+        </Link>
 
-          {/* Header */}
-          <div className="bg-[var(--navy)] rounded-2xl p-8 mb-8">
-            <p className="text-[var(--blue)] font-mono text-xs uppercase tracking-widest mb-2">
-              Stride Sports Physio &amp; Performance
-            </p>
-            <h1 className="font-bebas text-4xl text-white mb-1">
-              Concussion Symptom Diary
-            </h1>
-            <p className="text-[rgba(255,255,255,0.55)] text-sm">
-              Fill in each evening. Bring to your next appointment.
-            </p>
-          </div>
+        {/* Eyebrow + heading */}
+        <div className="ey ey-blue" style={{ marginBottom: 12 }}>
+          Symptom Tracking · Stride Sports Physio
+        </div>
+        <h1 className="sh sh-white" style={{ marginBottom: 8, fontSize: "clamp(2.6rem, 6vw, 4.5rem)" }}>
+          Concussion Symptom Diary
+        </h1>
+        <p style={{ color: "rgba(255,255,255,0.40)", fontSize: "0.82rem", marginBottom: 40 }}>
+          Fill in each evening. Bring to your next appointment.
+        </p>
 
-          {/* Athlete details */}
-          <div className="bg-white border border-[var(--brd)] rounded-xl p-6 mb-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="flex items-center gap-3">
-                <span className="text-[var(--muted)] text-sm shrink-0">Athlete:</span>
-                <div className="flex-1 border-b border-dashed border-[var(--stone)] h-6" />
+        {/* Athlete details */}
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 24, marginBottom: 40 }}>
+          {["Athlete", "Date of injury (Day 0)"].map((label) => (
+            <div key={label} style={{ display: "flex", alignItems: "center", gap: 10, flex: "1 1 260px" }}>
+              <span style={{ color: "rgba(255,255,255,0.35)", fontSize: "0.82rem", flexShrink: 0 }}>{label}:</span>
+              <div style={{ flex: 1, borderBottom: "1px dashed rgba(255,255,255,0.15)", height: 24 }} />
+            </div>
+          ))}
+        </div>
+
+        {/* Print button */}
+        <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 32 }}>
+          <PrintButton />
+        </div>
+
+        {/* Diary entries */}
+        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+          {DAYS.map(({ label, day }) => (
+            <div key={label} style={{ border: "1px solid rgba(255,255,255,0.09)", borderRadius: 14, overflow: "hidden" }}>
+              {/* Day header */}
+              <div style={{
+                background: "rgba(27,144,245,0.10)",
+                borderBottom: "1px solid rgba(255,255,255,0.07)",
+                padding: "12px 24px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+              }}>
+                <span style={{ fontFamily: "var(--font-bebas)", fontSize: "1.4rem", letterSpacing: "0.04em", color: "#fff" }}>
+                  {day}
+                </span>
+                <span style={{ fontFamily: "var(--font-dm-mono)", fontSize: "0.65rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--blue)" }}>
+                  {label}
+                </span>
               </div>
-              <div className="flex items-center gap-3">
-                <span className="text-[var(--muted)] text-sm shrink-0">Date of injury (Day 0):</span>
-                <div className="flex-1 border-b border-dashed border-[var(--stone)] h-6" />
+              {/* Symptom rows */}
+              <div style={{ padding: "20px 24px" }}>
+                {SYMPTOMS.map((symptom, i) => (
+                  <div key={symptom} style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: i < SYMPTOMS.length - 1 ? 12 : 0 }}>
+                    <span style={{ color: "rgba(255,255,255,0.35)", fontSize: "0.82rem", width: 180, flexShrink: 0 }}>{symptom}</span>
+                    <div style={{ flex: 1, borderBottom: "1px dashed rgba(255,255,255,0.10)", height: 22 }} />
+                  </div>
+                ))}
               </div>
             </div>
-          </div>
-
-          {/* Print button */}
-          <div className="flex justify-end mb-6 print:hidden">
-            <PrintButton />
-          </div>
-
-          {/* Diary entries */}
-          <div className="space-y-6">
-            {DAYS.map(({ label, day }) => (
-              <div key={label} className="bg-white border border-[var(--brd)] rounded-xl overflow-hidden">
-                <div className="bg-[var(--navy)] px-6 py-3 flex items-center justify-between">
-                  <span className="font-bebas text-xl text-white">{day}</span>
-                  <span className="text-[var(--blue)] font-mono text-xs uppercase tracking-widest">{label}</span>
-                </div>
-                <div className="p-6">
-                  <div className="space-y-3">
-                    {SYMPTOMS.map((symptom) => (
-                      <div key={symptom} className="flex items-center gap-3">
-                        <span className="text-[var(--muted)] text-sm w-44 shrink-0">{symptom}</span>
-                        <div className="flex-1 border-b border-dashed border-[var(--stone)] h-6" />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Disclaimer */}
-          <div className="mt-10 border-t border-[var(--brd)] pt-6">
-            <p className="text-[var(--navy)] font-semibold text-sm mb-1">Stride Sports Physio &amp; Performance</p>
-            <p className="text-[var(--muted)] text-sm">
-              0483 918 427 · info@stridephysiohealth.com.au · stridephysiohealth.com.au
-            </p>
-            <p className="text-[var(--muted)] text-xs mt-4 leading-relaxed">
-              <em>Progressing through return-to-sport stages does not constitute competitive clearance. Final clearance must be obtained from a registered medical practitioner (GP or Sports Physician).</em>
-            </p>
-          </div>
-
+          ))}
         </div>
-      </main>
+
+        {/* Disclaimer */}
+        <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: 24, marginTop: 48 }}>
+          <p style={{ fontSize: "0.88rem", color: "#fff", fontWeight: 600, marginBottom: 4 }}>
+            Stride Sports Physio &amp; Performance
+          </p>
+          <p style={{ fontSize: "0.82rem", color: "rgba(255,255,255,0.40)", marginBottom: 16 }}>
+            0483 918 427 · info@stridephysiohealth.com.au · stridephysiohealth.com.au
+          </p>
+          <p style={{ fontSize: "0.72rem", color: "rgba(255,255,255,0.22)", lineHeight: 1.65, fontStyle: "italic", margin: 0 }}>
+            Progressing through return-to-sport stages does not constitute competitive clearance. Final clearance must be obtained from a registered medical practitioner (GP or Sports Physician).
+          </p>
+        </div>
+
+      </div>
     </div>
   );
 }

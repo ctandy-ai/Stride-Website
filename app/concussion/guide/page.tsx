@@ -7,121 +7,134 @@ export const metadata: Metadata = {
     "Stride concussion acute recovery guide. First 48 hours, 21-day clock, red flags, and pain management.",
 };
 
+const row = (label: string) => (
+  <div key={label} style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
+    <span style={{ color: "rgba(255,255,255,0.35)", fontSize: "0.82rem", width: 200, flexShrink: 0 }}>{label}</span>
+    <div style={{ flex: 1, borderBottom: "1px dashed rgba(255,255,255,0.15)", height: 24 }} />
+  </div>
+);
+
 export default function ConcussionGuide() {
   return (
-    <div style={{ paddingTop: 66 }}>
-      <main className="min-h-screen bg-[var(--off)]">
-        <div className="max-w-2xl mx-auto px-6 py-12">
+    <div style={{ background: "var(--navy)", color: "rgba(255,255,255,0.82)", minHeight: "100vh", paddingTop: 66 }}>
+      <div style={{ maxWidth: 700, margin: "0 auto", padding: "64px 24px 80px" }}>
 
-          {/* Back */}
-          <Link href="/concussion" className="text-[var(--blue)] font-mono text-sm hover:underline mb-8 inline-block">
-            ← Concussion resources
-          </Link>
+        {/* Back */}
+        <Link href="/concussion" style={{ display: "inline-block", marginBottom: 36, fontSize: "0.82rem", color: "rgba(255,255,255,0.40)", textDecoration: "none" }}>
+          ← Concussion resources
+        </Link>
 
-          {/* Header */}
-          <div className="bg-[var(--navy)] rounded-2xl p-8 mb-8 print:bg-white print:border print:border-gray-300">
-            <p className="text-[var(--blue)] font-mono text-xs uppercase tracking-widest mb-2">
-              Stride Sports Physio &amp; Performance
-            </p>
-            <h1 className="font-bebas text-4xl text-white mb-1 print:text-gray-900">
-              Acute Recovery &amp; Care Guide
-            </h1>
-            <p className="text-[rgba(255,255,255,0.55)] text-sm print:text-gray-500">
-              Concussion management — first 48 hours
-            </p>
-          </div>
-
-          {/* Athlete details */}
-          <div className="bg-white border border-[var(--brd)] rounded-xl p-6 mb-6">
-            <h2 className="font-bebas text-2xl text-[var(--navy)] mb-4">Your Details</h2>
-            <div className="grid grid-cols-1 gap-3">
-              {[
-                { label: "Athlete name", value: "" },
-                { label: "Date of injury (Day 0)", value: "" },
-                { label: "Next appointment", value: "" },
-                { label: "Stride clinician", value: "" },
-              ].map(({ label }) => (
-                <div key={label} className="flex items-center gap-3">
-                  <span className="text-[var(--muted)] text-sm w-52 shrink-0">{label}</span>
-                  <div className="flex-1 border-b border-dashed border-[var(--stone)] h-6" />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Before next visit */}
-          <div className="bg-white border border-[var(--brd)] rounded-xl p-6 mb-6">
-            <h2 className="font-bebas text-2xl text-[var(--navy)] mb-4">Before Your Next Visit</h2>
-            <ul className="space-y-3">
-              {[
-                "Rest your body and your brain. No sport, training or gym.",
-                "Do not drive until your doctor says you can.",
-                "Fill in your symptom diary each evening and bring it with you.",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <span className="text-[var(--blue)] mt-0.5">✓</span>
-                  <span className="text-[var(--navy)] text-sm leading-relaxed">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* 21-day clock */}
-          <div className="bg-[var(--blue-dim)] border border-[var(--blue-glow)] rounded-xl p-6 mb-6">
-            <h2 className="font-bebas text-2xl text-[var(--navy)] mb-2">The 21-Day Clock</h2>
-            <p className="text-[var(--navy)] text-sm leading-relaxed">
-              The brain needs time to recover. Most concussion symptoms resolve within 21 days, but every person is different. Do not rush back to sport, training, or screen-heavy activity. Your clinician will guide you through the return-to-sport stages only when you are symptom-free at rest.
-            </p>
-          </div>
-
-          {/* Headache management */}
-          <div className="bg-white border border-[var(--brd)] rounded-xl p-6 mb-6">
-            <h2 className="font-bebas text-2xl text-[var(--navy)] mb-3">Headache Management</h2>
-            <p className="text-[var(--navy)] text-sm leading-relaxed mb-3">
-              Paracetamol (e.g. Panadol) at the recommended dose is safe to take for headache relief.
-            </p>
-            <p className="text-[var(--muted)] text-sm">
-              <strong className="text-[var(--navy)]">Avoid:</strong> Anti-inflammatories (ibuprofen, naprogesic), alcohol, and codeine-containing medications in the first 48 hours unless directed by your doctor.
-            </p>
-          </div>
-
-          {/* Red flags */}
-          <div className="bg-red-50 border border-red-200 rounded-xl p-6 mb-8">
-            <h2 className="font-bebas text-2xl text-red-700 mb-3">⚠ Red Flags — Go to Emergency</h2>
-            <p className="text-red-600 text-sm mb-3">
-              If any of the following occur, go to your nearest emergency department immediately or call <strong>000</strong>:
-            </p>
-            <ul className="space-y-2">
-              {[
-                "Repeated vomiting",
-                "Headache that keeps building and doesn't settle",
-                "Increasing confusion or disorientation",
-                "Weakness or numbness in arms or legs",
-                "A seizure or convulsion",
-                "Fluid from the ear or nose",
-                "One pupil noticeably larger than the other",
-              ].map((flag) => (
-                <li key={flag} className="flex items-start gap-2">
-                  <span className="text-red-500 mt-0.5">•</span>
-                  <span className="text-red-700 text-sm">{flag}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact & disclaimer */}
-          <div className="border-t border-[var(--brd)] pt-6">
-            <p className="text-[var(--navy)] font-semibold text-sm mb-1">Stride Sports Physio &amp; Performance</p>
-            <p className="text-[var(--muted)] text-sm">
-              0483 918 427 · info@stridephysiohealth.com.au · stridephysiohealth.com.au
-            </p>
-            <p className="text-[var(--muted)] text-xs mt-4 leading-relaxed">
-              <em>Disclaimer: This document provides acute management support. Final medical clearance to return to competitive contact sport must be obtained from a registered medical practitioner (GP or Sports Physician).</em>
-            </p>
-          </div>
-
+        {/* Eyebrow + heading */}
+        <div className="ey ey-blue" style={{ marginBottom: 12 }}>
+          Acute Care · Stride Sports Physio
         </div>
-      </main>
+        <h1 className="sh sh-white" style={{ marginBottom: 8, fontSize: "clamp(2.6rem, 6vw, 4.5rem)" }}>
+          Acute Recovery &amp; Care Guide
+        </h1>
+        <p style={{ color: "rgba(255,255,255,0.40)", fontSize: "0.82rem", marginBottom: 48 }}>
+          Concussion management — first 48 hours
+        </p>
+
+        {/* Athlete details */}
+        <section style={{ marginBottom: 48 }}>
+          <h2 style={{ fontFamily: "var(--font-bebas)", fontSize: "1.6rem", letterSpacing: "0.04em", color: "#fff", marginBottom: 20, paddingBottom: 10, borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
+            Your Details
+          </h2>
+          {row("Athlete name")}
+          {row("Date of injury (Day 0)")}
+          {row("Next appointment")}
+          {row("Stride clinician")}
+        </section>
+
+        {/* Before next visit */}
+        <section style={{ marginBottom: 48 }}>
+          <h2 style={{ fontFamily: "var(--font-bebas)", fontSize: "1.6rem", letterSpacing: "0.04em", color: "#fff", marginBottom: 20, paddingBottom: 10, borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
+            Before Your Next Visit
+          </h2>
+          {[
+            "Rest your body and your brain. No sport, training or gym.",
+            "Do not drive until your doctor says you can.",
+            "Fill in your symptom diary each evening and bring it with you.",
+          ].map((item) => (
+            <div key={item} style={{ display: "flex", gap: 14, marginBottom: 14, alignItems: "flex-start" }}>
+              <span style={{ color: "var(--blue)", flexShrink: 0, marginTop: 2 }}>✓</span>
+              <span style={{ color: "rgba(255,255,255,0.75)", fontSize: "0.95rem", lineHeight: 1.65 }}>{item}</span>
+            </div>
+          ))}
+        </section>
+
+        {/* 21-day clock */}
+        <section style={{ marginBottom: 48 }}>
+          <h2 style={{ fontFamily: "var(--font-bebas)", fontSize: "1.6rem", letterSpacing: "0.04em", color: "#fff", marginBottom: 16, paddingBottom: 10, borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
+            The 21-Day Clock
+          </h2>
+          <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "0.95rem", lineHeight: 1.75 }}>
+            The brain needs time to recover. Most concussion symptoms resolve within 21 days, but every person is different.
+            Do not rush back to sport, training, or screen-heavy activity. Your clinician will guide you through the
+            return-to-sport stages only when you are symptom-free at rest.
+          </p>
+        </section>
+
+        {/* Headache management */}
+        <section style={{ marginBottom: 48 }}>
+          <h2 style={{ fontFamily: "var(--font-bebas)", fontSize: "1.6rem", letterSpacing: "0.04em", color: "#fff", marginBottom: 16, paddingBottom: 10, borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
+            Headache Management
+          </h2>
+          <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "0.95rem", lineHeight: 1.75, marginBottom: 12 }}>
+            <strong style={{ color: "#fff" }}>Paracetamol</strong> (e.g. Panadol) at the recommended dose is safe for headache relief.
+          </p>
+          <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "0.95rem", lineHeight: 1.75 }}>
+            <strong style={{ color: "#fff" }}>Avoid in the first 48 hours:</strong> Anti-inflammatories (ibuprofen, naprogesic),
+            alcohol, and codeine-containing medications — unless directed by your doctor.
+          </p>
+        </section>
+
+        {/* Red flags */}
+        <section style={{
+          background: "rgba(220,38,38,0.10)",
+          border: "1px solid rgba(220,38,38,0.30)",
+          borderRadius: 14,
+          padding: "28px 28px",
+          marginBottom: 48,
+        }}>
+          <h2 style={{ fontFamily: "var(--font-bebas)", fontSize: "1.6rem", letterSpacing: "0.04em", color: "#f87171", marginBottom: 14 }}>
+            ⚠ Red Flags — Go to Emergency
+          </h2>
+          <p style={{ color: "rgba(248,113,113,0.80)", fontSize: "0.88rem", lineHeight: 1.65, marginBottom: 16 }}>
+            If any of the following occur, go to your nearest emergency department immediately or call <strong>000</strong>:
+          </p>
+          <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
+            {[
+              "Repeated vomiting",
+              "Headache that keeps building and doesn't settle",
+              "Increasing confusion or disorientation",
+              "Weakness or numbness in arms or legs",
+              "A seizure or convulsion",
+              "Fluid from the ear or nose",
+              "One pupil noticeably larger than the other",
+            ].map((flag) => (
+              <li key={flag} style={{ display: "flex", gap: 10, marginBottom: 10, alignItems: "flex-start" }}>
+                <span style={{ color: "#f87171", flexShrink: 0 }}>•</span>
+                <span style={{ color: "rgba(248,113,113,0.90)", fontSize: "0.9rem" }}>{flag}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* Contact & disclaimer */}
+        <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: 24 }}>
+          <p style={{ fontSize: "0.88rem", color: "#fff", fontWeight: 600, marginBottom: 4 }}>
+            Stride Sports Physio &amp; Performance
+          </p>
+          <p style={{ fontSize: "0.82rem", color: "rgba(255,255,255,0.40)", marginBottom: 16 }}>
+            0483 918 427 · info@stridephysiohealth.com.au · stridephysiohealth.com.au
+          </p>
+          <p style={{ fontSize: "0.72rem", color: "rgba(255,255,255,0.22)", lineHeight: 1.65, fontStyle: "italic", margin: 0 }}>
+            Disclaimer: This document provides acute management support. Final medical clearance to return to competitive contact sport must be obtained from a registered medical practitioner (GP or Sports Physician).
+          </p>
+        </div>
+
+      </div>
     </div>
   );
 }
