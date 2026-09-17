@@ -34,7 +34,7 @@ const SCHEDULE: Record<string, Slot[]> = {
   Wed: [
     { time: "11:00 am", coaches: ["Tom"] },
     { time: "11:30 am", coaches: ["Conner"] },
-    { time: "12:00 pm", colours: ["Tom"] as unknown as string[], coaches: ["Tom"] },
+    { time: "12:00 pm", coaches: ["Tom"] },
     { time: "4:00 pm",  coaches: ["Conner"] },
     { time: "5:00 pm",  coaches: ["Conner"] },
     { time: "6:00 pm",  coaches: ["Conner"] },
