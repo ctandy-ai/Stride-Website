@@ -196,11 +196,7 @@ ${form.phone||""}`;
             <p style={{color:"rgba(255,255,255,0.60)",fontSize:"0.95rem",lineHeight:1.65,marginBottom:20}}>
               Community AFL players on Bronze NRPP cover. Five steps — done right.
             </p>
-            {/* Privacy badge */}
-            <div style={{display:"inline-flex",alignItems:"center",gap:8,background:"rgba(74,222,128,0.12)",border:"1px solid rgba(74,222,128,0.28)",borderRadius:20,padding:"6px 14px"}}>
-              <span style={{color:"#4ade80",fontSize:"0.75rem"}}>🔒</span>
-              <span style={{color:"#4ade80",fontSize:"0.75rem",fontWeight:600}}>Your data stays in your browser only — we never store or see it</span>
-            </div>
+
           </div>
         </div>
 
@@ -215,14 +211,32 @@ ${form.phone||""}`;
         {tab==="steps"&&(
           <div className="print-hide">
 
-            {/* Auto-fill + privacy notice */}
-            <div style={{background:"rgba(27,144,245,0.08)",border:"1px solid rgba(27,144,245,0.22)",borderRadius:14,padding:"18px 22px",marginBottom:32,display:"flex",gap:14,alignItems:"flex-start"}}>
-              <span style={{fontSize:"1.4rem",flexShrink:0}}>📄</span>
-              <div>
-                <p style={{color:"#fff",fontWeight:700,fontSize:"0.95rem",marginBottom:5}}>How this form works</p>
-                <p style={{color:"rgba(255,255,255,0.65)",fontSize:"0.88rem",lineHeight:1.7,margin:0}}>
-                  Echelon does not have a public online claim portal — claims are submitted <strong style={{color:"#fff"}}>by email, fax, or post only</strong>. This tool pre-fills Sections A and D of the official claim form from your details. Print or save as PDF, sign, and email directly to Echelon. <strong style={{color:"#fff"}}>Your details stay in your browser only. Nothing is sent to Stride or stored anywhere.</strong>
-                </p>
+            {/* Online claim + how-this-form-works notice */}
+            <div style={{display:"flex",flexDirection:"column",gap:12,marginBottom:32}}>
+              {/* Online portal option */}
+              <div style={{background:"rgba(74,222,128,0.08)",border:"1px solid rgba(74,222,128,0.25)",borderRadius:12,padding:"16px 20px",display:"flex",gap:14,alignItems:"center"}}>
+                <span style={{fontSize:"1.3rem",flexShrink:0}}>🌐</span>
+                <div style={{flex:1}}>
+                  <p style={{color:"#fff",fontWeight:700,fontSize:"0.92rem",marginBottom:3}}>Option A — Complete your claim online</p>
+                  <p style={{color:"rgba(255,255,255,0.60)",fontSize:"0.85rem",lineHeight:1.6,margin:0}}>
+                    Echelon has an online claims portal. Athletes can submit directly at{" "}
+                    <a href="https://www.marshaflclaims.com.au/" target="_blank" rel="noopener" style={{color:"#4ade80",fontWeight:600}}>marshaflclaims.com.au</a>.
+                  </p>
+                </div>
+                <a href="https://www.marshaflclaims.com.au/" target="_blank" rel="noopener"
+                  style={{background:"#4ade80",color:"#000",fontWeight:700,fontSize:"0.82rem",padding:"9px 16px",borderRadius:8,textDecoration:"none",whiteSpace:"nowrap",flexShrink:0}}>
+                  Submit online →
+                </a>
+              </div>
+              {/* Paper form option */}
+              <div style={{background:"rgba(27,144,245,0.07)",border:"1px solid rgba(27,144,245,0.18)",borderRadius:12,padding:"16px 20px",display:"flex",gap:14,alignItems:"flex-start"}}>
+                <span style={{fontSize:"1.3rem",flexShrink:0}}>📄</span>
+                <div>
+                  <p style={{color:"#fff",fontWeight:700,fontSize:"0.92rem",marginBottom:3}}>Option B — Pre-filled paper form (this tool)</p>
+                  <p style={{color:"rgba(255,255,255,0.60)",fontSize:"0.85rem",lineHeight:1.6,margin:0}}>
+                    Use the Claim Form tab to pre-fill Sections A and D from your details, then print or save as PDF, sign, and email to Echelon. <span style={{color:"rgba(255,255,255,0.40)"}}>Your details stay in your browser only — nothing is sent to Stride or stored anywhere.</span>
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -483,9 +497,14 @@ ${form.phone||""}`;
         {tab==="form"&&(
           <div>
             {/* ─── Form actions bar (screen only) ─── */}
-            <div className="print-hide" style={{display:"flex",gap:10,marginBottom:28,flexWrap:"wrap"}}>
-              <button onClick={()=>doPrint("A")} style={{flex:"1 1 200px",background:"var(--blue)",color:"#fff",border:"none",borderRadius:10,padding:"12px 18px",fontWeight:700,fontSize:"0.85rem",cursor:"pointer"}}>🖨 Print Section A (your part)</button>
-              <button onClick={()=>doPrint("D")} style={{flex:"1 1 200px",background:"rgba(74,222,128,0.12)",color:"#4ade80",border:"1px solid rgba(74,222,128,0.3)",borderRadius:10,padding:"12px 18px",fontWeight:700,fontSize:"0.85rem",cursor:"pointer"}}>🖨 Print Section D (for your physio)</button>
+            <div className="print-hide" style={{marginBottom:28}}>
+              <div style={{display:"flex",gap:10,flexWrap:"wrap",marginBottom:10}}>
+                <button onClick={()=>doPrint("A")} style={{flex:"1 1 200px",background:"var(--blue)",color:"#fff",border:"none",borderRadius:10,padding:"12px 18px",fontWeight:700,fontSize:"0.85rem",cursor:"pointer"}}>🖨 Print Section A (your part)</button>
+                <button onClick={()=>doPrint("D")} style={{flex:"1 1 200px",background:"rgba(74,222,128,0.12)",color:"#4ade80",border:"1px solid rgba(74,222,128,0.3)",borderRadius:10,padding:"12px 18px",fontWeight:700,fontSize:"0.85rem",cursor:"pointer"}}>🖨 Print Section D (for your physio)</button>
+              </div>
+              <p style={{color:"rgba(255,255,255,0.28)",fontSize:"0.72rem",margin:0}}>
+                🔒 Your details stay in your browser only — nothing is sent to Stride or stored anywhere.
+              </p>
             </div>
 
             {/* ════ SECTION A (screen form) ════ */}
