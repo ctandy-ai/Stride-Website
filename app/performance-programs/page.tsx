@@ -3,8 +3,6 @@
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
-import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
 import PerformanceModal from "@/components/PerformanceModal";
 
 /* ─── Data ───────────────────────────────── */
@@ -184,7 +182,7 @@ export default function PerformancePrograms() {
 
   return (
     <>
-      <Nav />
+
 
       {/* ① HERO */}
       <section
@@ -2847,7 +2845,7 @@ export default function PerformancePrograms() {
         </motion.div>
       </section>
 
-      <Footer />
+
       <PerformanceModal />
     </>
   );
