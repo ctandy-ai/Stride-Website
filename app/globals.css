@@ -433,3 +433,11 @@ nav {
     gap: 24px !important;
   }
 }
+
+/* ── Print utilities ── */
+@media print {
+  .no-print { display: none !important; }
+  .print-only { display: block !important; }
+  nav, footer { display: none !important; }
+  body { background: #0D1B2A !important; }
+}
