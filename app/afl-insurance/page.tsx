@@ -96,17 +96,17 @@ const PrintRow=({label,value}:{label:string;value:string})=>(
 /* ─── Step card ──────────────────────────────────────────── */
 const StepCard=({n,title,who,children,status}:{n:string;title:string;who:string;children:React.ReactNode;status:"athlete"|"stride"|"club"|"echelon"})=>{
   const colors:{[k:string]:string}={athlete:"var(--blue)",stride:"#4ade80",club:"#f59e0b",echelon:"#a78bfa"};
-  const labels:{[k:string]:string}={athlete:"You",stride:"Stride physio",club:"Your club",echelon:"Echelon"};
+  const labels:{[k:string]:string}={athlete:"You complete this",stride:"Stride physio completes",club:"Your club completes",echelon:"Submit to Echelon"};
   return(
-    <div style={{border:"1px solid rgba(255,255,255,0.09)",borderRadius:14,overflow:"hidden",marginBottom:16}}>
-      <div style={{background:"rgba(255,255,255,0.04)",padding:"14px 20px",display:"flex",alignItems:"center",gap:14}}>
-        <div style={{width:36,height:36,borderRadius:"50%",background:colors[status],display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"var(--font-bebas)",fontSize:"1.1rem",color:"#000",flexShrink:0}}>{n}</div>
+    <div style={{border:"1px solid rgba(255,255,255,0.10)",borderLeft:`4px solid ${colors[status]}`,borderRadius:14,overflow:"hidden",marginBottom:20,background:"rgba(255,255,255,0.03)"}}>
+      <div style={{padding:"20px 24px",display:"flex",alignItems:"center",gap:18,borderBottom:"1px solid rgba(255,255,255,0.07)"}}>
+        <div style={{width:52,height:52,borderRadius:"50%",background:colors[status],display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"var(--font-bebas)",fontSize:"1.6rem",color:"#000",flexShrink:0,boxShadow:`0 0 20px ${colors[status]}44`}}>{n}</div>
         <div style={{flex:1}}>
-          <div style={{color:"#fff",fontWeight:700,fontSize:"0.95rem"}}>{title}</div>
-          <div style={{fontSize:"0.72rem",color:"rgba(255,255,255,0.35)",letterSpacing:"0.08em",textTransform:"uppercase"}}>{labels[status]} completes this</div>
+          <div style={{color:"#fff",fontWeight:700,fontSize:"1.1rem",letterSpacing:"0.01em",marginBottom:3}}>{title}</div>
+          <div style={{fontSize:"0.72rem",color:colors[status],letterSpacing:"0.10em",textTransform:"uppercase",fontWeight:600}}>{labels[status]}</div>
         </div>
       </div>
-      <div style={{padding:"16px 20px"}}>{children}</div>
+      <div style={{padding:"20px 24px"}}>{children}</div>
     </div>
   );
 };
@@ -176,24 +176,58 @@ ${form.phone||""}`;
 
       <div style={{maxWidth:760,margin:"0 auto",padding:"60px 24px 80px"}}>
 
-        {/* Header */}
-        <div className="print-hide">
-          <div className="ey ey-blue" style={{marginBottom:10}}>Stride Sports Physio · AFL Coverage</div>
-          <h1 className="sh sh-white" style={{fontSize:"clamp(2.4rem,5vw,4rem)",marginBottom:8}}>AFL NRPP Injury Claim</h1>
-          <p style={{color:"rgba(255,255,255,0.45)",fontSize:"0.9rem",lineHeight:1.65,marginBottom:32,maxWidth:560}}>
-            Step-by-step guide for community AFL players on Bronze cover. Complete your Section A online, get your physio to sign Section D, and follow up with your club and Echelon.
-          </p>
-          {/* Tabs */}
-          <div style={{display:"flex",gap:4,marginBottom:40,borderBottom:"1px solid rgba(255,255,255,0.09)"}}>
-            {tabs.map(([id,label])=>(
-              <button key={id} onClick={()=>setTab(id)} style={{background:"none",border:"none",cursor:"pointer",padding:"10px 18px",fontSize:"0.88rem",fontWeight:600,color:tab===id?"#fff":"rgba(255,255,255,0.40)",borderBottom:tab===id?"2px solid var(--blue)":"2px solid transparent",transition:"all 0.15s"}}>{label}</button>
-            ))}
+        {/* ── HERO ── */}
+        <div className="print-hide" style={{
+          margin:"0 -24px 48px",
+          borderRadius:20,
+          overflow:"hidden",
+          position:"relative",
+          minHeight:280,
+          backgroundImage:"linear-gradient(to right, #0D1B2A 35%, rgba(13,27,42,0.82) 60%, rgba(13,27,42,0.35) 100%), url('/afl-ruck.jpg')",
+          backgroundSize:"cover",
+          backgroundPosition:"center 30%",
+          display:"flex",
+          alignItems:"center",
+          padding:"48px 36px",
+        }}>
+          <div style={{maxWidth:500,position:"relative",zIndex:1}}>
+            <div className="ey ey-blue" style={{marginBottom:12}}>Stride Sports Physio · AFL Insurance</div>
+            <h1 className="sh sh-white" style={{fontSize:"clamp(2.6rem,5vw,4.4rem)",marginBottom:14,lineHeight:0.92}}>AFL Injury Claim Guide</h1>
+            <p style={{color:"rgba(255,255,255,0.60)",fontSize:"0.95rem",lineHeight:1.65,marginBottom:20}}>
+              Community AFL players on Bronze NRPP cover. Five steps — done right.
+            </p>
+            {/* Privacy badge */}
+            <div style={{display:"inline-flex",alignItems:"center",gap:8,background:"rgba(74,222,128,0.12)",border:"1px solid rgba(74,222,128,0.28)",borderRadius:20,padding:"6px 14px"}}>
+              <span style={{color:"#4ade80",fontSize:"0.75rem"}}>🔒</span>
+              <span style={{color:"#4ade80",fontSize:"0.75rem",fontWeight:600}}>Your data stays in your browser only — we never store or see it</span>
+            </div>
           </div>
+        </div>
+
+        {/* Tabs */}
+        <div className="print-hide" style={{display:"flex",gap:0,marginBottom:40,borderBottom:"1px solid rgba(255,255,255,0.09)"}}>
+          {tabs.map(([id,label])=>(
+            <button key={id} onClick={()=>setTab(id)} style={{background:"none",border:"none",cursor:"pointer",padding:"12px 20px",fontSize:"0.92rem",fontWeight:700,color:tab===id?"#fff":"rgba(255,255,255,0.35)",borderBottom:tab===id?"2px solid var(--blue)":"2px solid transparent",transition:"all 0.15s",letterSpacing:"0.01em"}}>{label}</button>
+          ))}
         </div>
 
         {/* ══ TAB: STEPS ══════════════════════════════════════ */}
         {tab==="steps"&&(
           <div className="print-hide">
+
+            {/* Auto-fill + privacy notice */}
+            <div style={{background:"rgba(27,144,245,0.08)",border:"1px solid rgba(27,144,245,0.22)",borderRadius:14,padding:"18px 22px",marginBottom:32,display:"flex",gap:14,alignItems:"flex-start"}}>
+              <span style={{fontSize:"1.4rem",flexShrink:0}}>📄</span>
+              <div>
+                <p style={{color:"#fff",fontWeight:700,fontSize:"0.95rem",marginBottom:5}}>How this form works</p>
+                <p style={{color:"rgba(255,255,255,0.65)",fontSize:"0.88rem",lineHeight:1.7,margin:0}}>
+                  Echelon does not have a public online claim portal — claims are submitted <strong style={{color:"#fff"}}>by email, fax, or post only</strong>. This tool pre-fills Sections A and D of the official claim form from your details. Print or save as PDF, sign, and email directly to Echelon. <strong style={{color:"#fff"}}>Your details stay in your browser only. Nothing is sent to Stride or stored anywhere.</strong>
+                </p>
+              </div>
+            </div>
+
+            {/* Step heading */}
+            <h2 className="sh sh-white" style={{fontSize:"clamp(1.8rem,4vw,2.8rem)",marginBottom:24}}>Your 5-Step Claim Guide</h2>
 
             <StepCard n="1" title="Complete Section A — Your Details" who="athlete" status="athlete">
               <p style={{color:"rgba(255,255,255,0.65)",fontSize:"0.88rem",lineHeight:1.7,marginBottom:14}}>
@@ -291,6 +325,76 @@ ${form.phone||""}`;
               </div>
               <p style={{color:"rgba(255,255,255,0.35)",fontSize:"0.8rem",margin:0}}>Once you have a claim number, submit any additional Stride invoices directly by email quoting that number.</p>
             </StepCard>
+
+            {/* ── Pricing map ── */}
+            <div style={{marginTop:40,paddingTop:32,borderTop:"1px solid rgba(255,255,255,0.09)"}}>
+              <h2 className="sh sh-white" style={{fontSize:"clamp(1.6rem,3.5vw,2.4rem)",marginBottom:6}}>Stride Pricing &amp; What NRPP Covers</h2>
+              <p style={{color:"rgba(255,255,255,0.40)",fontSize:"0.85rem",marginBottom:24}}>Two ways to see us. Here’s how Bronze cover maps to each.</p>
+
+              <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:16,marginBottom:20}}>
+
+                {/* Option 1: Sessions */}
+                <div style={{background:"rgba(27,144,245,0.08)",border:"1px solid rgba(27,144,245,0.22)",borderRadius:14,padding:"24px 22px"}}>
+                  <div className="ey ey-blue" style={{marginBottom:10}}>Option 1</div>
+                  <div style={{fontFamily:"var(--font-bebas)",fontSize:"1.5rem",color:"#fff",letterSpacing:"0.04em",marginBottom:4}}>Session-by-session</div>
+                  <div style={{color:"rgba(255,255,255,0.50)",fontSize:"0.8rem",marginBottom:20}}>Pay per visit. No commitment.</div>
+                  <div style={{display:"flex",flexDirection:"column",gap:10}}>
+                    {[
+                      {label:"Initial consultation",price:"$145"},
+                      {label:"Subsequent consultation",price:"$145"},
+                    ].map(({label,price})=>(
+                      <div key={label} style={{display:"flex",justifyContent:"space-between",alignItems:"center",borderBottom:"1px solid rgba(255,255,255,0.07)",paddingBottom:8}}>
+                        <span style={{color:"rgba(255,255,255,0.70)",fontSize:"0.85rem"}}>{label}</span>
+                        <span style={{color:"#fff",fontWeight:700,fontSize:"0.9rem"}}>{price}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div style={{marginTop:16,background:"rgba(74,222,128,0.08)",border:"1px solid rgba(74,222,128,0.2)",borderRadius:8,padding:"12px 14px"}}>
+                    <p style={{color:"#4ade80",fontWeight:700,fontSize:"0.8rem",marginBottom:4}}>🟢 NRPP Bronze covers</p>
+                    <p style={{color:"rgba(255,255,255,0.65)",fontSize:"0.8rem",lineHeight:1.6,margin:0}}>
+                      $145 is within the $150/session cap.<br/>
+                      Sessions 1–5: <strong style={{color:"#fff"}}>$137.75 back</strong> (95%)<br/>
+                      Sessions 6–10: <strong style={{color:"#fff"}}>$116 back</strong> (80%)<br/>
+                      Sessions 11+: <strong style={{color:"#fff"}}>$72.50 back</strong> (50%)<br/>
+                      <span style={{color:"rgba(255,255,255,0.40)"}}>Less $100 excess · $1,000 physio cap total</span>
+                    </p>
+                  </div>
+                </div>
+
+                {/* Option 2: Program */}
+                <div style={{background:"rgba(245,165,0,0.08)",border:"1px solid rgba(245,165,0,0.22)",borderRadius:14,padding:"24px 22px"}}>
+                  <div className="ey" style={{marginBottom:10,color:"#f59e0b"}}><span style={{display:"inline-block",width:22,height:1,background:"#f59e0b",marginRight:10,verticalAlign:"middle"}}/>Option 2</div>
+                  <div style={{fontFamily:"var(--font-bebas)",fontSize:"1.5rem",color:"#fff",letterSpacing:"0.04em",marginBottom:4}}>All-Inclusive Rehab Program</div>
+                  <div style={{color:"rgba(255,255,255,0.50)",fontSize:"0.8rem",marginBottom:20}}>Weekly fixed fee. Min 4 weeks, then 4-week blocks.</div>
+                  <div style={{display:"flex",flexDirection:"column",gap:10,marginBottom:16}}>
+                    <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",borderBottom:"1px solid rgba(255,255,255,0.07)",paddingBottom:8}}>
+                      <span style={{color:"rgba(255,255,255,0.70)",fontSize:"0.85rem"}}>Weekly program fee</span>
+                      <span style={{color:"#f59e0b",fontWeight:700,fontSize:"0.9rem"}}>Ask Stride</span>
+                    </div>
+                    <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",borderBottom:"1px solid rgba(255,255,255,0.07)",paddingBottom:8}}>
+                      <span style={{color:"rgba(255,255,255,0.70)",fontSize:"0.85rem"}}>Minimum commitment</span>
+                      <span style={{color:"#fff",fontWeight:700,fontSize:"0.9rem"}}>4 weeks</span>
+                    </div>
+                    <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
+                      <span style={{color:"rgba(255,255,255,0.70)",fontSize:"0.85rem"}}>Subsequent blocks</span>
+                      <span style={{color:"#fff",fontWeight:700,fontSize:"0.9rem"}}>4-week blocks</span>
+                    </div>
+                  </div>
+                  <div style={{background:"rgba(245,165,0,0.08)",border:"1px solid rgba(245,165,0,0.2)",borderRadius:8,padding:"12px 14px"}}>
+                    <p style={{color:"#f59e0b",fontWeight:700,fontSize:"0.8rem",marginBottom:4}}>🟡 NRPP Bronze — how it works</p>
+                    <p style={{color:"rgba(255,255,255,0.65)",fontSize:"0.8rem",lineHeight:1.6,margin:0}}>
+                      NRPP pays per individual session, not weekly fees. Your program sessions are submitted as individual consultations (up to $150/session cap). Stride provides an itemised invoice per session to support your claim. <strong style={{color:"#fff"}}>Speak to us at your first visit — we’ll help structure your invoicing correctly.</strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div style={{background:"rgba(255,255,255,0.04)",border:"1px solid rgba(255,255,255,0.08)",borderRadius:10,padding:"14px 18px"}}>
+                <p style={{color:"rgba(255,255,255,0.55)",fontSize:"0.82rem",lineHeight:1.65,margin:0}}>
+                  💡 <strong style={{color:"#fff"}}>Tip:</strong> Claim through your private health insurance first where you have physio cover — NRPP Bronze covers the gap not reimbursed by your PHI, up to its own limits. Present both your PHI statement and Stride invoice when submitting to Echelon.
+                </p>
+              </div>
+            </div>
 
           </div>
         )}
