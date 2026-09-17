@@ -365,11 +365,14 @@ ${form.phone||""}`;
                 <div style={{background:"rgba(245,165,0,0.08)",border:"1px solid rgba(245,165,0,0.22)",borderRadius:14,padding:"24px 22px"}}>
                   <div className="ey" style={{marginBottom:10,color:"#f59e0b"}}><span style={{display:"inline-block",width:22,height:1,background:"#f59e0b",marginRight:10,verticalAlign:"middle"}}/>Option 2</div>
                   <div style={{fontFamily:"var(--font-bebas)",fontSize:"1.5rem",color:"#fff",letterSpacing:"0.04em",marginBottom:4}}>All-Inclusive Rehab Program</div>
-                  <div style={{color:"rgba(255,255,255,0.50)",fontSize:"0.8rem",marginBottom:20}}>Weekly fixed fee. Min 4 weeks, then 4-week blocks.</div>
+                  <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:20}}>
+                    <div style={{color:"rgba(255,255,255,0.50)",fontSize:"0.8rem"}}>Weekly fixed fee · min 4 weeks · then 4-week blocks.</div>
+                    <a href="/acl-rehab" style={{color:"var(--blue)",fontSize:"0.75rem",textDecoration:"none",whiteSpace:"nowrap",marginLeft:8}}>Program details →</a>
+                  </div>
                   <div style={{display:"flex",flexDirection:"column",gap:10,marginBottom:16}}>
                     <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",borderBottom:"1px solid rgba(255,255,255,0.07)",paddingBottom:8}}>
                       <span style={{color:"rgba(255,255,255,0.70)",fontSize:"0.85rem"}}>Weekly program fee</span>
-                      <span style={{color:"#f59e0b",fontWeight:700,fontSize:"0.9rem"}}>Ask Stride</span>
+                      <span style={{color:"#f59e0b",fontWeight:700,fontSize:"0.9rem"}}>$185 / week</span>
                     </div>
                     <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",borderBottom:"1px solid rgba(255,255,255,0.07)",paddingBottom:8}}>
                       <span style={{color:"rgba(255,255,255,0.70)",fontSize:"0.85rem"}}>Minimum commitment</span>
