@@ -12,10 +12,9 @@ export default function Accelerator() {
   };
 
   const stats = [
-    { n: "11", unit: "yrs", label: "Melbourne Storm NRL" },
-    { n: "400+", unit: "", label: "Athletes through Stride" },
-    { n: "6", unit: "", label: "Partner clubs" },
-    { n: "48h", unit: "", label: "Avg. time to first plan" },
+    { n: "500+", unit: "", label: "Athletes Returned to Sport" },
+    { n: "5k+", unit: "", label: "Coached Athlete Rehab Hours" },
+    { n: "20+", unit: "", label: "Sporting Teams Worked With" },
   ];
 
   const inclusions = [
@@ -28,10 +27,11 @@ export default function Accelerator() {
   ];
 
   const steps = [
-    { n: "01", label: "Assess", desc: "Full athlete profile, injury history & sport demands" },
-    { n: "02", label: "Plan", desc: "Written program, milestones & target return date — day one" },
-    { n: "03", label: "Execute", desc: "Weekly physio + S&C, updated every session to your numbers" },
-    { n: "04", label: "Clear", desc: "Return confirmed by objective sport-specific testing" },
+    { n: "01", label: "First Consult — $145", desc: "A thorough conversation to establish first principles — your injury history, sport demands and goals. Where you are and where you want to be. Talk-heavy by design." },
+    { n: "02", label: "Deep Dive — $185", desc: "60-minute hands-on session: treatment, gym or movement assessment. By the end we have a complete picture of your status and what return will actually take. This completes your Initial Assessment." },
+    { n: "03", label: "Choose your pathway", desc: "Session by session ($145/consult) or Rehab Accelerator program ($185/week) — decided together at the end of your Initial Assessment." },
+    { n: "04", label: "Execute", desc: "Weekly physio + S&C, program updated every session." },
+    { n: "05", label: "Clear", desc: "Return to sport confirmed by objective sport-specific testing — not a calendar date or gut feel." },
   ];
 
   return (
@@ -75,7 +75,7 @@ export default function Accelerator() {
           </h2>
           <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "1.1rem", lineHeight: 1.85, maxWidth: 600 }}>
             Sports injury rehab, strength & conditioning, and movement coaching — <strong style={{ color: "#fff" }}>integrated under one roof, from one plan.</strong>{" "}
-            Every athlete leaves their first appointment with a written week-by-week program and a target return date. Not a rough estimate. A plan.
+            After your two-part Initial Assessment, every athlete leaves with a clear diagnosis, a written week-by-week program and a target return date.
           </p>
         </motion.div>
 
@@ -86,7 +86,7 @@ export default function Accelerator() {
           transition={{ delay: 0.15, duration: 0.5 }}
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
+            gridTemplateColumns: "repeat(3, 1fr)",
             gap: 1,
             background: "rgba(255,255,255,0.06)",
             borderRadius: 14,

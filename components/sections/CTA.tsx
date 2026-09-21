@@ -52,7 +52,7 @@ export default function CTA() {
           Don&apos;t wait.<br /><span className="orange">Get back.</span>
         </h2>
         <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "1.1rem", lineHeight: 1.7, marginBottom: 36 }}>
-          Your first appointment includes a full injury assessment and your personal return-to-sport roadmap.{" "}
+          Your Initial Assessment is two sessions. After both, you have a clear diagnosis, a written plan and a target return date.{" "}
           <strong style={{ color: "#fff" }}>Same-week appointments available.</strong>
         </p>
         <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", marginBottom: 20 }}>

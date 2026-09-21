@@ -28,9 +28,9 @@ export default function Stats() {
   const inView = useInView(ref, { once: true });
 
   const stats = [
-    { num: 2000, suffix: "+", label: "Athletes\nCoached" },
-    { num: 25, suffix: "+", label: "Professional\nAthletes" },
-    { num: 15, suffix: "", label: "Years Combined\nPro Sport Exp." },
+    { num: 500, suffix: "+", label: "Athletes\nReturned to Sport" },
+    { num: 5, suffix: "k+", label: "Coached Athlete\nRehab Hours" },
+    { num: 20, suffix: "+", label: "Sporting Teams\nWorked With" },
   ];
 
   return (

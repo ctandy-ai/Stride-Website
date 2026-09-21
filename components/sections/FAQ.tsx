@@ -6,7 +6,7 @@ import { useRef, useState } from "react";
 const faqs = [
   {
     q: "What is the Rehab Accelerator?",
-    a: "The Rehab Accelerator is Stride's all-inclusive sports injury program. It combines weekly 1:1 physiotherapy, a personalised S&C program, gym access, and return-to-sport clearance testing — all for a single weekly fee of $185. Every athlete leaves their first appointment with a written week-by-week plan and a target return date.",
+    a: "The Rehab Accelerator is Stride's all-inclusive sports injury program. It combines weekly 1:1 physiotherapy, a personalised S&C program, gym access, and return-to-sport clearance testing — all for a single weekly fee of $185. It starts with a two-part Initial Assessment ($145 + $185), after which every athlete has a written week-by-week plan and a target return date.",
   },
   {
     q: "Who is this for?",
@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     q: "What's included in the $145 Initial Assessment?",
-    a: "A full 45-minute sports injury assessment including movement analysis, sport-specific testing, a written injury diagnosis, week-by-week return program, and a target return date. You'll leave with a complete picture of your injury and a clear plan — not a guess.",
+    a: "A two-part process. Session 1 ($145): a thorough conversation to establish first principles — your injury history, sport demands and where you want to get back to. Session 2 ($185): a 60-minute hands-on deep dive combining treatment and movement assessment. After both sessions you'll have a clear diagnosis, a written week-by-week return program, and a target return date — not a guess.",
   },
   {
     q: "Can I use private health insurance?",
