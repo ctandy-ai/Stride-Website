@@ -98,38 +98,44 @@ export default function Problem() {
         </div>
 
         <div style={{ marginTop: 40, paddingTop: 32, borderTop: "1px solid var(--stone)" }}>
-          <div style={{ fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 16 }}>
+          <div style={{ fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 20 }}>
             Injuries we assess and manage most
           </div>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10 }}>
             {[
-              { label: "ACL", href: "/acl-rehab" },
-              { label: "Achilles", href: "/achilles-rehab" },
-              { label: "Ankle", href: "/ankle-rehab" },
-              { label: "Hip & Groin", href: "/hip-groin-rehab" },
-              { label: "Shoulder", href: "/shoulder-rehab" },
-              { label: "Hamstring & Calf", href: "/hamstring-rehab" },
+              { label: "ACL", sub: "Knee ligament", icon: "🦵", href: "/acl-rehab" },
+              { label: "Achilles", sub: "Tendon & rupture", icon: "🦶", href: "/achilles-rehab" },
+              { label: "Ankle", sub: "Sprain & instability", icon: "🏃", href: "/ankle-rehab" },
+              { label: "Hip & Groin", sub: "Strain & FAI", icon: "💪", href: "/hip-groin-rehab" },
+              { label: "Shoulder", sub: "Rotator cuff & labrum", icon: "🤸", href: "/shoulder-rehab" },
+              { label: "Hamstring & Calf", sub: "Soft tissue", icon: "🏄", href: "/hamstring-rehab" },
             ].map((injury) => (
               <a
                 key={injury.href}
                 href={injury.href}
+                className="injury-card"
                 style={{
-                  display: "inline-flex", alignItems: "center", gap: 6,
-                  padding: "8px 16px",
+                  display: "flex",
+                  flexDirection: "column",
+                  padding: "14px 16px",
                   border: "1px solid var(--stone)",
-                  borderRadius: 4,
-                  fontSize: "0.85rem",
-                  fontWeight: 600,
-                  color: "var(--navy)",
+                  borderRadius: 8,
                   textDecoration: "none",
                   background: "#fff",
-                  transition: "border-color .15s, color .15s",
+                  transition: "border-color .15s, box-shadow .15s, transform .15s",
+                  cursor: "pointer",
                 }}
               >
-                {injury.label} <span style={{ color: "var(--blue)", fontSize: "0.75rem" }}>→</span>
+                <div style={{ fontSize: "1.3rem", marginBottom: 6 }}>{injury.icon}</div>
+                <div style={{ fontWeight: 700, color: "var(--navy)", fontSize: "0.9rem", marginBottom: 2 }}>{injury.label}</div>
+                <div style={{ color: "var(--muted)", fontSize: "0.75rem", marginBottom: 10 }}>{injury.sub}</div>
+                <div style={{ marginTop: "auto", display: "flex", alignItems: "center", gap: 4, color: "var(--blue)", fontSize: "0.75rem", fontWeight: 700 }}>
+                  See rehab program <span style={{ fontSize: "0.8rem" }}>→</span>
+                </div>
               </a>
             ))}
           </div>
+          <style>{`.injury-card:hover { border-color: var(--blue); box-shadow: 0 4px 16px rgba(27,144,245,0.12); transform: translateY(-2px); }`}</style>
         </div>
       </div>
 

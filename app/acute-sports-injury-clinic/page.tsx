@@ -3,6 +3,7 @@ import SundayClinic from "@/components/sections/SundayClinic";
 import BookingModal from "@/components/BookingModal";
 import CTA from "@/components/sections/CTA";
 import InjuryQuiz from "@/components/sections/InjuryQuiz";
+import ClubDeclarationCard from "@/components/ClubDeclarationCard";
 
 export const metadata: Metadata = {
   title: "Acute Sports Injury Clinic Melbourne — Sunday Walk-In | Stride",
@@ -110,17 +111,7 @@ export default function AcuteSportsInjuryPage() {
                   loading="lazy"
                 />
               </div>
-              <div style={{ background: "rgba(255,255,255,0.04)", borderRadius: 8, overflow: "hidden" }}>
-                <div style={{ padding: "10px 16px", background: "rgba(255,255,255,0.15)", fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "#fff" }}>
-                  Club Declaration
-                </div>
-                <iframe
-                  src="https://dochub.com/m/shared-document/stride-/2GQ1NXoKy5D4OLLKDkW6bx/club-declaration-template?dt=-v_Z8sdje_3T-uLryB32"
-                  style={{ width: "100%", height: 500, border: "none", display: "block" }}
-                  allow="fullscreen"
-                  loading="lazy"
-                />
-              </div>
+              <ClubDeclarationCard />
             </div>
 
           </div>
