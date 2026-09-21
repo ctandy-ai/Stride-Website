@@ -20,7 +20,7 @@ export default function Pricing() {
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         {/* Head */}
         <div style={{ textAlign: "center", marginBottom: 64 }}>
-          <div className="ey ey-white" style={{ justifyContent: "center" }}>Transparent pricing</div>
+
           <h2
             style={{
               fontFamily: "var(--font-bebas)",
@@ -68,7 +68,7 @@ export default function Pricing() {
             >
               Step 1 — Start here
             </div>
-            <div style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.8rem", marginBottom: 8 }}>45-minute deep dive · written plan included</div>
+            <div style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.8rem", marginBottom: 8 }}>Two-part process · your plan built across both sessions</div>
             <div style={{ color: "#fff", fontSize: "1.2rem", fontWeight: 700, marginBottom: 16 }}>Initial Assessment</div>
             <div style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: 24 }}>
               <span style={{ fontFamily: "var(--font-bebas)", fontSize: "3.5rem", color: "#fff", lineHeight: 1 }}>$145</span>
@@ -82,10 +82,10 @@ export default function Pricing() {
             </div>
             <ul style={{ listStyle: "none", marginBottom: 24, display: "flex", flexDirection: "column", gap: 10 }}>
               {[
-                "Full sports injury assessment",
+                "Full injury assessment across two sessions",
                 "Movement analysis & sport-specific testing",
-                "Written injury diagnosis & return plan",
-                "Week-by-week program & target return date",
+                "Clear diagnosis and return-to-sport timeline",
+                "Written week-by-week program after session 2",
                 "Honest pathway recommendation — what you need, nothing you don't",
               ].map((item, i) => (
                 <li key={i} style={{ color: "rgba(255,255,255,0.7)", display: "flex", gap: 10, fontSize: "0.9rem" }}>
