@@ -96,6 +96,41 @@ export default function Problem() {
             </motion.div>
           ))}
         </div>
+
+        <div style={{ marginTop: 40, paddingTop: 32, borderTop: "1px solid var(--stone)" }}>
+          <div style={{ fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 16 }}>
+            Injuries we assess and manage most
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+            {[
+              { label: "ACL", href: "/acl-rehab" },
+              { label: "Achilles", href: "/achilles-rehab" },
+              { label: "Ankle", href: "/ankle-rehab" },
+              { label: "Hip & Groin", href: "/hip-groin-rehab" },
+              { label: "Shoulder", href: "/shoulder-rehab" },
+              { label: "Hamstring & Calf", href: "/hamstring-rehab" },
+            ].map((injury) => (
+              <a
+                key={injury.href}
+                href={injury.href}
+                style={{
+                  display: "inline-flex", alignItems: "center", gap: 6,
+                  padding: "8px 16px",
+                  border: "1px solid var(--stone)",
+                  borderRadius: 4,
+                  fontSize: "0.85rem",
+                  fontWeight: 600,
+                  color: "var(--navy)",
+                  textDecoration: "none",
+                  background: "#fff",
+                  transition: "border-color .15s, color .15s",
+                }}
+              >
+                {injury.label} <span style={{ color: "var(--blue)", fontSize: "0.75rem" }}>→</span>
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
 
       <motion.div
