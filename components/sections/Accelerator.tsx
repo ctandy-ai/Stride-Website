@@ -134,7 +134,7 @@ export default function Accelerator() {
           <div className="step-flow" style={{
             display: "grid",
             gridTemplateColumns: "1fr auto 1fr auto 1fr auto 1fr auto 1fr",
-            alignItems: "start",
+            alignItems: "stretch",
             gap: 0,
           }}>
             {steps.map((s, i) => (
@@ -151,7 +151,7 @@ export default function Accelerator() {
                     borderTop: "3px solid var(--blue)",
                     borderRadius: 12,
                     padding: "22px 20px",
-                    minHeight: 160,
+                    minHeight: 0,
                   }}
                 >
                   <div style={{
@@ -179,7 +179,7 @@ export default function Accelerator() {
                 {i < steps.length - 1 && (
                   <div key={`arrow-${i}`} style={{
                     display: "flex", alignItems: "center", justifyContent: "center",
-                    padding: "0 8px", paddingTop: 56,
+                    padding: "0 8px",
                   }}>
                     <svg width="28" height="16" viewBox="0 0 28 16" fill="none">
                       <path d="M0 8H24M24 8L18 2M24 8L18 14" stroke="rgba(27,144,245,0.6)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
