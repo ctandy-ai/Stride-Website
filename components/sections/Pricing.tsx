@@ -20,7 +20,6 @@ export default function Pricing() {
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         {/* Head */}
         <div style={{ textAlign: "center", marginBottom: 64 }}>
-
           <h2
             style={{
               fontFamily: "var(--font-bebas)",
@@ -28,14 +27,31 @@ export default function Pricing() {
               lineHeight: 0.9,
               letterSpacing: "0.02em",
               color: "#fff",
-              marginBottom: 16,
+              marginBottom: 24,
             }}
           >
             The fastest way back<br />to sport <span className="orange">starts here.</span>
           </h2>
-          <p style={{ color: "rgba(255,255,255,0.55)", maxWidth: 640, margin: "0 auto", lineHeight: 1.7 }}>
-            Start with a $145 Initial Assessment. Your physio builds your plan, presents your program, and you decide your next step — no pressure, no lock-in.
-          </p>
+
+          {/* Qualifying copy */}
+          <div style={{
+            maxWidth: 680, margin: "0 auto 48px",
+            padding: "28px 36px",
+            border: "1px solid rgba(255,255,255,0.1)",
+            borderLeft: "3px solid var(--blue)",
+            borderRadius: 8,
+            textAlign: "left",
+          }}>
+            <p style={{ color: "#fff", fontWeight: 600, fontSize: "1rem", lineHeight: 1.7, marginBottom: 12 }}>
+              This isn&apos;t for everyone.
+            </p>
+            <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.95rem", lineHeight: 1.75, marginBottom: 12 }}>
+              If you&apos;re comfortable training around the injury, guessing at timelines and hoping it sorts itself out — there are clinics for that. We&apos;re not one of them.
+            </p>
+            <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.95rem", lineHeight: 1.75, margin: 0 }}>
+              Stride is built for athletes who want a clear picture of what&apos;s wrong, what return actually requires, and a structured pathway to get there. No guesswork. No &ldquo;let&apos;s see how the next few weeks go.&rdquo;
+            </p>
+          </div>
         </div>
 
         {/* Cards */}
@@ -69,7 +85,7 @@ export default function Pricing() {
               Step 1 — Start here
             </div>
             <div style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.8rem", marginBottom: 8 }}>Two-part process · your plan built across both sessions</div>
-            <div style={{ color: "#fff", fontSize: "1.2rem", fontWeight: 700, marginBottom: 16 }}>Initial Assessment</div>
+            <div style={{ color: "#fff", fontSize: "1.2rem", fontWeight: 700, marginBottom: 16 }}>2-Stage Assessment</div>
             <div style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: 24 }}>
               <span style={{ fontFamily: "var(--font-bebas)", fontSize: "3.5rem", color: "#fff", lineHeight: 1 }}>$145</span>
               <div>
