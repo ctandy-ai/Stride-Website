@@ -27,11 +27,11 @@ export default function Accelerator() {
   ];
 
   const steps = [
-    { n: "01", label: "First Consult", price: "$145", desc: "Injury history, sport demands, goals. First principles. Talk-heavy by design." },
-    { n: "02", label: "Deep Dive", price: "$185", desc: "Hands-on assessment. Full picture of your status and what return takes." },
-    { n: "03", label: "Choose pathway", price: "", desc: "Session by session ($145) or Rehab Accelerator ($185\/wk) — your call." },
+    { n: "01", label: "First Consult", price: "", desc: "Deep conversation. First principles — where you are, where you want to be. Treatment included. You leave with a small win." },
+    { n: "02", label: "Deep Dive", price: "", desc: "Full gym and movement activity assessment. Hands-on treatment. Complete picture of your status and what return actually takes." },
+    { n: "03", label: "Choose Pathway", price: "", desc: "Collaboratively discuss the best pathway forward with our team. Session by session or Rehab Accelerator — decided together." },
     { n: "04", label: "Execute", price: "", desc: "Weekly physio + S&C. Program updated every session to your numbers." },
-    { n: "05", label: "Clear", price: "", desc: "Criteria-based return. Objective testing — not a calendar date." },
+    { n: "05", label: "Return Performing", price: "", desc: "Criteria-based return. Objective testing confirms you’re ready — not a calendar date." },
   ];
 
   return (
