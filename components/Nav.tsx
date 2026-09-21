@@ -13,7 +13,6 @@ const navLinks = [
   { href: "/combat-sports-physio", label: "Combat" },
   { href: "/acl-rehab", label: "ACL" },
   { href: "/acute-sports-injury-clinic", label: "Sunday Clinic" },
-  { href: "/afl-insurance", label: "AFL Insurance" },
 ];
 
 export default function Nav() {
