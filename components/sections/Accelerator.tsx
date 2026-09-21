@@ -27,11 +27,11 @@ export default function Accelerator() {
   ];
 
   const steps = [
-    { n: "01", label: "First Consult — $145", desc: "A thorough conversation to establish first principles — your injury history, sport demands and goals. Where you are and where you want to be. Talk-heavy by design." },
-    { n: "02", label: "Deep Dive — $185", desc: "60-minute hands-on session: treatment, gym or movement assessment. By the end we have a complete picture of your status and what return will actually take. This completes your Initial Assessment." },
-    { n: "03", label: "Choose your pathway", desc: "Session by session ($145/consult) or Rehab Accelerator program ($185/week) — decided together at the end of your Initial Assessment." },
-    { n: "04", label: "Execute", desc: "Weekly physio + S&C, program updated every session." },
-    { n: "05", label: "Clear", desc: "Return to sport confirmed by objective sport-specific testing — not a calendar date or gut feel." },
+    { n: "01", label: "First Consult", price: "$145", desc: "Injury history, sport demands, goals. First principles. Talk-heavy by design." },
+    { n: "02", label: "Deep Dive", price: "$185", desc: "Hands-on assessment. Full picture of your status and what return takes." },
+    { n: "03", label: "Choose pathway", price: "", desc: "Session by session ($145) or Rehab Accelerator ($185\/wk) — your call." },
+    { n: "04", label: "Execute", price: "", desc: "Weekly physio + S&C. Program updated every session to your numbers." },
+    { n: "05", label: "Clear", price: "", desc: "Criteria-based return. Objective testing — not a calendar date." },
   ];
 
   return (
@@ -127,13 +127,13 @@ export default function Accelerator() {
             textTransform: "uppercase", color: "rgba(255,255,255,0.35)",
             marginBottom: 28,
           }}>
-            How it works — four phases
+            How it works — five steps
           </div>
 
           {/* Step row */}
           <div className="step-flow" style={{
             display: "grid",
-            gridTemplateColumns: "1fr auto 1fr auto 1fr auto 1fr",
+            gridTemplateColumns: "1fr auto 1fr auto 1fr auto 1fr auto 1fr",
             alignItems: "start",
             gap: 0,
           }}>
@@ -163,13 +163,16 @@ export default function Accelerator() {
                   }}>{s.n}</div>
                   <div style={{
                     fontFamily: "var(--font-bebas)",
-                    fontSize: "1.6rem",
+                    fontSize: "1.45rem",
                     color: "#fff",
                     letterSpacing: "0.04em",
                     lineHeight: 1,
-                    marginBottom: 10,
+                    marginBottom: s.price ? 4 : 10,
                   }}>{s.label}</div>
-                  <div style={{ color: "rgba(255,255,255,0.52)", fontSize: "0.82rem", lineHeight: 1.6 }}>{s.desc}</div>
+                  {s.price && (
+                    <div style={{ color: "var(--blue)", fontSize: "0.78rem", fontWeight: 700, marginBottom: 10 }}>{s.price}</div>
+                  )}
+                  <div style={{ color: "rgba(255,255,255,0.52)", fontSize: "0.8rem", lineHeight: 1.6 }}>{s.desc}</div>
                 </motion.div>
 
                 {/* Arrow connector between steps */}
