@@ -75,7 +75,7 @@ export default function Accelerator() {
           </h2>
           <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "1.1rem", lineHeight: 1.85, maxWidth: 600 }}>
             Sports injury rehab, strength & conditioning, and movement coaching — <strong style={{ color: "#fff" }}>integrated under one roof, from one plan.</strong>{" "}
-            After your two-part Initial Assessment, every athlete leaves with a clear diagnosis, a written week-by-week program and a target return date.
+            After your two-part Initial Assessment, every athlete leaves with an objective picture of their status, a clear diagnosis, and a structured pathway forward — not a “see how you go”.
           </p>
         </motion.div>
 
@@ -261,7 +261,7 @@ export default function Accelerator() {
             fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.12em",
             textTransform: "uppercase", color: "var(--blue)",
             marginBottom: 14,
-          }}>Our commitment at every first appointment</div>
+          }}>Our commitment after your Initial Assessment</div>
           <p style={{
             color: "#fff",
             fontSize: "clamp(1.05rem, 2.2vw, 1.25rem)",
@@ -269,8 +269,8 @@ export default function Accelerator() {
             fontWeight: 500,
             margin: 0,
           }}>
-            You will leave with a <strong>written, week-by-week plan</strong> and a <strong>target return timeframe</strong> — based on your injury, your sport, and your objective assessment results.{" "}
-            <span style={{ color: "var(--blue)" }}>Not a guess. Not "a few weeks". A plan.</span>
+            Most athletes come in going on feel — training around the injury, guessing at timelines, hoping for the best. After your Initial Assessment, you won’t be.{" "}
+            <span style={{ color: "var(--blue)" }}>You’ll have an objective picture of where you are, what return actually requires, and a structured pathway forward — not a “see how you go”.</span>
           </p>
         </motion.div>
 
