@@ -64,7 +64,21 @@ export default function Nav() {
           <a
             href="https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings?business_id=76801"
             target="_blank" rel="noopener"
-            style={{ ...linkStyle, color: "#68b4ff" }}
+            style={{
+              background: "transparent",
+              color: "#fff",
+              border: "1px solid rgba(255,255,255,0.35)",
+              padding: "10px 20px",
+              borderRadius: 2,
+              fontFamily: "var(--font-inter)",
+              fontSize: "0.82rem",
+              fontWeight: 700,
+              letterSpacing: "0.04em",
+              textTransform: "uppercase",
+              textDecoration: "none",
+              whiteSpace: "nowrap",
+              transition: "border-color .2s, color .2s",
+            }}
           >
             Existing Client →
           </a>
@@ -148,11 +162,20 @@ export default function Nav() {
               target="_blank" rel="noopener"
               onClick={closeMenu}
               style={{
-                color: "#68b4ff", textDecoration: "none",
-                fontSize: "1.05rem", fontWeight: 600,
-                padding: "14px 0",
-                borderBottom: "1px solid rgba(255,255,255,0.06)",
                 display: "block",
+                marginTop: 12,
+                background: "transparent",
+                color: "#fff",
+                border: "1px solid rgba(255,255,255,0.35)",
+                borderRadius: 4,
+                padding: "14px",
+                fontFamily: "var(--font-inter)",
+                fontWeight: 700,
+                fontSize: "0.92rem",
+                letterSpacing: "0.04em",
+                textTransform: "uppercase",
+                textDecoration: "none",
+                textAlign: "center",
               }}
             >
               Existing Client →
