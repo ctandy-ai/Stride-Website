@@ -55,6 +55,8 @@ export default function InjuryQuiz() {
   const [isOpen, setIsOpen] = useState(false);
   const [step, setStep] = useState(0);
   const [scores, setScores] = useState<number[]>(Array(5).fill(-1));
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [phase, setPhase] = useState<"quiz" | "capture" | "result">("quiz");
   const [submitting, setSubmitting] = useState(false);
@@ -68,6 +70,8 @@ export default function InjuryQuiz() {
   const resetQuiz = () => {
     setStep(0);
     setScores(Array(5).fill(-1));
+    setName("");
+    setPhone("");
     setEmail("");
     setPhase("quiz");
     setSubmitting(false);
@@ -118,8 +122,10 @@ export default function InjuryQuiz() {
     return map[b] || map.red;
   };
 
+  const captureValid = name.trim().length >= 2 && phone.trim().length >= 8 && email.includes("@");
+
   const submitCapture = async () => {
-    if (!email || !email.includes("@")) return;
+    if (!captureValid) return;
     setSubmitting(true);
     const total = scores.reduce((a, b) => a + b, 0);
     const b = getBand(total);
@@ -130,6 +136,8 @@ export default function InjuryQuiz() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           source: "self-check",
+          name: name.trim(),
+          phone: phone.trim(),
           email,
           quiz_score: total,
           quiz_band: b,
@@ -299,11 +307,45 @@ export default function InjuryQuiz() {
         {phase === "capture" && (
           <div>
             <div style={{ color: "#fff", fontWeight: 700, fontSize: "1.2rem", marginBottom: 8 }}>
-              Your result is ready — get it in your inbox
+              Your result is ready — one step to go
             </div>
             <div style={{ color: "rgba(255,255,255,0.55)", marginBottom: 20, lineHeight: 1.6 }}>
-              Your free injury readiness score + what it means for your return to play.
+              Enter your details to get your injury readiness score and what it means for your return to play.
             </div>
+            <input
+              type="text"
+              placeholder="Full name *"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              style={{
+                width: "100%",
+                padding: "14px",
+                background: "rgba(255,255,255,0.06)",
+                border: "1px solid rgba(255,255,255,0.15)",
+                borderRadius: 8,
+                color: "#fff",
+                fontSize: "1rem",
+                marginBottom: 10,
+                boxSizing: "border-box",
+              }}
+            />
+            <input
+              type="tel"
+              placeholder="Mobile number *"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              style={{
+                width: "100%",
+                padding: "14px",
+                background: "rgba(255,255,255,0.06)",
+                border: "1px solid rgba(255,255,255,0.15)",
+                borderRadius: 8,
+                color: "#fff",
+                fontSize: "1rem",
+                marginBottom: 10,
+                boxSizing: "border-box",
+              }}
+            />
             <input
               type="email"
               placeholder="Email address *"
@@ -323,25 +365,25 @@ export default function InjuryQuiz() {
             />
             <button
               onClick={submitCapture}
-              disabled={submitting || !email.includes("@")}
+              disabled={submitting || !captureValid}
               style={{
                 width: "100%",
                 padding: "14px",
-                background: "var(--blue)",
-                color: "#fff",
+                background: captureValid ? "var(--blue)" : "rgba(255,255,255,0.1)",
+                color: captureValid ? "#fff" : "rgba(255,255,255,0.3)",
                 border: "none",
                 borderRadius: 8,
                 fontWeight: 700,
                 fontSize: "1rem",
-                cursor: "pointer",
+                cursor: captureValid ? "pointer" : "not-allowed",
                 marginBottom: 12,
               }}
             >
-              {submitting ? "Loading..." : "Send my result →"}
+              {submitting ? "Loading..." : "See my result →"}
             </button>
-            <div style={{ color: "rgba(255,255,255,0.35)", fontSize: "0.75rem" }}>
-              We&apos;ll only use this to send your results. No spam, ever.{" "}
-              <a href="/privacy-policy" style={{ color: "rgba(255,255,255,0.35)" }}>Privacy Policy</a>
+            <div style={{ color: "rgba(255,255,255,0.35)", fontSize: "0.75rem", lineHeight: 1.5 }}>
+              We&apos;ll use these details to contact you about your enquiry.{" "}
+              <a href="/privacy-policy" style={{ color: "rgba(255,255,255,0.45)" }}>See our privacy policy.</a>
             </div>
           </div>
         )}

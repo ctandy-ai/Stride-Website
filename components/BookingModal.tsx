@@ -8,6 +8,8 @@ type Step = 1 | 2 | 3 | "done";
 interface FormData {
   sport: string;
   injury: string;
+  duration: string;
+  notes: string;
   urgency: string;
   prog: string;
   name: string;
@@ -19,7 +21,7 @@ export default function BookingModal() {
   const [open, setOpen] = useState(false);
   const [step, setStep] = useState<Step>(1);
   const [formData, setFormData] = useState<FormData>({
-    sport: "", injury: "", urgency: "", prog: "", name: "", phone: "", email: "",
+    sport: "", injury: "", duration: "", notes: "", urgency: "", prog: "", name: "", phone: "", email: "",
   });
   const [submitting, setSubmitting] = useState(false);
 
@@ -64,7 +66,7 @@ export default function BookingModal() {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
-  const step1Valid = formData.sport && formData.injury;
+  const step1Valid = formData.sport && formData.injury && formData.duration;
   const step2Valid = formData.urgency && formData.prog;
   const step3Valid = formData.name && formData.phone && formData.email;
 
@@ -94,13 +96,18 @@ export default function BookingModal() {
     { ico: "🔙", label: "Back / Spine" },
     { ico: "❓", label: "Not sure yet" },
   ];
+  const durationOpts = [
+    { ico: "⚡", label: "Under 2 weeks" },
+    { ico: "📆", label: "2-6 weeks" },
+    { ico: "⏳", label: "6+ weeks" },
+  ];
   const urgencyOpts = [
-    { ico: "⚡", label: "ASAP — season / match deadline", full: true },
+    { ico: "⚡", label: "ASAP - season / match deadline", full: true },
     { ico: "📅", label: "This week" },
     { ico: "🗓", label: "Next 2 weeks" },
   ];
   const progOpts = [
-    { ico: "🏋️", label: "Rehab Accelerator — full program" },
+    { ico: "🏋️", label: "Rehab Accelerator - full program" },
     { ico: "📋", label: "Single consultation first" },
   ];
 
@@ -121,7 +128,7 @@ export default function BookingModal() {
     done: "",
   };
   const stepSubs: Record<Step, string> = {
-    1: "Tell us what brought you in — we'll match you with the right specialist.",
+    1: "Tell us what brought you in - we'll match you with the right specialist.",
     2: "We'll make sure we can meet your timeline.",
     3: "We'll confirm your appointment within 2 hours.",
     done: "",
@@ -220,6 +227,18 @@ export default function BookingModal() {
             {renderOpts("sport", sportOpts)}
             <label style={{ fontSize: "0.85rem", fontWeight: 700, display: "block", marginBottom: 8, color: "var(--navy)" }}>Injury area</label>
             {renderOpts("injury", injuryOpts)}
+            <label style={{ fontSize: "0.85rem", fontWeight: 700, display: "block", marginBottom: 8, marginTop: 4, color: "var(--navy)" }}>How long has it been going on?</label>
+            {renderOpts("duration", durationOpts)}
+            <div style={{ marginBottom: 16 }}>
+              <label style={{ fontSize: "0.85rem", fontWeight: 700, display: "block", marginBottom: 6, color: "var(--navy)" }}>Briefly, what's going on? <span style={{ fontWeight: 400, color: "var(--muted)" }}>(optional)</span></label>
+              <textarea
+                placeholder="e.g. Rolled my ankle at training, can't put full weight on it yet"
+                value={formData.notes}
+                onChange={(e) => setFormData((prev) => ({ ...prev, notes: e.target.value }))}
+                rows={3}
+                style={{ width: "100%", border: "2px solid #E8E6E0", borderRadius: 8, padding: "12px 14px", fontSize: "0.95rem", resize: "vertical", fontFamily: "inherit", boxSizing: "border-box" }}
+              />
+            </div>
             <button
               style={step1Valid ? btnBase : btnDisabled}
               disabled={!step1Valid}
@@ -281,26 +300,17 @@ export default function BookingModal() {
                 href="https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings?business_id=76801"
                 target="_blank"
                 rel="noopener"
-                style={{ background: "var(--blue)", color: "#fff", padding: "14px 20px", borderRadius: 8, textDecoration: "none", fontWeight: 700, fontSize: "0.95rem" }}
+                style={{ background: "var(--blue)", color: "#fff", padding: "16px 20px", borderRadius: 8, textDecoration: "none", fontWeight: 700, fontSize: "1rem", textAlign: "center" }}
               >
-                📅 &nbsp;New Client — Book Assessment
+                📅 &nbsp;Book your initial consultation
               </a>
-              <a
-                href="https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings?business_id=76801"
-                target="_blank"
-                rel="noopener"
-                style={{ background: "#0d7de8", color: "#fff", padding: "14px 20px", borderRadius: 8, textDecoration: "none", fontWeight: 700, fontSize: "0.95rem" }}
-              >
-                🔄 &nbsp;Existing Client — Book Appointment
-              </a>
-              <div style={{ color: "var(--muted)", fontSize: "0.8rem", margin: "4px 0" }}>need help choosing?</div>
               <a
                 href="tel:0483918427"
-                style={{ border: "2px solid #E8E6E0", color: "var(--navy)", padding: "14px 20px", borderRadius: 8, textDecoration: "none", fontWeight: 700, fontSize: "0.95rem" }}
+                style={{ border: "2px solid #E8E6E0", color: "var(--navy)", padding: "14px 20px", borderRadius: 8, textDecoration: "none", fontWeight: 700, fontSize: "0.95rem", textAlign: "center" }}
               >
                 📞 &nbsp;Call us: 0483 918 427
               </a>
-              <p style={{ fontSize: "0.8rem", color: "var(--muted)", marginTop: 4 }}>Our team will help you choose the right appointment type and answer any questions before you book.</p>
+              <p style={{ fontSize: "0.8rem", color: "var(--muted)", marginTop: 4 }}>Our team will confirm your appointment and answer any questions before your first session.</p>
             </div>
           </div>
         )}
