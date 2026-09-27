@@ -24,23 +24,20 @@ const cards: Card[] = [
   {
     icon: "🦶",
     title: "Ankle & Foot",
-    body: "From acute ankle sprains to chronic instability and Achilles injuries. Back on the field with a plan — not a timeline.",
-    href: "",
-    modal: true,
+    body: "From acute ankle sprains to chronic instability. Without proper rehab, re-injury rates exceed 70%. We fix that.",
+    href: "/ankle-rehab",
   },
   {
     icon: "💪",
     title: "Shoulder & Rotator Cuff",
     body: "Shoulder dislocations, rotator cuff tears, AC joint injuries, and throwing shoulder — assessed and managed by sports specialists.",
-    href: "",
-    modal: true,
+    href: "/shoulder-rehab",
   },
   {
     icon: "🏃",
     title: "Hamstring & Hip",
     body: "Hamstring strains are the most common muscle injury in sport. We grade, load, and return you — without the guesswork or re-injury risk.",
-    href: "",
-    modal: true,
+    href: "/hamstring-rehab",
   },
   // Row 2 — 3 cards
   {
