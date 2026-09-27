@@ -11,6 +11,7 @@ import FAQ from "@/components/sections/FAQ";
 import CTA from "@/components/sections/CTA";
 import BookingModal from "@/components/BookingModal";
 import InjuryQuiz from "@/components/sections/InjuryQuiz";
+import InjuryCards from "@/components/sections/InjuryCards";
 import StickyBookBtn from "@/components/ui/StickyBookBtn";
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <Hero />
       <Stats />
       <Services />
+      <InjuryCards />
       <Problem />
       <Accelerator />
       <Pricing />
