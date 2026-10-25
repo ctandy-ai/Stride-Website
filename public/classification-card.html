@@ -1,0 +1,1153 @@
+<title>Stride Classification Card</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: clinical instrument. Guided steps on the left, the live card pinned on the right; stacks on phones. */
+:root {
+  --ink: #0C3B52; --sky: #46BCF4; --teal: #0FA8BC; --teal-d: #0B7E8E; --paper: #EFF8FC; --amber: #E8833A; --red: #C0473B;
+  --bg: #F6FAFC; --surface: #FFFFFF; --fg: #102A38; --muted: #557080; --line: #D3E2EA; --soft: #E7F1F6;
+  --accent: #0B7E8E; --accent-fg: #FFFFFF; --warn: #B4621F; --warn-bg: #FBEBDD; --bad: #A93B31; --bad-bg: #F7E1DE; --ok: #1F7A55; --ok-bg: #DFF2E9;
+  --b-restore: #C0473B; --b-restore-fg: #FFFFFF; --b-learn: #E4EDF2; --b-learn-fg: #0C3B52; --b-develop: #2E9BD6; --b-develop-fg: #FFFFFF; --b-perform: #0C3B52; --b-perform-fg: #FFFFFF;
+  --f-display: "Barlow Semi Condensed", "Arial Narrow", Arial, sans-serif;
+  --f-body: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0A1E29; --surface: #102938; --fg: #E3EEF3; --muted: #93AFBD; --line: #24465A; --soft: #163447;
+  --accent: #3CC3D4; --accent-fg: #062029; --warn: #F0A161; --warn-bg: #3A2A1C; --bad: #F08A80; --bad-bg: #3A1F1D; --ok: #5FD1A0; --ok-bg: #173628;
+  --b-learn: #DCE7EE; --b-perform: #020E15; --b-perform-fg: #E3EEF3; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0A1E29; --surface: #102938; --fg: #E3EEF3; --muted: #93AFBD; --line: #24465A; --soft: #163447;
+  --accent: #3CC3D4; --accent-fg: #062029; --warn: #F0A161; --warn-bg: #3A2A1C; --bad: #F08A80; --bad-bg: #3A1F1D; --ok: #5FD1A0; --ok-bg: #173628;
+  --b-learn: #DCE7EE; --b-perform: #020E15; --b-perform-fg: #E3EEF3; color-scheme: dark }
+
+* { box-sizing: border-box }
+body { background: var(--bg); color: var(--fg); font-family: var(--f-body); font-size: 15px; line-height: 1.45; }
+.wrap { max-width: 1240px; margin: 0 auto; padding-block: 20px 60px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header.top { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 24px; border-bottom: 2px solid var(--fg); padding-bottom: 12px; margin-bottom: 18px; }
+h1 { font-family: var(--f-display); font-weight: 700; font-size: 30px; letter-spacing: .01em; margin: 0; text-wrap: balance; line-height: 1.05 }
+.sub { color: var(--muted); margin: 4px 0 0; max-width: 62ch }
+.toolbar { display: flex; gap: 8px; flex-wrap: wrap }
+button, .btn { font: 600 14px var(--f-body); border-radius: 6px; padding: 8px 14px; border: 1px solid var(--line); background: var(--surface); color: var(--fg); cursor: pointer; }
+button.primary { background: var(--accent); color: var(--accent-fg); border-color: var(--accent) }
+button:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid var(--sky); outline-offset: 1px }
+.grid { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 22px; align-items: start }
+@media (max-width: 980px) { .grid { grid-template-columns: minmax(0, 1fr) } }
+.steps { display: grid; gap: 16px; min-width: 0 }
+section.step { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px 18px; min-width: 0 }
+section.step > h2 { font-family: var(--f-display); font-weight: 600; font-size: 21px; margin: 0 0 2px; display: flex; gap: 10px; align-items: baseline }
+.num { font-family: var(--f-mono); font-size: 13px; color: var(--accent); font-weight: 600 }
+.why { color: var(--muted); margin: 0 0 12px; font-size: 14px; max-width: 70ch }
+.fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px 14px }
+label.f { display: grid; gap: 4px; font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--muted) }
+input, select, textarea { font: 400 15px var(--f-body); color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 7px 9px; width: 100%; min-width: 0 }
+input[type=number] { font-family: var(--f-mono); font-size: 14px }
+textarea { min-height: 70px; resize: vertical }
+.layer { margin-top: 14px }
+.layer h3 { font-family: var(--f-display); font-weight: 600; font-size: 16px; letter-spacing: .03em; text-transform: uppercase; margin: 0 0 6px; color: var(--fg) }
+.layer h3 small { font-family: var(--f-body); text-transform: none; letter-spacing: 0; color: var(--muted); font-weight: 400; font-size: 13px; margin-left: 6px }
+.attr { border-top: 1px solid var(--line); padding: 10px 0; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 2fr) minmax(0, 1.4fr); gap: 10px 14px; align-items: start }
+.attr.off { opacity: .5 }
+@media (max-width: 760px) { .attr { grid-template-columns: minmax(0, 1fr) } }
+.aname { font-weight: 700; }
+.ameta { font-size: 12.5px; color: var(--muted); margin-top: 2px }
+.ins { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 8px }
+.ins label { display: grid; gap: 3px; font-size: 11.5px; color: var(--muted); font-weight: 600 }
+.decide { display: grid; gap: 6px }
+.prop { font-size: 13px; color: var(--muted) }
+.chip { display: inline-flex; align-items: center; gap: 6px; font: 700 12px var(--f-body); letter-spacing: .05em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; border: 1px solid transparent; white-space: nowrap }
+.chip.R { background: var(--b-restore); color: var(--b-restore-fg) }
+.chip.L { background: var(--b-learn); color: var(--b-learn-fg); border-color: #C3D3DD }
+.chip.D { background: var(--b-develop); color: var(--b-develop-fg) }
+.chip.P { background: var(--b-perform); color: var(--b-perform-fg) }
+.chip.none { background: var(--soft); color: var(--muted) }
+.tag { display: inline-block; font: 600 11px var(--f-mono); padding: 1px 6px; border-radius: 4px; border: 1px solid var(--line); color: var(--muted); }
+.tag.calc { color: var(--ok); border-color: var(--ok) }
+.tag.judg { color: var(--warn); border-color: var(--warn) }
+.flag { font-size: 12.5px; padding: 4px 8px; border-radius: 5px; }
+.flag.hold { background: var(--warn-bg); color: var(--warn) }
+.flag.drop { background: var(--bad-bg); color: var(--bad) }
+.flag.clear { background: var(--ok-bg); color: var(--ok) }
+.toggle { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; color: var(--muted); margin-top: 4px }
+.toggle input { width: auto }
+aside.card { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); background: var(--surface); border: 2px solid var(--fg); border-radius: 8px; padding: 0; min-width: 0; overflow: hidden }
+@media (max-width: 980px) { aside.card { position: static } }
+.card-h { background: var(--fg); color: var(--bg); padding: 10px 14px; display: flex; justify-content: space-between; align-items: baseline; gap: 10px }
+.card-h b { font-family: var(--f-display); font-size: 18px; letter-spacing: .04em; text-transform: uppercase }
+.card-h span { font-family: var(--f-mono); font-size: 12px; opacity: .8 }
+.card-b { padding: 12px 14px; display: grid; gap: 12px }
+.kv { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 4px 10px; font-size: 13.5px }
+.kv dt { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; padding-top: 2px }
+.kv dd { margin: 0; min-width: 0 }
+.ceil { display: grid; gap: 6px; padding: 10px; border-radius: 6px; background: var(--soft) }
+.ceil .big { display: flex; gap: 10px; align-items: center; flex-wrap: wrap }
+.ceil .big .chip { font-size: 15px; padding: 5px 14px }
+.belts { display: grid; gap: 4px; font-size: 13px }
+.belts .row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; align-items: center }
+.belts .row.cap .n { font-weight: 700 }
+.belts .lh { font: 600 11px var(--f-body); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-top: 6px }
+.out { display: grid; gap: 8px }
+pre.copy { white-space: pre-wrap; font: 12.5px/1.5 var(--f-mono); background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 10px; margin: 0; max-height: 360px; overflow: auto }
+.outhead { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap }
+.outhead h4 { margin: 0; font-family: var(--f-display); font-size: 16px; font-weight: 600 }
+.status { font-size: 13px; color: var(--muted) }
+.example { background: var(--warn-bg); color: var(--warn); border-radius: 6px; padding: 8px 12px; font-size: 13.5px; margin-bottom: 14px }
+.rules { font-size: 12.5px; color: var(--muted); display: grid; gap: 2px; margin-top: 10px }
+.log { display: grid; gap: 6px; font-size: 13px }
+.log table { border-collapse: collapse; width: 100%; font-size: 12.5px; font-variant-numeric: tabular-nums }
+.log th, .log td { text-align: left; padding: 5px 6px; border-bottom: 1px solid var(--line) }
+.tablewrap { overflow-x: auto }
+.missing { color: var(--bad); font-size: 13px }
+@media (prefers-reduced-motion: no-preference) { .chip { transition: background-color .15s } }
+.rep-wrap { margin-top: 14px; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #fff }
+.rep-wrap iframe { width: 100%; height: 900px; border: 0; display: block; background: #fff }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>Stride Classification Card</h1>
+      <p class="sub">Demand first, then a belt per attribute, then the ceiling and its modifier, availability, pathway and program. The card proposes from the numbers; the clinician confirms or overrides and signs.</p>
+    </div>
+    <div class="toolbar">
+      <button id="btnExample" type="button">Load example</button>
+      <button id="btnClear" type="button">New athlete</button>
+      <button id="btnRetest" type="button" class="primary">Re-test</button>
+    </div>
+  </header>
+
+  <div id="exampleBanner" class="example">Example athlete loaded (not a real client): AFL midfielder, sub-elite, 9 months after a left ACL reconstruction. Nothing about an athlete is saved on this device; press New athlete to start a real card, and Re-test to load the last card code from Cliniko.</div>
+
+  <section class="step" id="retestPanel" hidden style="margin-bottom:16px">
+    <h2><span class="num">R</span>Re-test from the last card</h2>
+    <p class="why">Paste the card code from the bottom of the athlete's last Cliniko classification note. The demand profile fills in, test fields clear for the new numbers, and every attribute shows its previous belt so the change is visible. Nothing is stored here; the history stays in Cliniko.</p>
+    <textarea id="codeIn" placeholder="STRIDE1:..."></textarea>
+    <div class="toolbar" style="margin-top:8px"><button id="btnLoadCode" class="primary" type="button">Load previous card</button><button id="btnCancelRetest" type="button">Cancel</button><span id="codeStatus" class="status"></span></div>
+  </section>
+
+  <div class="grid">
+    <div class="steps">
+
+      <section class="step" id="s1">
+        <h2><span class="num">1</span>Demand profile</h2>
+        <p class="why">Always first. The sport decides which attributes are demanded and which running stream applies; the level selects the normative band each test is read against. A belt is a comparison against demand, so no demand profile, no belt.</p>
+        <div class="fields">
+          <label class="f">Card type<select id="cardType"><option value="block">First card or block re-test</option><option value="offcycle">Off-cycle: new injury or flare</option><option value="weekly">Restore weekly review</option></select></label>
+          <label class="f">Cliniko client reference<input id="ref" placeholder="Initials or Cliniko ID"></label>
+          <label class="f">Sport<select id="sport"></select></label>
+          <label class="f">Level<select id="level"><option>Community</option><option>Sub-elite</option><option>Elite</option><option>Junior</option><option>Recreational</option></select></label>
+          <label class="f">Position<input id="position" placeholder="e.g. midfielder"></label>
+          <label class="f">Sex<select id="sex"><option>Female</option><option>Male</option><option>Not stated</option></select></label>
+          <label class="f">Age<input id="age" type="number" min="8" max="80"></label>
+          <label class="f">Training age (years)<input id="tage" type="number" min="0" max="40"></label>
+          <label class="f">Injury and side<input id="injury" placeholder="e.g. left ACL reconstruction"></label>
+          <label class="f">Injured region<select id="region"><option>Lower limb</option><option>Upper limb</option><option>Spine or trunk</option><option>None</option></select></label>
+          <label class="f">Weeks since injury or surgery<input id="weeks" type="number" min="0"></label>
+          <label class="f">Tissue stage<select id="tissue">
+            <option value="0">Protect: early healing (caps at Restore)</option>
+            <option value="1">Load: remodelling (caps at Learn)</option>
+            <option value="2">Develop: maturing (caps at Develop)</option>
+            <option value="3" selected>No tissue cap</option></select></label>
+          <label class="f">Club sessions per week<input id="clubSessions" type="number" min="0" max="10"></label>
+          <label class="f">Club HSR per week (m)<input id="clubHsr" type="number" min="0" placeholder="GPS or estimate"></label>
+          <label class="f">Game HSR per week (m)<input id="gameHsr" type="number" min="0" placeholder="GPS or estimate"></label>
+          <label class="f">Growth stage (under 18)<select id="phv"><option value="">Adult or not set</option><option>Pre growth spurt</option><option>Circa: in the growth spurt</option><option>Post growth spurt</option></select></label>
+          <label class="f">Parent or guardian (under 18)<select id="consent"><option value="">Not applicable</option><option>Consented</option><option>Not yet</option></select></label>
+        </div>
+        <p class="why" style="margin:10px 0 0">Club training and games count toward the weekly high-speed running band. The Stride running target is the band minus what the athlete already runs outside.</p>
+      </section>
+
+      <section class="step" id="s2">
+        <h2><span class="num">2</span>Belt per attribute</h2>
+        <p class="why">Enter what was tested. Each row shows the proposed belt and how it was reached: <span class="tag calc">calculated</span> from a locked threshold, or <span class="tag judg">judgement</span> where the normative source is not yet declared. Every gate reads the other limb, the sport and level, and the game's demand. Set the final belt; if it differs from the proposal, give the reason.</p>
+        <div id="attrs"></div>
+        <div class="rules">
+          <div>Asymmetry ladder: 7% or under clear; 7 to 10% hold (no promotion this block); over 10% drops one belt.</div>
+          <div>RSI: under 1.5 Learn, 1.5 to 2.0 Develop, over 2.0 Perform. HSR per week: 0 Restore, under 150 m Learn, 150 to 400 m Develop, 400 m and over Perform. Contacts per session: 20 or under Restore, 60 Learn, 120 Develop, over 120 Perform.</div>
+        </div>
+      </section>
+
+      <section class="step" id="s3">
+        <h2><span class="num">3</span>Ceiling and modifier</h2>
+        <p class="why">The ceiling is the lowest belt among demanded attributes, capped by tissue stage. It caps game-like tasks only, never the whole session: isolated work runs at the belt of the attribute it loads.</p>
+        <div id="ceilBox" class="ceil"></div>
+        <div class="fields" style="margin-top:10px">
+          <label class="f">Ceiling modifier<select id="modifier">
+            <option value="">Choose</option>
+            <option>Time-limited: tissue still changing, time moves the ceiling</option>
+            <option>Training-limited: only training moves the ceiling</option>
+            <option>Structural: the ceiling will not move, change the gate not the goal</option></select></label>
+        </div>
+        <div id="modHint" class="status" style="margin-top:6px"></div>
+      </section>
+
+      <section class="step" id="s4">
+        <h2><span class="num">4</span>Availability</h2>
+        <p class="why">A separate axis, never merged into the belt. A failed psychological readiness screen is a hard hold whatever the belt says. Competition gate: 95% symmetry or better held in a fatigued state.</p>
+        <div class="fields">
+          <label class="f">Context<select id="context"><option>Training only</option><option>Modified training</option><option>Full training</option><option>Trial or practice match</option><option>Competition</option></select></label>
+          <label class="f">Consequence of failure<select id="consequence"><option>Low</option><option>Moderate</option><option>High</option></select></label>
+          <label class="f">Readiness screen<select id="psyTool"><option>ACL-RSI</option><option>TSK-11</option><option>Other</option><option>Not done</option></select></label>
+          <label class="f">Screen score<input id="psyScore" placeholder="score"></label>
+          <label class="f">Screen result<select id="psyResult"><option value="">Choose</option><option>Pass</option><option>Fail: hard hold</option></select></label>
+          <label class="f">Fatigued symmetry (%)<input id="fatSym" type="number" min="0" max="100" step="0.5" placeholder="e.g. 93"></label>
+          <label class="f">Who holds the risk<select id="risk"><option>Stride clinician</option><option>Club medical</option><option>Surgeon</option><option>Athlete and family, informed</option></select></label>
+        </div>
+        <div class="fields" style="margin-top:10px">
+          <label class="f">Clearance decision<select id="clearance"><option value="">No clearance decision this card</option><option value="training">Cleared for full training</option><option value="competition">Cleared for competition</option></select></label>
+        </div>
+        <div id="availOut" class="status" style="margin-top:8px"></div>
+        <div id="clrOut" class="missing" style="margin-top:4px"></div>
+      </section>
+
+      <section class="step" id="s5">
+        <h2><span class="num">5</span>Pathway, program and sign-off</h2>
+        <p class="why">The ceiling belt selects the pathway and the base programs. The demand profile selects the running stream. The gym program is set by the strength and power belts (isolated work runs at its own belt); the running program is set by the ceiling, because it carries the game-like work. File names match the v6 import files.</p>
+        <div class="fields">
+          <label class="f">Block to start<select id="block"><option value="A">A Accumulation</option><option value="B">B Intensification</option><option value="C">C Vary and express</option></select></label>
+          <label class="f">Develop decision (if Develop)<select id="devDecision"><option>Gaps are clinical: continuity</option><option>Gaps are training: Athletic Development</option><option>Gaps are training: S&amp;C Membership</option></select></label>
+          <label class="f">Signed by<input id="signer" placeholder="Name"></label>
+          <label class="f">Role<select id="signerRole"><option>Senior physiotherapist</option><option>Physiotherapist</option><option>S&amp;C coach</option></select></label>
+          <label class="f">AHPRA number<input id="ahpra" placeholder="PHY..."></label>
+        </div>
+        <div id="signOut" class="status" style="margin-top:8px"></div>
+        <label class="f" style="margin-top:10px">Clinical notes for the card<textarea id="notes" placeholder="Anything the numbers do not carry."></textarea></label>
+      </section>
+
+      <section class="step" id="s6a">
+        <h2><span class="num">6</span>The athlete's report</h2>
+        <p class="why">Built from the card: what they've built, where they're at in plain words, what it means in their sport, what they'll notice, the next steps and the re-test marker. The four fields below make it theirs. None of them is saved or put in the card code.</p>
+        <div class="fields">
+          <label class="f">First name<input id="athName" placeholder="For the report only"></label>
+          <label class="f">Their goal, in their words<input id="athGoal" placeholder="e.g. play seniors this season"></label>
+        </div>
+        <div class="fields" style="margin-top:10px">
+          <label class="f">What they told us (their sport, their words)<textarea id="athWords" placeholder="e.g. I lose power on my shot unless I pause at the bottom"></textarea></label>
+          <label class="f">One thing worth knowing<textarea id="athNote" placeholder="e.g. needs 5 to 6 reps to warm into it: get on court early"></textarea></label>
+        </div>
+        <div class="toolbar" style="margin-top:12px"><button id="btnRepDl" class="primary" type="button">Download report</button><button id="btnRepToggle" type="button">Show preview</button><span id="repStatus" class="status"></span></div>
+        <div id="repPreview" class="rep-wrap" hidden></div>
+      </section>
+
+      <section class="step" id="s6">
+        <h2><span class="num">7</span>Override log</h2>
+        <p class="why">Every override is saved without the athlete's identity: sport, level, attribute, proposed belt, final belt and reason. Over time this shows where the thresholds are wrong, which is how the gates get refined.</p>
+        <div class="toolbar"><button id="btnLog" class="primary" type="button">Save overrides to the log</button><span id="logStatus" class="status"></span></div>
+        <div id="logBox" class="log" style="margin-top:10px"></div>
+      </section>
+    </div>
+
+    <aside class="card" aria-label="Live classification card">
+      <div class="card-h"><b>Card</b><span id="cardDate"></span></div>
+      <div class="card-b">
+        <dl class="kv" id="cardTop"></dl>
+        <div class="ceil" id="cardCeil"></div>
+        <div class="belts" id="cardBelts"></div>
+        <dl class="kv" id="cardPath"></dl>
+        <div id="missing" class="missing"></div>
+        <div class="out">
+          <div class="outhead"><h4>Cliniko treatment note</h4><button id="cpCliniko" type="button">Copy</button></div>
+          <pre class="copy" id="outCliniko"></pre>
+          <div class="outhead"><h4>TeamBuildr assignment</h4><button id="cpTB" type="button">Copy</button></div>
+          <pre class="copy" id="outTB"></pre>
+          <div class="outhead"><h4>For the athlete</h4><button id="cpAth" type="button">Copy</button></div>
+          <pre class="copy" id="outAth"></pre>
+          <div id="clubWrap" hidden class="out">
+            <div class="outhead"><h4>Club and family note</h4><button id="cpClub" type="button">Copy</button></div>
+            <pre class="copy" id="outClub"></pre>
+          </div>
+          <span id="copyStatus" class="status"></span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<script>
+const BELTS = ["Restore", "Learn", "Develop", "Perform"];
+const BC = ["R", "L", "D", "P"];
+const PATHWAY = ["Rehab Accelerator: weekly 1:1 physio, individualised S&C, weekly program review",
+  "Accelerator into continuity: ongoing physio alongside S&C",
+  "Develop decision point", "Athletic Development or S&C Membership: choose by the currencies the sport spends"];
+const CAL = ["Program assigned to the athlete, served in order on completion; group Restore; weekly physio review; calendar for individual add-ons and dates only", "Program assigned to the athlete, served in order on completion; group Learn; weekly review slot; calendar for individual add-ons and dates only", "Program assigned to the athlete, served in order on completion; group Develop or the tier stepped across to; weekly review slot; calendar for individual add-ons and dates only", "Program assigned to the athlete, served in order on completion; group Perform under the tier; weekly review slot; calendar for individual add-ons and dates only"];
+const HSR = ["0 m per week", "50 to 150 m per week", "150 to 400 m per week", "400 to 700 m per week"];
+const HSRN = [[0, 0], [50, 150], [150, 400], [400, 700]];
+const MDC = { o_strength: 5, o_cmj: 6, o_hop: 5, o_rsi: 8, o_stiff: 10, o_mas: 3 }; // provisional %: replace with Stride repeat-test data
+const GYM_IDS = ["c_land", "c_single", "o_strength", "o_cmj", "o_hop", "o_rsi", "o_stiff", "t_contacts"];
+const CON = ["0 to 20 per session, bilateral only", "20 to 60 per session", "60 to 120 per session", "120 to 200 per session"];
+
+const SPORTS = {
+  "AFL": { run: "Field", contact: true },
+  "Football (soccer)": { run: "Field", contact: false },
+  "Rugby league or union": { run: "Field", contact: true },
+  "Basketball": { run: "Court", contact: false },
+  "Netball": { run: "Court", contact: false },
+  "Gym only or general": { run: "None", contact: false, gym: true },
+  "Calisthenics or gymnastics": { run: "None", contact: false, gym: true, note: "skill, strength and control dominant; no dedicated running variant" },
+  "Overhead or throwing sport": { run: "None", contact: false, note: "no dedicated variant yet: individualise conditioning" },
+  "Combat sport": { run: "None", contact: true, note: "no dedicated variant yet: individualise conditioning" },
+};
+
+const SCREEN = [["", "Not screened"], ["1", "1: unable or painful"], ["2", "2: competent slow, with cues"], ["3", "3: competent at speed"], ["4", "4: robust, reactive, fatigued"]];
+const ABS = [["", "Not read"], ["0", "Not cleared to test"], ["1", "Below band for sport and level"], ["2", "At band"], ["3", "Above band, with buffer"]];
+
+const ATTRS = [
+  { id: "c_land", layer: "Competency", name: "Landing and force absorption", kind: "screen", tests: "Landing screen, snap down, drop landing" },
+  { id: "c_decel", layer: "Competency", name: "Deceleration mechanics", kind: "screen", tests: "5-2-7 and decel screen, VueMotion" },
+  { id: "c_single", layer: "Competency", name: "Single-leg control", kind: "screen", tests: "Single-leg squat, step-down, pelvic control" },
+  { id: "c_cod", layer: "Competency", name: "Change of direction mechanics", kind: "screen", tests: "Planned and unanticipated cut screen" },
+  { id: "c_run", layer: "Competency", name: "Running mechanics", kind: "screen", tests: "VueMotion gait, A skip, Vmax mechanics", needRun: true },
+  { id: "c_contact", layer: "Competency", name: "Contact technique", kind: "screen", tests: "Tackle and contact progressions", needContact: true },
+  { id: "o_strength", layer: "Output", name: "Max strength", kind: "abs", unit: "x BW", label: "Relative e1RM", asym: true, tests: "Trap bar or squat e1RM, single-leg strength on force plates" },
+  { id: "o_cmj", layer: "Output", name: "Jump power", kind: "abs", unit: "cm", label: "CMJ height", asym: true, tests: "CMJ on force plates" },
+  { id: "o_hop", layer: "Output", name: "Single-leg power", kind: "abs", unit: "cm", label: "Triple crossover hop distance", asym: true, tests: "P2P Triple Crossover Hop on VueMotion (hop for distance, not the VALD hop tests)" },
+  { id: "o_rsi", layer: "Output", name: "Reactive strength", kind: "rsi", unit: "RSI", label: "Drop jump RSI", asym: true, tests: "Drop jump, single-leg drop jump" },
+  { id: "o_stiff", layer: "Output", name: "Elasticity and stiffness", kind: "abs", unit: "m/s", label: "Pogo RSI (VALD Hop Test)", asym: true, tests: "Double-leg pogo (VALD Hop Test) gives RSI; single-leg pogo (VALD Single Leg Hop Test) gives the left and right asymmetry" },
+  { id: "o_mas", layer: "Output", name: "Aerobic speed", kind: "abs", unit: "m/s", label: "MAS", asym: false, tests: "MAS test or Yo-Yo", needRun: true },
+  { id: "t_hsr", layer: "Tolerance", name: "High-speed running", kind: "tol", unit: "m/week", label: "Tolerated", tests: "Weekly HSR tolerated with a settled 24 to 48 hour response", needRun: true },
+  { id: "t_contacts", layer: "Tolerance", name: "Ground contacts", kind: "tol", unit: "per session", label: "Tolerated", tests: "Plyo contacts per session tolerated, settled response" },
+];
+const REASONS = ["", "Tissue", "Competency quality", "History or recent load", "Demand of sport or position", "Readiness", "Data quality"];
+
+const state = {};
+let prev = null; // { date, finals: {id: beltIndex}, ceiling, holds: [ids] }
+const $ = id => document.getElementById(id);
+function ordinal(n) { const s = ["th", "st", "nd", "rd"], v = n % 100; return n + (s[(v - 20) % 10] || s[v] || s[0]); }
+function auDate(d) { const m = ["January","February","March","April","May","June","July","August","September","October","November","December"]; return `${ordinal(d.getDate())} of ${m[d.getMonth()]} ${d.getFullYear()}`; }
+function chip(i) { return i == null ? '<span class="chip none">none</span>' : `<span class="chip ${BC[i]}">${BELTS[i]}</span>`; }
+
+/* ---------- build the attribute rows ---------- */
+function buildAttrs() {
+  const box = $("attrs"); box.innerHTML = "";
+  ["Competency", "Output", "Tolerance"].forEach(layer => {
+    const sub = { Competency: "can they do it", Output: "how much", Tolerance: "how many times" }[layer];
+    const wrap = document.createElement("div"); wrap.className = "layer";
+    wrap.innerHTML = `<h3>${layer}<small>${sub}</small></h3>`;
+    ATTRS.filter(a => a.layer === layer).forEach(a => {
+      const row = document.createElement("div"); row.className = "attr"; row.id = "row_" + a.id;
+      let ins = "";
+      if (a.kind === "screen") ins = `<label>Screen score<select id="${a.id}_v">${SCREEN.map(o => `<option value="${o[0]}">${o[1]}</option>`).join("")}</select></label>`;
+      if (a.kind === "abs") ins = `<label>${a.label} (${a.unit})<input id="${a.id}_v" type="number" step="any"></label>
+        <label>Read against sport and level<select id="${a.id}_abs">${ABS.map(o => `<option value="${o[0]}">${o[1]}</option>`).join("")}</select></label>
+        ${a.asym ? `<label>Asymmetry (%)<input id="${a.id}_asym" type="number" step="0.1" min="0"></label>` : ""}`;
+      if (a.kind === "rsi") ins = `<label>${a.label}<input id="${a.id}_v" type="number" step="0.01" min="0"></label>
+        <label>Asymmetry (%)<input id="${a.id}_asym" type="number" step="0.1" min="0"></label>
+        <label>Cleared for drop jumps<select id="${a.id}_clr"><option value="1">Yes</option><option value="0">No</option></select></label>`;
+      if (a.kind === "tol") ins = `<label>${a.label} (${a.unit})<input id="${a.id}_v" type="number" step="1" min="0"></label>
+        <label>24 to 48 h response<select id="${a.id}_resp"><option value="settled">Settled</option><option value="flared">Flared or lingering</option></select></label>`;
+      row.innerHTML = `
+        <div><div class="aname">${a.name}</div><div class="ameta">${a.tests}</div>
+          <label class="toggle"><input type="checkbox" id="${a.id}_dem"> Demanded by this sport</label></div>
+        <div class="ins">${ins}</div>
+        <div class="decide">
+          <div class="prop" id="${a.id}_prop"></div>
+          <div class="prop" id="${a.id}_prev"></div>
+          <div id="${a.id}_flag"></div>
+          <label class="f">Final belt<select id="${a.id}_final"><option value="">Use proposal</option>${BELTS.map((b, i) => `<option value="${i}">${b}</option>`).join("")}</select></label>
+          <label class="f" id="${a.id}_rwrap" hidden>Override reason<select id="${a.id}_reason">${REASONS.map(r => `<option>${r}</option>`).join("")}</select></label>
+        </div>`;
+      wrap.appendChild(row);
+    });
+    box.appendChild(wrap);
+  });
+}
+
+/* ---------- the logic ---------- */
+function num(id) { const el = $(id); if (!el || el.value === "") return null; const v = parseFloat(el.value); return isNaN(v) ? null : v; }
+function val(id) { const el = $(id); return el ? el.value : ""; }
+function asymMod(b, asym) {
+  if (b == null || asym == null) return { b, flag: null };
+  if (asym <= 7) return { b, flag: ["clear", `Asymmetry ${asym}%: clear`] };
+  if (asym <= 10) return { b, flag: ["hold", `Asymmetry ${asym}%: hold, no promotion this block`] };
+  return { b: Math.max(0, b - 1), flag: ["drop", `Asymmetry ${asym}%: over 10%, drops one belt`] };
+}
+function propose(a) {
+  if (a.kind === "screen") { const s = val(a.id + "_v"); return s === "" ? { b: null, basis: "Not screened", type: "judg" } : { b: +s - 1, basis: `Screen score ${s}`, type: "judg" }; }
+  if (a.kind === "abs") {
+    const r = val(a.id + "_abs"); if (r === "") return { b: null, basis: "Absolute read not set", type: "judg" };
+    const base = +r; const m = asymMod(base, num(a.id + "_asym"));
+    const v = num(a.id + "_v");
+    return { b: m.b, flag: m.flag, basis: `${v != null ? v + " " + a.unit + ", " : ""}${ABS.find(o => o[0] === r)[1].toLowerCase()}`, type: "judg", note: "Normative source pending: absolute read is clinician judgement; asymmetry is calculated." };
+  }
+  if (a.kind === "rsi") {
+    if (val(a.id + "_clr") === "0") return { b: 0, basis: "Not cleared for drop jumps", type: "calc" };
+    const v = num(a.id + "_v"); if (v == null) return { b: null, basis: "Not tested", type: "calc" };
+    const base = v < 1.5 ? 1 : v <= 2.0 ? 2 : 3; const m = asymMod(base, num(a.id + "_asym"));
+    return { b: m.b, flag: m.flag, basis: `RSI ${v}: ${BELTS[base]} band`, type: "calc" };
+  }
+  if (a.kind === "tol") {
+    const v = num(a.id + "_v"); if (v == null) return { b: null, basis: "Not recorded", type: "calc" };
+    let base = a.id === "t_hsr" ? (v <= 0 ? 0 : v < 150 ? 1 : v < 400 ? 2 : 3) : (v <= 20 ? 0 : v <= 60 ? 1 : v <= 120 ? 2 : 3);
+    let flag = null;
+    if (val(a.id + "_resp") === "flared") { base = Math.max(0, base - 1); flag = ["drop", "Response flared: drops one belt"]; }
+    return { b: base, flag, basis: `${v} ${a.unit} tolerated`, type: "calc" };
+  }
+}
+function demandDefault(a, sp) {
+  const s = SPORTS[sp] || {};
+  if (a.needContact && !s.contact) return false;
+  if (a.needRun && s.run === "None") return false;
+  if (s.gym && ["c_cod", "o_rsi", "o_stiff"].includes(a.id)) return false;
+  return true;
+}
+
+function compute() {
+  const res = {};
+  ATTRS.forEach(a => {
+    const p = propose(a);
+    const fin = val(a.id + "_final");
+    const final = fin === "" ? p.b : +fin;
+    const over = fin !== "" && +fin !== p.b;
+    res[a.id] = { a, p, final, over, reason: val(a.id + "_reason"), dem: $(a.id + "_dem").checked };
+    $(a.id + "_prop").innerHTML = `Proposed ${chip(p.b)} <span class="tag ${p.type}">${p.type === "calc" ? "calculated" : "judgement"}</span><br>${p.basis}${p.note ? `<br><span style="font-size:12px">${p.note}</span>` : ""}`;
+    $(a.id + "_flag").innerHTML = p.flag ? `<span class="flag ${p.flag[0]}">${p.flag[1]}</span>` : "";
+    $(a.id + "_rwrap").hidden = !over;
+    $("row_" + a.id).classList.toggle("off", !res[a.id].dem);
+    const pv = prev && prev.finals ? prev.finals[a.id] : undefined;
+    res[a.id].prev = pv;
+    if (prev) {
+      let msg = `Last card (${prev.date}): ${pv == null ? '<span class="chip none">none</span>' : chip(pv)}`;
+      if (pv != null && final != null) {
+        if (final > pv) msg += ` <span class="flag clear">promoted</span>`;
+        else if (final < pv) msg += ` <span class="flag drop">dropped</span>`;
+        else msg += ` <span class="flag hold">held</span>`;
+        if (final > pv && p.flag && p.flag[0] === "hold") msg += `<br><span class="flag drop">Promotion blocked by rule: this attribute carries a hold flag (asymmetry 7 to 10%).</span>`;
+        const pr = prev.raw && prev.raw[a.id];
+        const nv = num(a.id + "_v");
+        if (MDC[a.id] && pr && pr.v != null && nv != null && pr.v !== 0) {
+          const ch = Math.round(((nv - pr.v) / Math.abs(pr.v)) * 1000) / 10;
+          const real = Math.abs(ch) >= MDC[a.id];
+          res[a.id].noise = `change ${ch > 0 ? "+" : ""}${ch}% (${real ? "real change" : "within measurement error of " + MDC[a.id] + "%"})`;
+          res[a.id].noiseFlag = !real;
+          msg += `<br>Change since last test: ${res[a.id].noise}`;
+          if (final > pv && !real) msg += `<br><span class="flag drop">Promotion not supported: the change is within measurement error.</span>`;
+        }
+      }
+      $(a.id + "_prev").innerHTML = msg;
+    } else $(a.id + "_prev").innerHTML = "";
+  });
+  const dem = Object.values(res).filter(r => r.dem && r.final != null);
+  const minB = dem.length ? Math.min(...dem.map(r => r.final)) : null;
+  const tcap = +val("tissue");
+  let ceiling = minB == null ? null : Math.min(minB, tcap);
+  const capping = minB == null ? [] : dem.filter(r => r.final === ceiling);
+  const tissueBinds = minB != null && tcap < minB;
+  const unread = Object.values(res).filter(r => r.dem && r.final == null);
+  const holds = Object.values(res).filter(r => r.dem && r.p.flag && r.p.flag[0] === "hold");
+  const gdem = dem.filter(r => GYM_IDS.includes(r.a.id));
+  const gmin = gdem.length ? Math.min(...gdem.map(r => r.final)) : minB;
+  const gymBelt = gmin == null ? null : Math.max(ceiling, Math.min(gmin, tcap));
+  const gymCapping = gdem.filter(r => r.final === gymBelt);
+  return { res, ceiling, capping, tissueBinds, unread, holds, tcap, gymBelt, gymCapping };
+}
+
+/* ---------- render ---------- */
+function render() {
+  const sp = val("sport"); const s = SPORTS[sp] || {};
+  const c = compute();
+  const date = auDate(new Date());
+  $("cardDate").textContent = date;
+
+  // Step 3
+  if (c.ceiling == null) $("ceilBox").innerHTML = "No demanded attribute has a belt yet.";
+  else {
+    const names = c.tissueBinds ? "Tissue stage (caps the available belt)" : c.capping.map(r => r.a.name).join(", ");
+    $("ceilBox").innerHTML = `<div class="big">${chip(c.ceiling)}<span>Capped by: <b>${names}</b></span></div>
+      ${c.capping.length > 1 && !c.tissueBinds ? `<div class="status">${c.capping.length} attributes tie at the ceiling. Lead the program with the one the sport spends most.</div>` : ""}
+      ${c.holds.length ? `<div class="status">Hold flags (no promotion this block): ${c.holds.map(r => r.a.name).join(", ")}</div>` : ""}`;
+  }
+  $("modHint").textContent = c.tissueBinds ? "Tissue stage is binding: time-limited is the likely modifier." : (c.ceiling != null ? "Choose the modifier: these are three different conversations with the athlete." : "");
+
+  // Step 4
+  const psyFail = val("psyResult").startsWith("Fail");
+  const fat = num("fatSym");
+  const gateMet = fat != null && fat >= 95;
+  let avail = psyFail ? "Hard hold: readiness screen failed, whatever the belt." :
+    (val("context") === "Competition" && !gateMet ? "Competition is not available: the competition gate (95% fatigued symmetry) is not met." :
+    (gateMet ? "Competition gate met." : "Competition gate not yet tested or not met."));
+  $("availOut").textContent = avail;
+
+  // card top
+  $("cardTop").innerHTML = `
+    <dt>Athlete</dt><dd>${esc(val("ref")) || "<i>no reference</i>"}</dd>
+    <dt>Demand</dt><dd>${esc(sp)}, ${esc(val("level"))}${val("position") ? ", " + esc(val("position")) : ""}</dd>
+    <dt>Injury</dt><dd>${esc(val("injury")) || "none recorded"}${num("weeks") != null ? ", " + num("weeks") + " weeks" : ""}</dd>`;
+  $("cardCeil").innerHTML = `<div class="big">${chip(c.ceiling)}<span>${c.ceiling == null ? "Ceiling not set" : "Ceiling belt"}</span></div>
+    <div class="status">${val("modifier") ? esc(val("modifier").split(":")[0]) : "Modifier not chosen"}${psyFail ? " · Hard hold" : ""}</div>`;
+  let bl = "";
+  ["Competency", "Output", "Tolerance"].forEach(L => {
+    bl += `<div class="lh">${L}</div>`;
+    ATTRS.filter(a => a.layer === L).forEach(a => {
+      const r = c.res[a.id]; if (!r.dem) return;
+      const cap = c.ceiling != null && r.final === c.ceiling && !c.tissueBinds;
+      bl += `<div class="row ${cap ? "cap" : ""}"><span class="n">${a.name}${r.over ? " *" : ""}</span>${chip(r.final)}</div>`;
+    });
+  });
+  let delta = "";
+  if (prev) {
+    const moved = Object.values(c.res).filter(r => r.dem && r.prev != null && r.final != null && r.final !== r.prev);
+    delta = `<div class="lh">Since last card (${esc(prev.date)})</div><div>Ceiling ${prev.ceiling == null ? "none" : BELTS[prev.ceiling]} to ${c.ceiling == null ? "none" : BELTS[c.ceiling]}. ${moved.length ? moved.map(r => `${r.a.name} ${r.final > r.prev ? "up" : "down"} to ${BELTS[r.final]}`).join("; ") : "No belt changes."}</div>`;
+  }
+  $("cardBelts").innerHTML = bl + delta + `<div class="status" style="margin-top:4px">* clinician override. Bold rows set the ceiling.</div>`;
+
+  // ---- program selection: gym by strength and power belts, running by the ceiling
+  const ce = c.ceiling;
+  const gb = c.gymBelt;
+  const blk = val("block"); const bn = { A: "A Accumulation", B: "B Intensification", C: "C Vary and express" }[blk];
+  const region = val("region");
+  let gym = "", run = "";
+  if (gb === 0) {
+    gym = `Stride Restore Gym ${region === "Upper limb" ? "Upper Limb" : "Lower Limb"} v6${region === "Spine or trunk" ? " (individualise for the spine: no dedicated template yet)" : ""}`;
+  } else if (gb != null) gym = `Stride ${BELTS[gb]} Gym ${bn} v6`;
+  if (ce === 0) run = "None at Restore: reconditioning lives inside G5";
+  else if (ce != null) run = s.run === "None" ? `None: ${s.note || "the sport does not spend high-speed running"}` : `Stride ${BELTS[ce]} Running ${s.run} ${bn} v6`;
+
+  // ---- weekly HSR: the band is for the whole week, club and game included
+  const band = HSRN[ce == null ? 0 : ce];
+  const outside = (num("clubHsr") || 0) + (num("gameHsr") || 0);
+  const tLo = Math.max(0, band[0] - outside), tHi = Math.max(0, band[1] - outside);
+  const hsrLine = ce == null ? "" : (outside > band[1]
+    ? `Club and game already exceed the ${BELTS[ce]} band (${outside} m against ${band[1]} m): no Stride HSR this week, flag the load to the club.`
+    : `Stride HSR target ${tLo} to ${tHi} m per week (band ${band[0]} to ${band[1]} m, minus ${outside} m from club and game).`);
+  const conLine = gb == null ? "" : `Contacts ${CON[gb]}${val("phv").startsWith("Circa") ? ", at about 70% of the program dose during the growth spurt" : ""}.`;
+
+  let path = ce == null ? "" : (ce === 2 ? `Develop decision point: ${val("devDecision")}` : PATHWAY[ce]);
+  $("cardPath").innerHTML = ce == null ? "" : `
+    <dt>Pathway</dt><dd>${esc(path)}</dd>
+    <dt>Delivery</dt><dd>${CAL[ce]}</dd>
+    <dt>Gym</dt><dd>${esc(gym)}<br><span class="status">Set by strength and power belts: ${gb == null ? "none" : BELTS[gb]}${c.gymCapping.length ? " (" + esc(c.gymCapping.map(r => r.a.name).join(", ")) + ")" : ""}</span></dd>
+    <dt>Running</dt><dd>${esc(run)}<br><span class="status">Set by the ceiling: game-like work is capped here.</span></dd>
+    <dt>Budgets</dt><dd>${esc(hsrLine)} ${esc(conLine)}</dd>`;
+
+  // ---- clearance
+  const clr = val("clearance");
+  const compOk = gateMet && !psyFail && val("psyResult") === "Pass" && ce != null && ce >= 2 && !c.unread.length;
+  let clrMsg = "";
+  if (clr === "competition" && !compOk) clrMsg = "Competition clearance is blocked: it needs the fatigued symmetry gate (95%), a passed readiness screen, every demanded attribute read, and a ceiling of Develop or above.";
+  if (clr === "training" && (psyFail || ce == null || ce < 1)) clrMsg = "Full training clearance is blocked: it needs a passed readiness screen and a ceiling of Learn or above.";
+  $("clrOut").textContent = clrMsg || (clr ? "Clearance criteria met. Senior sign-off required." : "");
+
+  // ---- sign-off tiers
+  const senior = [];
+  const ct = val("cardType");
+  if (ce === 0) senior.push("Restore ceiling");
+  if (Object.values(c.res).some(r => r.over && r.reason === "Tissue")) senior.push("override on tissue grounds");
+  if (psyFail) senior.push("failed readiness screen");
+  if (clr) senior.push("clearance decision");
+  if (ct === "offcycle") senior.push("off-cycle card (new injury or flare)");
+  const role = val("signerRole");
+  const roleBlock = role === "S&C coach" && (senior.length || ce == null || Object.values(c.res).some(r => r.over));
+  $("signOut").textContent = senior.length ? `Senior physiotherapist sign-off required: ${senior.join(", ")}.` : (role === "S&C coach" ? "S&C coach may sign: a block re-test at Learn or above with no overrides." : "");
+
+  // ---- missing items
+  const miss = [];
+  if (!val("ref")) miss.push("client reference");
+  if (c.unread.length) miss.push(`belts for ${c.unread.length} demanded attribute${c.unread.length > 1 ? "s" : ""}`);
+  const noReason = Object.values(c.res).filter(r => r.over && !r.reason);
+  if (noReason.length) miss.push(`override reason for ${noReason.map(r => r.a.name).join(", ")}`);
+  if (c.ceiling != null && !val("modifier")) miss.push("ceiling modifier");
+  if (!val("psyResult")) miss.push("readiness screen result");
+  if (num("age") != null && num("age") < 18 && val("consent") !== "Consented") miss.push("parent or guardian consent (under 18)");
+  if (num("age") != null && num("age") < 18 && !val("phv")) miss.push("growth stage (under 18)");
+  if (ct === "offcycle" && !val("notes")) miss.push("what happened (off-cycle card notes)");
+  if (clrMsg) miss.push("clearance criteria");
+  if (senior.length && role !== "Senior physiotherapist") miss.push("senior physiotherapist sign-off");
+  if (roleBlock && !senior.length) miss.push("physiotherapist sign-off (S&C coaches sign clean re-tests only)");
+  if (!val("signer")) miss.push("sign-off name");
+  $("missing").textContent = miss.length ? "Before signing: " + miss.join("; ") + "." : "Ready to sign and copy.";
+  c.ready = !miss.length;
+
+  // ---- outputs
+  const above = Object.values(c.res).filter(r => r.dem && r.final != null && ce != null && r.final > ce);
+  const typeLabel = { block: "BLOCK RE-TEST OR FIRST CARD", offcycle: "OFF-CYCLE CARD: NEW INJURY OR FLARE", weekly: "RESTORE WEEKLY REVIEW" }[ct] || "CARD";
+  const moved = prev ? Object.values(c.res).filter(r => r.dem && r.prev != null && r.final != null && r.final !== r.prev) : [];
+  const lines = [];
+  lines.push(`STRIDE CLASSIFICATION CARD (${typeLabel}): ${date}`);
+  lines.push(`Client: ${val("ref") || "(reference)"}`);
+  if (ct === "weekly") {
+    lines.push(`Ceiling: ${ce == null ? "not set" : BELTS[ce]}. Modifier: ${val("modifier") || "not chosen"}. Tissue stage: ${$("tissue").selectedOptions[0].text}.`);
+    lines.push(prev ? `Since ${prev.date}: ${moved.length ? moved.map(r => `${r.a.name} ${BELTS[r.prev]} to ${BELTS[r.final]}`).join("; ") : "no belt changes"}.` : "No previous card loaded.");
+    lines.push(`Program: ${gym || "not set"}. Readiness: ${val("psyResult") || "not set"}.`);
+  } else {
+    lines.push(`Demand profile: ${sp}, ${val("level")}${val("position") ? ", " + val("position") : ""}; ${val("sex")}${val("age") ? ", age " + val("age") : ""}${val("tage") ? ", training age " + val("tage") : ""}. Running stream: ${s.run}.`);
+    lines.push(`Injury: ${val("injury") || "none recorded"}${num("weeks") != null ? ", " + num("weeks") + " weeks" : ""}. Tissue stage: ${$("tissue").selectedOptions[0].text}.`);
+    lines.push(`Outside load per week: ${num("clubSessions") || 0} club sessions, club HSR ${num("clubHsr") || 0} m, game HSR ${num("gameHsr") || 0} m.${num("age") != null && num("age") < 18 ? ` Under 18: growth stage ${val("phv") || "not set"}; consent ${val("consent") || "not recorded"}.` : ""}`);
+    lines.push("");
+    lines.push("Belts (proposed > final, basis):");
+    ["Competency", "Output", "Tolerance"].forEach(L => {
+      lines.push(`${L}:`);
+      ATTRS.filter(a => a.layer === L).forEach(a => {
+        const r = c.res[a.id];
+        if (!r.dem) { lines.push(`  ${a.name}: not demanded`); return; }
+        const pb = r.p.b == null ? "none" : BELTS[r.p.b], fb = r.final == null ? "none" : BELTS[r.final];
+        lines.push(`  ${a.name}: ${pb} > ${fb} (${r.p.basis}${r.p.flag ? "; " + r.p.flag[1] : ""}; ${r.p.type === "calc" ? "calculated" : "judgement"}${r.over ? "; OVERRIDE, reason: " + (r.reason || "not given") : ""}${r.noise ? "; " + r.noise : ""})`);
+      });
+    });
+    lines.push("");
+    lines.push(`Ceiling: ${ce == null ? "not set" : BELTS[ce]}. Capped by: ${c.tissueBinds ? "tissue stage" : c.capping.map(r => r.a.name).join(", ") || "n/a"}. Modifier: ${val("modifier") || "not chosen"}.`);
+    lines.push(`Strength and power belt (sets the gym program): ${gb == null ? "not set" : BELTS[gb]}.`);
+    if (c.holds.length) lines.push(`Hold flags: ${c.holds.map(r => r.a.name).join(", ")}.`);
+    lines.push(`Above the ceiling (train at own belt): ${above.length ? above.map(r => `${r.a.name} ${BELTS[r.final]}`).join(", ") : "none"}.`);
+    lines.push("");
+    lines.push(`Availability: context ${val("context")}; consequence ${val("consequence")}; readiness ${val("psyTool")} ${val("psyScore") || ""} ${val("psyResult") || "(result not set)"}; fatigued symmetry ${fat != null ? fat + "%" : "not tested"}; risk held by ${val("risk")}. ${avail}`);
+    if (clr) lines.push(`Clearance: ${clr === "competition" ? "cleared for competition" : "cleared for full training"}${clrMsg ? " (BLOCKED: criteria not met)" : ""}.`);
+    if (ce != null) {
+      lines.push(`Pathway: ${path}. Delivery: ${CAL[ce]}.`);
+      lines.push(`Programs: ${gym}${run.startsWith("Stride") ? " + " + run : ""}. ${hsrLine} ${conLine}`);
+    }
+    if (prev) {
+      const blocked = moved.filter(r => r.final > r.prev && r.p.flag && r.p.flag[0] === "hold");
+      const noisy = moved.filter(r => r.final > r.prev && r.noiseFlag);
+      lines.push("");
+      lines.push(`Change since last card (${prev.date}): ceiling ${prev.ceiling == null ? "none" : BELTS[prev.ceiling]} to ${ce == null ? "none" : BELTS[ce]}. ${moved.length ? moved.map(r => `${r.a.name} ${BELTS[r.prev]} to ${BELTS[r.final]}`).join("; ") + "." : "No belt changes."}${blocked.length ? " WARNING: promoted despite a hold flag: " + blocked.map(r => r.a.name).join(", ") + "." : ""}${noisy.length ? " WARNING: promoted on a change within measurement error: " + noisy.map(r => r.a.name).join(", ") + "." : ""}`);
+    }
+  }
+  if (val("notes")) { lines.push(""); lines.push(`Notes: ${val("notes")}`); }
+  lines.push("");
+  lines.push(`Signed: ${val("signer") || "(name)"}, ${val("signerRole")}${val("ahpra") ? ", AHPRA " + val("ahpra") : ""}, ${date}.`);
+  lines.push("");
+  lines.push("Card code (paste into the Classification Card at the next re-test):");
+  lines.push(makeCode(c, date));
+  $("outCliniko").textContent = lines.join("\n");
+
+  const tb = [];
+  if (ce != null) {
+    tb.push(`Assign: ${gym}${run.startsWith("Stride") ? "\nAssign: " + run : ""}`);
+    tb.push(`Delivery: ${CAL[ce]}. Floor changes limited to readiness, equipment clash, pain or poor quality; everything else at the weekly review.`);
+    tb.push(`Profile note: Ceiling ${BELTS[ce]} (${c.tissueBinds ? "tissue stage" : c.capping.map(r => r.a.name).join(", ")}), ${val("modifier") ? val("modifier").split(":")[0].toLowerCase() : "modifier not set"}. Gym set by strength and power belt ${gb == null ? "none" : BELTS[gb]}. ${psyFail ? "HARD HOLD on readiness. " : ""}Classified ${date}.`);
+    tb.push(`Week 1 note: ${hsrLine} ${conLine} Game-like work (small-sided games, reactive cuts, contact) capped at ${BELTS[ce]}. Above the ceiling, train at own rung: ${above.length ? above.map(r => `${r.a.name} ${BELTS[r.final]}`).join("; ") : "none"}.${c.holds.length ? " Hold, no promotion this block: " + c.holds.map(r => r.a.name).join(", ") + "." : ""}${val("phv").startsWith("Circa") ? " Growth spurt: plyo contacts at about 70%, add control work, no max-height depth jumps." : ""}`);
+    tb.push(`Readiness: daily questionnaire on; log the 24 to 48 hour response against the one dial that moved.`);
+    tb.push(`Evaluations: enter the headline tests (CMJ, RSI, triple hop, strength, MAS) with this date.`);
+  } else tb.push("Set belts for the demanded attributes to produce the assignment.");
+  $("outTB").textContent = tb.join("\n");
+
+  // ---- athlete summary and report: built from one model
+  const R = athleteModel({ c, ce, gb, run, band, tLo, tHi, outside, above, psyFail, clr, clrMsg, sp, s, date });
+  lastReport = R;
+  $("outAth").textContent = R ? athleteText(R) : "Complete the card to produce the athlete summary.";
+  if (!$("repPreview").hidden) showPreview();
+
+  // ---- club and family note
+  const clubN = [];
+  if (clr && !clrMsg) {
+    clubN.push(`${date}`);
+    clubN.push(`Re: ${val("ref") || "(athlete)"}`);
+    clubN.push(clr === "competition"
+      ? `Following testing today, this athlete has met our return-to-competition criteria: limb symmetry of 95% or better under fatigue, a passed readiness screen, and strength, power and running tolerance at or above what their level of ${sp.toLowerCase()} asks.`
+      : `Following testing today, this athlete is cleared for full training. They are not yet cleared for competition; we will re-test in about 6 weeks.`);
+    clubN.push(`Running load: please keep their weekly high-speed running within ${band[0]} to ${band[1]} m including club training and games, and let us know their game minutes.`);
+    clubN.push(`Please contact us if they report pain, swelling or a change in confidence.`);
+    clubN.push(`${val("signer") || "(clinician)"}, Stride Sports Physio and Performance`);
+  }
+  $("outClub").textContent = clubN.length ? clubN.join("\n") : "Produced when a clearance decision is made and its criteria are met.";
+  $("clubWrap").hidden = !clr;
+}
+const PROFILE_IDS = ["ref", "sport", "level", "position", "sex", "age", "tage", "injury", "region", "weeks", "tissue", "risk", "clubSessions", "clubHsr", "gameHsr", "phv", "consent"];
+function makeCode(c, date) {
+  const finals = {}; ATTRS.forEach(a => { const r = c.res[a.id]; if (r.final != null) finals[a.id] = r.final; });
+  const prof = {}; PROFILE_IDS.forEach(id => prof[id] = val(id));
+  const dem = ATTRS.filter(a => c.res[a.id].dem).map(a => a.id);
+  const raw = {}; ATTRS.forEach(a => { const v = num(a.id + "_v"), as = num(a.id + "_asym"); if (v != null || as != null) raw[a.id] = { v, asym: as }; });
+  const body = { v: 1, date, prof, finals, raw, dem, ceiling: c.ceiling, block: val("block") };
+  try { return "STRIDE1:" + btoa(unescape(encodeURIComponent(JSON.stringify(body)))); } catch (e) { return "(code unavailable)"; }
+}
+function readCode(txt) {
+  const m = String(txt).match(/STRIDE1:([A-Za-z0-9+\/=]+)/);
+  if (!m) throw new Error("No card code found. It starts with STRIDE1: at the bottom of the last Cliniko note.");
+  return JSON.parse(decodeURIComponent(escape(atob(m[1]))));
+}
+const NEXT_BLOCK = { A: "B", B: "C", C: "A" };
+function esc(s) { return String(s).replace(/[&<>"]/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch])); }
+
+/* ---------- state: per-viewer draft only ---------- */
+const IDS = () => [...document.querySelectorAll("input,select,textarea")].map(e => e.id).filter(Boolean);
+function snapshot() { const o = {}; IDS().forEach(id => { const e = $(id); o[id] = e.type === "checkbox" ? e.checked : e.value; }); return o; }
+function restore(o) { IDS().forEach(id => { if (!(id in o)) return; const e = $(id); if (e.type === "checkbox") e.checked = !!o[id]; else e.value = o[id]; }); }
+function save() { /* deliberately empty: no athlete data is stored on the device */ }
+let isExample = true;
+
+function applyDemand() { const sp = val("sport"); ATTRS.forEach(a => { $(a.id + "_dem").checked = demandDefault(a, sp); }); }
+
+const EXAMPLE = {
+  ref: "EX-01 (example)", sport: "AFL", level: "Sub-elite", position: "Midfielder", sex: "Male", age: "22", tage: "5",
+  injury: "Left ACL reconstruction (hamstring graft)", region: "Lower limb", weeks: "39", tissue: "3",
+  c_land_v: "3", c_decel_v: "3", c_single_v: "3", c_cod_v: "2", c_run_v: "3", c_contact_v: "2",
+  o_strength_v: "1.9", o_strength_abs: "2", o_strength_asym: "6", o_cmj_v: "38", o_cmj_abs: "2", o_cmj_asym: "8.5",
+  o_hop_v: "512", o_hop_abs: "2", o_hop_asym: "6", o_rsi_v: "1.72", o_rsi_asym: "6", o_rsi_clr: "1",
+  o_stiff_v: "0.99", o_stiff_abs: "2", o_stiff_asym: "9", o_mas_v: "4.6", o_mas_abs: "3",
+  t_hsr_v: "220", t_hsr_resp: "settled", t_contacts_v: "70", t_contacts_resp: "settled",
+  context: "Modified training", consequence: "High", psyTool: "ACL-RSI", psyScore: "68", psyResult: "Pass", fatSym: "91", risk: "Stride clinician",
+  modifier: "Training-limited: only training moves the ceiling", block: "A",
+  athName: "Sam", athGoal: "Play senior footy this season", athWords: "My left knee feels fine running straight, but I don't trust it cutting hard off the left at training.", athNote: "Your jump numbers climbed across every set, so a proper warm-up before training matters for you.",
+  notes: "Example only. The ceiling is set by change of direction and contact technique, so running and game-like work stay at Learn while the gym runs at Develop.",
+};
+
+/* ---------- athlete report: plain language, sport translation ---------- */
+// n: plain name, w: what it is, s: short noun, t: noun for "build ...", u: unit words for a number, note: what they'll notice, work: what we'll be doing
+const PLAIN = {
+  c_land: { n: "Your brakes", w: "absorbing force when you land", s: "brakes", t: "the brakes", note: "Landings will feel softer: less thud, more absorb-and-go.", work: ["Landing and absorbing", "Slow lowering work, landing holds and low drops. Teaching your body it can absorb force safely."] },
+  c_decel: { n: "Your stopping", w: "slowing down hard and staying balanced", s: "stopping", t: "the stop", note: "Stopping hard won't cost you as much time or balance.", work: ["Stopping", "Deceleration drills and stopping on one leg, planned first, then reacting to a cue."] },
+  c_single: { n: "One-leg control", w: "hip and knee steady over one foot", s: "one-leg control", t: "one-leg control", note: "Standing, landing and pushing off one leg will feel steadier.", work: ["One-leg control", "Single-leg squats, step-downs and hip work. {SIDE} leads every set."] },
+  c_cod: { n: "Your cut", w: "changing direction at speed", s: "cut", t: "the cut", note: "Cuts will feel sharper, and you'll trust the plant foot.", work: ["Cutting", "Planned cuts first, then reacting to a cue. Angle and speed go up only when the shape holds."] },
+  c_run: { n: "Running form", w: "moving well at speed", s: "running form", t: "running form", note: "Running will feel smoother and easier at the same speed.", work: ["Running form", "Drills, accelerations and top-speed exposures built into every running session."] },
+  c_contact: { n: "Contact", w: "taking and making contact safely", s: "contact", t: "contact skills", note: "Contact will feel controlled rather than a gamble.", work: ["Contact", "Tackle and contact progressions: shape first, then speed, then live."] },
+  o_strength: { n: "Strength", w: "the base everything else sits on", s: "strength", t: "strength", u: "x body weight", lab: "strength", note: "Heavy sessions will feel more manageable and you'll bounce back faster.", work: ["Strength", "Heavy squats, hinges and single-leg lifts across medium, heavy and light weeks."] },
+  o_cmj: { n: "Your engine", w: "power from a standing start", s: "engine", t: "the engine", u: "cm", lab: "standing jump", note: "Jumps from a standing start will feel more powerful.", work: ["The engine", "Loaded and unloaded jumps paired with the main lifts."] },
+  o_hop: { n: "One-leg power", w: "pushing off one leg for distance", s: "one-leg power", t: "one-leg power", u: "cm", lab: "triple crossover hop", note: "Pushing off {SIDEL} will start to feel as confident as the other side.", work: ["One-leg power", "Hops, bounds and single-leg lifts. {SIDE} leads every set."] },
+  o_rsi: { n: "Your spring", w: "bouncing straight out of a landing", s: "spring", t: "the spring", u: "", lab: "spring score (drop jump RSI)", note: "You'll get off the ground faster after you land.", work: ["The spring", "Drop jumps, hurdle hops and quick rebounds, graded and counted every session."] },
+  o_stiff: { n: "Your bounce", w: "quick, springy ankles and calves", s: "bounce", t: "the bounce", u: "", lab: "bounce score (pogo RSI)", note: "Running and hopping will feel lighter, with more bounce off each step.", work: ["The bounce", "Pogos, skips and calf strength, counted every session."] },
+  o_mas: { n: "Your aerobic engine", w: "how fast you can run and keep running", s: "aerobic engine", t: "the aerobic engine", u: "m/s", lab: "aerobic speed", note: "You'll recover faster between efforts and finish stronger.", work: ["Aerobic engine", "Interval running at your aerobic speed, built into the running sessions."] },
+  t_hsr: { n: "Running load", w: "how much fast running your body handles each week", s: "running load", t: "running load", u: "m a week", lab: "fast running", note: "Bigger running weeks will feel normal, not draining.", work: ["Running load", "Fast running built up week by week, club training and games included."] },
+  t_contacts: { n: "Landing load", w: "how many jumps and landings your body handles", s: "landing load", t: "landing load", u: "a session", lab: "jumps and landings", note: "Jump-heavy sessions won't leave you sore the next day.", work: ["Landing load", "Jumps and landings counted every session and built up week by week."] },
+};
+
+// where each quality shows up in the sport
+const GENERIC_M = {
+  c_land: "Landing with control and moving straight into the next action", c_decel: "Stopping hard without losing balance", c_single: "Control and confidence on one leg",
+  c_cod: "Changing direction sharply", c_run: "More efficient running", c_contact: "Handling contact with control", o_strength: "A stronger base for everything you do",
+  o_cmj: "More power from a standing start", o_hop: "More power off one leg", o_rsi: "Faster reactions off the ground", o_stiff: "Lighter, springier movement",
+  o_mas: "Better fitness and faster recovery between efforts", t_hsr: "Handling more running without breaking down", t_contacts: "Handling more training without soreness",
+};
+const SPORT_LANG = {
+  "AFL": { floor: "the ground", game: "match simulation, contested marking and tackling drills", m: {
+    c_land: "Landing from a contested mark and getting straight into the next contest", c_decel: "Stopping hard to win the ball at ground level, then going again",
+    c_single: "Holding your shape through a bump or a one-leg landing", c_cod: "Side-stepping a tackler or shaking an opponent at a stoppage",
+    c_run: "Running at top speed on the lead without wasting energy", c_contact: "Tackling and being tackled with control",
+    o_strength: "Holding your ground in the contest and standing up in tackles", o_cmj: "Getting up for marks and ruck contests",
+    o_hop: "Explosive first steps out of a stoppage", o_rsi: "Bouncing straight out of a contest into the next play", o_stiff: "Faster, lighter running over four quarters",
+    o_mas: "Repeat efforts late in the last quarter", t_hsr: "Backing up fast efforts week after week without breaking down", t_contacts: "Handling a full week of training plus a game" } },
+  "Football (soccer)": { floor: "the pitch", game: "small-sided games, live one-on-ones and full-speed pressing", m: {
+    c_land: "Landing safely from a header and staying in the play", c_decel: "Pulling up hard to press, jockey or check back",
+    c_single: "Striking and passing off a steady standing leg", c_cod: "Turning sharply to beat a defender or track a runner",
+    c_run: "Repeat sprints in behind without your form falling apart", o_strength: "Holding off a defender and shielding the ball",
+    o_cmj: "Winning headers", o_hop: "Explosive first steps to get to the ball first", o_rsi: "Quick turns and second efforts",
+    o_stiff: "Lighter, faster running over 90 minutes", o_mas: "Pressing and recovering late in the game",
+    t_hsr: "Backing up a full week of training and a game without hamstring or groin trouble", t_contacts: "Handling the week's training load" } },
+  "Rugby league or union": { floor: "the field", game: "full-contact drills, live tackling and match simulation", m: {
+    c_land: "Landing from a high-ball or lineout contest safely", c_decel: "Stopping hard to set your defensive line",
+    c_single: "Stepping and taking contact on one leg", c_cod: "Stepping a defender at speed", c_run: "Efficient support running and line breaks",
+    c_contact: "Tackling, carrying and cleaning out with control", o_strength: "Winning collisions and holding your ground at the ruck",
+    o_cmj: "High-ball and lineout contests", o_hop: "Explosive first steps off the line", o_rsi: "Getting back up and into the line quickly",
+    o_stiff: "Faster, more efficient running", o_mas: "Repeat efforts and quick resets between plays",
+    t_hsr: "Backing up a full week of training and a game", t_contacts: "Handling the week's training load" } },
+  "Basketball": { floor: "the court", game: "live five-on-five, full-speed closeouts and contested rebounding", m: {
+    c_land: "Rebound landings and jump-stops that feel controlled, not jarring", c_decel: "Stopping on a dime to pull up or change pace",
+    c_single: "Layups and one-foot landings that stay steady", c_cod: "Sharper crossovers, cuts and defensive slides",
+    c_run: "Getting up and down the floor efficiently in transition", c_contact: "Holding position through contact on a drive or in the post",
+    o_strength: "Holding position and finishing through contact", o_cmj: "Standing jumps for contested rebounds and blocks",
+    o_hop: "One-foot take-offs for layups", o_rsi: "Second jumps on the boards and a quick dip-and-drive on your shot",
+    o_stiff: "Quick feet and a lighter, springier stride", o_mas: "Defensive intensity late in the fourth quarter",
+    t_hsr: "Backing up hard transition running across a full week", t_contacts: "A full week of training plus games without sore calves or knees" } },
+  "Netball": { floor: "the court", game: "full-court match play and contested intercepts", m: {
+    c_land: "Landing on one foot from a lead or intercept and stopping dead inside the footwork rule", c_decel: "Pulling up hard to hold a space or stop a lead",
+    c_single: "Pivoting and landing on one leg with the knee and hip steady", c_cod: "Dodging to get free from your opponent",
+    c_run: "Efficient leads and drives up the court", o_strength: "Holding your space and absorbing landings safely",
+    o_cmj: "Getting up for rebounds and intercepts", o_hop: "Explosive one-foot drives into a lead", o_rsi: "Rebounding straight off the floor for a second effort",
+    o_stiff: "Quick, light feet on the lead and on defence", o_mas: "Keeping your intensity through four quarters",
+    t_hsr: "Handling repeated leads across training and games", t_contacts: "A full week of training plus games" } },
+  "Calisthenics or gymnastics": { floor: "the floor", game: "full routines, tumbling and competition elements", m: {
+    c_land: "Sticking landings from height without a jarring hit", c_single: "Steady one-leg balances, kicks and turns",
+    o_strength: "Holding strength elements and lifting cleanly", o_cmj: "Height on leaps and jumps", o_hop: "Power on one-leg take-offs and leaps",
+    t_contacts: "Full routine run-throughs without next-day soreness" } },
+  "Overhead or throwing sport": { floor: "the field", game: "full-intensity throwing and match play", m: {} },
+  "Combat sport": { floor: "the mat", game: "live sparring and rolling", m: { c_contact: "Taking and making contact with control", o_strength: "Winning positions and holding your base" } },
+  "Gym only or general": { floor: "the gym", game: "", m: {} },
+};
+const SPNAME = { "AFL": "footy", "Football (soccer)": "football", "Rugby league or union": "rugby", "Basketball": "basketball", "Netball": "netball", "Calisthenics or gymnastics": "calisthenics", "Overhead or throwing sport": "your sport", "Combat sport": "your sport", "Gym only or general": "training" };
+const moment = (sp, id) => ((SPORT_LANG[sp] || {}).m || {})[id] || GENERIC_M[id];
+
+const NEXT_SCREEN = ["", "controlled and pain-free, slowly", "solid at full speed", "solid when you're tired", "solid when you're tired, every time"];
+const ABS_WORD = { 0: "not yet cleared to test", 1: "below the range for", 2: "in the range for", 3: "above the range for" };
+const BEHIND_V = { o_strength: "you lift on one leg", o_cmj: "you jump and land", o_hop: "you hop and push off", o_rsi: "you rebound off the ground", o_stiff: "you hop and bounce" };
+const LABEL_ORDER = { STRONG: 0, "ON TRACK": 1, HOLD: 2, BUILD: 3, PROTECT: 4 };
+let lastReport = null;
+
+function sideOf(txt) { const t = (txt || "").toLowerCase(); return /\bleft\b/.test(t) ? "left" : /\bright\b/.test(t) ? "right" : ""; }
+function addWeeks(d, w) { const x = new Date(d); x.setDate(x.getDate() + w * 7); return x; }
+function capFirst(s) { return s ? s[0].toUpperCase() + s.slice(1) : s; }
+function lc1(s) { return s ? s[0].toLowerCase() + s.slice(1) : s; }
+
+function athleteModel(o) {
+  const { c, ce, gb, run, tLo, tHi, outside, psyFail, clr, clrMsg, sp, s, date } = o;
+  if (ce == null) return null;
+  const side = sideOf(val("injury"));
+  const SIDE = side ? `Your ${side} leg` : "Your weaker side";
+  const SIDEL = side ? `your ${side}` : "your weaker side";
+  const lvl = val("level"), level = `${lvl.toLowerCase()} ${sp === "AFL" ? "AFL" : SPNAME[sp] || "sport"}`;
+  const lang = SPORT_LANG[sp] || { floor: "the field", game: "game-like work", m: {} };
+  const fill = t => t.replace("{SIDE}", SIDE).replace("{SIDEL}", SIDEL);
+  const dem = Object.values(c.res).filter(r => r.dem && r.final != null);
+
+  // label each demanded quality
+  const q = dem.map(r => {
+    const a = r.a, P = PLAIN[a.id], v = num(a.id + "_v"), asym = num(a.id + "_asym"), absR = val(a.id + "_abs");
+    let label = r.final >= ce + 2 || absR === "3" || (a.id === "o_rsi" && v != null && v > 2) ? "STRONG" : r.final > ce ? "ON TRACK" : "BUILD";
+    if (c.tissueBinds && r.final === ce) label = "PROTECT";
+    const behind = r.p.flag && r.p.flag[0] !== "clear" && asym != null;
+    if (behind && label !== "BUILD" && label !== "PROTECT") label = "HOLD";
+    let detail = P.w;
+    if (behind) detail = `${side ? "the " + side : "one side"} is ${asym}% behind the other`;
+    // number in plain words
+    let fig = "";
+    if (v != null && a.kind !== "screen") fig = `${v}${P.u ? " " + P.u : ""}`;
+    let readTxt = "";
+    if (absR !== "" && absR != null && a.kind === "abs") readTxt = `${ABS_WORD[absR]} ${level}`;
+    if (a.id === "o_rsi" && v != null) readTxt = v < 1.5 ? "in the building zone" : v <= 2 ? "in the developing zone" : "in the top zone";
+    // target for the next block
+    let target = "";
+    if (c.tissueBinds && r.final === ce) target = "time and a settled response: the tissue sets the pace on this one";
+    else if (behind) target = `${P.s}: ${side ? "your " + side : "the weaker side"} within 7% of the other (now ${asym}%)`;
+    else if (a.kind === "screen") { const sc = +val(a.id + "_v"); target = `${lc1(P.n)} ${NEXT_SCREEN[sc] || NEXT_SCREEN[3]}`; }
+    else if (a.id === "o_rsi" && v != null) target = v < 1.5 ? `spring score from ${v} to 1.5` : v <= 2 ? `spring score from ${v} past 2.0` : `spring score held above 2.0`;
+    else if (a.kind === "tol" && v != null) { const steps = a.id === "t_hsr" ? [150, 400, 700] : [21, 61, 121]; const nx = steps.find(x => x > v); target = nx ? `${P.lab} from ${v} up to ${nx} ${P.u}, with no flare the day after` : `hold ${v} ${P.u} with no flare the day after`; }
+    else if (absR === "0") target = `${lc1(P.n)} cleared to test`;
+    else if (absR === "1") target = `${P.lab || lc1(P.n)} up into the range for ${level}${MDC[a.id] && v != null ? ` (a real change is ${MDC[a.id]}% or more: about ${Math.round(v * (1 + MDC[a.id] / 100) * 100) / 100} ${P.u})` : ""}`;
+    else target = `${P.lab || lc1(P.n)} moving up from ${v != null ? v + " " + (P.u || "") : "here"}`.trim();
+    // change since last test
+    let change = null;
+    const pr = prev && prev.raw && prev.raw[a.id];
+    if (MDC[a.id] && pr && pr.v != null && v != null && pr.v !== 0) {
+      const ch = Math.round(((v - pr.v) / Math.abs(pr.v)) * 1000) / 10;
+      change = { from: pr.v, to: v, pct: ch, real: Math.abs(ch) >= MDC[a.id] };
+    }
+    return { r, a, P, v, asym, label, detail, fig, readTxt, target, change, capping: c.capping.includes(r), behind };
+  });
+
+  const byStrength = [...q].sort((x, y) => (LABEL_ORDER[x.label] - LABEL_ORDER[y.label]) || (y.r.final - x.r.final) || ((x.a.kind === "screen") - (y.a.kind === "screen")));
+  const best = byStrength.find(x => x.label === "STRONG" || x.label === "ON TRACK") || null;
+  // focus: what caps the ceiling first (sport demand), then hold flags
+  const focus = q.filter(x => x.capping).sort((x, y) => (x.a.kind === "screen" ? 0 : 1) - (y.a.kind === "screen" ? 0 : 1));
+  q.filter(x => x.behind && !x.capping).forEach(x => focus.push(x));
+  const f1 = focus[0] || null, f2 = focus[1] || null;
+
+  const gains = q.filter(x => x.change && x.change.real && x.change.pct > 0);
+  const name = val("athName").trim();
+  const age = num("age");
+  const injury = val("injury").trim();
+
+  // headline
+  let tag;
+  if (c.tissueBinds) tag = `PROTECT ${injury ? "THE " + (sideOf(injury) ? sideOf(injury).toUpperCase() + " " : "") + "INJURY" : "THE TISSUE"} · BUILD AROUND IT`;
+  else if (best && f1) tag = `${best.label === "STRONG" ? "STRONG" : "SOLID"} ${best.P.s.toUpperCase()} · BUILD ${f1.P.t.toUpperCase()}`;
+  else tag = `${BELTS[ce].toUpperCase()} BELT · BUILD ${f1 ? f1.P.t.toUpperCase() : "EVERYTHING"}`;
+
+  // what you've built
+  let builtHead, builtBody;
+  if (gains.length) {
+    builtHead = "The block worked.";
+    builtBody = gains.slice(0, 3).map(x => `${capFirst(x.P.lab || x.P.s)} went from ${x.change.from} to ${x.change.to}${x.P.u ? " " + x.P.u : ""} (${x.change.pct > 0 ? "+" : ""}${x.change.pct}%)`).join("; ") +
+      ". Every one of those is bigger than test-to-test noise, so it's real change, not a good day.";
+    if (best) builtBody += ` ${capFirst(moment(sp, best.a.id).toLowerCase())}: that's where you'll feel it first on ${lang.floor}.`;
+  } else if (best) {
+    builtHead = `${best.P.n} is ${best.label === "STRONG" ? "genuinely strong" : "in good shape"}.`;
+    builtBody = `${best.fig ? `${capFirst(best.P.lab || best.P.s)} of ${best.fig}${best.readTxt ? " sits " + best.readTxt : ""}. ` : best.a.kind === "screen" ? `${best.P.n} is already ${NEXT_SCREEN[+val(best.a.id + "_v") - 1] || "solid"}. ` : ""}` +
+      `${val("tage") ? `${val("tage")} year${val("tage") === "1" ? "" : "s"} of training is clearly in there. ` : ""}` +
+      `On ${lang.floor}, that's ${lc1(moment(sp, best.a.id))}: you can already compete there.`;
+  } else {
+    builtHead = "This is your starting line.";
+    builtBody = `Everything we measured sits at the same level, which makes the plan simple: we build it all together, with ${f1 ? f1.P.t : "the basics"} first.`;
+  }
+  const tiles = (gains.length ? gains : byStrength.filter(x => x.fig && x.label !== "BUILD" && x.label !== "PROTECT")).slice(0, 3)
+    .map(x => ({ big: gains.length ? `${x.change.pct > 0 ? "+" : ""}${x.change.pct}%` : x.fig, small: (x.P.lab || x.P.s).toUpperCase() }));
+
+  // where you're at: strongest first, capped at 6, always include the focus
+  let rows = byStrength.slice();
+  if (rows.length > 6) { const keep = new Set([...focus.slice(0, 3), ...byStrength.slice(0, 3)]); rows = rows.filter(x => keep.has(x)).slice(0, 6); }
+  rows = rows.map(x => ({ name: x.P.n, detail: x.detail, label: x.label }));
+
+  // the story
+  let story = "";
+  if (c.tissueBinds) story = `${injury ? capFirst(injury) : "The injury"}${num("weeks") != null ? `, ${num("weeks")} weeks in,` : ""} still sets the pace. Tissue heals on its own schedule, so we train everything around it rather than through it. Pain-free is the start line, not the finish line.`;
+  else if (f1) story = `${f1.P.n} (${f1.P.w}) is what sets your level this block${f1.fig ? `: ${f1.fig}${f1.readTxt ? ", " + f1.readTxt : ""}` : f1.behind ? `: ${f1.detail}` : ""}. In ${SPNAME[sp] || "your sport"}, it shows up in ${lc1(moment(sp, f1.a.id))}. The game finds your weakest link, so this is where the work goes.`;
+  const oneLiner = best && f1 ? `${best.label === "STRONG" ? "Strong" : "Solid"} ${best.P.s}. Now we build ${f1.P.t}.` : f1 ? `Now we build ${f1.P.t}.` : "Keep building.";
+
+  // what they told us
+  const words = val("athWords").trim();
+  const told = words ? { quote: words, link: f1 ? `It lines up with what the testing found: ${lc1(f1.P.n)}, ${f1.P.w}. Build ${f1.P.t} and you get that back.` : "We'll keep it front of mind as we build the program." } : null;
+
+  // focus and what it unlocks
+  const focusHead = f1 ? `Build ${f1.P.t}${f2 && f2.P.t !== f1.P.t ? `, then ${f2.P.t}` : ""}.` : "Build on what's there.";
+  const focusBody = (best && f1 ? `${best.P.n} is already where it needs to be, so we're not chasing more of it this block. ` : "") +
+    (f1 ? `The job is ${f1.P.w}${f1.behind || (f2 && f2.behind) ? `, with ${SIDEL} leading` : ""}.` : "") + " What this unlocks:";
+  const unlocks = [];
+  focus.slice(0, 3).forEach(x => { const m = moment(sp, x.a.id); if (!unlocks.includes(m)) unlocks.push(m); });
+  if (s.run && s.run !== "None" && focus.some(x => ["c_land", "o_stiff", "c_single", "o_rsi"].includes(x.a.id))) unlocks.push("Running: every stride is a landing on one leg, so this work carries straight into how running feels");
+  if (injury && !c.tissueBinds) unlocks.push(`Protecting your ${lc1(injury).replace(/ (reconstruction|repair).*$/i, "")} as the load goes up`);
+  else if (age != null && age >= 40 && ["Basketball", "Netball", "Football (soccer)", "AFL"].includes(sp)) unlocks.push(`Calf and Achilles protection: the most common thing that takes masters athletes off ${lang.floor}`);
+  else if (val("sex") === "Female" && ["Basketball", "Netball", "Football (soccer)", "AFL"].includes(sp) && focus.some(x => ["c_land", "c_cod", "c_single", "c_decel"].includes(x.a.id))) unlocks.push("Knee protection: landing and cutting control is the best defence against ACL injury in your sport");
+  if (unlocks.length < 3) byStrength.filter(x => x.label === "ON TRACK").slice(0, 3 - unlocks.length).forEach(x => unlocks.push(moment(sp, x.a.id)));
+
+  // how you compare
+  const compare = q.filter(x => (x.a.kind === "abs" && val(x.a.id + "_abs") !== "") || (x.a.id === "o_rsi" && x.v != null)).map(x => {
+    let pos;
+    if (x.a.kind === "abs") pos = { 0: 0.08, 1: 0.25, 2: 0.55, 3: 0.85 }[val(x.a.id + "_abs")];
+    else pos = x.v < 1.5 ? Math.max(0.08, (x.v / 1.5) * 0.33) : x.v <= 2 ? 0.34 + ((x.v - 1.5) / 0.5) * 0.33 : Math.min(0.95, 0.68 + ((x.v - 2) / 1) * 0.3);
+    return { name: x.P.n, sub: x.P.w, fig: x.fig || String(x.v), pos };
+  });
+
+  // what you'll notice
+  const notices = [];
+  focus.forEach(x => { const n = x.behind ? `${SIDE} will start to pull its weight when ${BEHIND_V[x.a.id] || "you train"}.` : fill(x.P.note); if (!notices.includes(n)) notices.push(n); });
+  if (words && f1) notices.unshift(`What you told us about will start to change before the numbers do.`);
+  byStrength.filter(x => x.label === "HOLD").forEach(x => { const n = fill(x.P.note); if (!notices.includes(n)) notices.push(n); });
+
+  // next steps
+  const steps = [];
+  if (c.tissueBinds) steps.push(["Protect and load", "Graded loading for the injured area, guided by how it responds the next day."]);
+  focus.slice(0, 2).forEach(x => steps.push([x.P.work[0], fill(x.P.work[1])]));
+  if (best && steps.length < 3) steps.push([`Hold ${best.P.t}`, `${capFirst(best.P.lab || best.P.s)} work stays in at a lighter dose. We don't lose what you've built.`]);
+  while (steps.length < 3) steps.push(["Every session counts", "Three gym sessions a week, medium, heavy and light, so you're fresh for the heavy weeks."]);
+
+  // your week
+  const week = [];
+  week.push(`Three gym sessions a week (lower, upper, total body)${run.startsWith("Stride") ? " plus your running sessions" : ""}. Weeks run medium, heavy, light, then again, and week 6 is the re-test.`);
+  if (run.startsWith("Stride")) week.push(outside > o.band[1] ? `Your club training and games already cover your fast running for this level, so we won't add more this week. Tell us your minutes.` : `Fast running this week: ${tLo} to ${tHi} m from us, on top of club training and games. Tell us your minutes, because they count.`);
+  if (lang.game && gb != null && ce < gb) week.push(`${capFirst(lang.game)} stay at ${BELTS[ce]} level for now. Your gym work runs at ${BELTS[gb]}, because that's where your strength and power are.`);
+  let avail = "";
+  if (psyFail) avail = "We're holding you from games for now. Confidence is part of being ready, and we'll work on it together.";
+  else if (clr === "competition" && !clrMsg) avail = "You're cleared to play.";
+  else if (clr === "training" && !clrMsg) avail = "You're cleared for full training. Games come after the next re-test.";
+  else if (injury) avail = `Training: ${val("context").toLowerCase()}. Feeling better isn't being ready: the gates decide when you play.`;
+  if (avail) week.push(avail);
+  if (val("phv").startsWith("Circa")) week.push("You're in a growth spurt, so jump numbers are lighter and control work is higher for now. That's normal and temporary.");
+
+  const goal = val("athGoal").trim();
+  const reDate = auDate(addWeeks(new Date(), 6));
+  const marker = f1 ? f1.target : "every quality holding or moving up";
+  const marker2 = f2 && f2.target !== marker ? f2.target : "";
+  const phrase = c.tissueBinds ? "Pain-free is the start line." : injury && clr !== "competition" ? "Feeling better isn't being ready." : c.holds.length ? "Change the gate, not the goal." : "Available beats impressive.";
+
+  const meta = [age != null ? String(age) : "", `${level}${val("position") ? " " + val("position").toLowerCase() : ""}`, val("tage") ? `${val("tage")} year${val("tage") === "1" ? "" : "s"} training` : "", injury ? `${lc1(injury)}${num("weeks") != null ? ", " + num("weeks") + " weeks" : ""}` : ""].filter(Boolean).join(" · ");
+
+  return { name, date, meta, tag, builtHead, builtBody, tiles, rows, story, oneLiner, told, focusHead, focusBody, unlocks: unlocks.slice(0, 6), compare, level,
+    notices: notices.slice(0, 5), steps: steps.slice(0, 3), week, goal, reDate, marker, marker2, note: val("athNote").trim(), phrase, belt: BELTS[ce] };
+}
+
+function athleteText(R) {
+  const L = [];
+  L.push(`${R.name ? R.name + ", here" : "Here"} is your testing summary from the ${R.date}.`);
+  L.push(R.tag);
+  if (R.goal) L.push(`Your goal: ${R.goal}`);
+  L.push("");
+  L.push(`WHAT YOU'VE BUILT: ${R.builtHead} ${R.builtBody}`);
+  L.push("");
+  L.push("WHERE YOU'RE AT");
+  R.rows.forEach(r => L.push(`- ${r.name}, ${r.detail}: ${r.label}`));
+  if (R.story) { L.push(""); L.push(`THE STORY: ${R.story}`); }
+  if (R.told) { L.push(""); L.push(`WHAT YOU TOLD US: "${R.told.quote}" ${R.told.link}`); }
+  L.push("");
+  L.push(`THE FOCUS: ${R.focusHead} ${R.focusBody}`);
+  R.unlocks.forEach(u => L.push(`-> ${u}`));
+  L.push("");
+  L.push("WHAT YOU'LL NOTICE BEFORE THE NUMBERS MOVE");
+  R.notices.forEach(n => L.push(`- ${n}`));
+  L.push("");
+  L.push("WHAT WE'LL BE DOING");
+  R.steps.forEach((s, i) => L.push(`${i + 1}. ${s[0]}: ${s[1]}`));
+  L.push("");
+  L.push("YOUR WEEK");
+  R.week.forEach(w => L.push(`- ${w}`));
+  L.push("");
+  L.push(`RE-TEST: around the ${R.reDate}. The marker to watch: ${R.marker}.${R.marker2 ? " Then: " + R.marker2 + "." : ""}`);
+  if (R.note) { L.push(""); L.push(`ONE THING WORTH KNOWING: ${R.note}`); }
+  L.push("");
+  L.push(`${R.oneLiner} ${R.phrase}`);
+  L.push("Stride Sports Physio and Performance");
+  return L.join("\n");
+}
+
+function athleteHTML(R) {
+  const e = esc;
+  const css = `
+  @page { size: A4; margin: 14mm 14mm 16mm }
+  * { box-sizing: border-box }
+  body { margin: 0; background: #fff; color: #102A38; font: 15px/1.5 "Source Sans 3", "Segoe UI", Arial, sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact }
+  .pg { max-width: 820px; margin: 0 auto; padding: 28px 26px }
+  .kick { font: 700 12px "Barlow Semi Condensed", Arial, sans-serif; letter-spacing: .18em; color: #0B7E8E; text-transform: uppercase }
+  h1 { font: 700 34px/1.05 "Barlow Semi Condensed", "Arial Narrow", Arial, sans-serif; margin: 4px 0 2px; color: #0C3B52 }
+  h2 { font: 700 26px/1.1 "Barlow Semi Condensed", "Arial Narrow", Arial, sans-serif; margin: 0 0 4px; color: #0C3B52 }
+  h3 { font: 700 19px/1.2 "Barlow Semi Condensed", Arial, sans-serif; margin: 0 0 6px; color: #0C3B52 }
+  .sub { color: #557080; margin: 0 }
+  .band { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; border-top: 3px solid #0C3B52; border-bottom: 1px solid #D3E2EA; padding: 10px 0; margin: 14px 0 18px; font-size: 13.5px; color: #557080 }
+  .band b { color: #0C3B52; font: 700 13px "Barlow Semi Condensed", Arial, sans-serif; letter-spacing: .12em }
+  .hero { background: #0C3B52; color: #fff; border-radius: 10px; padding: 20px 22px; margin-bottom: 18px; break-inside: avoid }
+  .hero .kick { color: #46BCF4 } .hero h3 { color: #fff; font-size: 24px } .hero p { margin: 0 0 12px; color: #DDEBF2 }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px }
+  .tile { border-top: 2px solid #46BCF4; padding-top: 8px }
+  .tile .b { font: 700 28px/1 "Barlow Semi Condensed", Arial, sans-serif; color: #fff; font-variant-numeric: tabular-nums }
+  .tile .s { font: 600 11px "Source Sans 3", Arial, sans-serif; letter-spacing: .1em; color: #93C9E2; margin-top: 4px }
+  .rows { margin: 6px 0 20px; break-inside: avoid }
+  .row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 10px 0; border-bottom: 1px solid #E3EDF2 }
+  .row .n { font-weight: 700 } .row .d { color: #557080; font-size: 14px }
+  .lab { font: 700 12px "Barlow Semi Condensed", Arial, sans-serif; letter-spacing: .12em; padding: 4px 10px; border-radius: 999px; white-space: nowrap }
+  .STRONG { background: #0C3B52; color: #fff } .ONTRACK { background: #2E9BD6; color: #fff } .HOLD { background: #FBEBDD; color: #B4621F } .BUILD { background: #E8833A; color: #fff } .PROTECT { background: #C0473B; color: #fff }
+  .box { border: 1px solid #D3E2EA; border-left: 4px solid #0FA8BC; border-radius: 8px; padding: 16px 18px; margin: 0 0 16px; break-inside: avoid }
+  .box.told { border-left-color: #E8833A; background: #FFF8F2 }
+  .box p { margin: 0 0 8px } .box p:last-child { margin: 0 }
+  .quote { font-style: italic; color: #0C3B52 }
+  .one { font: 700 20px "Barlow Semi Condensed", Arial, sans-serif; color: #0B7E8E; margin-top: 8px }
+  ul.ar, ul.ck { list-style: none; padding: 0; margin: 6px 0 0 }
+  ul.ar li, ul.ck li { padding: 5px 0 5px 26px; position: relative }
+  ul.ar li::before { content: "→"; position: absolute; left: 2px; color: #0FA8BC; font-weight: 700 }
+  ul.ck li::before { content: "✓"; position: absolute; left: 2px; color: #1F7A55; font-weight: 700 }
+  .cmp { margin: 8px 0 18px; break-inside: avoid }
+  .scale { display: grid; grid-template-columns: 1fr 1fr 1fr; font: 600 10.5px "Source Sans 3", Arial, sans-serif; letter-spacing: .08em; color: #557080; margin: 0 0 6px 34% }
+  .scale span:nth-child(2) { text-align: center } .scale span:nth-child(3) { text-align: right }
+  .bar { display: grid; grid-template-columns: 34% 1fr; align-items: center; gap: 10px; padding: 8px 0 }
+  .bar .n { font-weight: 700; font-size: 14px } .bar .d { color: #557080; font-size: 12.5px }
+  .track { position: relative; height: 12px; border-radius: 999px; background: linear-gradient(90deg, #F7E1DE 0 33.3%, #E7F1F6 33.3% 66.6%, #DFF2E9 66.6%) }
+  .mk { position: absolute; top: -5px; width: 22px; height: 22px; margin-left: -11px; border-radius: 50%; background: #0C3B52; border: 3px solid #fff; box-shadow: 0 0 0 1px #0C3B52 }
+  .mkl { position: absolute; top: -24px; transform: translateX(-50%); font: 700 12px "JetBrains Mono", monospace; color: #0C3B52; white-space: nowrap }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 8px 0 18px }
+  .st { border-top: 3px solid #0C3B52; padding-top: 8px; break-inside: avoid }
+  .st .k { font: 700 26px/1 "Barlow Semi Condensed", Arial, sans-serif; color: #0FA8BC }
+  .st b { display: block; margin: 4px 0 } .st p { margin: 0; font-size: 14px; color: #33505F }
+  .foot { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; border-top: 1px solid #D3E2EA; padding-top: 10px; margin-top: 22px; font-size: 12.5px; color: #557080 }
+  .foot b { color: #0C3B52 }
+  .brk { break-before: page; margin-top: 28px }
+  @media print { .pg { padding: 0 } .brk { margin-top: 0 } }`;
+  const rows = R.rows.map(r => `<div class="row"><div><div class="n">${e(r.name)}</div><div class="d">${e(r.detail)}</div></div><span class="lab ${r.label.replace(" ", "")}">${e(r.label)}</span></div>`).join("");
+  const tiles = R.tiles.length ? `<div class="tiles">${R.tiles.map(t => `<div class="tile"><div class="b">${e(t.big)}</div><div class="s">${e(t.small)}</div></div>`).join("")}</div>` : "";
+  const cmp = R.compare.length ? `<h3>How you compare: ${e(R.level)}</h3><div class="cmp"><div class="scale"><span>BELOW RANGE</span><span>IN RANGE</span><span>ABOVE RANGE</span></div>${R.compare.map(x => `<div class="bar"><div><div class="n">${e(x.name)}</div><div class="d">${e(x.sub)}</div></div><div class="track"><span class="mkl" style="left:${(x.pos * 100).toFixed(1)}%">${e(x.fig)}</span><span class="mk" style="left:${(x.pos * 100).toFixed(1)}%"></span></div></div>`).join("")}</div>` : "";
+  const foot = (r) => `<div class="foot"><span>Stride Sports Physio and Performance</span><b>${e(r)}</b></div>`;
+  return `<!doctype html><html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${e(R.name || "Athlete")} testing report</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@700&display=swap"><style>${css}</style></head><body><div class="pg">
+<div class="kick">Your testing report</div>
+<h1>${R.name ? "Testing day: " + e(R.name) : "Your testing day"}</h1>
+<p class="sub">Tested ${e(R.date)}${R.goal ? " · Goal: " + e(R.goal) : ""}</p>
+<div class="band"><span>${e(R.meta)}</span><b>${e(R.tag)}</b></div>
+<div class="hero"><div class="kick">★ What you've built</div><h3>${e(R.builtHead)}</h3><p>${e(R.builtBody)}</p>${tiles}</div>
+<h2>Where you're at</h2><div class="rows">${rows}</div>
+${R.story ? `<div class="box"><div class="kick">The story</div><p>${e(R.story)}</p></div>` : ""}
+${foot(R.oneLiner)}
+<div class="brk"></div>
+<div class="kick">The next block</div><h2>What we're working on.</h2><p class="sub" style="margin-bottom:14px">The focus, what you'll notice, and the next steps</p>
+${R.told ? `<div class="box told"><div class="kick" style="color:#B4621F">★ The thing you already told us</div><p class="quote">"${e(R.told.quote)}"</p><p>${e(R.told.link)}</p></div>` : ""}
+<div class="box"><div class="kick">The focus</div><h3>${e(R.focusHead)}</h3><p>${e(R.focusBody)}</p><ul class="ar">${R.unlocks.map(u => `<li>${e(u)}</li>`).join("")}</ul></div>
+${cmp}
+<h3>What you'll notice before the numbers move</h3><ul class="ck" style="margin-bottom:18px">${R.notices.map(n => `<li>${e(n)}</li>`).join("")}</ul>
+<h3>What we'll be doing</h3><div class="steps">${R.steps.map((s, i) => `<div class="st"><div class="k">${i + 1}</div><b>${e(s[0])}</b><p>${e(s[1])}</p></div>`).join("")}</div>
+<div class="box"><div class="kick">Your week</div>${R.week.map(w => `<p>${e(w)}</p>`).join("")}</div>
+<div class="box"><div class="kick">The re-test</div><p>Around the <b>${e(R.reDate)}</b>. The marker to watch: <b>${e(R.marker)}</b>.${R.marker2 ? " Then: " + e(R.marker2) + "." : ""}</p>${R.note ? `<p><b>One thing worth knowing:</b> ${e(R.note)}</p>` : ""}</div>
+${foot(R.phrase)}
+</div></body></html>`;
+}
+
+function showPreview() {
+  const box = $("repPreview");
+  if (!lastReport) { box.innerHTML = '<div class="status" style="padding:12px">Complete the card to build the report.</div>'; return; }
+  let fr = box.querySelector("iframe");
+  if (!fr) { fr = document.createElement("iframe"); fr.title = "Athlete report preview"; box.innerHTML = ""; box.appendChild(fr); }
+  fr.srcdoc = athleteHTML(lastReport);
+}
+async function downloadReport() {
+  if (!lastReport) { $("repStatus").textContent = "Complete the card first."; return; }
+  const html = athleteHTML(lastReport);
+  const fname = `${(lastReport.name || "Athlete").replace(/[^A-Za-z0-9 -]/g, "").trim() || "Athlete"} testing report ${new Date().toISOString().slice(0, 10)}.html`;
+  let dl = null;
+  try { dl = await window.claude?.use?.("downloads"); } catch (e) { dl = null; }
+  if (dl) {
+    try { await dl.save({ filename: fname, data: html }); $("repStatus").textContent = "Saved. Open it and print to PDF to send."; return; }
+    catch (e) { if (e && e.code === "declined") { $("repStatus").textContent = "Download cancelled."; return; } }
+  }
+  try {
+    const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([html], { type: "text/html" })); a.download = fname; document.body.appendChild(a); a.click(); a.remove();
+    $("repStatus").textContent = "Downloaded. Open it and print to PDF to send.";
+  } catch (e) { $("repStatus").textContent = "Download is not available in this view. Use Show preview, or copy the athlete summary from the card."; }
+}
+
+function init() {
+  const sel = $("sport"); Object.keys(SPORTS).forEach(k => { const o = document.createElement("option"); o.textContent = k; sel.appendChild(o); });
+  buildAttrs();
+  let loaded = false;
+  try { localStorage.removeItem("stride-card-draft"); } catch (e) {}
+  if (!loaded) { restore(EXAMPLE); applyDemand(); restore(EXAMPLE); isExample = true; }
+  $("exampleBanner").hidden = !isExample;
+  document.addEventListener("input", e => { if (e.target.id === "sport") applyDemand(); render(); });
+  document.addEventListener("change", e => { if (e.target.id === "sport") applyDemand(); render(); });
+  $("btnExample").onclick = () => { IDS().forEach(id => { const e = $(id); if (e.type === "checkbox") e.checked = false; else if (e.tagName === "SELECT") e.selectedIndex = 0; else e.value = ""; }); restore(EXAMPLE); applyDemand(); isExample = true; prev = null; $("exampleBanner").hidden = false; $("tissue").value = "3"; render(); };
+  $("btnClear").onclick = () => { IDS().forEach(id => { const e = $(id); if (e.type === "checkbox") e.checked = false; else if (e.tagName === "SELECT") e.selectedIndex = 0; else e.value = ""; }); $("tissue").value = "3"; applyDemand(); isExample = false; prev = null; $("exampleBanner").hidden = true; render(); };
+  const copy = (id) => { const t = $(id).textContent; const done = () => { $("copyStatus").textContent = "Copied."; setTimeout(() => $("copyStatus").textContent = "", 2000); };
+    const fallback = () => { const r = document.createRange(); r.selectNodeContents($(id)); const s = getSelection(); s.removeAllRanges(); s.addRange(r); $("copyStatus").textContent = "Selected: press copy on your keyboard."; };
+    try { navigator.clipboard.writeText(t).then(done, fallback); } catch (e) { fallback(); } };
+  $("cpCliniko").onclick = () => { copy("outCliniko"); autoLog(); };
+  $("cpAth").onclick = () => copy("outAth");
+  $("cpClub").onclick = () => copy("outClub");
+  $("btnRetest").onclick = () => { $("retestPanel").hidden = false; $("codeIn").focus(); };
+  $("btnCancelRetest").onclick = () => { $("retestPanel").hidden = true; $("codeStatus").textContent = ""; };
+  $("btnLoadCode").onclick = () => {
+    let card;
+    try { card = readCode($("codeIn").value); } catch (e) { $("codeStatus").textContent = e.message || "That code could not be read. Copy the whole line from the Cliniko note."; return; }
+    IDS().forEach(id => { if (id === "codeIn") return; const e = $(id); if (e.type === "checkbox") e.checked = false; else if (e.tagName === "SELECT") e.selectedIndex = 0; else e.value = ""; });
+    Object.entries(card.prof || {}).forEach(([k, v]) => { if ($(k)) $(k).value = v; });
+    if (card.prof && card.prof.weeks !== "" && card.prof.weeks != null) $("weeks").value = (+card.prof.weeks || 0) + 6;
+    ATTRS.forEach(a => { $(a.id + "_dem").checked = (card.dem || []).includes(a.id); });
+    if (card.block && NEXT_BLOCK[card.block]) $("block").value = NEXT_BLOCK[card.block];
+    prev = { date: card.date, finals: card.finals || {}, raw: card.raw || {}, ceiling: card.ceiling };
+    isExample = false; $("exampleBanner").hidden = true;
+    $("codeIn").value = ""; $("retestPanel").hidden = true;
+    $("codeStatus").textContent = "";
+    render();
+    try { $("s2").scrollIntoView({ behavior: "smooth" }); } catch (e) {}
+  };
+  $("cpTB").onclick = () => copy("outTB");
+  $("btnRepDl").onclick = downloadReport;
+  $("btnRepToggle").onclick = () => { const b = $("repPreview"); b.hidden = !b.hidden; $("btnRepToggle").textContent = b.hidden ? "Show preview" : "Hide preview"; if (!b.hidden) showPreview(); };
+  render();
+  initLog();
+}
+
+/* ---------- shared override log (de-identified) ---------- */
+let db = null, uid = null;
+async function initLog() {
+  $("logBox").innerHTML = '<div class="status">Connecting to the team log...</div>';
+  try {
+    db = await window.claude?.use?.("db");
+    const user = await window.claude?.use?.("user");
+    if (user) { try { uid = await user.id(); } catch (e) {} }
+  } catch (e) { db = null; }
+  if (!db) { $("logBox").innerHTML = '<div class="status">The override log is not available on this page. Record overrides in the claude.ai version of the card.</div>'; $("btnLog").disabled = true; return; }
+  db.collection("overrides").orderBy("ts", "desc").limit(200).onSnapshot(snap => renderLog(snap.docs.map(d => d.data())),
+    () => { $("logBox").innerHTML = '<div class="status">The team log could not be read just now.</div>'; });
+  $("btnLog").onclick = saveLog;
+}
+let loggedKey = "";
+async function autoLog() {
+  if (!db || isExample) return;
+  const c = compute(); const rows = Object.values(c.res).filter(r => r.over && r.reason);
+  if (!rows.length) return;
+  const key = JSON.stringify(rows.map(r => [r.a.id, r.p.b, r.final, r.reason]));
+  if (key === loggedKey) return;
+  await saveLog(); loggedKey = key;
+}
+async function saveLog() {
+  if (isExample) { $("logStatus").textContent = "This is the example athlete: nothing saved."; return; }
+  const c = compute();
+  const rows = Object.values(c.res).filter(r => r.over);
+  if (!rows.length) { $("logStatus").textContent = "No overrides on this card."; return; }
+  if (rows.some(r => !r.reason)) { $("logStatus").textContent = "Give a reason for every override first."; return; }
+  $("btnLog").disabled = true; $("logStatus").textContent = "Saving...";
+  try {
+    for (const r of rows) {
+      await db.collection("overrides").add({ ts: new Date().toISOString(), sport: val("sport"), level: val("level"), layer: r.a.layer,
+        attribute: r.a.name, proposed: r.p.b == null ? "none" : BELTS[r.p.b], final: BELTS[r.final], reason: r.reason, basis: r.p.type, by: uid || "" });
+    }
+    $("logStatus").textContent = `Saved ${rows.length} override${rows.length > 1 ? "s" : ""}. No athlete details were stored.`;
+  } catch (e) {
+    $("logStatus").textContent = e && e.code === "not_granted" ? "You do not have permission to write to the log. Ask Chris for edit access." : "Could not save just now. Try again in a moment.";
+  } finally { $("btnLog").disabled = false; }
+}
+function renderLog(list) {
+  if (!list.length) { $("logBox").innerHTML = '<div class="status">No overrides logged yet. The first saved card with an override will appear here, grouped by attribute and reason.</div>'; return; }
+  const agg = {};
+  list.forEach(o => { const k = o.attribute + "|" + o.reason; agg[k] = agg[k] || { attribute: o.attribute, reason: o.reason, n: 0, up: 0, down: 0 };
+    agg[k].n++; const pi = BELTS.indexOf(o.proposed), fi = BELTS.indexOf(o.final); if (fi > pi) agg[k].up++; else agg[k].down++; });
+  const rows = Object.values(agg).sort((a, b) => b.n - a.n).slice(0, 12);
+  $("logBox").innerHTML = `<div class="status">${list.length} overrides logged. Most frequent:</div><div class="tablewrap"><table>
+    <thead><tr><th>Attribute</th><th>Reason</th><th>Count</th><th>Raised</th><th>Lowered</th></tr></thead>
+    <tbody>${rows.map(r => `<tr><td>${esc(r.attribute)}</td><td>${esc(r.reason)}</td><td>${r.n}</td><td>${r.up}</td><td>${r.down}</td></tr>`).join("")}</tbody></table></div>`;
+}
+
+init();
+</script>
