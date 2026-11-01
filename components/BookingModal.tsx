@@ -309,6 +309,15 @@ export default function BookingModal() {
                 target="_blank"
                 rel="noopener"
                 style={{ background: "var(--blue)", color: "#fff", padding: "16px 20px", borderRadius: 8, textDecoration: "none", fontWeight: 700, fontSize: "1rem", textAlign: "center" }}
+                onClick={() => {
+                  if (typeof (window as any).gtag !== "undefined") {
+                    (window as any).gtag("event", "conversion", {
+                      send_to: "AW-18138589776/GEOtCP2Mo7AdENDUk8lD",
+                      value: 1.0,
+                      currency: "AUD",
+                    });
+                  }
+                }}
               >
                 📅 &nbsp;Book your initial consultation
               </a>
