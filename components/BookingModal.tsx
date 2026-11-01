@@ -80,6 +80,14 @@ export default function BookingModal() {
         body: JSON.stringify({ source: "booking-modal", ...formData }),
       });
     } catch {}
+    // Fire Google Ads conversion — Submit lead form
+    if (typeof (window as any).gtag !== "undefined") {
+      (window as any).gtag("event", "conversion", {
+        send_to: "AW-18138589776/RRhlCPOInLAdENDUk8lD",
+        value: 1.0,
+        currency: "AUD",
+      });
+    }
     setStep("done");
     setSubmitting(false);
   };
