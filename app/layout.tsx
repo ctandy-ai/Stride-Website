@@ -51,12 +51,26 @@ export default function RootLayout({
       className={`${inter.variable} ${bebasNeue.variable} ${dmMono.variable}`}
     >
       <head>
-        {/* Google Ads Global Site Tag */}
+        {/* Google Ads Global Site Tag — AW-753839414 */}
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=AW-753839414"
           strategy="afterInteractive"
         />
+        {/* Google tag — AW-18138589776 */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18138589776"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init-18138589776" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18138589776');
+          `}
+        </Script>
         <Script id="gtag-init" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
