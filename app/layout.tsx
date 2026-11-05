@@ -51,46 +51,18 @@ export default function RootLayout({
       className={`${inter.variable} ${bebasNeue.variable} ${dmMono.variable}`}
     >
       <head>
-        {/* Google Ads Global Site Tag — AW-753839414 */}
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=AW-753839414"
-          strategy="afterInteractive"
-        />
-        {/* Google tag — AW-18138589776 */}
+        {/* Google tag — Stride Sports Physio (AW-18138589776) — primary campaign account */}
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=AW-18138589776"
           strategy="afterInteractive"
         />
-        <Script id="gtag-init-18138589776" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-18138589776');
-          `}
-        </Script>
         <Script id="gtag-init" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'AW-753839414');
-          `}
-        </Script>
-        {/* Google Ads conversion tracking */}
-        <Script id="gtag-conversions" strategy="afterInteractive">
-          {`
-            document.addEventListener('DOMContentLoaded', function() {
-              document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
-                el.addEventListener('click', function() {
-                  if(typeof gtag !== 'undefined') {
-                    gtag('event', 'conversion', {'send_to': 'AW-753839414/-PE5CITshpscELbauucC'});
-                  }
-                });
-              });
-            });
+            gtag('config', 'AW-18138589776');
           `}
         </Script>
       </head>

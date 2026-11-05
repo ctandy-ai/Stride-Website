@@ -53,11 +53,6 @@ export default function BookingModal() {
   useEffect(() => {
     (window as any).openModal = () => {
       setOpen(true);
-      if (typeof (window as any).gtag !== "undefined") {
-        (window as any).gtag("event", "conversion", {
-          send_to: "AW-753839414/OXjOCO_rhpscELbauucC",
-        });
-      }
     };
     (window as any).closeModal = () => { setOpen(false); setStep(1); };
   }, []);
