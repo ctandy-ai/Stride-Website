@@ -20,11 +20,6 @@ export default function Nav() {
 
   const openModal = useCallback(() => {
     window.dispatchEvent(new Event("openModal"));
-    if (typeof (window as any).gtag !== "undefined") {
-      (window as any).gtag("event", "conversion", {
-        send_to: "AW-753839414/OXjOCO_rhpscELbauucC",
-      });
-    }
     setMenuOpen(false);
   }, []);
 
