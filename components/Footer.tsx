@@ -66,6 +66,16 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener"
                   style={{ color: "rgba(255,255,255,0.45)", textDecoration: "none", fontSize: "0.9rem" }}
+                  onClick={() => {
+                    if (typeof (window as any).gtag !== "undefined") {
+                      (window as any).gtag("event", "conversion", {
+                        send_to: "AW-18138589776/GEOtCP2Mo7AdENDUk8lD",
+                        value: 145.0,
+                        currency: "AUD",
+                        transport_type: "beacon",
+                      });
+                    }
+                  }}
                 >
                   {item.label}
                 </a>

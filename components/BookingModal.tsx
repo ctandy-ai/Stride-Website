@@ -310,6 +310,7 @@ export default function BookingModal() {
                       send_to: "AW-18138589776/GEOtCP2Mo7AdENDUk8lD",
                       value: 145.0,
                       currency: "AUD",
+                      transport_type: "beacon", // ensures delivery even if browser navigates away immediately
                     });
                   }
                 }}
