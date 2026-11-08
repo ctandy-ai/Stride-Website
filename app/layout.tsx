@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Bebas_Neue, DM_Mono } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -52,20 +51,19 @@ export default function RootLayout({
     >
       <head>
         {/* Google tag — Stride Sports Physio (AW-18138589776) — primary campaign account */}
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=AW-18138589776"
-          strategy="afterInteractive"
+        {/* Using raw <script> tags (not Next.js Script component) so Google's crawler sees them in static HTML */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18138589776" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-18138589776');
+              gtag('config', 'G-GWWVRK727R');
+            `
+          }}
         />
-        <Script id="gtag-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-18138589776');
-            gtag('config', 'G-GWWVRK727R');
-          `}
-        </Script>
       </head>
       <body>
         <Nav />
