@@ -30,7 +30,7 @@ export default function Pricing() {
               marginBottom: 24,
             }}
           >
-            The fastest way back<br />to sport <span className="orange">starts here.</span>
+            Your way back<br />to sport <span className="orange">starts here.</span>
           </h2>
 
           {/* Qualifying copy */}

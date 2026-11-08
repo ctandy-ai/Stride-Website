@@ -70,8 +70,8 @@ export default function Accelerator() {
             color: "#fff",
             marginBottom: 20,
           }}>
-            The Rehab<br />
-            <span className="orange">Accelerator.</span>
+            Return to<br />
+            <span className="orange">Perform.</span>
           </h2>
           <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "1.1rem", lineHeight: 1.85, maxWidth: 600 }}>
             Sports injury rehab, strength & conditioning, and movement coaching — <strong style={{ color: "#fff" }}>integrated under one roof, from one plan.</strong>{" "}
