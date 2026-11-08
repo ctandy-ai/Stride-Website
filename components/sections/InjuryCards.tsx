@@ -30,7 +30,7 @@ const cards: Card[] = [
   {
     icon: "💪",
     title: "Shoulder & Rotator Cuff",
-    body: "Shoulder dislocations, rotator cuff tears, AC joint injuries, and throwing shoulder — assessed and managed by sports specialists.",
+    body: "Shoulder dislocations, rotator cuff tears, AC joint injuries, and throwing shoulder — assessed and managed by sports physiotherapists.",
     href: "/shoulder-rehab",
   },
   {
