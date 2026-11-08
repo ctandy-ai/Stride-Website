@@ -5,8 +5,8 @@ import { useRef, useState } from "react";
 
 const faqs = [
   {
-    q: "What is the Rehab Accelerator?",
-    a: "The Rehab Accelerator is Stride's all-inclusive sports injury program. It combines weekly 1:1 physiotherapy, a personalised S&C program, gym access, and return-to-sport clearance testing — all for a single weekly fee of $185. It starts with a two-part Initial Assessment ($145 + $185), after which every athlete has a written week-by-week plan and a target return date.",
+    q: "What is Return to Perform?",
+    a: "Return to Perform is Stride's all-inclusive sports injury program. It combines weekly 1:1 physiotherapy, a personalised S&C program, gym access, and return-to-sport clearance testing — all for a single weekly fee of $185. It starts with a two-part Initial Assessment ($145 + $185), after which every athlete has a written week-by-week plan and a target return date.",
   },
   {
     q: "Who is this for?",

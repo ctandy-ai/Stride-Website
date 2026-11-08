@@ -104,7 +104,7 @@ const faqItems = [
   },
   {
     q: "What happens after six weeks?",
-    a: "At the end of a block you sit down with your coach to review progress and decide what the next block looks like. Most athletes continue — but that conversation happens every time, not automatically. You're not locked into anything beyond the block you're in.",
+    a: "At the end of a block you sit down with your coach to review progress and decide what the next block looks like. Most athletes continue — but that conversation happens every time, not automatically. After your first six week block it runs week by week, and you're never locked in beyond the week you're in.",
   },
   {
     q: "Can I pause?",
@@ -364,7 +364,7 @@ export default function PerformancePrograms() {
             }}
           >
             Athlete Performance $145/wk &nbsp;·&nbsp; S&amp;C Performance
-            $90/wk &nbsp;·&nbsp; Both in six week blocks
+            $90/wk &nbsp;·&nbsp; Both start with a six week block, then run week by week
           </motion.p>
         </div>
       </section>
@@ -415,8 +415,7 @@ export default function PerformancePrograms() {
           }}
         >
           <p>
-            Nearly every athlete we assess is already training. Most of them are
-            training hard. That is almost never the problem.
+            Most athletes we assess are already training, and most are training hard. That is almost never the problem.
           </p>
           <p style={{ marginTop: 16 }}>
             The problem is that hard work only pays when it is pointed at the
@@ -2212,8 +2211,7 @@ export default function PerformancePrograms() {
             }}
           >
             <strong style={{ color: "#fff" }}>
-              If you want the full package, Athlete Performance is the cheaper
-              way to get it.
+              If you want the full package, Athlete Performance puts everything in one price.
             </strong>{" "}
             And if you only want coached programming, $90 a week is the right
             answer — and we would genuinely rather you took it than paid us for

@@ -22,16 +22,16 @@ export default function Accelerator() {
     { icon: "🏋️", title: "Unlimited Gym Access", sub: "Train in our gym as often as you like. Coached small-group sessions included — up to 40 a week." },
     { icon: "🎯", title: "Sport-Specific S&C", sub: "Built for your sport, your position, and your training demands" },
     { icon: "💬", title: "Direct Physio Access", sub: "Messaging, check-ins, and program updates between appointments" },
-    { icon: "✅", title: "Return-to-Sport Testing", sub: "Objective clearance — not a calendar date or gut feel" },
+    { icon: "✅", title: "Return-to-Sport Testing", sub: "Objective testing against criteria — not a calendar date or gut feel" },
     { icon: "📱", title: "Training Platform", sub: "Your program, milestones, and progress — tracked every session" },
   ];
 
   const steps = [
     { n: "01", label: "First Consult", price: "", desc: "Deep conversation. First principles — where you are, where you want to be. Treatment included. You leave with a small win." },
     { n: "02", label: "Deep Dive", price: "", desc: "Full gym and movement activity assessment. Hands-on treatment. Complete picture of your status and what return actually takes." },
-    { n: "03", label: "Choose Pathway", price: "", desc: "Collaboratively discuss the best pathway forward with our team. Session by session or Rehab Accelerator — decided together." },
+    { n: "03", label: "Choose Pathway", price: "", desc: "Collaboratively discuss the best pathway forward with our team. Session by session or Return to Perform — decided together." },
     { n: "04", label: "Execute", price: "", desc: "Weekly physio + S&C. Program updated every session to your numbers." },
-    { n: "05", label: "Return Performing", price: "", desc: "Criteria-based return. Objective testing confirms you’re ready — not a calendar date." },
+    { n: "05", label: "Return Performing", price: "", desc: "Criteria-based return. Objective testing confirms you're ready — not a calendar date. Finish rehab and your next step is already planned." },
   ];
 
   return (
@@ -70,12 +70,12 @@ export default function Accelerator() {
             color: "#fff",
             marginBottom: 20,
           }}>
-            The Rehab<br />
-            <span className="orange">Accelerator.</span>
+            Return to<br />
+            <span className="orange">Perform.</span>
           </h2>
           <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "1.1rem", lineHeight: 1.85, maxWidth: 600 }}>
             Sports injury rehab, strength & conditioning, and movement coaching — <strong style={{ color: "#fff" }}>integrated under one roof, from one plan.</strong>{" "}
-            After your two-part Initial Assessment, every athlete leaves with an objective picture of their status, a clear diagnosis, and a structured pathway forward — not a “see how you go”.
+            After your two-part Initial Assessment, every athlete leaves with an objective picture of their status, a clear diagnosis, and a structured pathway forward — not a "see how you go".
           </p>
         </motion.div>
 
@@ -269,8 +269,8 @@ export default function Accelerator() {
             fontWeight: 500,
             margin: 0,
           }}>
-            Most athletes come in going on feel — training around the injury, guessing at timelines, hoping for the best. After your Initial Assessment, you won’t be.{" "}
-            <span style={{ color: "var(--blue)" }}>You’ll have an objective picture of where you are, what return actually requires, and a structured pathway forward — not a “see how you go”.</span>
+            Most athletes come in going on feel — training around the injury, guessing at timelines, hoping for the best. After your Initial Assessment, you won't be.{" "}
+            <span style={{ color: "var(--blue)" }}>You'll have an objective picture of where you are, what return actually requires, and a structured pathway forward — not a "see how you go".</span>
           </p>
         </motion.div>
 
@@ -293,7 +293,7 @@ export default function Accelerator() {
         >
           <div>
             <div style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.10em", marginBottom: 6 }}>
-              All-inclusive · min 4 weeks · then 4-week blocks
+              All-inclusive · 6 weeks to start · then week by week
             </div>
             <div style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
               <span style={{

@@ -34,7 +34,7 @@ export default function Footer() {
             />
           </div>
           <p style={{ fontSize: "0.9rem", lineHeight: 1.7, color: "rgba(255,255,255,0.45)" }}>
-            Melbourne&apos;s sports injury rehab specialists. Structured, sport-specific rehabilitation from first appointment to return to play.
+            Sports injury rehab physiotherapists in Moonee Ponds. Structured, sport-specific rehabilitation from first appointment to return to play.
             <br /><br />
             <strong style={{ color: "rgba(255,255,255,0.45)" }}>13 Puckle Street, Moonee Ponds VIC 3039</strong><br />
             Mon–Fri 7:30am–7:30pm · Sat 7:30am–1pm
@@ -44,7 +44,7 @@ export default function Footer() {
           <div style={{ fontSize: "0.78rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#fff", marginBottom: 16 }}>Programs</div>
           <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
             {[
-              { href: "/#program", label: "Rehab Accelerator" },
+              { href: "/#program", label: "Return to Perform" },
               { href: "/#pricing", label: "Pricing" },
               { href: "/performance-programs", label: "S\u0026C Performance" },
               { href: "#", label: "Book online", modal: true },

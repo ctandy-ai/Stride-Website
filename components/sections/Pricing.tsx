@@ -30,7 +30,7 @@ export default function Pricing() {
               marginBottom: 24,
             }}
           >
-            The fastest way back<br />to sport <span className="orange">starts here.</span>
+            Your way back<br />to sport <span className="orange">starts here.</span>
           </h2>
 
           {/* Qualifying copy */}
@@ -100,7 +100,7 @@ export default function Pricing() {
               {[
                 "Full injury assessment across two sessions",
                 "Movement analysis & sport-specific testing",
-                "Clear diagnosis and return-to-sport timeline",
+                "Clear diagnosis and what return actually requires",
                 "Written week-by-week program after session 2",
                 "Honest pathway recommendation — what you need, nothing you don't",
               ].map((item, i) => (
@@ -151,7 +151,7 @@ export default function Pricing() {
               Step 2 — Your program
             </div>
             <div style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.8rem", marginBottom: 8 }}>All-inclusive · unlimited access</div>
-            <div style={{ color: "#fff", fontSize: "1.2rem", fontWeight: 700, marginBottom: 16 }}>Rehab Accelerator</div>
+            <div style={{ color: "#fff", fontSize: "1.2rem", fontWeight: 700, marginBottom: 16 }}>Return to Perform</div>
             <div style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: 24 }}>
               <span style={{ fontFamily: "var(--font-bebas)", fontSize: "3.5rem", color: "#fff", lineHeight: 1 }}>$185</span>
               <div>
@@ -164,12 +164,11 @@ export default function Pricing() {
             </div>
             <ul style={{ listStyle: "none", marginBottom: 24, display: "flex", flexDirection: "column", gap: 10 }}>
               {[
-                { item: 'Personal "Athlete Profile" Testing', val: "$441 value" },
                 { item: "Weekly 1:1 Physiotherapy Session & Review", val: "$185–220/wk elsewhere" },
                 { item: "Individualised S&C Program", val: "$100–150/wk elsewhere" },
                 { item: "Gym & coaching access when you need it", val: "$70+/session elsewhere" },
                 { item: "Unlimited program revisions — updated every week", val: "" },
-                { item: "Return-to-sport testing & clearance", val: "" },
+                { item: "Return-to-sport testing", val: "" },
                 { item: "Programming platform access throughout", val: "" },
               ].map((row, i) => (
                 <li key={i} style={{ display: "flex", gap: 10, fontSize: "0.9rem", alignItems: "flex-start" }}>
@@ -201,76 +200,7 @@ export default function Pricing() {
           </motion.div>
         </div>
 
-        {/* Value stack */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          style={{
-            background: "rgba(255,255,255,0.04)",
-            border: "1px solid rgba(255,255,255,0.1)",
-            borderRadius: 16,
-            padding: 32,
-          }}
-        >
-          <div style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.8rem", marginBottom: 20 }}>
-            What you&apos;d pay per week buying this separately elsewhere
-          </div>
-          {[
-            { label: "Weekly physio session (avg. competitor rate)", cost: "$185–220 / wk" },
-            { label: "Individualised S&C program", cost: "$100–150 / wk" },
-            { label: "Gym access & coaching sessions", cost: "$70–90 / session" },
-            { label: "Written rehab plan & weekly review", cost: "$80–100 / wk" },
-            { label: "Return-to-sport testing", cost: "$441 (once)" },
-          ].map((row, i) => (
-            <div
-              key={i}
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                padding: "10px 0",
-                borderBottom: "1px solid rgba(255,255,255,0.06)",
-                color: "rgba(255,255,255,0.6)",
-                fontSize: "0.9rem",
-              }}
-            >
-              <span>{row.label}</span>
-              <span style={{ color: "rgba(255,255,255,0.45)" }}>{row.cost}</span>
-            </div>
-          ))}
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              padding: "14px 0",
-              borderBottom: "1px solid rgba(255,255,255,0.06)",
-              color: "#fff",
-              fontWeight: 700,
-            }}
-          >
-            <span>Total if purchased separately</span>
-            <span>$435–560+ / wk</span>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              padding: "14px 0",
-              color: "var(--blue)",
-              fontWeight: 700,
-              fontSize: "1.05rem",
-            }}
-          >
-            <span>Stride Rehab Accelerator — everything above, one weekly fee</span>
-            <span style={{ fontFamily: "var(--font-bebas)", fontSize: "1.8rem" }}>$185 / wk</span>
-          </div>
-          <div style={{ color: "rgba(255,255,255,0.35)", fontSize: "0.8rem", marginTop: 8, fontStyle: "italic" }}>
-            Most athletes who price this out separately tell us they wish they&apos;d started sooner.
-          </div>
-        </motion.div>
+
       </div>
     </div>
   );
