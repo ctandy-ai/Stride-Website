@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
+import { fireGtag, CONV } from "@/lib/conversions";
 import { useRef } from "react";
 
 export default function CTA() {
@@ -63,6 +64,7 @@ export default function CTA() {
             href="tel:0483918427"
             className="btn btn-ghost"
             style={{ textDecoration: "none" }}
+            onClick={() => fireGtag(CONV.phoneCall)}
           >
             Call us: 0483 918 427
           </a>

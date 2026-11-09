@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { fireGtag, CONV } from "@/lib/conversions";
 
 export default function Footer() {
   return (
@@ -99,7 +100,7 @@ export default function Footer() {
               { href: "https://stridephysiohealth.com.au/about", label: "About Stride", external: true },
               { href: "https://www.preparedtoplay.com.au", label: "Prepared to Play", external: true },
               { href: "https://stridephysiohealth.com.au/contact", label: "Contact us", external: true },
-              { href: "tel:0483918427", label: "0483 918 427" },
+              { href: "tel:0483918427", label: "0483 918 427", phoneLink: true },
             ].map((item) => (
               <a
                 key={item.label}
@@ -107,6 +108,7 @@ export default function Footer() {
                 target={item.external ? "_blank" : undefined}
                 rel={item.external ? "noopener" : undefined}
                 style={{ color: "rgba(255,255,255,0.45)", textDecoration: "none", fontSize: "0.9rem" }}
+                onClick={(item as any).phoneLink ? () => fireGtag(CONV.phoneCall) : undefined}
               >
                 {item.label}
               </a>

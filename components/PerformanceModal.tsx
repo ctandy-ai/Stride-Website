@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { fireGtag, CONV } from "@/lib/conversions";
 
 type Step = 1 | 2 | 3 | "done";
 
@@ -241,7 +242,8 @@ export default function PerformanceModal() {
                   📅 Book Blueprint Testing Session
                 </a>
                 <a href="tel:0483918427"
-                  style={{ display: "block", background: "transparent", color: "rgba(255,255,255,0.6)", border: "1px solid rgba(255,255,255,0.15)", textDecoration: "none", borderRadius: 8, padding: "13px 18px", fontSize: "0.84rem", fontWeight: 600 }}>
+                  style={{ display: "block", background: "transparent", color: "rgba(255,255,255,0.6)", border: "1px solid rgba(255,255,255,0.15)", textDecoration: "none", borderRadius: 8, padding: "13px 18px", fontSize: "0.84rem", fontWeight: 600 }}
+                  onClick={() => fireGtag(CONV.phoneCall)}>
                   📞 Call us: 0483 918 427
                 </a>
               </div>

@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import PerformanceModal from "@/components/PerformanceModal";
+import { fireGtag, CONV } from "@/lib/conversions";
 
 /* ─── Data ───────────────────────────────── */
 
@@ -2827,6 +2828,7 @@ export default function PerformancePrograms() {
             <a
               href="tel:+61483918427"
               className="btn btn-ghost"
+              onClick={() => fireGtag(CONV.phoneCall)}
             >
               Call us
             </a>

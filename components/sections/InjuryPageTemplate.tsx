@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import BookingModal from "@/components/BookingModal";
+import { fireGtag, CONV } from "@/lib/conversions";
 import CTA from "@/components/sections/CTA";
 
 export interface InjuryPageProps {
@@ -115,6 +116,7 @@ export default function InjuryPageTemplate({
                   fontWeight: 600,
                   textDecoration: "none",
                 }}
+                onClick={() => fireGtag(CONV.phoneCall)}
               >
                 Call 0483 918 427
               </a>

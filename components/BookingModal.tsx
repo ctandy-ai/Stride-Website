@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { fireGtag, CONV } from "@/lib/conversions";
 
 type Step = 1 | 2 | 3 | "done";
 
@@ -76,13 +77,7 @@ export default function BookingModal() {
       });
     } catch {}
     // Fire Google Ads conversion — Submit lead form
-    if (typeof (window as any).gtag !== "undefined") {
-      (window as any).gtag("event", "conversion", {
-        send_to: "AW-18138589776/RRhlCPOInLAdENDUk8lD",
-        value: 1.0,
-        currency: "AUD",
-      });
-    }
+    fireGtag(CONV.leadForm, { value: 1.0, currency: "AUD" });
     setStep("done");
     setSubmitting(false);
   };
@@ -305,13 +300,7 @@ export default function BookingModal() {
                 rel="noopener"
                 style={{ background: "var(--blue)", color: "#fff", padding: "16px 20px", borderRadius: 8, textDecoration: "none", fontWeight: 700, fontSize: "1rem", textAlign: "center" }}
                 onClick={() => {
-                  if (typeof (window as any).gtag !== "undefined") {
-                    (window as any).gtag("event", "conversion", {
-                      send_to: "AW-18138589776/GEOtCP2Mo7AdENDUk8lD",
-                      value: 145.0,
-                      currency: "AUD",
-                      transport_type: "beacon", // ensures delivery even if browser navigates away immediately
-                    });
+                  fireGtag(CONV.clinikoClick, { value: 145.0, currency: "AUD", transport_type: "beacon" });
                   }
                 }}
               >
@@ -320,6 +309,7 @@ export default function BookingModal() {
               <a
                 href="tel:0483918427"
                 style={{ border: "2px solid #E8E6E0", color: "var(--navy)", padding: "14px 20px", borderRadius: 8, textDecoration: "none", fontWeight: 700, fontSize: "0.95rem", textAlign: "center" }}
+                onClick={() => fireGtag(CONV.phoneCall)}
               >
                 📞 &nbsp;Call us: 0483 918 427
               </a>

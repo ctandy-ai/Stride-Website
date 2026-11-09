@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { Metadata } from "next";
 import BookingModal from "@/components/BookingModal";
+import { fireGtag, CONV } from "@/lib/conversions";
 import CTA from "@/components/sections/CTA";
 
 /* ─── NOTE: metadata must be in a server component.
@@ -166,6 +167,7 @@ export default function ACLRehabPage() {
                   fontWeight: 600,
                   textDecoration: "none",
                 }}
+                onClick={() => fireGtag(CONV.phoneCall)}
               >
                 Call 0483 918 427
               </a>
