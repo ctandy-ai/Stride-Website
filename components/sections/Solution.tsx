@@ -223,7 +223,7 @@ export default function Solution() {
       </div>}
 
       {/* Team */}
-      <div ref={refTeam} style={{ background: "var(--navy)", padding: "96px var(--px)" }}>
+      <div ref={refTeam} id="team" style={{ background: "var(--navy)", padding: "96px var(--px)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 56 }}>
             <div className="ey ey-blue" style={{ justifyContent: "center" }}>Who you&apos;ll work with</div>

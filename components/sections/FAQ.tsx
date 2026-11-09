@@ -38,6 +38,7 @@ export default function FAQ() {
   return (
     <div
       ref={ref}
+      id="faq"
       style={{ background: "var(--off)", padding: "96px var(--px)" }}
     >
       <div style={{ maxWidth: 800, margin: "0 auto" }}>

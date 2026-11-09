@@ -6,6 +6,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer
+      id="contact"
       style={{
         background: "var(--navy)",
         color: "rgba(255,255,255,0.45)",

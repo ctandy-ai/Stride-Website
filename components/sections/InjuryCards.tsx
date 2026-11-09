@@ -178,6 +178,7 @@ export default function InjuryCards() {
   return (
     <div
       ref={ref}
+      id="what-we-treat"
       style={{ background: "var(--off)", padding: "96px var(--px)" }}
     >
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
