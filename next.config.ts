@@ -16,6 +16,7 @@ const nextConfig: NextConfig = {
       { source: '/services', destination: '/#what-we-treat', permanent: true },
       { source: '/contact', destination: '/#contact', permanent: true },
       { source: '/bookings', destination: 'https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings?business_id=76801', permanent: true },
+      { source: '/book/online', destination: 'https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings?business_id=76801', permanent: true },
       // Old injury/service page slugs
       { source: '/sports-physio', destination: '/', permanent: true },
       { source: '/sports-physio-moonee-ponds', destination: '/', permanent: true },

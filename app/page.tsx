@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import Hero from "@/components/sections/Hero";
 import Stats from "@/components/sections/Stats";
 import Services from "@/components/sections/Services";
@@ -15,6 +16,20 @@ import InjuryCards from "@/components/sections/InjuryCards";
 import StickyBookBtn from "@/components/ui/StickyBookBtn";
 
 export default function Home() {
+  // Open quiz modal when navigating to /#self-check
+  useEffect(() => {
+    if (window.location.hash === "#self-check") {
+      const tryOpen = () => {
+        if (typeof (window as any).openQuizModal === "function") {
+          (window as any).openQuizModal();
+        } else {
+          setTimeout(tryOpen, 100);
+        }
+      };
+      tryOpen();
+    }
+  }, []);
+
   return (
     <>
       <Hero />
