@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Bebas_Neue, DM_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -50,7 +51,19 @@ export default function RootLayout({
       className={`${inter.variable} ${bebasNeue.variable} ${dmMono.variable}`}
     >
       <head>
-        {/* GTM-T49PZPP removed — conversion linking now handled by Google tag destinations */}
+        {/* Google tag (gtag.js) — Google Ads AW-18138589776 */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18138589776"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18138589776');
+          `}
+        </Script>
       </head>
       <body>
 
