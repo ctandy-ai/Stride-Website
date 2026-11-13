@@ -50,7 +50,8 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${bebasNeue.variable} ${dmMono.variable}`}
     >
-      <head>
+      <head />
+      <body>
         {/* Google tag (gtag.js) — Google Ads AW-18138589776 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-18138589776"
@@ -64,9 +65,6 @@ export default function RootLayout({
             gtag('config', 'AW-18138589776');
           `}
         </Script>
-      </head>
-      <body>
-
         <Nav />
         <main>{children}</main>
         <Footer />
