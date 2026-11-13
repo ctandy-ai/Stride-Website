@@ -30,6 +30,10 @@ export const metadata: Metadata = {
   title: "Stride Sports Physio — Sports Injury Management | Melbourne",
   description:
     "Melbourne sports injury physiotherapists. Sport-specific rehab — AFL, netball, rugby, BJJ, MMA. Get a written plan from day one. 13 Puckle St, Moonee Ponds.",
+  metadataBase: new URL("https://www.stridephysiohealth.com.au"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Stride Sports Physio — Sports Injury Management | Melbourne",
     description:
