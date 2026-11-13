@@ -69,13 +69,21 @@ export default function BookingModal() {
   const submitForm = async () => {
     if (!step3Valid) return;
     setSubmitting(true);
+    const payload = JSON.stringify({ source: "booking-modal", ...formData });
     try {
       await fetch("https://api.stridephysiohealth.com.au/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ source: "booking-modal", ...formData }),
+        body: payload,
       });
-    } catch {}
+    } catch {
+      // API unreachable — save locally so the lead isn't lost
+      try {
+        const saved = JSON.parse(localStorage.getItem("stride_unsent_leads") || "[]");
+        saved.push({ ...JSON.parse(payload), saved_at: new Date().toISOString() });
+        localStorage.setItem("stride_unsent_leads", JSON.stringify(saved));
+      } catch { /* localStorage unavailable, nothing more we can do */ }
+    }
     // Fire Google Ads conversion — Submit lead form
     fireGtag(CONV.leadForm, { value: 1.0, currency: "AUD" });
     setStep("done");
