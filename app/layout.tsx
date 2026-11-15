@@ -68,7 +68,9 @@ export default function RootLayout({
             gtag('js', new Date());
             gtag('config', 'AW-18138589776', {
               linker: {
-                domains: ['stridephysiohealth.com.au', 'www.stridephysiohealth.com.au', 'stride-physiotherapy-and-health-group.au1.cliniko.com']
+                domains: ['stridephysiohealth.com.au', 'www.stridephysiohealth.com.au', 'stride-physiotherapy-and-health-group.au1.cliniko.com'],
+                accept_incoming: true,
+                decorate_forms: false
               }
             });
           `}
