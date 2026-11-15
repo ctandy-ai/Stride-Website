@@ -66,7 +66,11 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'AW-18138589776');
+            gtag('config', 'AW-18138589776', {
+              linker: {
+                domains: ['stridephysiohealth.com.au', 'www.stridephysiohealth.com.au', 'stride-physiotherapy-and-health-group.au1.cliniko.com']
+              }
+            });
           `}
         </Script>
         <Nav />
