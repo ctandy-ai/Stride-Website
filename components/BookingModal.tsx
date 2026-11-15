@@ -305,7 +305,6 @@ export default function BookingModal() {
               <a
                 href="https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings?business_id=76801"
                 target="_blank"
-                rel="noopener"
                 style={{ background: "var(--blue)", color: "#fff", padding: "16px 20px", borderRadius: 8, textDecoration: "none", fontWeight: 700, fontSize: "1rem", textAlign: "center" }}
                 onClick={() => {
                   fireGtag(CONV.clinikoClick, { value: 145.0, currency: "AUD", transport_type: "beacon" });
