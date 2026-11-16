@@ -15,6 +15,12 @@ export const metadata: Metadata = {
     title: "Sports Concussion Melbourne | Stride Sports Physio",
     description:
       "Sports concussion assessment and graded return-to-sport management at Stride in Moonee Ponds.",
+    images: [{ url: 'https://www.stridephysiohealth.com.au/og-image.jpg', width: 1200, height: 630, alt: 'Stride Sports Physio & Performance — Moonee Ponds' }],
+    url: 'https://www.stridephysiohealth.com.au/concussion',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['https://www.stridephysiohealth.com.au/og-image.jpg'],
   },
 };
 

@@ -16,6 +16,12 @@ export const metadata: Metadata = {
     title: "Sunday Injury Clinic Melbourne — Walk-In | Stride",
     description:
       "Hurt over the weekend? Stride's Acute Sports Injury Clinic is open Sundays 9am–2pm.",
+    images: [{ url: 'https://www.stridephysiohealth.com.au/og-image.jpg', width: 1200, height: 630, alt: 'Stride Sports Physio & Performance — Moonee Ponds' }],
+    url: 'https://www.stridephysiohealth.com.au/acute-sports-injury-clinic',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['https://www.stridephysiohealth.com.au/og-image.jpg'],
   },
 };
 

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { Metadata } from "next";
+import Script from "next/script";
 import BookingModal from "@/components/BookingModal";
 import { fireGtag, CONV } from "@/lib/conversions";
 import CTA from "@/components/sections/CTA";
@@ -759,6 +760,19 @@ export default function ACLRehabPage() {
 
         <BookingModal />
       </div>
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(f => ({
+            "@type": "Question",
+            "name": f.q,
+            "acceptedAnswer": { "@type": "Answer", "text": f.a }
+          }))
+        }) }}
+      />
     </>
   );
 }

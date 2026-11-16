@@ -8,6 +8,16 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/privacy-policy",
   },
+  openGraph: {
+    title: "Privacy Policy — Stride Sports Physio & Performance",
+    description: "Privacy Policy for Stride Sports Physio & Performance. How we collect, use, and protect your personal and health information.",
+    images: [{ url: 'https://www.stridephysiohealth.com.au/og-image.jpg', width: 1200, height: 630, alt: 'Stride Sports Physio & Performance — Moonee Ponds' }],
+    url: 'https://www.stridephysiohealth.com.au/privacy-policy',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['https://www.stridephysiohealth.com.au/og-image.jpg'],
+  },
 };
 
 export default function PrivacyPolicy() {

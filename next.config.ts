@@ -12,9 +12,7 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       // Legacy page redirects
-      { source: '/about', destination: '/#team', permanent: true },
       { source: '/services', destination: '/#what-we-treat', permanent: true },
-      { source: '/contact', destination: '/#contact', permanent: true },
       { source: '/bookings', destination: '/#book', permanent: true },
       { source: '/book/online', destination: '/#book', permanent: true },
       // Old injury/service page slugs

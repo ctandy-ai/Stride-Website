@@ -40,6 +40,12 @@ export const metadata: Metadata = {
     siteName: "Stride Sports Physio & Performance",
     locale: "en_AU",
     type: "website",
+    images: [{ url: 'https://www.stridephysiohealth.com.au/og-image.jpg', width: 1200, height: 630, alt: 'Stride Sports Physio & Performance — Moonee Ponds' }],
+    url: 'https://www.stridephysiohealth.com.au',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['https://www.stridephysiohealth.com.au/og-image.jpg'],
   },
 };
 

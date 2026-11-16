@@ -15,6 +15,12 @@ export const metadata: Metadata = {
     title: "Combat Sports Physio Melbourne — BJJ, MMA, Boxing | Stride",
     description:
       "Specialist physiotherapy for BJJ, MMA, boxing, and wrestling athletes in Melbourne.",
+    images: [{ url: 'https://www.stridephysiohealth.com.au/og-image.jpg', width: 1200, height: 630, alt: 'Stride Sports Physio & Performance — Moonee Ponds' }],
+    url: 'https://www.stridephysiohealth.com.au/combat-sports-physio',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['https://www.stridephysiohealth.com.au/og-image.jpg'],
   },
 };
 
