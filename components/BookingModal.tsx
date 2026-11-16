@@ -18,6 +18,19 @@ interface FormData {
   email: string;
 }
 
+function getUtmParams(): Record<string, string> {
+  if (typeof window === 'undefined') return {};
+  const params = new URLSearchParams(window.location.search);
+  const keys = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid'];
+  const result: Record<string, string> = {};
+  keys.forEach(k => { const v = params.get(k); if (v) result[k] = v; });
+  // Also check sessionStorage for previously captured UTMs (handles multi-page journeys)
+  try {
+    const stored = JSON.parse(sessionStorage.getItem('stride_utms') || '{}');
+    return { ...stored, ...result }; // URL params override stored
+  } catch { return result; }
+}
+
 export default function BookingModal() {
   const [open, setOpen] = useState(false);
   const [step, setStep] = useState<Step>(1);
@@ -25,6 +38,20 @@ export default function BookingModal() {
     sport: "", injury: "", duration: "", notes: "", urgency: "", prog: "", name: "", phone: "", email: "",
   });
   const [submitting, setSubmitting] = useState(false);
+
+  // Capture UTMs into sessionStorage on mount so they persist across page navigation
+  useEffect(() => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const keys = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid'];
+      const fresh: Record<string,string> = {};
+      keys.forEach(k => { const v = params.get(k); if (v) fresh[k] = v; });
+      if (Object.keys(fresh).length > 0) {
+        const existing = JSON.parse(sessionStorage.getItem('stride_utms') || '{}');
+        sessionStorage.setItem('stride_utms', JSON.stringify({ ...existing, ...fresh }));
+      }
+    } catch {}
+  }, []);
 
   useEffect(() => {
     const handleOpen = () => setOpen(true);
@@ -69,7 +96,8 @@ export default function BookingModal() {
   const submitForm = async () => {
     if (!step3Valid) return;
     setSubmitting(true);
-    const payload = JSON.stringify({ source: "booking-modal", ...formData });
+    const utms = getUtmParams();
+    const payload = JSON.stringify({ source: "booking-modal", ...formData, ...utms });
     try {
       await fetch("https://api.stridephysiohealth.com.au/lead", {
         method: "POST",
