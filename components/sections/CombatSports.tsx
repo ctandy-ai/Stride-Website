@@ -96,7 +96,7 @@ export default function CombatSports() {
                 {card.n}
               </div>
               <div>
-                <h4 style={{ fontWeight: 700, color: "#fff", marginBottom: 6, fontSize: "1rem" }}>{card.title}</h4>
+                <h3 style={{ fontWeight: 700, color: "#fff", marginBottom: 6, fontSize: "1rem" }}>{card.title}</h3>
                 <p style={{ color: "rgba(255,255,255,0.55)", lineHeight: 1.7, fontSize: "0.92rem" }}>{card.body}</p>
               </div>
             </motion.div>

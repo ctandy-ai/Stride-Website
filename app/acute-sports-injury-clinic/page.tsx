@@ -8,7 +8,7 @@ import ClubDeclarationCard from "@/components/ClubDeclarationCard";
 export const metadata: Metadata = {
   title: "Sunday Injury Clinic Melbourne — Walk-In | Stride",
   description:
-    "Hurt over the weekend? Stride's Acute Sports Injury Clinic is open Sundays 9am–2pm. Walk in, get assessed, get your plan. No GP referral needed. Moonee Ponds.",
+    "Hurt over the weekend? Stride's Sunday Acute Sports Injury Clinic is open 9am–2pm. Walk in, get assessed, no GP referral needed. Moonee Ponds.",
   alternates: {
     canonical: "/acute-sports-injury-clinic",
   },

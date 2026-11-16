@@ -7,7 +7,7 @@ import InjuryQuiz from "@/components/sections/InjuryQuiz";
 export const metadata: Metadata = {
   title: "Sports Concussion Melbourne | Stride Sports Physio",
   description:
-    "Sports concussion assessment and graded return-to-sport management at Stride Sports Physio, Moonee Ponds. Same-day assessment, written recovery plan, objective clearance criteria.",
+    "Sports concussion assessment and graded return-to-sport management, Moonee Ponds. Same-day assessment, written recovery plan, clearance criteria.",
   alternates: {
     canonical: "/concussion",
   },

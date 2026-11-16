@@ -68,7 +68,7 @@ function ServiceCard({
         {card.n}
       </div>
       <div>
-        <h4
+        <h3
           style={{
             fontWeight: 700,
             color: "var(--navy)",
@@ -77,7 +77,7 @@ function ServiceCard({
           }}
         >
           {card.title}
-        </h4>
+        </h3>
         <p
           style={{ color: "#4A6070", lineHeight: 1.7, fontSize: "0.92rem" }}
         >
