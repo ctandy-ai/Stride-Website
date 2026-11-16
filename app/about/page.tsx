@@ -4,14 +4,14 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About Stride Sports Physio | Moonee Ponds",
   description:
-    "Meet the team at Stride Sports Physio & Performance — Chris Tandy and Tom Yeung. Sports physio specialists in Moonee Ponds, Melbourne.",
+    "Meet the team at Stride Sports Physio & Performance — Chris Tandy and Tom Yeung. Sports injury physiotherapists in Moonee Ponds, Melbourne.",
   alternates: {
     canonical: "/about",
   },
   openGraph: {
     title: "About Stride Sports Physio | Moonee Ponds",
     description:
-      "Meet the team at Stride Sports Physio & Performance — Chris Tandy and Tom Yeung. Sports physio specialists in Moonee Ponds, Melbourne.",
+      "Meet the team at Stride Sports Physio & Performance — Chris Tandy and Tom Yeung. Sports injury physiotherapists in Moonee Ponds, Melbourne.",
     images: [{ url: 'https://www.stridephysiohealth.com.au/og-image.jpg', width: 1200, height: 630, alt: 'Stride Sports Physio & Performance — Moonee Ponds' }],
     url: 'https://www.stridephysiohealth.com.au/about',
   },
@@ -53,7 +53,7 @@ export default function AboutPage() {
             lineHeight: 1.7,
           }}
         >
-          Sports physiotherapy specialists in Moonee Ponds, Melbourne.
+          Sports injury physiotherapists in Moonee Ponds, Melbourne.
         </p>
       </div>
 
@@ -164,7 +164,7 @@ export default function AboutPage() {
                 marginBottom: 12,
               }}
             >
-              Senior Physiotherapist & Combat Sports Specialist
+              Physiotherapist
             </div>
             <h2
               style={{
@@ -189,7 +189,7 @@ export default function AboutPage() {
             >
               {[
                 "Founded Combat Sports Consulting",
-                "Specialises in BJJ, MMA, boxing, and wrestling athletes",
+                "Works with BJJ, MMA, boxing, and wrestling athletes",
               ].map((item, i) => (
                 <li
                   key={i}
