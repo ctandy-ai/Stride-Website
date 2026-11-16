@@ -20,7 +20,7 @@ const nextConfig: NextConfig = {
       // Old injury/service page slugs
       { source: '/sports-physio', destination: '/', permanent: true },
       { source: '/sports-physio-moonee-ponds', destination: '/', permanent: true },
-      { source: '/acl-rehab', destination: '/acl-rehab', permanent: false }, // already exists
+      // acl-rehab has its own page — no redirect needed (was causing redirect loop)
       { source: '/shoulder', destination: '/shoulder-rehab', permanent: true },
       { source: '/hamstring', destination: '/hamstring-rehab', permanent: true },
       { source: '/ankle', destination: '/ankle-rehab', permanent: true },
