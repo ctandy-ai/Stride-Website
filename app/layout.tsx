@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Bebas_Neue, DM_Mono } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -76,26 +75,7 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
-        {/* Google tag (gtag.js) — Google Ads AW-18138589776 + cross-domain linker */}
-        {/* NOTE: Remove this block once GTM container is confirmed handling all conversions */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-18138589776"
-          strategy="afterInteractive"
-        />
-        <Script id="gtag-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-18138589776', {
-              linker: {
-                domains: ['stridephysiohealth.com.au', 'www.stridephysiohealth.com.au', 'stride-physiotherapy-and-health-group.au1.cliniko.com'],
-                accept_incoming: true,
-                decorate_forms: false
-              }
-            });
-          `}
-        </Script>
+
         <Nav />
         <main>{children}</main>
         <Footer />
