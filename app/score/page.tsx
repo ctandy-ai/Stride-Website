@@ -6,7 +6,7 @@ import { fireGtag, CONV } from "@/lib/conversions";
 
 export default function ScorePage() {
   const [band, setBand] = useState("green");
-  const [sportName, setSportName] = useState("your sport");
+  const [sportName, setSportName] = useState("sport");
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
