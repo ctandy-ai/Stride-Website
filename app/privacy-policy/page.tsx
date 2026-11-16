@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Privacy Policy — Stride Sports Physio & Performance",
   description:
     "Privacy Policy for Stride Sports Physio & Performance. How we collect, use, and protect your personal and health information.",
+  alternates: {
+    canonical: "/privacy-policy",
+  },
 };
 
 export default function PrivacyPolicy() {

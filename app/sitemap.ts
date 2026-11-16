@@ -16,7 +16,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/concussion`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/acute-sports-injury-clinic`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/performance-programs`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/score`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/privacy-policy`, lastModified: now, changeFrequency: "yearly", priority: 0.2 },
   ];
 }

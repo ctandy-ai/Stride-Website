@@ -71,7 +71,7 @@ export default function SundayClinic() {
           <span style={{ color: "#68b4ff", fontSize: "0.78rem", fontWeight: 600 }}>Now open Sundays · 9am–2pm</span>
         </div>
         <div className="ey ey-blue">Acute Sports Injury Clinic</div>
-        <h2
+        <h1
           style={{
             fontFamily: "var(--font-bebas)",
             fontSize: "clamp(2.5rem, 5vw, 4rem)",
@@ -82,7 +82,7 @@ export default function SundayClinic() {
           }}
         >
           Hurt on the weekend?<br /><span className="orange">Don&apos;t wait till Monday.</span>
-        </h2>
+        </h1>
         <p className="bt-inv" style={{ marginBottom: 32 }}>
           Our Sunday Acute Sports Injury Clinic is built for athletes who got hurt over the weekend and can&apos;t afford to wait days for answers. Walk in, get assessed, get your plan.
         </p>
@@ -105,7 +105,7 @@ export default function SundayClinic() {
                 {card.n}
               </div>
               <div>
-                <h4 style={{ fontWeight: 700, color: "#fff", marginBottom: 6, fontSize: "1rem" }}>{card.title}</h4>
+                <h3 style={{ fontWeight: 700, color: "#fff", marginBottom: 6, fontSize: "1rem" }}>{card.title}</h3>
                 <p style={{ color: "rgba(255,255,255,0.55)", lineHeight: 1.7, fontSize: "0.92rem" }}>{card.body}</p>
               </div>
             </motion.div>

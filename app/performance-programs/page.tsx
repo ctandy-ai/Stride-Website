@@ -199,7 +199,7 @@ export default function PerformancePrograms() {
       >
         <Image
           src="/gym-section.jpg"
-          alt=""
+          alt="Stride Sports Physio gym and performance training facility in Moonee Ponds"
           fill
           priority
           style={{ objectFit: "cover", objectPosition: "center 25%" }}
@@ -2721,7 +2721,7 @@ export default function PerformancePrograms() {
         <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
           <Image
             src="/training-section.jpg"
-            alt=""
+            alt="Athletes training at Stride Sports Physio performance programs, Moonee Ponds"
             fill
             style={{ objectFit: "cover", objectPosition: "center 35%", filter: "brightness(0.18) saturate(0.6)" }}
           />

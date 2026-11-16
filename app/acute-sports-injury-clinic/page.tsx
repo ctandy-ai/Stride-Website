@@ -6,11 +6,14 @@ import InjuryQuiz from "@/components/sections/InjuryQuiz";
 import ClubDeclarationCard from "@/components/ClubDeclarationCard";
 
 export const metadata: Metadata = {
-  title: "Acute Sports Injury Clinic Melbourne — Sunday Walk-In | Stride",
+  title: "Sunday Injury Clinic Melbourne — Walk-In | Stride",
   description:
     "Hurt over the weekend? Stride's Acute Sports Injury Clinic is open Sundays 9am–2pm. Walk in, get assessed, get your plan. No GP referral needed. Moonee Ponds.",
+  alternates: {
+    canonical: "/acute-sports-injury-clinic",
+  },
   openGraph: {
-    title: "Acute Sports Injury Clinic Melbourne — Sunday Walk-In | Stride",
+    title: "Sunday Injury Clinic Melbourne — Walk-In | Stride",
     description:
       "Hurt over the weekend? Stride's Acute Sports Injury Clinic is open Sundays 9am–2pm.",
   },

@@ -49,13 +49,13 @@ export default function Footer() {
               { href: "/#program", label: "Return to Perform" },
               { href: "/#pricing", label: "Pricing" },
               { href: "/performance-programs", label: "S\u0026C Performance" },
-              { href: "#", label: "Book online", modal: true },
+              { href: "https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings?business_id=76801", label: "Book online", modal: true },
               { href: "https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings?business_id=76801", label: "Book Now", external: true },
             ].map((item) => (
               item.modal ? (
                 <a
                   key={item.label}
-                  href="#"
+                  href={item.href}
                   onClick={(e) => { e.preventDefault(); window.dispatchEvent(new Event("openModal")); }}
                   style={{ color: "rgba(255,255,255,0.45)", textDecoration: "none", fontSize: "0.9rem" }}
                 >
@@ -97,9 +97,9 @@ export default function Footer() {
           <div style={{ fontSize: "0.78rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#fff", marginBottom: 16 }}>Company</div>
           <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
             {[
-              { href: "https://stridephysiohealth.com.au/about", label: "About Stride", external: true },
+              { href: "https://www.stridephysiohealth.com.au/about", label: "About Stride", external: true },
               { href: "https://www.preparedtoplay.com.au", label: "Prepared to Play", external: true },
-              { href: "https://stridephysiohealth.com.au/contact", label: "Contact us", external: true },
+              { href: "/#contact", label: "Contact us", external: false },
               { href: "tel:0483918427", label: "0483 918 427", phoneLink: true },
             ].map((item) => (
               <a
@@ -130,7 +130,7 @@ export default function Footer() {
           gap: 12,
         }}
       >
-        <div style={{ fontSize: "0.8rem" }}>© 2026 Stride Sports Physiotherapy & Performance. All rights reserved.</div>
+        <div style={{ fontSize: "0.8rem" }}>© 2026 Stride Sports Physio & Performance. All rights reserved.</div>
         <div style={{ display: "flex", gap: 20 }}>
           <Link href="/privacy-policy" style={{ color: "rgba(255,255,255,0.45)", textDecoration: "none", fontSize: "0.8rem" }}>Privacy Policy</Link>
           <a href="https://www.ahpra.gov.au/Registration/Advertising-guidelines.aspx" target="_blank" rel="noopener" style={{ color: "rgba(255,255,255,0.45)", textDecoration: "none", fontSize: "0.8rem" }}>AHPRA Guidelines</a>

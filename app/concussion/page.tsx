@@ -5,11 +5,14 @@ import CTA from "@/components/sections/CTA";
 import InjuryQuiz from "@/components/sections/InjuryQuiz";
 
 export const metadata: Metadata = {
-  title: "Sports Concussion Management Melbourne | Stride Sports Physio",
+  title: "Sports Concussion Melbourne | Stride Sports Physio",
   description:
-    "Sports concussion assessment and graded return-to-sport management at Stride Sports Physio, Moonee Ponds. Same-day assessment, written recovery plan, and objective clearance criteria.",
+    "Sports concussion assessment and graded return-to-sport management at Stride Sports Physio, Moonee Ponds. Same-day assessment, written recovery plan, objective clearance criteria.",
+  alternates: {
+    canonical: "/concussion",
+  },
   openGraph: {
-    title: "Sports Concussion Management Melbourne | Stride Sports Physio",
+    title: "Sports Concussion Melbourne | Stride Sports Physio",
     description:
       "Sports concussion assessment and graded return-to-sport management at Stride in Moonee Ponds.",
   },

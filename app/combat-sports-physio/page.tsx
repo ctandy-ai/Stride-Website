@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Combat Sports Physio Melbourne — BJJ, MMA, Boxing | Stride",
   description:
     "Specialist physiotherapy for BJJ, MMA, boxing, and wrestling athletes in Melbourne. Tom Yeung — Senior Physio and founder of Combat Sports Consulting. 13 Puckle St, Moonee Ponds.",
+  alternates: {
+    canonical: "/combat-sports-physio",
+  },
   openGraph: {
     title: "Combat Sports Physio Melbourne — BJJ, MMA, Boxing | Stride",
     description:

@@ -15,7 +15,7 @@ export default function ScorePage() {
       .get("sport")
       ?.replace(/[^a-zA-Z\s]/g, "")
       .trim()
-      .substring(0, 50) || "your sport";
+      .substring(0, 50) || "sport";
     setBand(b);
     setSportName(s);
   }, []);

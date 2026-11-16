@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "Shoulder Injury Rehab Melbourne — Shoulder Physio | Stride",
   description:
     "Shoulder injury rehabilitation in Moonee Ponds, Melbourne. Rotator cuff, labrum, instability and overhead athlete specialists. Initial Assessment from $145.",
+  alternates: {
+    canonical: "/shoulder-rehab",
+  },
   openGraph: {
     title: "Shoulder Injury Rehab Melbourne — Shoulder Physio | Stride",
     description:

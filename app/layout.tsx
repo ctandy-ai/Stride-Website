@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     "Melbourne sports injury physiotherapists. Sport-specific rehab — AFL, netball, rugby, BJJ, MMA. Get a written plan from day one. 13 Puckle St, Moonee Ponds.",
   metadataBase: new URL("https://www.stridephysiohealth.com.au"),
   alternates: {
-    canonical: "/",
+    canonical: "https://www.stridephysiohealth.com.au",
   },
   openGraph: {
     title: "Stride Sports Physio — Sports Injury Management | Melbourne",
@@ -54,6 +54,39 @@ export default function RootLayout({
       className={`${inter.variable} ${bebasNeue.variable} ${dmMono.variable}`}
     >
       <head>
+        {/* LocalBusiness / Physiotherapy structured data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Physiotherapy",
+              "name": "Stride Sports Physio & Performance",
+              "url": "https://www.stridephysiohealth.com.au",
+              "telephone": "0483918427",
+              "priceRange": "$$",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "13 Puckle Street",
+                "addressLocality": "Moonee Ponds",
+                "addressRegion": "VIC",
+                "postalCode": "3039",
+                "addressCountry": "AU"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": -37.7652,
+                "longitude": 144.9169
+              },
+              "openingHoursSpecification": [
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:30", "closes": "19:30" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "07:30", "closes": "13:00" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:00", "closes": "14:00" }
+              ],
+              "areaServed": ["Moonee Ponds","Essendon","Ascot Vale","Flemington","Strathmore","Niddrie","Keilor East"]
+            })
+          }}
+        />
         {/* Google Tag Manager — GTM-T49PZPP */}
         <script
           dangerouslySetInnerHTML={{
