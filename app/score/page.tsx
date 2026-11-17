@@ -280,7 +280,7 @@ export default function ScorePage() {
         }}
       >
         Stride Physiotherapy & Health Group · 13 Puckle St, Moonee Ponds VIC 3039 ·{" "}
-        <a href="tel:0483918427" style={{ color: "inherit", textDecoration: "none" }} onClick={() => fireGtag(CONV.phoneCall)}>0483 918 427</a>
+        <a href="tel:+61483918427" style={{ color: "inherit", textDecoration: "none" }} onClick={() => fireGtag(CONV.phoneCall)}>0483 918 427</a>
       </footer>
 
       <BookingModal />

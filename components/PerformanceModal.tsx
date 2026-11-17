@@ -241,7 +241,7 @@ export default function PerformanceModal() {
                   style={{ display: "block", background: "var(--blue)", color: "#fff", textDecoration: "none", borderRadius: 8, padding: "14px 18px", fontWeight: 700, fontSize: "0.86rem", letterSpacing: "0.04em", textTransform: "uppercase", marginBottom: 10 }}>
                   📅 Book Blueprint Testing Session
                 </a>
-                <a href="tel:0483918427"
+                <a href="tel:+61483918427"
                   style={{ display: "block", background: "transparent", color: "rgba(255,255,255,0.6)", border: "1px solid rgba(255,255,255,0.15)", textDecoration: "none", borderRadius: 8, padding: "13px 18px", fontSize: "0.84rem", fontWeight: 600 }}
                   onClick={() => fireGtag(CONV.phoneCall)}>
                   📞 Call us: 0483 918 427

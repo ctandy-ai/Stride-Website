@@ -61,7 +61,7 @@ export default function CTA() {
             Book my assessment <span className="arr">→</span>
           </button>
           <a
-            href="tel:0483918427"
+            href="tel:+61483918427"
             className="btn btn-ghost"
             style={{ textDecoration: "none" }}
             onClick={() => fireGtag(CONV.phoneCall)}

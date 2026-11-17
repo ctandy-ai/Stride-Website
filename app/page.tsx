@@ -10,6 +10,7 @@ import Accelerator from "@/components/sections/Accelerator";
 import Pricing from "@/components/sections/Pricing";
 import Solution from "@/components/sections/Solution";
 import FAQ from "@/components/sections/FAQ";
+import MooneePonds from "@/components/sections/MooneePonds";
 import CTA from "@/components/sections/CTA";
 import BookingModal from "@/components/BookingModal";
 import InjuryQuiz from "@/components/sections/InjuryQuiz";
@@ -77,6 +78,7 @@ export default function Home() {
       </div>
 
       <Solution />
+      <MooneePonds />
       <FAQ />
       <CTA />
 

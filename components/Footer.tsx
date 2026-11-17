@@ -100,7 +100,7 @@ export default function Footer() {
               { href: "https://www.stridephysiohealth.com.au/about", label: "About Stride", external: true },
               { href: "https://www.preparedtoplay.com.au", label: "Prepared to Play", external: true },
               { href: "https://www.stridephysiohealth.com.au/contact", label: "Contact us", external: true },
-              { href: "tel:0483918427", label: "0483 918 427", phoneLink: true },
+              { href: "tel:+61483918427", label: "0483 918 427", phoneLink: true },
             ].map((item) => (
               <a
                 key={item.label}

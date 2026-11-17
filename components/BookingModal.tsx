@@ -341,7 +341,7 @@ export default function BookingModal() {
                 📅 &nbsp;Book your initial consultation
               </a>
               <a
-                href="tel:0483918427"
+                href="tel:+61483918427"
                 style={{ border: "2px solid #E8E6E0", color: "var(--navy)", padding: "14px 20px", borderRadius: 8, textDecoration: "none", fontWeight: 700, fontSize: "0.95rem", textAlign: "center" }}
                 onClick={() => fireGtag(CONV.phoneCall)}
               >

@@ -4,6 +4,7 @@ import { Bebas_Neue, DM_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import StickyCallBook from "@/components/ui/StickyCallBook";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -69,7 +70,7 @@ export default function RootLayout({
               "@type": "Physiotherapy",
               "name": "Stride Sports Physio & Performance",
               "url": "https://www.stridephysiohealth.com.au",
-              "telephone": "0483918427",
+              "telephone": "+61483918427",
               "priceRange": "$$",
               "address": {
                 "@type": "PostalAddress",
@@ -118,6 +119,7 @@ export default function RootLayout({
         <Nav />
         <main>{children}</main>
         <Footer />
+        <StickyCallBook />
       </body>
     </html>
   );
