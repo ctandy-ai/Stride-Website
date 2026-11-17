@@ -29,6 +29,9 @@ const nextConfig: NextConfig = {
       { source: '/programs', destination: '/performance-programs', permanent: true },
       { source: '/blog', destination: '/', permanent: true },
       { source: '/blog/:slug*', destination: '/', permanent: true },
+      // Services subpages → home
+      { source: '/services/online-consultations', destination: '/', permanent: true },
+      { source: '/services/:slug*', destination: '/', permanent: true },
       { source: '/team', destination: '/#team', permanent: true },
       { source: '/faq', destination: '/#faq', permanent: true },
       { source: '/pricing', destination: '/#pricing', permanent: true },

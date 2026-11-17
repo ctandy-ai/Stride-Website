@@ -198,7 +198,7 @@ export default function ScorePage() {
             Trusted by Athletes &amp; Clubs
           </h2>
           <p style={{ fontSize: "1.02rem", color: "rgba(255,255,255,0.85)", lineHeight: 1.8, marginBottom: 12 }}>
-            Over <strong>11 years partnering with Melbourne Storm NRL</strong>, we&apos;ve built the rehab expertise that helps athletes come back stronger and faster.
+            Over <strong>7 years with Melbourne Storm (NRL) and 4 years with Essendon VFL</strong>, we&apos;ve built the rehab expertise that helps athletes come back stronger and faster.
           </p>
           <p style={{ fontSize: "1.02rem", color: "rgba(255,255,255,0.85)", lineHeight: 1.8 }}>
             <strong>Club partners include:</strong> Oak Park FC · West Footscray FC — and dozens of individual athletes across AFL, netball, rugby, BJJ, and MMA.
