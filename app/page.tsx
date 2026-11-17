@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Script from "next/script";
 import Hero from "@/components/sections/Hero";
 import Stats from "@/components/sections/Stats";
 import Services from "@/components/sections/Services";
@@ -83,6 +84,24 @@ export default function Home() {
       <BookingModal />
       <InjuryQuiz />
       <StickyBookBtn />
+
+      {/* FAQPage structured data */}
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "What is Return to Perform?", "acceptedAnswer": { "@type": "Answer", "text": "Return to Perform is Stride\u2019s all-inclusive sports injury program. It combines weekly 1:1 physiotherapy, a personalised S&C program, gym access, and return-to-sport clearance testing \u2014 all for a single weekly fee of $185. It starts with a two-part Initial Assessment ($145 + $185), after which every athlete has a written week-by-week plan and a target return date." } },
+            { "@type": "Question", "name": "Who is this for?", "acceptedAnswer": { "@type": "Answer", "text": "Any competitive athlete dealing with a sports injury \u2014 AFL, netball, rugby, soccer, BJJ, MMA, boxing, wrestling, running, or any other sport. We work with athletes of all levels from amateur to professional." } },
+            { "@type": "Question", "name": "Do I need a referral?", "acceptedAnswer": { "@type": "Answer", "text": "No referral is needed for a standard physiotherapy appointment. If you want to use your Medicare EPC (Enhanced Primary Care plan), you\u2019ll need a GP referral before your appointment. Private health insurance and HICAPS are available on the day." } },
+            { "@type": "Question", "name": "What\u2019s included in the $145 Initial Assessment?", "acceptedAnswer": { "@type": "Answer", "text": "A two-part process. Session 1 ($145): a thorough conversation to establish first principles \u2014 your injury history, sport demands and where you want to get back to. Session 2 ($185): a 60-minute hands-on deep dive combining treatment and movement assessment. After both sessions you\u2019ll have a clear diagnosis, a written week-by-week return program, and a target return date." } },
+            { "@type": "Question", "name": "Can I use private health insurance?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We use HICAPS for on-the-spot private health rebate claiming. Medicare EPC plans are also accepted with a valid GP referral." } },
+            { "@type": "Question", "name": "What if I have a combat sports injury (BJJ, MMA, boxing)?", "acceptedAnswer": { "@type": "Answer", "text": "Our Senior Physiotherapist Tom Yeung specialises in combat sport rehabilitation. He has a deep background in combat training and understands the unique demands, culture, and timelines of competitive grappling and striking sports." } }
+          ]
+        }) }}
+      />
     </>
   );
 }
