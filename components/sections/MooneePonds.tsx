@@ -68,27 +68,14 @@ export default function MooneePonds() {
                 color: "rgba(255,255,255,0.75)",
                 fontSize: "1.05rem",
                 lineHeight: 1.75,
-                marginBottom: 20,
-              }}
-            >
-              Stride is a sports physio clinic at 13 Puckle St, Moonee Ponds
-              — a short walk from Moonee Ponds station and the Puckle St
-              shops. We work with players and athletes from Moonee Ponds,
-              Essendon, Ascot Vale, Flemington, Strathmore, Aberfeldie and
-              Essendon North, across footy, soccer, netball, basketball,
-              running and combat sports.
-            </p>
-            <p
-              style={{
-                color: "rgba(255,255,255,0.6)",
-                fontSize: "0.95rem",
-                lineHeight: 1.7,
                 marginBottom: 32,
               }}
             >
-              {/* TODO: confirm with Chris — okay to name Oak Park FC and Doutta Stars FC here? */}
-              Stride is the club physio for Oak Park FC and Essendon Doutta
-              Stars FC in the EDFL.
+              We&rsquo;re at 13 Puckle Street, Moonee Ponds, a short trip
+              from Essendon, Ascot Vale, Flemington, Strathmore, Aberfeldie,
+              Niddrie, Keilor East, Avondale Heights, Pascoe Vale, Brunswick
+              West and Maribyrnong. We work with local clubs including Oak
+              Park FC and Doutta Stars FC.
             </p>
 
             {/* Hours */}
@@ -139,7 +126,7 @@ export default function MooneePonds() {
                 rel="noopener"
                 className="btn btn-primary"
               >
-                Book online →
+                Book my assessment — $145
               </a>
               <a
                 href={PHONE}
