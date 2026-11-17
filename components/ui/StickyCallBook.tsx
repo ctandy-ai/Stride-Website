@@ -3,6 +3,8 @@
 // Sticky Call / Book bar — mobile only (<768px), fixed bottom
 // Brief: two equal buttons, tel: in international format, doesn't cover content/footer
 
+import { fireGtag, CONV } from "@/lib/conversions";
+
 const PHONE = "tel:+61483918427";
 const PHONE_DISPLAY = "0483 918 427";
 const BOOKING_URL =
@@ -20,7 +22,7 @@ export default function StickyCallBook() {
         <a
           href={PHONE}
           className="sticky-call-book__btn sticky-call-book__btn--call"
-          // GTM phone-click conversion fires via global tel: trigger in GTM-T49PZPP
+          onClick={() => fireGtag(CONV.phoneCall)}
         >
           <svg
             width="16"

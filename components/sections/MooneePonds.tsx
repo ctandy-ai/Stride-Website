@@ -3,6 +3,8 @@
 // Sports Physio in Moonee Ponds — local SEO section
 // Brief: lower-middle of homepage, before FAQ
 
+import { fireGtag, CONV } from "@/lib/conversions";
+
 const BOOKING_URL =
   "https://stride-physiotherapy-and-health-group.au1.cliniko.com/bookings";
 const PHONE = "tel:+61483918427";
@@ -142,7 +144,7 @@ export default function MooneePonds() {
               <a
                 href={PHONE}
                 className="btn btn-secondary"
-                // GTM phone-click conversion fires via global tel: trigger
+                onClick={() => fireGtag(CONV.phoneCall)}
               >
                 Call {PHONE_DISPLAY}
               </a>
