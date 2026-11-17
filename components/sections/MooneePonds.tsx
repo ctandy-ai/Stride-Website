@@ -14,7 +14,6 @@ const PHONE_DISPLAY = "0483 918 427";
 const HOURS = [
   { days: "Monday – Friday", time: "7:30 am – 7:30 pm" },
   { days: "Saturday", time: "7:30 am – 1:00 pm" },
-  // TODO: confirm with Chris — Sunday Acute Clinic hours (currently 9am–2pm per schema)
   { days: "Sunday", time: "9:00 am – 2:00 pm (Acute Clinic)" },
 ];
 
@@ -72,10 +71,10 @@ export default function MooneePonds() {
               }}
             >
               We&rsquo;re at 13 Puckle Street, Moonee Ponds, a short trip
-              from Essendon, Ascot Vale, Flemington, Strathmore, Aberfeldie,
-              Niddrie, Keilor East, Avondale Heights, Pascoe Vale, Brunswick
-              West and Maribyrnong. We work with local clubs including Oak
-              Park FC and Doutta Stars FC.
+              from Essendon, Essendon North, Ascot Vale, Flemington,
+              Strathmore, Aberfeldie, Niddrie, Keilor East and Maribyrnong.
+              We work with local clubs including Oak Park FC and Doutta Stars
+              FC.
             </p>
 
             {/* Hours */}
