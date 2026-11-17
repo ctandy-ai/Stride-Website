@@ -39,7 +39,7 @@ export default function Footer() {
             Sports injury rehab physiotherapists in Moonee Ponds. Structured, sport-specific rehabilitation from first appointment to return to play.
             <br /><br />
             <strong style={{ color: "rgba(255,255,255,0.45)" }}>13 Puckle Street, Moonee Ponds VIC 3039</strong><br />
-            Mon–Fri 7:30am–7:30pm · Sat 7:30am–1pm
+            Mon–Fri 7:30am–7:30pm · Sat 7:30am–1pm · Sun 9am–2pm (Acute Clinic)
           </p>
         </div>
         <div>

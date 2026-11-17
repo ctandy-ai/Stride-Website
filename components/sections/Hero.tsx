@@ -204,9 +204,9 @@ Getting sports injury management right the first time.
             lineHeight: 1.6,
           }}
         >
-          <strong style={{ color: "rgba(255,255,255,0.6)" }}>Melbourne Sports Physio & Performance</strong>
+          <strong style={{ color: "rgba(255,255,255,0.6)" }}>Stride Sports Physio & Performance</strong>
           &nbsp;·&nbsp; 13 Puckle St, Moonee Ponds
-          &nbsp;·&nbsp; Mon–Fri 7:30am–7:30pm &nbsp;·&nbsp; Sat 7:30am–1pm
+          &nbsp;·&nbsp; Mon–Fri 7:30am–7:30pm &nbsp;·&nbsp; Sat 7:30am–1pm &nbsp;·&nbsp; Sun 9am–2pm (Acute Clinic)
         </motion.div>
       </div>
     </section>
