@@ -154,6 +154,45 @@ body {
   font-weight: 500;
 }
 .btn-ghost:hover { border-color: var(--blue); background: var(--blue-dim); transform: translateY(-2px); }
+.btn-white {
+  background: #fff;
+  color: var(--navy);
+  border: none;
+  padding: 18px 36px;
+  font-size: 1.02rem;
+  font-weight: 700;
+}
+.btn-white:hover { background: rgba(255,255,255,0.88); transform: translateY(-2px); }
+
+/* ── Hero redesign ── */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 48px;
+  align-items: flex-end;
+}
+.hero-proof-mobile { display: none; }
+/* Sticky book bar — mobile only */
+.sticky-bar-mobile { display: none; }
+.wyaa-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-proof-card { display: none !important; }
+  .hero-proof-mobile { display: block !important; }
+  .hero-hours-strip { display: none !important; }
+  .hero-call-desktop { display: none !important; }
+  .wyaa-grid { grid-template-columns: 1fr; }
+  .wyaa-card-selfcheck { order: -1; }
+  /* Sticky book bar visible on mobile only */
+  .sticky-bar-mobile { display: flex !important; }
+  /* Hero: tighten bottom padding so content fits one screen */
+  .hero-content-wrap { padding-bottom: 20px !important; }
+}
 .arr { display: inline-block; transition: transform .2s; }
 .btn-primary:hover .arr, .btn-ghost:hover .arr { transform: translateX(4px); }
 

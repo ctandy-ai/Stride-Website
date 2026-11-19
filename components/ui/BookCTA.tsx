@@ -53,7 +53,7 @@ export default function BookCTA({
         {withCall && (
           <a
             href="tel:+61483918427"
-            className="btn btn-ghost"
+            className="btn btn-white"
             style={{ textDecoration: "none" }}
             onClick={() => fireGtag(CONV.phoneCall)}
           >

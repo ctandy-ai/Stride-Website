@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import Script from "next/script";
 import Hero from "@/components/sections/Hero";
-import Stats from "@/components/sections/Stats";
+import WhereAreYouAt from "@/components/sections/WhereAreYouAt";
 import Services from "@/components/sections/Services";
 import Problem from "@/components/sections/Problem";
 import MacroLook from "@/components/sections/MacroLook";
@@ -50,8 +50,10 @@ export default function Home() {
       {/* 1. Hero */}
       <Hero />
 
-      {/* 2. Social proof strip */}
-      <Stats />
+      {/* 2. Where are you at? */}
+      <WhereAreYouAt />
+
+      {/* 3. Social proof strip */}
       <Services />
 
       {/* 3. Injury entry / what we treat */}

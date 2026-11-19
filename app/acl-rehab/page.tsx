@@ -162,15 +162,11 @@ export default function ACLRehabPage() {
               </button>
               <a
                 href="tel:+61483918427"
-                style={{
-                  color: "rgba(255,255,255,0.70)",
-                  fontSize: "1rem",
-                  fontWeight: 600,
-                  textDecoration: "none",
-                }}
+                className="btn btn-white"
+                style={{ textDecoration: "none" }}
                 onClick={() => fireGtag(CONV.phoneCall)}
               >
-                Call 0483 918 427
+                Call us
               </a>
             </div>
 

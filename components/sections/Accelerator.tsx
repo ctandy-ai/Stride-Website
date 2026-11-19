@@ -18,20 +18,20 @@ export default function Accelerator() {
   ];
 
   const inclusions = [
-    { icon: "🩺", title: "You’ll always know what this week looks like.", sub: "It’s written down." },
-    { icon: "🏋️", title: "Keep training while you rehab.", sub: "The gym’s on site, and your program’s built in." },
+    { icon: "🩺", title: "You'll always know what this week looks like.", sub: "It's written down." },
+    { icon: "🏋️", title: "Keep training while you rehab.", sub: "The gym's on site, and your program's built in." },
     { icon: "💬", title: "Something flares up mid-week? Message your physio.", sub: "Not stuck guessing between appointments." },
-    { icon: "✅", title: "Go back knowing you’re ready, because the numbers say so.", sub: "Return cleared by testing, not a calendar date." },
+    { icon: "✅", title: "Go back knowing you're ready, because the numbers say so.", sub: "Return cleared by testing, not a calendar date." },
     { icon: "💰", title: "One weekly price covers physio, S&C and gym.", sub: "No surprise bills." },
-    { icon: "📊", title: "See how each leg compares, measured on force plates, not eyeballed.", sub: "Know exactly when you’re ready." },
+    { icon: "📊", title: "See how each leg compares, measured on force plates, not eyeballed.", sub: "Know exactly when you're ready." },
   ];
 
   const steps = [
-    { n: "01", label: "First Consult", price: "", desc: "Deep conversation. First principles — where you are, where you want to be. Treatment included. You leave with a small win." },
+    { n: "01", label: "First Consult", price: "", desc: "Deep conversation. First principles - where you are, where you want to be. Treatment included. You leave with a small win." },
     { n: "02", label: "Deep Dive", price: "", desc: "Full gym and movement activity assessment. Hands-on treatment. Complete picture of your status and what return actually takes." },
-    { n: "03", label: "Choose Pathway", price: "", desc: "Collaboratively discuss the best pathway forward with our team. Session by session or Return to Perform — decided together." },
+    { n: "03", label: "Choose Pathway", price: "", desc: "Collaboratively discuss the best pathway forward with our team. Session by session or Return to Perform - decided together." },
     { n: "04", label: "Execute", price: "", desc: "Weekly physio + S&C. Program updated every session to your numbers." },
-    { n: "05", label: "Return Performing", price: "", desc: "Criteria-based return. Objective testing confirms you're ready — not a calendar date. Finish rehab and your next step is already planned." },
+    { n: "05", label: "Return Performing", price: "", desc: "Criteria-based return. Objective testing confirms you're ready - not a calendar date. Finish rehab and your next step is already planned." },
   ];
 
   return (
@@ -45,7 +45,7 @@ export default function Accelerator() {
         overflow: "hidden",
       }}
     >
-      {/* Background texture — subtle radial glow */}
+      {/* Background texture - subtle radial glow */}
       <div style={{
         position: "absolute", inset: 0, pointerEvents: "none",
         background: "radial-gradient(ellipse 70% 50% at 50% 100%, rgba(27,144,245,0.08) 0%, transparent 70%)",
@@ -74,8 +74,8 @@ export default function Accelerator() {
             <span className="orange">Perform.</span>
           </h2>
           <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "1.1rem", lineHeight: 1.85, maxWidth: 600 }}>
-            Sports injury rehab, strength & conditioning, and movement coaching — <strong style={{ color: "#fff" }}>integrated under one roof, from one plan.</strong>{" "}
-            After your two-part Initial Assessment, every athlete leaves with an objective picture of their status, a clear diagnosis, and a structured pathway forward — not a "see how you go".
+            Sports injury rehab, strength & conditioning, and movement coaching - <strong style={{ color: "#fff" }}>integrated under one roof, from one plan.</strong>{" "}
+            After your two-part Initial Assessment, every athlete leaves with an objective picture of their status, a clear diagnosis, and a structured pathway forward - not a "see how you go".
           </p>
         </motion.div>
 
@@ -127,7 +127,7 @@ export default function Accelerator() {
             textTransform: "uppercase", color: "rgba(255,255,255,0.35)",
             marginBottom: 28,
           }}>
-            How it works — five steps
+            How it works - five steps
           </div>
 
           {/* Step row */}
@@ -203,7 +203,7 @@ export default function Accelerator() {
             textTransform: "uppercase", color: "rgba(255,255,255,0.35)",
             marginBottom: 28,
           }}>
-            Everything included — every week
+            Everything included - every week
           </div>
 
           <div className="inclusions-grid" style={{
@@ -269,8 +269,8 @@ export default function Accelerator() {
             fontWeight: 500,
             margin: 0,
           }}>
-            Most athletes come in going on feel — training around the injury, guessing at timelines, hoping for the best. After your Initial Assessment, you won't be.{" "}
-            <span style={{ color: "var(--blue)" }}>You'll have an objective picture of where you are, what return actually requires, and a structured pathway forward — not a "see how you go".</span>
+            Most athletes come in going on feel - training around the injury, guessing at timelines, hoping for the best. After your Initial Assessment, you won't be.{" "}
+            <span style={{ color: "var(--blue)" }}>You'll have an objective picture of where you are, what return actually requires, and a structured pathway forward - not a "see how you go".</span>
           </p>
         </motion.div>
 
@@ -310,7 +310,7 @@ export default function Accelerator() {
             </div>
           </div>
           <button className="btn btn-primary" onClick={openModal} style={{ whiteSpace: "nowrap" }}>
-            Book my assessment — $145 <span className="arr">→</span>
+            Book my assessment - $145 <span className="arr">→</span>
           </button>
         </motion.div>
 
