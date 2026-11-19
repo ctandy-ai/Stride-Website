@@ -18,12 +18,12 @@ export default function Accelerator() {
   ];
 
   const inclusions = [
-    { icon: "🩺", title: "Weekly 1:1 Physiotherapy", sub: "Full session + program review every week — not a 15-min check-in" },
-    { icon: "🏋️", title: "Unlimited Gym Access", sub: "Train in our gym as often as you like. Coached small-group sessions included — up to 40 a week." },
-    { icon: "🎯", title: "Sport-Specific S&C", sub: "Built for your sport, your position, and your training demands" },
-    { icon: "💬", title: "Direct Physio Access", sub: "Messaging, check-ins, and program updates between appointments" },
-    { icon: "✅", title: "Return-to-Sport Testing", sub: "Objective testing against criteria — not a calendar date or gut feel" },
-    { icon: "📱", title: "Training Platform", sub: "Your program, milestones, and progress — tracked every session" },
+    { icon: "🩺", title: "You’ll always know what this week looks like.", sub: "It’s written down. Weekly 1:1 physio keeps your program moving." },
+    { icon: "🏋️", title: "Keep training while you rehab.", sub: "The gym’s on site, and your program’s built in. Sport-specific S&C included." },
+    { icon: "💬", title: "Something flares up mid-week? Message your physio.", sub: "Direct access between appointments — not stuck guessing until next week." },
+    { icon: "✅", title: "Go back knowing you’re ready.", sub: "Return cleared by testing, because the numbers say so — not a calendar date." },
+    { icon: "💰", title: "One weekly price. No surprise bills.", sub: "$185/week covers physio, S&C and gym. That’s it." },
+    { icon: "📱", title: "Your program, tracked every session.", sub: "Milestones, numbers and progress in one place." },
   ];
 
   const steps = [
@@ -310,7 +310,7 @@ export default function Accelerator() {
             </div>
           </div>
           <button className="btn btn-primary" onClick={openModal} style={{ whiteSpace: "nowrap" }}>
-            Book my assessment <span className="arr">→</span>
+            Book my assessment — $145 <span className="arr">→</span>
           </button>
         </motion.div>
 

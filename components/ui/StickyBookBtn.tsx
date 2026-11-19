@@ -65,7 +65,7 @@ export default function StickyBookBtn() {
           whiteSpace: "nowrap",
         }}
       >
-        Book my assessment →
+        Book my assessment — $145 →
       </button>
     </div>
   );

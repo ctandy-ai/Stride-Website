@@ -6,8 +6,12 @@ import Hero from "@/components/sections/Hero";
 import Stats from "@/components/sections/Stats";
 import Services from "@/components/sections/Services";
 import Problem from "@/components/sections/Problem";
+import MacroLook from "@/components/sections/MacroLook";
+import CuriosityHook from "@/components/sections/CuriosityHook";
+import HowItWorks from "@/components/sections/HowItWorks";
 import Accelerator from "@/components/sections/Accelerator";
 import Pricing from "@/components/sections/Pricing";
+import WhoItsFor from "@/components/sections/WhoItsFor";
 import Solution from "@/components/sections/Solution";
 import FAQ from "@/components/sections/FAQ";
 import MooneePonds from "@/components/sections/MooneePonds";
@@ -18,7 +22,6 @@ import InjuryCards from "@/components/sections/InjuryCards";
 import StickyBookBtn from "@/components/ui/StickyBookBtn";
 
 export default function Home() {
-  // Open modals when navigating to hash anchors
   useEffect(() => {
     const hash = window.location.hash;
     if (hash === "#self-check") {
@@ -44,42 +47,45 @@ export default function Home() {
 
   return (
     <>
+      {/* 1. Hero */}
       <Hero />
+
+      {/* 2. Social proof strip */}
       <Stats />
       <Services />
+
+      {/* 3. Injury entry / what we treat */}
       <InjuryCards />
+
+      {/* 4. Problem — §5.2 "Sore doesn't always mean broken" */}
       <Problem />
-      <Accelerator />
+
+      {/* 5. §5.3 "We look at more than where it hurts" */}
+      <MacroLook />
+
+      {/* 6. Curiosity hook — "Do you know your numbers?" */}
+      <CuriosityHook />
+
+      {/* 7. "What happens after you book" */}
+      <HowItWorks />
+
+      {/* 8. Pricing */}
       <Pricing />
 
-      {/* Guarantee */}
-      <div style={{ background: "var(--off)", padding: "96px var(--px)", textAlign: "center" }}>
-        <div style={{ maxWidth: 680, margin: "0 auto" }}>
-          <div className="ey ey-navy" style={{ justifyContent: "center" }}>Our commitment</div>
-          <h2 style={{ fontFamily: "var(--font-bebas)", fontSize: "clamp(2.5rem, 5vw, 4.5rem)", lineHeight: 0.9, color: "var(--navy)", letterSpacing: "0.02em", marginBottom: 20 }}>
-            If it&apos;s not right,<br /><span className="orange">we&apos;ll make it right.</span>
-          </h2>
-          <p className="bt" style={{ marginBottom: 32 }}>
-            We&apos;re confident in our approach — and we back that up with a genuine commitment to your experience.
-            <br /><br />
-            <strong>If you&apos;re not satisfied with your initial consultation, contact us and we&apos;ll work to make it right.</strong>{" "}
-            We take every concern seriously and will discuss what options are appropriate for your situation.
-            <br /><br />
-            We want every athlete who walks through our door to feel the difference from the first appointment.
-            That&apos;s not a marketing line — it&apos;s how we&apos;ve operated since 2017.
-          </p>
-          <button
-            className="btn btn-primary"
-            onClick={() => typeof (window as any).openModal === "function" && (window as any).openModal()}
-          >
-            Book my assessment <span className="arr">→</span>
-          </button>
-        </div>
-      </div>
+      {/* 9. Everything included / Return to Perform */}
+      <Accelerator />
 
+      {/* 10. §5.4 "Is Stride right for you?" */}
+      <WhoItsFor />
+
+      {/* 11. Team */}
       <Solution />
       <MooneePonds />
+
+      {/* 12. FAQ (existing + §5.5 additions) */}
       <FAQ />
+
+      {/* 13. Closing module §5.7 */}
       <CTA />
 
       {/* Modals */}
@@ -98,9 +104,12 @@ export default function Home() {
             { "@type": "Question", "name": "What is Return to Perform?", "acceptedAnswer": { "@type": "Answer", "text": "Return to Perform is Stride\u2019s all-inclusive sports injury program. It combines weekly 1:1 physiotherapy, a personalised S&C program, gym access, and return-to-sport clearance testing \u2014 all for a single weekly fee of $185. It starts with a two-part Initial Assessment ($145 + $185), after which every athlete has a written week-by-week plan and a target return date." } },
             { "@type": "Question", "name": "Who is this for?", "acceptedAnswer": { "@type": "Answer", "text": "Any competitive athlete dealing with a sports injury \u2014 AFL, netball, rugby, soccer, BJJ, MMA, boxing, wrestling, running, or any other sport. We work with athletes of all levels from amateur to professional." } },
             { "@type": "Question", "name": "Do I need a referral?", "acceptedAnswer": { "@type": "Answer", "text": "No referral is needed for a standard physiotherapy appointment. If you want to use your Medicare EPC (Enhanced Primary Care plan), you\u2019ll need a GP referral before your appointment. Private health insurance and HICAPS are available on the day." } },
-            { "@type": "Question", "name": "What\u2019s included in the $145 Initial Assessment?", "acceptedAnswer": { "@type": "Answer", "text": "A two-part process. Session 1 ($145): a thorough conversation to establish first principles \u2014 your injury history, sport demands and where you want to get back to. Session 2 ($185): a 60-minute hands-on deep dive combining treatment and movement assessment. After both sessions you\u2019ll have a clear diagnosis, a written week-by-week return program, and a target return date." } },
+            { "@type": "Question", "name": "What\u2019s included in the $145 Initial Assessment?", "acceptedAnswer": { "@type": "Answer", "text": "A two-part process. Session 1 ($145): what\u2019s wrong and what\u2019s been causing it (45 min). Session 2 ($185): strength, movement and sport-specific tests, measured, not eyeballed. After both sessions you\u2019ll have a clear diagnosis, a written week-by-week return program, and a target return date." } },
             { "@type": "Question", "name": "Can I use private health insurance?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We use HICAPS for on-the-spot private health rebate claiming. Medicare EPC plans are also accepted with a valid GP referral." } },
-            { "@type": "Question", "name": "What if I have a combat sports injury (BJJ, MMA, boxing)?", "acceptedAnswer": { "@type": "Answer", "text": "Our Senior Physiotherapist Tom Yeung works primarily with combat sport athletes — BJJ, MMA, boxing and wrestling. He has a deep background in combat training and understands the unique demands, culture, and timelines of competitive grappling and striking sports." } }
+            { "@type": "Question", "name": "What if I have a combat sports injury (BJJ, MMA, boxing)?", "acceptedAnswer": { "@type": "Answer", "text": "Our Senior Physiotherapist Tom Yeung works primarily with combat sport athletes \u2014 BJJ, MMA, boxing and wrestling. He has a deep background in combat training and understands the unique demands, culture, and timelines of competitive grappling and striking sports." } },
+            { "@type": "Question", "name": "Am I overreacting by booking?", "acceptedAnswer": { "@type": "Answer", "text": "No. Most athletes wait to see if something settles. If it hasn't, or it keeps coming back, it's worth knowing why. Sometimes the answer is reassuring." } },
+            { "@type": "Question", "name": "Will you just give me more exercises?", "acceptedAnswer": { "@type": "Answer", "text": "Often fewer, better placed. Rehab works best when it fits into your normal training, not on top of it." } },
+            { "@type": "Question", "name": "Do I have to stop training?", "acceptedAnswer": { "@type": "Answer", "text": "Rarely completely. We'll show you what you can keep doing and how to adjust the rest." } }
           ]
         }) }}
       />

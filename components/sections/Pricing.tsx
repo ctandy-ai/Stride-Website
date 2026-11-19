@@ -110,16 +110,16 @@ export default function Pricing() {
                 </li>
               ))}
             </ul>
-            <div style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.78rem", marginBottom: 16 }}>
-              Private health claimable &nbsp;·&nbsp; HICAPS available &nbsp;·&nbsp; Medicare EPC accepted
-            </div>
             <button
               className="btn btn-primary"
               onClick={openModal}
-              style={{ width: "100%", justifyContent: "center" }}
+              style={{ width: "100%", justifyContent: "center", marginBottom: 10 }}
             >
-              Book my assessment →
+              Book my assessment — $145 →
             </button>
+            <div style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.72rem" }}>
+              No referral needed &nbsp;·&nbsp; Private health claimable &nbsp;·&nbsp; Same-week appointments usually available
+            </div>
           </motion.div>
 
           {/* Step 2 */}
@@ -195,7 +195,7 @@ export default function Pricing() {
                 cursor: "pointer",
               }}
             >
-              Book my assessment →
+              Book my assessment — $145 →
             </button>
           </motion.div>
         </div>

@@ -75,7 +75,7 @@ export default function CombatSports() {
           Built for fighters.<br /><span className="orange">Not general patients.</span>
         </h2>
         <p className="bt-inv" style={{ marginBottom: 32 }}>
-          Boxing, MMA, BJJ, Muay Thai, wrestling. Combat athletes have a different relationship with pain, training demands, and recovery timelines. Generic physio doesn&apos;t account for that.
+          Sparring, drilling, conditioning and making weight all land on the same body. We look at your whole camp, not just the sore elbow — and show you what you can keep doing, what to protect, and how long until you&apos;re back on the mats.
         </p>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 16, marginBottom: 32 }}>
@@ -105,7 +105,7 @@ export default function CombatSports() {
 
         <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
           <button className="btn btn-primary" onClick={openModal}>
-            Book with Tom <span className="arr">→</span>
+            Book my assessment — $145 <span className="arr">→</span>
           </button>
           <Link
             href="/combat-sports-physio"

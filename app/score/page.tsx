@@ -264,7 +264,7 @@ export default function ScorePage() {
           onClick={openModal}
           className="btn btn-primary"
         >
-          Book my Initial Athlete Assessment <span className="arr">→</span>
+          Book my assessment — $145 <span className="arr">→</span>
         </button>
       </section>
 

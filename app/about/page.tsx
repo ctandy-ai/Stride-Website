@@ -176,7 +176,6 @@ export default function AboutPage() {
             role="Senior Physiotherapist"
             name="Tom Yeung"
             items={[
-              "Bachelor of Physiotherapy, La Trobe University",
               "Founder, Combat Sports Consulting",
               "Works primarily with BJJ, MMA, boxing and wrestling athletes",
             ]}
@@ -188,7 +187,6 @@ export default function AboutPage() {
             name="Conner Van Turnhout"
             items={[
               "Bachelor of Physiotherapy + PG Certificate in Sports Physiotherapy (Otago)",
-              "Currently completing Master of Sports Physiotherapy, La Trobe",
               "Background in Rugby Union and CrossFit",
             ]}
           />
@@ -198,7 +196,6 @@ export default function AboutPage() {
             role="Osteopath — Sunday Acute Sports Injury Clinic"
             name="Jordan Schorel"
             items={[
-              "Bachelor of Health Science / Master of Osteopathy",
               "Lead clinician, Sunday Acute Sports Injury Clinic (9am–2pm)",
               "First-point-of-care assessment and management for sport injuries",
             ]}

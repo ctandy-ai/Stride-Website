@@ -27,15 +27,15 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Stride Sports Physio — Sports Injury Management | Melbourne",
+  title: "Sports Physio Moonee Ponds — Sports Injury Rehab | Stride",
   description:
-    "Sports injury physio in Melbourne. AFL, netball, rugby, BJJ, MMA. Written plan from day one. 13 Puckle St, Moonee Ponds.",
+    "Sports physio in Moonee Ponds for athletes. A diagnosis, a written plan and a return timeline you can see. Initial Assessment $145. Sunday injury clinic.",
   metadataBase: new URL("https://www.stridephysiohealth.com.au"),
   alternates: {
     canonical: "https://www.stridephysiohealth.com.au",
   },
   openGraph: {
-    title: "Stride Sports Physio — Sports Injury Management | Melbourne",
+    title: "Sports Physio Moonee Ponds — Sports Injury Rehab | Stride",
     description:
       "Melbourne sports injury physiotherapists. Sport-specific rehab — AFL, netball, rugby, BJJ, MMA. Get a written plan from day one.",
     siteName: "Stride Sports Physio & Performance",

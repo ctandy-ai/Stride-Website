@@ -43,6 +43,10 @@ export default function HamstringRehabPage() {
         approach="We assess the injury (grade, location, mechanism), calf or hamstring strength and flexibility, and running mechanics where relevant. Rehabilitation is progressive — early pain-free loading, then eccentric strength work (Nordic curls, heel raises), then sport-specific speed and power work. We use a structured return-to-sprint protocol for running athletes."
         timeline="Grade I hamstring/calf: 1–3 weeks. Grade II: 3–6 weeks. Grade III (significant tear): 6–12 weeks. Recurrent injuries or proximal hamstring tendinopathy: longer — we address the underlying cause."
         faqs={faqs}
+        relatedLinks={[
+          { label: "Knee pain in athletes →", href: "/knee-pain-athletes" },
+          { label: "ACL rehab →", href: "/acl-rehab" },
+        ]}
       />
       <Script
         id="faq-schema"

@@ -112,8 +112,11 @@ export default function SundayClinic() {
           ))}
         </div>
         <button className="btn btn-primary" onClick={openModal}>
-          Book Sunday Assessment <span className="arr">→</span>
+          Book Sunday assessment — $239 <span className="arr">→</span>
         </button>
+        <p style={{ marginTop: 10, fontSize: "0.78rem", color: "rgba(255,255,255,0.4)" }}>
+          No referral needed &nbsp;·&nbsp; Private health claimable &nbsp;·&nbsp; Same-week appointments usually available
+        </p>
       </div>
     </div>
   );
