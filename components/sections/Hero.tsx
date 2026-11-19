@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { fireGtag, CONV } from "@/lib/conversions";
 import Link from "next/link";
 
@@ -20,8 +19,9 @@ export default function Hero() {
       style={{
         position: "relative",
         width: "100%",
-        height: "100vh",
-        minHeight: 640,
+        height: "100dvh",
+        minHeight: 600,
+        maxHeight: "100dvh",
         overflow: "hidden",
         paddingTop: 66,
       }}
@@ -54,21 +54,18 @@ export default function Hero() {
           padding: "0 var(--px) 88px",
           zIndex: 5,
         }}
+        className="hero-content-wrap"
       >
         <div className="hero-grid">
           {/* ── Left column ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.65 }}
-            className="hero-left"
-          >
-            {/* Eyebrow */}
+          <div className="hero-left">
+            {/* Eyebrow — Inter 15px bold */}
             <div
               style={{
-                fontFamily: "var(--font-dm-mono)",
-                fontSize: "0.72rem",
-                letterSpacing: "0.14em",
+                fontFamily: "var(--font-inter), Inter, sans-serif",
+                fontSize: "15px",
+                fontWeight: 700,
+                letterSpacing: "0.08em",
                 textTransform: "uppercase",
                 color: "#7DB4FF",
                 marginBottom: 14,
@@ -77,11 +74,11 @@ export default function Hero() {
               Sports Physio in Moonee Ponds
             </div>
 
-            {/* H1 — solid colours, no outline */}
+            {/* H1 */}
             <h1
               style={{
                 fontFamily: "var(--font-bebas)",
-                fontSize: "clamp(3.5rem, 7.5vw, 7rem)",
+                fontSize: "clamp(3.2rem, 7.5vw, 7rem)",
                 lineHeight: 0.9,
                 letterSpacing: "0.02em",
                 color: "#fff",
@@ -96,8 +93,8 @@ export default function Hero() {
             {/* Subline */}
             <p
               style={{
-                color: "rgba(255,255,255,0.75)",
-                fontSize: "clamp(0.95rem, 1.4vw, 1.08rem)",
+                color: "rgba(255,255,255,0.8)",
+                fontSize: "clamp(0.9rem, 1.4vw, 1.08rem)",
                 lineHeight: 1.65,
                 maxWidth: 480,
                 marginBottom: 28,
@@ -124,17 +121,14 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Microcopy */}
-            <p style={{ color: "rgba(255,255,255,0.42)", fontSize: "0.82rem", margin: 0 }}>
+            {/* Microcopy — bumped to 14px + contrast */}
+            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "14px", margin: 0 }}>
               No referral needed &nbsp;·&nbsp; Private health claimable &nbsp;·&nbsp; Same-week appointments
             </p>
-          </motion.div>
+          </div>
 
-          {/* ── Right column — proof card ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.25, duration: 0.65 }}
+          {/* ── Right column — proof card (desktop only) ── */}
+          <div
             className="hero-proof-card"
             style={{
               background: "rgba(9,20,33,0.82)",
@@ -145,13 +139,15 @@ export default function Hero() {
               alignSelf: "flex-end",
             }}
           >
+            {/* "Across our team" label above stats */}
             <div
               style={{
-                fontFamily: "var(--font-dm-mono)",
-                fontSize: "0.6rem",
-                letterSpacing: "0.14em",
+                fontFamily: "var(--font-inter), Inter, sans-serif",
+                fontSize: "14px",
+                fontWeight: 700,
+                letterSpacing: "0.1em",
                 textTransform: "uppercase",
-                color: "rgba(255,255,255,0.4)",
+                color: "rgba(255,255,255,0.65)",
                 marginBottom: 20,
               }}
             >
@@ -164,7 +160,7 @@ export default function Hero() {
                   <span style={{ fontFamily: "var(--font-bebas)", fontSize: "2.2rem", color: "#fff", lineHeight: 1 }}>
                     {s.n}
                   </span>
-                  <span style={{ color: "rgba(255,255,255,0.55)", fontSize: "0.82rem", lineHeight: 1.3 }}>
+                  <span style={{ color: "rgba(255,255,255,0.75)", fontSize: "14px", lineHeight: 1.3 }}>
                     {s.label}
                   </span>
                 </div>
@@ -172,47 +168,59 @@ export default function Hero() {
             </div>
 
             <div style={{ borderTop: "1px solid rgba(255,255,255,0.1)", paddingTop: 16 }}>
-              <div style={{ color: "rgba(255,255,255,0.35)", fontSize: "0.72rem", marginBottom: 6 }}>
+              <div style={{ color: "rgba(255,255,255,0.6)", fontSize: "14px", marginBottom: 6 }}>
                 Our team has worked with
               </div>
-              <div style={{ color: "rgba(255,255,255,0.75)", fontSize: "0.82rem", lineHeight: 1.5 }}>
+              <div style={{ color: "rgba(255,255,255,0.85)", fontSize: "14px", lineHeight: 1.5 }}>
                 Melbourne Storm (NRL) · Essendon VFL · Western Bulldogs
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
 
         {/* ── Compact proof card for MOBILE only ── */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.5 }}
+        <div
           className="hero-proof-mobile"
           style={{
             background: "rgba(9,20,33,0.75)",
             backdropFilter: "blur(12px)",
             border: "1px solid rgba(255,255,255,0.12)",
             borderRadius: 12,
-            padding: "16px",
-            marginTop: 16,
+            padding: "14px 16px",
+            marginTop: 14,
           }}
         >
-          <div style={{ display: "flex", justifyContent: "space-around", marginBottom: 12 }}>
+          {/* "Across our team" label on mobile */}
+          <div
+            style={{
+              fontFamily: "var(--font-inter), Inter, sans-serif",
+              fontSize: "14px",
+              fontWeight: 700,
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              color: "rgba(255,255,255,0.65)",
+              textAlign: "center",
+              marginBottom: 10,
+            }}
+          >
+            Across our team
+          </div>
+          <div style={{ display: "flex", justifyContent: "space-around", marginBottom: 10 }}>
             {stats.map((s, i) => (
               <div key={i} style={{ textAlign: "center" }}>
                 <div style={{ fontFamily: "var(--font-bebas)", fontSize: "1.6rem", color: "#fff", lineHeight: 1 }}>{s.n}</div>
-                <div style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.65rem", lineHeight: 1.3, maxWidth: 60 }}>{s.label}</div>
+                <div style={{ color: "rgba(255,255,255,0.7)", fontSize: "14px", lineHeight: 1.3, maxWidth: 72 }}>{s.label}</div>
               </div>
             ))}
           </div>
-          <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: 10, textAlign: "center" }}>
-            <span style={{ color: "rgba(255,255,255,0.3)", fontSize: "0.65rem" }}>Our team has worked with </span>
-            <span style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.65rem" }}>Melbourne Storm (NRL) · Essendon VFL · Western Bulldogs</span>
+          <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: 8, textAlign: "center" }}>
+            <span style={{ color: "rgba(255,255,255,0.55)", fontSize: "14px" }}>Our team has worked with </span>
+            <span style={{ color: "rgba(255,255,255,0.8)", fontSize: "14px" }}>Melbourne Storm (NRL) · Essendon VFL · Western Bulldogs</span>
           </div>
-        </motion.div>
+        </div>
       </div>
 
-      {/* ── Bottom hours strip ── */}
+      {/* ── Bottom hours strip (desktop only) ── */}
       <div
         style={{
           position: "absolute",
@@ -234,8 +242,8 @@ export default function Hero() {
       >
         <div
           style={{
-            color: "rgba(255,255,255,0.5)",
-            fontSize: "0.78rem",
+            color: "rgba(255,255,255,0.7)",
+            fontSize: "14px",
             lineHeight: 1.5,
             display: "flex",
             gap: "6px 20px",
@@ -255,7 +263,7 @@ export default function Hero() {
               color: "#fff",
               fontWeight: 600,
               textDecoration: "none",
-              fontSize: "0.78rem",
+              fontSize: "14px",
             }}
           >
             <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#22c55e", display: "inline-block", flexShrink: 0 }} />
@@ -271,7 +279,7 @@ export default function Hero() {
             padding: "8px 18px",
             borderRadius: 6,
             fontWeight: 700,
-            fontSize: "0.82rem",
+            fontSize: "14px",
             textDecoration: "none",
             whiteSpace: "nowrap",
             display: "inline-flex",
@@ -290,7 +298,7 @@ export default function Hero() {
         </a>
       </div>
 
-      {/* Responsive CSS is in globals.css — .hero-grid, .hero-proof-mobile, .hero-call-desktop, .hero-hours-strip */}
+      {/* Responsive CSS is in globals.css — .hero-grid, .hero-proof-mobile, .hero-call-desktop, .hero-hours-strip, .sticky-bar-mobile */}
     </section>
   );
 }

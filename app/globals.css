@@ -172,6 +172,8 @@ body {
   align-items: flex-end;
 }
 .hero-proof-mobile { display: none; }
+/* Sticky book bar — mobile only */
+.sticky-bar-mobile { display: none; }
 .wyaa-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -186,6 +188,10 @@ body {
   .hero-call-desktop { display: none !important; }
   .wyaa-grid { grid-template-columns: 1fr; }
   .wyaa-card-selfcheck { order: -1; }
+  /* Sticky book bar visible on mobile only */
+  .sticky-bar-mobile { display: flex !important; }
+  /* Hero: tighten bottom padding so content fits one screen */
+  .hero-content-wrap { padding-bottom: 20px !important; }
 }
 .arr { display: inline-block; transition: transform .2s; }
 .btn-primary:hover .arr, .btn-ghost:hover .arr { transform: translateX(4px); }
