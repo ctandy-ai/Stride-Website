@@ -26,7 +26,19 @@ const faqs = [
   },
   {
     q: "What if I have a combat sports injury (BJJ, MMA, boxing)?",
-    a: "Our Senior Physiotherapist Tom Yeung specialises in combat sport rehabilitation. He has a deep background in combat training and understands the unique demands, culture, and timelines of competitive grappling and striking sports. He's also the founder of Combat Sports Consulting.",
+    a: "Our Senior Physiotherapist Tom Yeung works primarily with combat sport athletes — BJJ, MMA, boxing and wrestling. He has a deep background in combat training and understands the unique demands, culture, and timelines of competitive grappling and striking sports. He's also the founder of Combat Sports Consulting.",
+  },
+  {
+    q: "Am I overreacting by booking?",
+    a: "No. Most athletes wait to see if something settles. If it hasn't, or it keeps coming back, it's worth knowing why. Sometimes the answer is reassuring.",
+  },
+  {
+    q: "Will you just give me more exercises?",
+    a: "Often fewer, better placed. Rehab works best when it fits into your normal training, not on top of it.",
+  },
+  {
+    q: "Do I have to stop training?",
+    a: "Rarely completely. We'll show you what you can keep doing and how to adjust the rest.",
   },
 ];
 

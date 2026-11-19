@@ -17,189 +17,162 @@ export default function Pricing() {
       id="pricing"
       style={{ background: "var(--navy)", padding: "96px var(--px)" }}
     >
-      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+      <div style={{ maxWidth: 820, margin: "0 auto" }}>
+
         {/* Head */}
-        <div style={{ textAlign: "center", marginBottom: 64 }}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          style={{ marginBottom: 48 }}
+        >
+          <div className="ey ey-blue" style={{ marginBottom: 16 }}>Pricing</div>
           <h2
             style={{
               fontFamily: "var(--font-bebas)",
-              fontSize: "clamp(3rem, 6vw, 5rem)",
+              fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
               lineHeight: 0.9,
               letterSpacing: "0.02em",
               color: "#fff",
-              marginBottom: 24,
+              marginBottom: 20,
             }}
           >
-            Your way back<br />to sport <span className="orange">starts here.</span>
+            What it costs.<br /><span className="orange">All of it.</span>
           </h2>
+          <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "1rem", lineHeight: 1.75, maxWidth: 540 }}>
+            Most clinics don&apos;t show prices. We do, because not knowing what it&apos;ll cost is one more thing you shouldn&apos;t have to guess.
+          </p>
+        </motion.div>
 
-          {/* Qualifying copy */}
-          <div style={{
-            maxWidth: 680, margin: "0 auto 48px",
-            padding: "28px 36px",
-            border: "1px solid rgba(255,255,255,0.1)",
-            borderLeft: "3px solid var(--blue)",
-            borderRadius: 8,
-            textAlign: "left",
-          }}>
-            <p style={{ color: "#fff", fontWeight: 600, fontSize: "1rem", lineHeight: 1.7, marginBottom: 12 }}>
-              This isn&apos;t for everyone.
-            </p>
-            <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.95rem", lineHeight: 1.75, marginBottom: 12 }}>
-              If you&apos;re comfortable training around the injury, guessing at timelines and hoping it sorts itself out — there are clinics for that. We&apos;re not one of them.
-            </p>
-            <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.95rem", lineHeight: 1.75, margin: 0 }}>
-              Stride is built for athletes who want a clear picture of what&apos;s wrong, what return actually requires, and a structured pathway to get there. No guesswork. No &ldquo;let&apos;s see how the next few weeks go.&rdquo;
-            </p>
-          </div>
-        </div>
+        {/* Pricing items */}
+        <div style={{ display: "flex", flexDirection: "column", gap: 20, marginBottom: 32 }}>
 
-        {/* Cards */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginBottom: 48 }}>
-          {/* Step 1 */}
+          {/* Initial Assessment */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.1, duration: 0.6 }}
+            transition={{ delay: 0.15, duration: 0.5 }}
             style={{
               background: "rgba(27,144,245,0.1)",
               border: "2px solid rgba(27,144,245,0.4)",
-              borderRadius: 16,
-              padding: 32,
+              borderRadius: 14,
+              padding: "28px 32px",
+              display: "flex",
+              gap: 32,
+              alignItems: "flex-start",
+              flexWrap: "wrap",
             }}
           >
-            <div
-              style={{
-                display: "inline-block",
-                background: "var(--blue)",
-                color: "#fff",
-                fontSize: "0.72rem",
-                fontWeight: 700,
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                padding: "4px 12px",
-                borderRadius: 20,
-                marginBottom: 12,
-              }}
-            >
-              Step 1 — Start here
+            <div style={{ flex: "0 0 auto" }}>
+              <span style={{ fontFamily: "var(--font-bebas)", fontSize: "3rem", color: "#fff", lineHeight: 1, display: "block" }}>$145</span>
+              <span style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.75rem" }}>one-off</span>
             </div>
-            <div style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.8rem", marginBottom: 8 }}>Two-part process · your plan built across both sessions</div>
-            <div style={{ color: "#fff", fontSize: "1.2rem", fontWeight: 700, marginBottom: 16 }}>2-Stage Assessment</div>
-            <div style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: 24 }}>
-              <span style={{ fontFamily: "var(--font-bebas)", fontSize: "3.5rem", color: "#fff", lineHeight: 1 }}>$145</span>
-              <div>
-                <div style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.8rem" }}>one-off</div>
-                <div style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.8rem" }}>45 minutes</div>
+            <div style={{ flex: 1, minWidth: 220 }}>
+              <div
+                style={{
+                  display: "inline-block",
+                  background: "var(--blue)",
+                  color: "#fff",
+                  fontSize: "0.65rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  padding: "3px 10px",
+                  borderRadius: 20,
+                  marginBottom: 10,
+                }}
+              >
+                Start here
               </div>
+              <h3 style={{ color: "#fff", fontWeight: 700, fontSize: "1.1rem", marginBottom: 8 }}>Initial Assessment</h3>
+              <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "0.9rem", lineHeight: 1.7, margin: 0 }}>
+                Two sessions. Diagnosis, testing and a written week-by-week plan. Private health claimable on the spot (HICAPS).
+              </p>
             </div>
-            <div style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 12 }}>
-              What you walk away with
+            <div style={{ flex: "0 0 auto", alignSelf: "center" }}>
+              <button className="btn btn-primary" onClick={openModal} style={{ whiteSpace: "nowrap" }}>
+                Book — $145 <span className="arr">→</span>
+              </button>
             </div>
-            <ul style={{ listStyle: "none", marginBottom: 24, display: "flex", flexDirection: "column", gap: 10 }}>
-              {[
-                "Full injury assessment across two sessions",
-                "Movement analysis & sport-specific testing",
-                "Clear diagnosis and what return actually requires",
-                "Written week-by-week program after session 2",
-                "Honest pathway recommendation — what you need, nothing you don't",
-              ].map((item, i) => (
-                <li key={i} style={{ color: "rgba(255,255,255,0.7)", display: "flex", gap: 10, fontSize: "0.9rem" }}>
-                  <span style={{ color: "var(--blue)", fontWeight: 700 }}>✓</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <div style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.78rem", marginBottom: 16 }}>
-              Private health claimable &nbsp;·&nbsp; HICAPS available &nbsp;·&nbsp; Medicare EPC accepted
-            </div>
-            <button
-              className="btn btn-primary"
-              onClick={openModal}
-              style={{ width: "100%", justifyContent: "center" }}
-            >
-              Book my assessment →
-            </button>
           </motion.div>
 
-          {/* Step 2 */}
+          {/* Return to Perform */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.2, duration: 0.6 }}
+            transition={{ delay: 0.25, duration: 0.5 }}
             style={{
               background: "rgba(255,255,255,0.04)",
               border: "1px solid rgba(255,255,255,0.12)",
-              borderRadius: 16,
-              padding: 32,
+              borderRadius: 14,
+              padding: "28px 32px",
+              display: "flex",
+              gap: 32,
+              alignItems: "flex-start",
+              flexWrap: "wrap",
             }}
           >
-            <div
-              style={{
-                display: "inline-block",
-                background: "rgba(255,255,255,0.1)",
-                color: "rgba(255,255,255,0.6)",
-                fontSize: "0.72rem",
-                fontWeight: 700,
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                padding: "4px 12px",
-                borderRadius: 20,
-                marginBottom: 12,
-              }}
-            >
-              Step 2 — Your program
+            <div style={{ flex: "0 0 auto" }}>
+              <span style={{ fontFamily: "var(--font-bebas)", fontSize: "3rem", color: "#fff", lineHeight: 1, display: "block" }}>$185</span>
+              <span style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.75rem" }}>per week</span>
             </div>
-            <div style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.8rem", marginBottom: 8 }}>All-inclusive · unlimited access</div>
-            <div style={{ color: "#fff", fontSize: "1.2rem", fontWeight: 700, marginBottom: 16 }}>Return to Perform</div>
-            <div style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: 24 }}>
-              <span style={{ fontFamily: "var(--font-bebas)", fontSize: "3.5rem", color: "#fff", lineHeight: 1 }}>$185</span>
-              <div>
-                <div style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.8rem" }}>per week</div>
-                <div style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.8rem" }}>all-inclusive</div>
+            <div style={{ flex: 1, minWidth: 220 }}>
+              <div
+                style={{
+                  display: "inline-block",
+                  background: "rgba(255,255,255,0.1)",
+                  color: "rgba(255,255,255,0.6)",
+                  fontSize: "0.65rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  padding: "3px 10px",
+                  borderRadius: 20,
+                  marginBottom: 10,
+                }}
+              >
+                All-inclusive program
               </div>
+              <h3 style={{ color: "#fff", fontWeight: 700, fontSize: "1.1rem", marginBottom: 8 }}>Return to Perform</h3>
+              <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "0.9rem", lineHeight: 1.7, margin: 0 }}>
+                Weekly 1:1 physio, sport-specific S&C, gym access, direct physio access between sessions and return-to-sport testing. Start with 6 weeks, then week by week.
+              </p>
             </div>
-            <div style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 12 }}>
-              Everything included — no add-ons, no surprises
-            </div>
-            <ul style={{ listStyle: "none", marginBottom: 24, display: "flex", flexDirection: "column", gap: 10 }}>
-              {[
-                { item: "Weekly 1:1 Physiotherapy Session & Review", val: "$185–220/wk elsewhere" },
-                { item: "Individualised S&C Program", val: "$100–150/wk elsewhere" },
-                { item: "Gym & coaching access when you need it", val: "$70+/session elsewhere" },
-                { item: "Unlimited program revisions — updated every week", val: "" },
-                { item: "Return-to-sport testing", val: "" },
-                { item: "Programming platform access throughout", val: "" },
-              ].map((row, i) => (
-                <li key={i} style={{ display: "flex", gap: 10, fontSize: "0.9rem", alignItems: "flex-start" }}>
-                  <span style={{ color: "var(--blue)", fontWeight: 700, flexShrink: 0 }}>✓</span>
-                  <span style={{ color: "rgba(255,255,255,0.7)", flex: 1 }}>{row.item}</span>
-                  {row.val && (
-                    <span style={{ color: "rgba(255,255,255,0.35)", fontSize: "0.75rem", flexShrink: 0 }}>{row.val}</span>
-                  )}
-                </li>
-              ))}
-            </ul>
-            <button
-              onClick={openModal}
-              style={{
-                width: "100%",
-                justifyContent: "center",
-                background: "transparent",
-                border: "1px solid rgba(255,255,255,0.3)",
-                color: "#fff",
-                padding: "16px",
-                borderRadius: 8,
-                fontWeight: 700,
-                fontSize: "1rem",
-                cursor: "pointer",
-              }}
-            >
-              Book my assessment →
-            </button>
+          </motion.div>
+
+          {/* Pay per visit */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ delay: 0.35, duration: 0.5 }}
+            style={{
+              padding: "16px 32px",
+              borderLeft: "3px solid rgba(255,255,255,0.12)",
+            }}
+          >
+            <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.9rem", lineHeight: 1.65, margin: 0 }}>
+              <strong style={{ color: "rgba(255,255,255,0.75)" }}>Prefer to pay per visit?</strong>{" "}
+              Consultations from $145.
+            </p>
           </motion.div>
         </div>
 
+        {/* Small print + CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.4, duration: 0.5 }}
+        >
+          <p style={{ color: "rgba(255,255,255,0.3)", fontSize: "0.78rem", marginBottom: 24 }}>
+            Private health rebates depend on your fund and level of cover.
+          </p>
+          <button className="btn btn-primary" onClick={openModal}>
+            Book my assessment — $145 <span className="arr">→</span>
+          </button>
+          <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.78rem", marginTop: 10, marginBottom: 0 }}>
+            No referral needed &nbsp;·&nbsp; Private health claimable &nbsp;·&nbsp; Same-week appointments usually available
+          </p>
+        </motion.div>
 
       </div>
     </div>

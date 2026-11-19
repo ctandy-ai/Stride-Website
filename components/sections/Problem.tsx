@@ -11,18 +11,18 @@ export default function Problem() {
   const cards = [
     {
       n: "01",
-      title: "No clear timeline or plan",
-      body: "You leave every appointment without knowing if you're on track — or what \"on track\" even looks like. That uncertainty makes it impossible to plan when you return, how hard to push, or whether you're heading in the right direction at all.",
+      title: "You did more, quickly.",
+      body: "Pre-season, a new team, extra sessions, more running. Your body can handle a lot, just not all at once.",
     },
     {
       n: "02",
-      title: "Generic exercises with no sport context",
-      body: "A netball wing attack, a rugby prop and a BJJ competitor all have different demands. Your program should reflect your sport, your position, your training week — it rarely does.",
+      title: "Not enough time to recover.",
+      body: "Training, games, gym and work stacked back to back.",
     },
     {
       n: "03",
-      title: '"Stop training" — with no alternative',
-      body: "Rest has a role. But full rest prescribed without a path forward doesn't work for a competitive athlete. There is almost always something you can keep doing — and should be.",
+      title: "Rest fixed the pain, not the problem.",
+      body: "It settles, then comes back as soon as you pick things up again.",
     },
   ];
 
@@ -48,14 +48,12 @@ export default function Problem() {
           className="sh sh-navy"
           style={{ marginBottom: 24 }}
         >
-          Generic rehab{" "}
-          <span className="orange">wasn&apos;t built</span>{" "}
-          for athletes.
+          Sore doesn&apos;t{" "}
+          <span className="orange">always mean</span>{" "}
+          broken.
         </h2>
         <p className="bt" style={{ marginBottom: 32 }}>
-          Weekly check-ins. Generic exercises. <strong>&quot;It depends&quot;</strong> when you ask how long you&apos;ll be out.
-          That model was designed for office workers with sore backs — not footballers, court athletes or combat competitors who{" "}
-          <strong>can&apos;t play the sport they love.</strong>
+          When something hurts, it&apos;s natural to think something&apos;s damaged. Sometimes it is, and we&apos;ll find that. But often, pain is your body saying it&apos;s been asked to do more than it was ready for.
         </p>
         <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
           {cards.map((card, i) => (
@@ -97,18 +95,23 @@ export default function Problem() {
           ))}
         </div>
 
-        <div style={{ marginTop: 40, paddingTop: 32, borderTop: "1px solid var(--stone)" }}>
+        <p className="bt" style={{ marginTop: 20, marginBottom: 32 }}>
+          The good news: what you do each week is something you can change. That&apos;s where we start.
+        </p>
+
+        <div style={{ marginTop: 0, paddingTop: 32, borderTop: "1px solid var(--stone)" }}>
           <div style={{ fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 20 }}>
             Injuries we assess and manage most
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10 }}>
             {[
               { label: "ACL", sub: "Knee ligament", icon: "🦵", href: "/acl-rehab" },
+              { label: "Knee pain", sub: "Tendon, kneecap & meniscus", icon: "🔴", href: "/knee-pain-athletes" },
               { label: "Achilles", sub: "Tendon & rupture", icon: "🦶", href: "/achilles-rehab" },
               { label: "Ankle", sub: "Sprain & instability", icon: "🏃", href: "/ankle-rehab" },
               { label: "Hip & Groin", sub: "Strain & FAI", icon: "💪", href: "/hip-groin-rehab" },
               { label: "Shoulder", sub: "Rotator cuff & labrum", icon: "🤸", href: "/shoulder-rehab" },
-              { label: "Hamstring & Calf", sub: "Soft tissue", icon: "🏄", href: "/hamstring-rehab" },
+              { label: "Hamstring & Calf", sub: "Muscle injuries", icon: "🏄", href: "/hamstring-rehab" },
             ].map((injury) => (
               <a
                 key={injury.href}

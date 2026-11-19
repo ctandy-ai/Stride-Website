@@ -14,7 +14,7 @@ export default function CombatSports() {
 
   const cards = [
     { n: "01", title: "Tom Yeung — your dedicated combat physio", body: "Senior Physiotherapist with a background in combat training. He understands why a 12-week full rest prescription doesn't work for a competitor who has a bout in six weeks." },
-    { n: "02", title: "Return confirmed by objective testing", body: "Not a calendar date. Not a guess. Movement and load capacity tested against your specific sport demands before clearance is given." },
+    { n: "02", title: "Return confirmed by objective testing", body: "Not a calendar date. Not a guess. Movement and strength tested against your specific sport demands before clearance is given." },
     { n: "03", title: "Training continues through rehab", body: "There is almost always something you can keep doing. We build around what you can't do, not just stop everything you can." },
   ];
 
@@ -75,7 +75,7 @@ export default function CombatSports() {
           Built for fighters.<br /><span className="orange">Not general patients.</span>
         </h2>
         <p className="bt-inv" style={{ marginBottom: 32 }}>
-          Boxing, MMA, BJJ, Muay Thai, wrestling. Combat athletes have a different relationship with pain, training load, and recovery timelines. Generic physio doesn&apos;t account for that.
+          Sparring, drilling, conditioning and making weight all land on the same body. We look at your whole camp, not just the sore elbow — and show you what you can keep doing, what to protect, and how long until you&apos;re back on the mats.
         </p>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 16, marginBottom: 32 }}>
@@ -105,7 +105,7 @@ export default function CombatSports() {
 
         <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
           <button className="btn btn-primary" onClick={openModal}>
-            Book with Tom <span className="arr">→</span>
+            Book my assessment — $145 <span className="arr">→</span>
           </button>
           <Link
             href="/combat-sports-physio"

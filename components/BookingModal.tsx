@@ -162,7 +162,7 @@ export default function BookingModal() {
     done: "",
   };
   const stepSubs: Record<Step, string> = {
-    1: "Tell us what brought you in - we'll match you with the right specialist.",
+    1: "Tell us what brought you in - we'll match you with the right physio.",
     2: "We'll make sure we can meet your timeline.",
     3: "We'll confirm your appointment within 2 hours.",
     done: "",

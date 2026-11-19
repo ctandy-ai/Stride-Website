@@ -320,10 +320,7 @@ export default function ACLRehabPage() {
                 marginBottom: 52,
               }}
             >
-              Our ACL pathway was developed by Chris Tandy, who spent 11 years
-              embedded at Melbourne Storm NRL — managing ACL surgeries at the
-              highest level in Australian rugby league. That methodology now
-              drives every ACL program we run.
+              Our ACL pathway was developed by Chris Tandy, who spent 7 years with Melbourne Storm (NRL) and 4 years with Essendon VFL — managing musculoskeletal injuries at the highest level in Australian football and rugby league. That methodology now drives every ACL program we run.
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               {phases.map((phase, i) => (
@@ -677,7 +674,7 @@ export default function ACLRehabPage() {
                 all-inclusive).
               </p>
               <button className="btn btn-primary" onClick={openModal}>
-                Book my ACL assessment →
+                Book my assessment — $145 →
               </button>
             </div>
           </div>
@@ -754,6 +751,15 @@ export default function ACLRehabPage() {
             </div>
           </div>
         </section>
+
+        {/* Related */}
+        <div style={{ background: "var(--off)", padding: "40px var(--px)", textAlign: "center" }}>
+          <div style={{ color: "var(--muted)", fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 12 }}>Related</div>
+          <div style={{ display: "flex", gap: 20, justifyContent: "center", flexWrap: "wrap" }}>
+            <a href="/knee-pain-athletes" style={{ color: "var(--blue)", fontWeight: 700, fontSize: "0.9rem" }}>Knee pain in athletes →</a>
+            <a href="/hamstring-rehab" style={{ color: "var(--blue)", fontWeight: 700, fontSize: "0.9rem" }}>Hamstring &amp; calf →</a>
+          </div>
+        </div>
 
         {/* ⑧ CTA */}
         <CTA />

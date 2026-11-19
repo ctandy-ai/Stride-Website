@@ -16,6 +16,7 @@ export interface InjuryPageProps {
   approach: string;
   timeline: string;
   faqs: { q: string; a: string }[];
+  relatedLinks?: { label: string; href: string }[];
 }
 
 const STEPS = [
@@ -56,6 +57,7 @@ export default function InjuryPageTemplate({
   approach,
   timeline,
   faqs,
+  relatedLinks,
 }: InjuryPageProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
@@ -347,7 +349,7 @@ export default function InjuryPageTemplate({
                 {
                   label: "Session 1",
                   price: "$145",
-                  body: "45-minute first consult. Full injury history, sport demands, where you are and where you want to get back to.",
+                  body: "What's wrong and what's been causing it (45 min).",
                 },
                 {
                   label: "Session 2",
@@ -414,16 +416,10 @@ export default function InjuryPageTemplate({
               all-inclusive).
             </p>
             <button className="btn btn-primary" onClick={openModal}>
-              Book my assessment →
+              Book my assessment — $145 →
             </button>
-            <p
-              style={{
-                marginTop: 14,
-                fontSize: "0.80rem",
-                color: "#4A6070",
-              }}
-            >
-              HICAPS on day · Private health claimable · Medicare EPC accepted
+            <p style={{ marginTop: 10, fontSize: "0.78rem", color: "#4A6070" }}>
+              No referral needed &nbsp;·&nbsp; Private health claimable &nbsp;·&nbsp; Same-week appointments usually available
             </p>
           </div>
         </section>
@@ -512,20 +508,34 @@ export default function InjuryPageTemplate({
             {/* Bottom CTA */}
             <div style={{ marginTop: 48, textAlign: "center" }}>
               <button className="btn btn-primary" onClick={openModal}>
-                Book Initial Assessment →
+                Book my assessment — $145 →
               </button>
+              <p style={{ marginTop: 10, fontSize: "0.78rem", color: "rgba(255,255,255,0.4)" }}>
+                No referral needed &nbsp;·&nbsp; Private health claimable &nbsp;·&nbsp; Same-week appointments usually available
+              </p>
               <p
                 style={{
-                  marginTop: 14,
+                  marginTop: 8,
                   fontSize: "0.80rem",
                   color: "rgba(255,255,255,0.38)",
                 }}
               >
-                13 Puckle St, Moonee Ponds · Initial Assessment from $145
+                13 Puckle St, Moonee Ponds
               </p>
             </div>
           </div>
         </section>
+
+        {relatedLinks && relatedLinks.length > 0 && (
+          <div style={{ background: "var(--off)", padding: "40px var(--px)", textAlign: "center" }}>
+            <div style={{ color: "var(--muted)", fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 12 }}>Related</div>
+            <div style={{ display: "flex", gap: 20, justifyContent: "center", flexWrap: "wrap" }}>
+              {relatedLinks.map((l) => (
+                <a key={l.href} href={l.href} style={{ color: "var(--blue)", fontWeight: 700, fontSize: "0.9rem" }}>{l.label}</a>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* ⑦ CTA */}
         <CTA />

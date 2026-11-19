@@ -24,7 +24,7 @@ export default function HipGroinRehabPage() {
         },
       ]}
       approach="We take a full clinical assessment — hip ROM, adductor and hip flexor strength testing, pelvis stability, and sport-specific movement analysis. We differentiate between the common injury types and build your program around the actual diagnosis, not a generic 'groin strain' protocol."
-      timeline="Adductor strains: 2–6 weeks depending on grade. Hip flexor: 2–4 weeks. FAI and sports hernia: variable — may require specialist consultation. Osteitis pubis: 6–12 weeks minimum."
+      timeline="Adductor strains: 2–6 weeks depending on grade. Hip flexor: 2–4 weeks. FAI and sports hernia: variable — may require a referral to a sports medicine doctor. Osteitis pubis: 6–12 weeks minimum."
       faqs={[
         {
           q: "How do I know if it's a groin strain or something more serious?",
@@ -32,7 +32,7 @@ export default function HipGroinRehabPage() {
         },
         {
           q: "I play AFL — is this a common injury?",
-          a: "Very common. The rotational and kicking demands of AFL place significant load on the groin and hip complex. We work with AFL athletes regularly and understand the sport's specific demands.",
+          a: "Very common. The rotational and kicking demands of AFL place significant stress on the groin and hip complex. We work with AFL athletes regularly and understand the sport's specific demands.",
         },
         {
           q: "Can I still train?",

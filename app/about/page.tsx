@@ -21,7 +21,17 @@ export const metadata: Metadata = {
   },
 };
 
-function TeamCard({ role, name, items }: { role: string; name: string; items: string[] }) {
+function TeamCard({
+  role,
+  name,
+  items,
+  bio,
+}: {
+  role: string;
+  name: string;
+  items: string[];
+  bio?: string;
+}) {
   return (
     <div
       style={{
@@ -80,6 +90,19 @@ function TeamCard({ role, name, items }: { role: string; name: string; items: st
           </li>
         ))}
       </ul>
+      {bio && (
+        <p
+          style={{
+            color: "rgba(255,255,255,0.6)",
+            fontSize: "0.9rem",
+            lineHeight: 1.75,
+            marginTop: 20,
+            marginBottom: 0,
+          }}
+        >
+          {bio}
+        </p>
+      )}
     </div>
   );
 }
@@ -145,26 +168,25 @@ export default function AboutPage() {
               "7 years with Melbourne Storm (NRL)",
               "4 years with Essendon VFL",
             ]}
+            bio="Chris spent 7 years as a physiotherapist with Melbourne Storm (NRL) and 4 years with Essendon Football Club's VFL program. He now loves working with community athletes — getting to know each person and helping them build the habits that make the difference in injury management and performance, with progress measured, not guessed. Chris founded Stride to bring objective testing and sport-specific rehab to community and amateur athletes, and works with local clubs including Oak Park FC and Doutta Stars FC."
           />
 
           {/* Tom Yeung */}
           <TeamCard
-            role="Senior Athletic Physiotherapist"
+            role="Senior Physiotherapist"
             name="Tom Yeung"
             items={[
-              "Bachelor of Physiotherapy, La Trobe University",
               "Founder, Combat Sports Consulting",
-              "Specialises in BJJ, MMA, boxing and wrestling rehabilitation",
+              "Works primarily with BJJ, MMA, boxing and wrestling athletes",
             ]}
           />
 
           {/* Conner Van Turnhout */}
           <TeamCard
-            role="Athletic Physiotherapist"
+            role="Physiotherapist"
             name="Conner Van Turnhout"
             items={[
               "Bachelor of Physiotherapy + PG Certificate in Sports Physiotherapy (Otago)",
-              "Currently completing Master of Sports Physiotherapy, La Trobe",
               "Background in Rugby Union and CrossFit",
             ]}
           />
@@ -174,18 +196,42 @@ export default function AboutPage() {
             role="Osteopath — Sunday Acute Sports Injury Clinic"
             name="Jordan Schorel"
             items={[
-              "Bachelor of Health Science / Master of Osteopathy",
               "Lead clinician, Sunday Acute Sports Injury Clinic (9am–2pm)",
               "First-point-of-care assessment and management for sport injuries",
             ]}
           />
         </div>
 
-        {/* AHPRA statement */}
+        {/* Clinic hours */}
         <div
           style={{
             maxWidth: 900,
             margin: "48px auto 0",
+            padding: "20px 32px",
+            background: "rgba(255,255,255,0.03)",
+            borderRadius: 8,
+            borderLeft: "3px solid var(--orange)",
+          }}
+        >
+          <p
+            style={{
+              color: "rgba(255,255,255,0.6)",
+              fontSize: "0.88rem",
+              lineHeight: 1.7,
+              margin: 0,
+            }}
+          >
+            <strong style={{ color: "#fff" }}>Clinic hours:</strong>{" "}
+            Mon–Fri 7:30am–7:30pm &nbsp;·&nbsp; Sat 7:30am–1pm &nbsp;·&nbsp; Sun 9am–2pm (Acute Sports Injury Clinic)
+            &nbsp;·&nbsp; 13 Puckle St, Moonee Ponds
+          </p>
+        </div>
+
+        {/* AHPRA statement */}
+        <div
+          style={{
+            maxWidth: 900,
+            margin: "24px auto 0",
             padding: "24px 32px",
             background: "rgba(255,255,255,0.04)",
             borderRadius: 8,
@@ -200,7 +246,7 @@ export default function AboutPage() {
               margin: 0,
             }}
           >
-            All physiotherapists and osteopaths at Stride Sports Physio & Performance are registered with the Australian Health Practitioner Regulation Agency (AHPRA).
+            All practitioners at Stride Sports Physio &amp; Performance are registered with the Australian Health Practitioner Regulation Agency (AHPRA).
           </p>
         </div>
 

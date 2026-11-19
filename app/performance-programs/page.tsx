@@ -633,7 +633,7 @@ export default function PerformancePrograms() {
         >
           We use a classification system across every physical quality that
           matters for your sport: strength, how fast you produce force,
-          elasticity, speed, how well you change direction, how much load you
+          elasticity, speed, how well you change direction, how much training stress you
           can absorb week to week. Each one gets graded against what your sport
           actually demands of it. That tells us three things immediately: what
           is already good enough, what is holding you back, and what is not
@@ -1361,7 +1361,7 @@ export default function PerformancePrograms() {
               force development.
             </h2>
             {[
-              "Watch an athlete train and you learn a lot. Whether they hold position under load. Whether the bar is going up. Whether they look sharp or flat today. Good coaches read all of that continuously, and it is genuinely useful.",
+              "Watch an athlete train and you learn a lot. Whether they hold position under effort. Whether the bar is going up. Whether they look sharp or flat today. Good coaches read all of that continuously, and it is genuinely useful.",
               "Here is what watching cannot tell you: how quickly you produce force from a standstill, how much energy you get back out of a stretch, and whether your left side is doing meaningfully less work than your right.",
               "Those are frequently the exact things capping an athlete. Which means you can train hard and well for six weeks, on everything visible, and never once touch the thing that is actually limiting you.",
             ].map((text, i) => (

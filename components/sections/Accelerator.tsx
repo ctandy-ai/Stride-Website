@@ -12,18 +12,18 @@ export default function Accelerator() {
   };
 
   const stats = [
-    { n: "500+", unit: "", label: "Athletes Returned to Sport" },
+    { n: "500+", unit: "", label: "Athletes guided back to sport across our team" },
     { n: "5k+", unit: "", label: "Coached Athlete Rehab Hours" },
     { n: "20+", unit: "", label: "Sporting Teams Worked With" },
   ];
 
   const inclusions = [
-    { icon: "🩺", title: "Weekly 1:1 Physiotherapy", sub: "Full session + program review every week — not a 15-min check-in" },
-    { icon: "🏋️", title: "Unlimited Gym Access", sub: "Train in our gym as often as you like. Coached small-group sessions included — up to 40 a week." },
-    { icon: "🎯", title: "Sport-Specific S&C", sub: "Built for your sport, your position, and your training demands" },
-    { icon: "💬", title: "Direct Physio Access", sub: "Messaging, check-ins, and program updates between appointments" },
-    { icon: "✅", title: "Return-to-Sport Testing", sub: "Objective testing against criteria — not a calendar date or gut feel" },
-    { icon: "📱", title: "Training Platform", sub: "Your program, milestones, and progress — tracked every session" },
+    { icon: "🩺", title: "You’ll always know what this week looks like.", sub: "It’s written down." },
+    { icon: "🏋️", title: "Keep training while you rehab.", sub: "The gym’s on site, and your program’s built in." },
+    { icon: "💬", title: "Something flares up mid-week? Message your physio.", sub: "Not stuck guessing between appointments." },
+    { icon: "✅", title: "Go back knowing you’re ready, because the numbers say so.", sub: "Return cleared by testing, not a calendar date." },
+    { icon: "💰", title: "One weekly price covers physio, S&C and gym.", sub: "No surprise bills." },
+    { icon: "📊", title: "See how each leg compares, measured on force plates, not eyeballed.", sub: "Know exactly when you’re ready." },
   ];
 
   const steps = [
@@ -306,11 +306,11 @@ export default function Accelerator() {
               <span style={{ color: "rgba(255,255,255,0.55)", fontSize: "1.1rem" }}>/&nbsp;week</span>
             </div>
             <div style={{ color: "rgba(255,255,255,0.35)", fontSize: "0.78rem", marginTop: 4 }}>
-              Or from $145 · initial &amp; subsequent consultations
+              Prefer to pay per visit? Consultations from $145.
             </div>
           </div>
           <button className="btn btn-primary" onClick={openModal} style={{ whiteSpace: "nowrap" }}>
-            Book my assessment <span className="arr">→</span>
+            Book my assessment — $145 <span className="arr">→</span>
           </button>
         </motion.div>
 

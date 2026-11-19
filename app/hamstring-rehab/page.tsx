@@ -24,12 +24,12 @@ export default function HamstringRehabPage() {
         injury="Hamstring & Calf"
         headline="Hamstring & Calf Rehab."
         headlineAccent="Sprint again."
-        subtext="Soft tissue injuries have the highest recurrence rate in sport. The research is clear — progressive loading, not rest, prevents re-injury. We build programs that get you back faster and keep you there."
+        subtext="Muscle injuries have the highest recurrence rate in sport. The research is clear — progressive rehab, not rest, prevents re-injury. We build programs that get you back faster and keep you there."
         problemTitle="What goes wrong with hamstring and calf rehab"
         problems={[
           {
             title: "Inadequate loading in early rehab",
-            body: "The instinct to rest a hamstring or calf strain is understandable — but tendons and muscle-tendon junctions need progressive load to heal correctly. Passive rest alone produces weaker, less resilient tissue.",
+            body: "The instinct to rest a hamstring or calf strain is understandable — but muscles and their attachment points need progressive rehab to heal correctly. Passive rest alone produces a weaker, less resilient result.",
           },
           {
             title: "No sprint mechanics assessment",
@@ -43,6 +43,10 @@ export default function HamstringRehabPage() {
         approach="We assess the injury (grade, location, mechanism), calf or hamstring strength and flexibility, and running mechanics where relevant. Rehabilitation is progressive — early pain-free loading, then eccentric strength work (Nordic curls, heel raises), then sport-specific speed and power work. We use a structured return-to-sprint protocol for running athletes."
         timeline="Grade I hamstring/calf: 1–3 weeks. Grade II: 3–6 weeks. Grade III (significant tear): 6–12 weeks. Recurrent injuries or proximal hamstring tendinopathy: longer — we address the underlying cause."
         faqs={faqs}
+        relatedLinks={[
+          { label: "Knee pain in athletes →", href: "/knee-pain-athletes" },
+          { label: "ACL rehab →", href: "/acl-rehab" },
+        ]}
       />
       <Script
         id="faq-schema"

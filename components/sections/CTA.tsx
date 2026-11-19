@@ -23,7 +23,6 @@ export default function CTA() {
         textAlign: "center",
       }}
     >
-      {/* Background gradient blob */}
       <div
         style={{
           position: "absolute",
@@ -43,22 +42,22 @@ export default function CTA() {
         <h2
           style={{
             fontFamily: "var(--font-bebas)",
-            fontSize: "clamp(4rem, 8vw, 7rem)",
+            fontSize: "clamp(3.5rem, 7vw, 6rem)",
             lineHeight: 0.9,
             letterSpacing: "0.02em",
             color: "#fff",
             marginBottom: 20,
           }}
         >
-          Don&apos;t wait.<br /><span className="orange">Get back.</span>
+          Find out what you&apos;re dealing with.
         </h2>
         <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "1.1rem", lineHeight: 1.7, marginBottom: 36 }}>
-          Your Initial Assessment is two sessions. After both, you have a clear diagnosis, a written plan and a clear picture of what return requires.{" "}
-          <strong style={{ color: "#fff" }}>Same-week appointments available.</strong>
+          Two sessions. We find out what&apos;s wrong and what&apos;s been causing it, and you leave with a written plan.{" "}
+          <strong style={{ color: "#fff" }}>Same-week appointments are usually available.</strong>
         </p>
-        <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", marginBottom: 20 }}>
+        <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", marginBottom: 10 }}>
           <button className="btn btn-primary" onClick={openModal}>
-            Book my assessment <span className="arr">→</span>
+            Book my assessment — $145 <span className="arr">→</span>
           </button>
           <a
             href="tel:+61483918427"
@@ -66,11 +65,14 @@ export default function CTA() {
             style={{ textDecoration: "none" }}
             onClick={() => fireGtag(CONV.phoneCall)}
           >
-            Call us: 0483 918 427
+            Call 0483 918 427
           </a>
         </div>
+        <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.78rem", margin: "0 0 20px" }}>
+          No referral needed &nbsp;·&nbsp; Private health claimable &nbsp;·&nbsp; Same-week appointments usually available
+        </p>
         <div style={{ color: "rgba(255,255,255,0.35)", fontSize: "0.82rem" }}>
-          13 Puckle St, Moonee Ponds · Mon–Fri 7:30am–7:30pm · Sat 7:30am–1pm
+          Sunday walk-in clinic, 9am–2pm · 13 Puckle St, Moonee Ponds
         </div>
       </motion.div>
     </div>

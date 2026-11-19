@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/hamstring-rehab`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/hip-groin-rehab`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/achilles-rehab`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/knee-pain-athletes`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/combat-sports-physio`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/concussion`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/acute-sports-injury-clinic`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },

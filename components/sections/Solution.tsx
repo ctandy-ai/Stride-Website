@@ -32,33 +32,33 @@ const testimonials = [
 const team = [
   {
     name: "Chris Tandy",
-    role: "Senior Athletic Physiotherapist · Coach",
-    bio: "Masters of Sports Physiotherapy. 11 years in elite and sub-elite sport with Melbourne Storm (NRL) and Essendon VFL. Passionate about understanding the core drivers behind behaviour change and performance optimisation to help injured athletes and those wanting to maximise their sporting performance.",
-    boldBio: "Melbourne Storm Rugby League Club and Essendon Football Club's VFL Program",
+    role: "Director & Senior Physiotherapist",
+    bio: "Master of Sports Physiotherapy (La Trobe). 7 years with Melbourne Storm (NRL) and 4 years with Essendon’s VFL program.",
+    boldBio: "7 years with Melbourne Storm (NRL) and 4 years with Essendon’s VFL program",
     img: "/chris-tandy.jpg",
     imgPosition: "top center",
   },
   {
     name: "Tom Yeung",
-    role: "Senior Athletic Physiotherapist · Coach",
-    bio: "Bachelor of Physiotherapy, La Trobe University, with additional training in Sports & Exercise Rehabilitation. Avid gym-goer with a background in combat training — Tom brings genuine understanding of the demands combat athletes face. He knows why a 12-week full rest prescription doesn't work for a competitor.",
-    boldBio: "Avid gym-goer with a background in combat training",
+    role: "Senior Physiotherapist",
+    bio: "Trains in combat sports and founded Combat Sports Consulting.",
+    boldBio: "Founder, Combat Sports Consulting",
     img: "/tom-yeung.jpg",
     imgPosition: "top center",
   },
   {
     name: "Conner Van Turnhout",
-    role: "Athletic Physiotherapist · Coach",
-    bio: "Bachelor of Physiotherapy and Postgraduate Certificate in Sports Physiotherapy, University of Otago — currently completing a Master of Sports Physiotherapy at La Trobe. Keen CrossFitter with a background in Rugby Union, Conner understands the physical demands of sport and the importance of staying active. Evidence-based care tailored to help you achieve your goals.",
-    boldBio: "Keen CrossFitter with a background in Rugby Union",
+    role: "Physiotherapist",
+    bio: "Rugby union background; works with field and court athletes.",
+    boldBio: "Rugby union background",
     img: "/conner-van-turnhout.jpg",
     imgPosition: "top center",
   },
   {
     name: "Jordan Schorel",
     role: "Osteopath · Acute Sports Injury Clinic",
-    bio: "Bachelor of Health Science / Master of Osteopathy. Lead clinician for Stride's Sunday Acute Sports Injury Clinic — first-point-of-care assessment and management for athletes who can't wait. Bringing osteopathic expertise into Stride's sports injury rehabilitation programs, with a focus on restoring function and getting athletes back to the sport they love.",
-    boldBio: "Lead clinician for Stride's Sunday Acute Sports Injury Clinic",
+    bio: "Leads the Sunday Acute Sports Injury Clinic.",
+    boldBio: "Sunday Acute Sports Injury Clinic",
     img: "/jordan-schorel.jpg",
     imgPosition: "top center",
   },
@@ -228,7 +228,7 @@ export default function Solution() {
           <div style={{ textAlign: "center", marginBottom: 56 }}>
             <div className="ey ey-blue" style={{ justifyContent: "center" }}>Who you&apos;ll work with</div>
             <h2 style={{ fontFamily: "var(--font-bebas)", fontSize: "clamp(2.5rem, 5vw, 4rem)", lineHeight: 0.9, color: "#fff", letterSpacing: "0.02em" }}>
-              Elite sport expertise.<br /><span className="orange">In your corner.</span>
+              Elite-sport experience,<br /><span className="orange">for every athlete.</span>
             </h2>
           </div>
 

@@ -29,9 +29,11 @@ const nextConfig: NextConfig = {
       { source: '/programs', destination: '/performance-programs', permanent: true },
       { source: '/blog', destination: '/', permanent: true },
       { source: '/blog/:slug*', destination: '/', permanent: true },
-      // Services subpages → home
-      { source: '/services/online-consultations', destination: '/', permanent: true },
-      { source: '/services/:slug*', destination: '/', permanent: true },
+      // Services subpages → home (true 301, single hop, with and without trailing slash)
+      { source: '/services/online-consultations', destination: '/', statusCode: 301 },
+      { source: '/services/online-consultations/', destination: '/', statusCode: 301 },
+      { source: '/services/:slug+/', destination: '/', statusCode: 301 },
+      { source: '/services/:slug+', destination: '/', statusCode: 301 },
       { source: '/team', destination: '/#team', permanent: true },
       { source: '/faq', destination: '/#faq', permanent: true },
       { source: '/pricing', destination: '/#pricing', permanent: true },

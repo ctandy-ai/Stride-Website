@@ -49,18 +49,27 @@ const questions = [
       { label: "Not at all — no real plan", pts: 0 },
     ],
   },
+  {
+    text: "In the 4 weeks before this started, did your training change? (New program, more sessions, pre-season, a new team, more games)",
+    opts: [
+      { label: "Yes", pts: 0 },
+      { label: "No", pts: 0 },
+      { label: "Not sure", pts: 0 },
+    ],
+  },
 ];
 
 export default function InjuryQuiz() {
   const [isOpen, setIsOpen] = useState(false);
   const [step, setStep] = useState(0);
-  const [scores, setScores] = useState<number[]>(Array(5).fill(-1));
+  const [scores, setScores] = useState<number[]>(Array(6).fill(-1));
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [phase, setPhase] = useState<"quiz" | "capture" | "result">("quiz");
   const [submitting, setSubmitting] = useState(false);
   const [band, setBand] = useState("");
+  const [trainingJump, setTrainingJump] = useState(false);
 
   useEffect(() => {
     (window as any).openQuizModal = () => setIsOpen(true);
@@ -69,23 +78,25 @@ export default function InjuryQuiz() {
 
   const resetQuiz = () => {
     setStep(0);
-    setScores(Array(5).fill(-1));
+    setScores(Array(6).fill(-1));
     setName("");
     setPhone("");
     setEmail("");
     setPhase("quiz");
     setSubmitting(false);
     setBand("");
+    setTrainingJump(false);
   };
 
-  const pickOpt = (pts: number) => {
+  const pickOpt = (pts: number, optLabel?: string) => {
     const newScores = [...scores];
     newScores[step] = pts;
     setScores(newScores);
+    if (step === 5) setTrainingJump(optLabel === "Yes");
   };
 
   const nextStep = () => {
-    if (step < 4) setStep(step + 1);
+    if (step < 5) setStep(step + 1);
     else setPhase("capture");
   };
 
@@ -106,7 +117,7 @@ export default function InjuryQuiz() {
       amber: {
         icon: "📋",
         heading: "Some gaps to explore",
-        insight: "Your rehab has some structure, but there are a few areas — like objective testing and sport-specific programming — that are worth reviewing with a physio. A conversation with a specialist can help fill those gaps before you return to training.",
+        insight: "Your rehab has some structure, but there are a few areas — like objective testing and sport-specific programming — that are worth reviewing with a physio. A conversation with a physio can help fill those gaps before you return to training.",
       },
       green: {
         icon: "✅",
@@ -127,7 +138,7 @@ export default function InjuryQuiz() {
   const submitCapture = async () => {
     if (!captureValid) return;
     setSubmitting(true);
-    const total = scores.reduce((a, b) => a + b, 0);
+    const total = scores.slice(0, 5).reduce((a, b) => a + b, 0);
     const b = getBand(total);
     setBand(b);
     try {
@@ -160,7 +171,7 @@ export default function InjuryQuiz() {
 
   const currentQ = questions[step];
   const canNext = scores[step] >= 0;
-  const total = scores.reduce((a, b) => a + b, 0);
+  const total = scores.slice(0, 5).reduce((a, b) => a + b, 0);
   const bandInfo = band ? getBandInfo(band) : null;
 
   return (
@@ -239,7 +250,7 @@ export default function InjuryQuiz() {
                 transition={{ duration: 0.25 }}
               >
                 <div style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.75rem", marginBottom: 8 }}>
-                  Question {step + 1} of 5
+                  Question {step + 1} of 6
                 </div>
                 <div style={{ color: "#fff", fontWeight: 700, fontSize: "1.1rem", lineHeight: 1.5, marginBottom: 20 }}>
                   {currentQ.text}
@@ -248,7 +259,7 @@ export default function InjuryQuiz() {
                 {currentQ.opts.map((opt, i) => (
                   <button
                     key={i}
-                    onClick={() => pickOpt(opt.pts)}
+                    onClick={() => pickOpt(opt.pts, opt.label)}
                     style={{
                       width: "100%",
                       display: "flex",
@@ -297,7 +308,7 @@ export default function InjuryQuiz() {
                     cursor: canNext ? "pointer" : "not-allowed",
                   }}
                 >
-                  {step < 4 ? "Next →" : "See my score →"}
+                  {step < 5 ? "Next →" : "See my score →"}
                 </button>
               </motion.div>
             </AnimatePresence>
@@ -394,9 +405,16 @@ export default function InjuryQuiz() {
             <div style={{ color: "#fff", fontWeight: 700, fontSize: "1.3rem", marginBottom: 16 }}>
               {bandInfo.heading}
             </div>
-            <p style={{ color: "rgba(255,255,255,0.65)", lineHeight: 1.7, marginBottom: 24, fontSize: "0.95rem" }}>
+            <p style={{ color: "rgba(255,255,255,0.65)", lineHeight: 1.7, marginBottom: scores[5] === 0 ? 12 : 24, fontSize: "0.95rem" }}>
               {bandInfo.insight}
             </p>
+            {trainingJump && (
+              <div style={{ background: "rgba(27,144,245,0.12)", border: "1px solid rgba(27,144,245,0.3)", borderRadius: 8, padding: "14px 16px", marginBottom: 20, textAlign: "left" }}>
+                <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "0.9rem", lineHeight: 1.65, margin: 0 }}>
+                  A jump in how much you&apos;ve been training is one of the most common things we see behind sports injuries. It&apos;s worth looking at what you&apos;ve been doing, not just where it hurts.
+                </p>
+              </div>
+            )}
             <div style={{ background: "rgba(255,255,255,0.05)", borderRadius: 8, padding: 14, marginBottom: 20 }}>
               <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.75rem" }}>
                 This self-check is for educational purposes only and is not a clinical assessment. Please consult a registered physiotherapist for a professional evaluation.
