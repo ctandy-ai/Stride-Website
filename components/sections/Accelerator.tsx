@@ -306,7 +306,7 @@ export default function Accelerator() {
               <span style={{ color: "rgba(255,255,255,0.55)", fontSize: "1.1rem" }}>/&nbsp;week</span>
             </div>
             <div style={{ color: "rgba(255,255,255,0.35)", fontSize: "0.78rem", marginTop: 4 }}>
-              Or from $145 · initial &amp; subsequent consultations
+              Prefer to pay per visit? Consultations from $145.
             </div>
           </div>
           <button className="btn btn-primary" onClick={openModal} style={{ whiteSpace: "nowrap" }}>
