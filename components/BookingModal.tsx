@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { fireGtag, CONV } from "@/lib/conversions";
+import { fireGtag, CONV, pushDataLayerEvent } from "@/lib/conversions";
 
 type Step = 1 | 2 | 3 | "done";
 
@@ -112,8 +112,8 @@ export default function BookingModal() {
         localStorage.setItem("stride_unsent_leads", JSON.stringify(saved));
       } catch { /* localStorage unavailable, nothing more we can do */ }
     }
-    // Fire Google Ads conversion — Submit lead form
-    fireGtag(CONV.leadForm, { value: 1.0, currency: "AUD" });
+    // Push lead form event to GTM dataLayer — GTM fires the Google Ads conversion tag
+    pushDataLayerEvent(CONV.leadForm, { value: 1.0, currency: "AUD" });
     setStep("done");
     setSubmitting(false);
   };
