@@ -2,183 +2,315 @@
 
 import { motion } from "framer-motion";
 import { fireGtag, CONV } from "@/lib/conversions";
+import Link from "next/link";
+
+const stats = [
+  { n: "500+", label: "athletes guided back to sport" },
+  { n: "5K+",  label: "coached rehab hours" },
+  { n: "20+",  label: "sporting teams worked with" },
+];
 
 export default function Hero() {
   const openModal = () => {
-    if (typeof (window as any).openModal === "function") {
-      (window as any).openModal();
-    }
-  };
-  const openQuizModal = () => {
-    if (typeof (window as any).openQuizModal === "function") {
-      (window as any).openQuizModal();
-    }
+    if (typeof (window as any).openModal === "function") (window as any).openModal();
   };
 
   return (
     <section
-      className="hero"
       style={{
         position: "relative",
         width: "100%",
         height: "100vh",
         minHeight: 640,
         overflow: "hidden",
-        display: "flex",
-        alignItems: "flex-end",
         paddingTop: 66,
       }}
     >
-      {/* Overlay */}
+      {/* ── Video background ── */}
+      <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
+        <video
+          autoPlay muted loop playsInline
+          style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", filter: "blur(0.6px)" }}
+        >
+          <source src="/hero-loop.webm" type="video/webm" />
+          <source src="/hero-loop.mp4" type="video/mp4" />
+        </video>
+        <div
+          style={{
+            position: "absolute", inset: 0,
+            background: "linear-gradient(to top, rgba(9,20,33,0.97) 0%, rgba(9,20,33,0.80) 40%, rgba(9,20,33,0.35) 70%, transparent 100%)",
+          }}
+        />
+      </div>
+
+      {/* ── Main content (2-col desktop) ── */}
       <div
         style={{
           position: "absolute",
           inset: 0,
-          background:
-            "linear-gradient(to top, rgba(9,20,33,0.97) 0%, rgba(9,20,33,0.78) 35%, rgba(9,20,33,0.28) 65%, transparent 100%), linear-gradient(to right, rgba(9,20,33,0.88) 0%, rgba(9,20,33,0.50) 45%, transparent 78%)",
-          zIndex: 1,
-        }}
-      />
-      {/* Background video */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", zIndex: 0, filter: "blur(0.8px)" }}
-      >
-        <source src="/hero-loop.webm" type="video/webm" />
-        <source src="/hero-loop.mp4" type="video/mp4" />
-      </video>
-
-      <div
-        className="hero-inner-content"
-        style={{
-          position: "relative",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "flex-end",
+          padding: "0 var(--px) 88px",
           zIndex: 5,
-          padding: "0 var(--px) 56px",
-          maxWidth: "min(680px, 55vw)",
-          width: "100%",
         }}
       >
-        {/* Proof line */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.05, duration: 0.6 }}
-          style={{
-            fontFamily: "var(--font-dm-mono)",
-            fontSize: "0.72rem",
-            letterSpacing: "0.11em",
-            textTransform: "uppercase",
-            color: "rgba(255,255,255,0.55)",
-            marginBottom: 16,
-            lineHeight: 1.65,
-          }}
-        >
-          AFL &nbsp;·&nbsp; Netball &nbsp;·&nbsp; Soccer &nbsp;·&nbsp; Rugby &nbsp;·&nbsp; Basketball &nbsp;·&nbsp; Running &nbsp;·&nbsp; BJJ &nbsp;·&nbsp; MMA &nbsp;·&nbsp; Boxing
-        </motion.div>
+        <div className="hero-grid">
+          {/* ── Left column ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.65 }}
+            className="hero-left"
+          >
+            {/* Eyebrow */}
+            <div
+              style={{
+                fontFamily: "var(--font-dm-mono)",
+                fontSize: "0.72rem",
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
+                color: "#7DB4FF",
+                marginBottom: 14,
+              }}
+            >
+              Sports Physio in Moonee Ponds
+            </div>
 
-        {/* H1 */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.17, duration: 0.6 }}
-          style={{
-            fontFamily: "var(--font-bebas)",
-            fontSize: "clamp(3.5rem, 8vw, 7rem)",
-            lineHeight: 0.9,
-            letterSpacing: "0.02em",
-            color: "#fff",
-            marginBottom: 20,
-          }}
-        >
-          Know Exactly
-          <br />
-          <span style={{ WebkitTextStroke: "2px #fff", color: "transparent" }}>
-            Where You Stand.
-          </span>
-        </motion.h1>
+            {/* H1 — solid colours, no outline */}
+            <h1
+              style={{
+                fontFamily: "var(--font-bebas)",
+                fontSize: "clamp(3.5rem, 7.5vw, 7rem)",
+                lineHeight: 0.9,
+                letterSpacing: "0.02em",
+                color: "#fff",
+                marginBottom: 20,
+              }}
+            >
+              Know Exactly
+              <br />
+              <span style={{ color: "#7DB4FF" }}>Where You Stand.</span>
+            </h1>
 
-        {/* Subline — §5.1 */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.29, duration: 0.6 }}
-          style={{
-            color: "rgba(255,255,255,0.72)",
-            fontSize: "1.05rem",
-            lineHeight: 1.65,
-            marginBottom: 28,
-            maxWidth: 480,
-          }}
-        >
-          Sports physio in Moonee Ponds. We check where it hurts and what you&apos;ve been doing, so you know what&apos;s wrong and what to change.
-        </motion.p>
+            {/* Subline */}
+            <p
+              style={{
+                color: "rgba(255,255,255,0.75)",
+                fontSize: "clamp(0.95rem, 1.4vw, 1.08rem)",
+                lineHeight: 1.65,
+                maxWidth: 480,
+                marginBottom: 28,
+              }}
+            >
+              Find out what&apos;s wrong, what&apos;s causing it and exactly what to do next — with a written plan for getting back to your sport.
+            </p>
 
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.41, duration: 0.6 }}
-          className="hero-ctas"
-          style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 10, width: "100%", maxWidth: 420 }}
-        >
-          {/* Primary */}
-          <button
-            onClick={openModal}
+            {/* Buttons */}
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap", alignItems: "center", marginBottom: 12 }}>
+              <button className="btn btn-primary" onClick={openModal}>
+                Book my assessment — $145 <span className="arr">→</span>
+              </button>
+              <a
+                href="tel:+61483918427"
+                className="btn btn-white"
+                style={{ textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 8 }}
+                onClick={() => fireGtag(CONV.phoneCall)}
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                Call us
+              </a>
+            </div>
+
+            {/* Microcopy */}
+            <p style={{ color: "rgba(255,255,255,0.42)", fontSize: "0.82rem", margin: 0 }}>
+              No referral needed &nbsp;·&nbsp; Private health claimable &nbsp;·&nbsp; Same-week appointments
+            </p>
+          </motion.div>
+
+          {/* ── Right column — proof card ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.25, duration: 0.65 }}
+            className="hero-proof-card"
             style={{
-              width: "100%", background: "var(--blue)", color: "#fff",
-              border: "none", borderRadius: 4, padding: "16px 28px",
-              fontFamily: "var(--font-inter)", fontWeight: 700,
-              fontSize: "0.9rem", letterSpacing: "0.04em", textTransform: "uppercase",
-              cursor: "pointer", textAlign: "left",
+              background: "rgba(9,20,33,0.82)",
+              backdropFilter: "blur(16px)",
+              border: "1px solid rgba(255,255,255,0.14)",
+              borderRadius: 16,
+              padding: "28px 24px",
+              alignSelf: "flex-end",
             }}
           >
-            Book my assessment — $145 →
-          </button>
+            <div
+              style={{
+                fontFamily: "var(--font-dm-mono)",
+                fontSize: "0.6rem",
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
+                color: "rgba(255,255,255,0.4)",
+                marginBottom: 20,
+              }}
+            >
+              Across our team
+            </div>
 
-          {/* Button subline */}
-          <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.72rem", lineHeight: 1.5, margin: 0, maxWidth: 380 }}>
-            No referral needed &nbsp;·&nbsp; Private health claimable &nbsp;·&nbsp; Same-week appointments usually available
-          </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 16, marginBottom: 20 }}>
+              {stats.map((s, i) => (
+                <div key={i} style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
+                  <span style={{ fontFamily: "var(--font-bebas)", fontSize: "2.2rem", color: "#fff", lineHeight: 1 }}>
+                    {s.n}
+                  </span>
+                  <span style={{ color: "rgba(255,255,255,0.55)", fontSize: "0.82rem", lineHeight: 1.3 }}>
+                    {s.label}
+                  </span>
+                </div>
+              ))}
+            </div>
 
-          {/* Secondary — text link */}
-          <button
-            onClick={openQuizModal}
-            style={{
-              background: "none", border: "none", padding: 0,
-              color: "rgba(255,255,255,0.65)", fontSize: "0.9rem", fontWeight: 500,
-              cursor: "pointer", textAlign: "left", textDecoration: "underline",
-              textDecorationColor: "rgba(255,255,255,0.3)",
-            }}
-          >
-            Not sure what you&apos;re dealing with? 2-minute self-check →
-          </button>
+            <div style={{ borderTop: "1px solid rgba(255,255,255,0.1)", paddingTop: 16 }}>
+              <div style={{ color: "rgba(255,255,255,0.35)", fontSize: "0.72rem", marginBottom: 6 }}>
+                Our team has worked with
+              </div>
+              <div style={{ color: "rgba(255,255,255,0.75)", fontSize: "0.82rem", lineHeight: 1.5 }}>
+                Melbourne Storm (NRL) · Essendon VFL · Western Bulldogs
+              </div>
+            </div>
+          </motion.div>
+        </div>
 
-          {/* Tertiary — Sunday clinic text link */}
-          <a
-            href="/acute-sports-injury-clinic"
-            style={{
-              color: "rgba(255,255,255,0.5)", fontSize: "0.85rem", fontWeight: 500,
-              textDecoration: "underline", textDecorationColor: "rgba(255,255,255,0.25)",
-            }}
-          >
-            Hurt on the weekend? Sunday clinic, 9am–2pm →
-          </a>
-        </motion.div>
-
-        {/* Address note */}
+        {/* ── Compact proof card for MOBILE only ── */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.53, duration: 0.6 }}
-          style={{ marginTop: 24, fontSize: "0.8rem", color: "rgba(255,255,255,0.35)", lineHeight: 1.6 }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+          className="hero-proof-mobile"
+          style={{
+            background: "rgba(9,20,33,0.75)",
+            backdropFilter: "blur(12px)",
+            border: "1px solid rgba(255,255,255,0.12)",
+            borderRadius: 12,
+            padding: "16px",
+            marginTop: 16,
+          }}
         >
-          13 Puckle St, Moonee Ponds
-          &nbsp;·&nbsp; Mon–Fri 7:30am–7:30pm &nbsp;·&nbsp; Sat 7:30am–1pm &nbsp;·&nbsp; Sun 9am–2pm (Acute Clinic)
+          <div style={{ display: "flex", justifyContent: "space-around", marginBottom: 12 }}>
+            {stats.map((s, i) => (
+              <div key={i} style={{ textAlign: "center" }}>
+                <div style={{ fontFamily: "var(--font-bebas)", fontSize: "1.6rem", color: "#fff", lineHeight: 1 }}>{s.n}</div>
+                <div style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.65rem", lineHeight: 1.3, maxWidth: 60 }}>{s.label}</div>
+              </div>
+            ))}
+          </div>
+          <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: 10, textAlign: "center" }}>
+            <span style={{ color: "rgba(255,255,255,0.3)", fontSize: "0.65rem" }}>Our team has worked with </span>
+            <span style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.65rem" }}>Melbourne Storm (NRL) · Essendon VFL · Western Bulldogs</span>
+          </div>
         </motion.div>
       </div>
+
+      {/* ── Bottom hours strip ── */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          zIndex: 6,
+          background: "rgba(9,20,33,0.92)",
+          backdropFilter: "blur(12px)",
+          borderTop: "1px solid rgba(255,255,255,0.08)",
+          padding: "12px var(--px)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: 12,
+          flexWrap: "wrap",
+        }}
+        className="hero-hours-strip"
+      >
+        <div
+          style={{
+            color: "rgba(255,255,255,0.5)",
+            fontSize: "0.78rem",
+            lineHeight: 1.5,
+            display: "flex",
+            gap: "6px 20px",
+            flexWrap: "wrap",
+            alignItems: "center",
+          }}
+        >
+          <span>13 Puckle St, Moonee Ponds</span>
+          <span>Mon–Fri 7:30am–7:30pm</span>
+          <span>Sat 7:30am–1pm</span>
+          <Link
+            href="/acute-sports-injury-clinic"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 6,
+              color: "#fff",
+              fontWeight: 600,
+              textDecoration: "none",
+              fontSize: "0.78rem",
+            }}
+          >
+            <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#22c55e", display: "inline-block", flexShrink: 0 }} />
+            Sun 9am–2pm · Acute Sports Injury Clinic →
+          </Link>
+        </div>
+        <a
+          href="tel:+61483918427"
+          style={{
+            background: "#fff",
+            color: "var(--navy)",
+            border: "none",
+            padding: "8px 18px",
+            borderRadius: 6,
+            fontWeight: 700,
+            fontSize: "0.82rem",
+            textDecoration: "none",
+            whiteSpace: "nowrap",
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 6,
+            letterSpacing: "0.03em",
+            textTransform: "uppercase",
+            flexShrink: 0,
+          }}
+          onClick={() => fireGtag(CONV.phoneCall)}
+        >
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          Call us
+        </a>
+      </div>
+
+      {/* ── Responsive CSS ── */}
+      <style>{`
+        /* Desktop: 2-col grid */
+        .hero-grid {
+          display: grid;
+          grid-template-columns: 1fr 400px;
+          gap: 48px;
+          align-items: flex-end;
+        }
+        .hero-proof-mobile { display: none; }
+
+        /* Mobile: single column */
+        @media (max-width: 768px) {
+          .hero-grid {
+            grid-template-columns: 1fr;
+          }
+          .hero-proof-card { display: none; }
+          .hero-proof-mobile { display: block; }
+          .hero-hours-strip { display: none; }
+        }
+      `}</style>
     </section>
   );
 }

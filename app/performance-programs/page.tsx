@@ -2827,7 +2827,7 @@ export default function PerformancePrograms() {
             </button>
             <a
               href="tel:+61483918427"
-              className="btn btn-ghost"
+              className="btn btn-white"
               onClick={() => fireGtag(CONV.phoneCall)}
             >
               Call us

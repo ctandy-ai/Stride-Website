@@ -154,6 +154,15 @@ body {
   font-weight: 500;
 }
 .btn-ghost:hover { border-color: var(--blue); background: var(--blue-dim); transform: translateY(-2px); }
+.btn-white {
+  background: #fff;
+  color: var(--navy);
+  border: none;
+  padding: 18px 36px;
+  font-size: 1.02rem;
+  font-weight: 700;
+}
+.btn-white:hover { background: rgba(255,255,255,0.88); transform: translateY(-2px); }
 .arr { display: inline-block; transition: transform .2s; }
 .btn-primary:hover .arr, .btn-ghost:hover .arr { transform: translateX(4px); }
 

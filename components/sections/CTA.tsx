@@ -61,11 +61,11 @@ export default function CTA() {
           </button>
           <a
             href="tel:+61483918427"
-            className="btn btn-ghost"
+            className="btn btn-white"
             style={{ textDecoration: "none" }}
             onClick={() => fireGtag(CONV.phoneCall)}
           >
-            Call 0483 918 427
+            Call us
           </a>
         </div>
         <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.78rem", margin: "0 0 20px" }}>
