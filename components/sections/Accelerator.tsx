@@ -18,12 +18,12 @@ export default function Accelerator() {
   ];
 
   const inclusions = [
-    { icon: "🩺", title: "You’ll always know what this week looks like.", sub: "It’s written down. Weekly 1:1 physio keeps your program moving." },
-    { icon: "🏋️", title: "Keep training while you rehab.", sub: "The gym’s on site, and your program’s built in. Sport-specific S&C included." },
-    { icon: "💬", title: "Something flares up mid-week? Message your physio.", sub: "Direct access between appointments — not stuck guessing until next week." },
-    { icon: "✅", title: "Go back knowing you’re ready.", sub: "Return cleared by testing, because the numbers say so — not a calendar date." },
-    { icon: "💰", title: "One weekly price. No surprise bills.", sub: "$185/week covers physio, S&C and gym. That’s it." },
-    { icon: "📱", title: "Your program, tracked every session.", sub: "Milestones, numbers and progress in one place." },
+    { icon: "🩺", title: "You’ll always know what this week looks like.", sub: "It’s written down." },
+    { icon: "🏋️", title: "Keep training while you rehab.", sub: "The gym’s on site, and your program’s built in." },
+    { icon: "💬", title: "Something flares up mid-week? Message your physio.", sub: "Not stuck guessing between appointments." },
+    { icon: "✅", title: "Go back knowing you’re ready, because the numbers say so.", sub: "Return cleared by testing, not a calendar date." },
+    { icon: "💰", title: "One weekly price covers physio, S&C and gym.", sub: "No surprise bills." },
+    { icon: "📊", title: "See how each leg compares, measured on force plates, not eyeballed.", sub: "Know exactly when you’re ready." },
   ];
 
   const steps = [
