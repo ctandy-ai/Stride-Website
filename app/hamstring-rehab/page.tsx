@@ -24,12 +24,12 @@ export default function HamstringRehabPage() {
         injury="Hamstring & Calf"
         headline="Hamstring & Calf Rehab."
         headlineAccent="Sprint again."
-        subtext="Soft tissue injuries have the highest recurrence rate in sport. The research is clear — progressive loading, not rest, prevents re-injury. We build programs that get you back faster and keep you there."
+        subtext="Muscle injuries have the highest recurrence rate in sport. The research is clear — progressive rehab, not rest, prevents re-injury. We build programs that get you back faster and keep you there."
         problemTitle="What goes wrong with hamstring and calf rehab"
         problems={[
           {
             title: "Inadequate loading in early rehab",
-            body: "The instinct to rest a hamstring or calf strain is understandable — but tendons and muscle-tendon junctions need progressive load to heal correctly. Passive rest alone produces weaker, less resilient tissue.",
+            body: "The instinct to rest a hamstring or calf strain is understandable — but muscles and their attachment points need progressive rehab to heal correctly. Passive rest alone produces a weaker, less resilient result.",
           },
           {
             title: "No sprint mechanics assessment",

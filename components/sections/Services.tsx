@@ -2,14 +2,6 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import Image from "next/image";
-
-const logos = [
-  { src: "/logos/melbourne-storm.svg", alt: "Melbourne Storm NRL", width: 120, height: 56 },
-  { src: "/logos/nrl.svg",             alt: "NRL",                  width: 80,  height: 56 },
-  { src: "/logos/essendon.png",        alt: "Essendon FC",          width: 52,  height: 56 },
-  { src: "/logos/bulldogs.svg",        alt: "Western Bulldogs",     width: 56,  height: 56 },
-];
 
 export default function Services() {
   const ref = useRef(null);
@@ -17,46 +9,23 @@ export default function Services() {
 
   return (
     <div ref={ref} style={{ background: "#fff", padding: "40px var(--px)", borderTop: "1px solid var(--stone)" }}>
-      <div style={{ maxWidth: 1000, margin: "0 auto", textAlign: "center" }}>
-        <div style={{
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.5 }}
+        style={{ maxWidth: 760, margin: "0 auto", textAlign: "center" }}
+      >
+        <p style={{
           fontFamily: "var(--font-dm-mono)",
-          fontSize: "0.6rem",
-          letterSpacing: "0.15em",
-          textTransform: "uppercase",
+          fontSize: "0.72rem",
+          letterSpacing: "0.08em",
           color: "var(--muted)",
-          marginBottom: 28,
+          lineHeight: 1.7,
+          margin: 0,
         }}>
-          Organisations our team has worked with and are trusted by:
-        </div>
-        <div style={{
-          display: "flex",
-          gap: 48,
-          justifyContent: "center",
-          alignItems: "center",
-          flexWrap: "wrap",
-        }}>
-          {logos.map((logo, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 10 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: i * 0.1, duration: 0.4 }}
-              style={{ display: "flex", alignItems: "center", justifyContent: "center", opacity: 0.7, filter: "grayscale(30%)", transition: "opacity 0.2s" }}
-              onMouseEnter={(e) => (e.currentTarget.style.opacity = "1")}
-              onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.7")}
-            >
-              <Image
-                src={logo.src}
-                alt={logo.alt}
-                width={logo.width}
-                height={logo.height}
-                style={{ width: "auto", height: logo.height, objectFit: "contain" }}
-                unoptimized
-              />
-            </motion.div>
-          ))}
-        </div>
-      </div>
+          Our team, past and present, has worked with Melbourne Storm (NRL), Essendon FC&apos;s VFL program and the Western Bulldogs.
+        </p>
+      </motion.div>
     </div>
   );
 }

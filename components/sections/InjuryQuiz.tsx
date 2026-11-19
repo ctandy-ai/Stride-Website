@@ -106,7 +106,7 @@ export default function InjuryQuiz() {
       amber: {
         icon: "📋",
         heading: "Some gaps to explore",
-        insight: "Your rehab has some structure, but there are a few areas — like objective testing and sport-specific programming — that are worth reviewing with a physio. A conversation with a specialist can help fill those gaps before you return to training.",
+        insight: "Your rehab has some structure, but there are a few areas — like objective testing and sport-specific programming — that are worth reviewing with a physio. A conversation with a physio can help fill those gaps before you return to training.",
       },
       green: {
         icon: "✅",

@@ -8,7 +8,7 @@ const faqs = [
   },
   {
     q: "Can I still train with Achilles pain?",
-    a: "Often yes — with modification. We adjust load and find what you can do while the tendon is managed. Complete rest is rarely the right answer.",
+    a: "Often yes — with modification. We adjust activity and find what you can do while the tendon is managed. Complete rest is rarely the right answer.",
   },
   {
     q: "How long before I can run again?",
@@ -24,12 +24,12 @@ export default function AchillesRehabPage() {
         injury="Achilles Tendon"
         headline="Achilles Rehab."
         headlineAccent="Back to running."
-        subtext="Achilles injuries are one of the most common — and most mismanaged — in sport. Load it too early and you re-tear. Rest it too long and you lose the tendon's capacity. We get the balance right."
+        subtext="Achilles injuries are one of the most common — and most mismanaged — in sport. Push too hard too early and you re-tear. Rest too long and the tendon weakens. We get the balance right."
         problemTitle="What goes wrong with Achilles rehab"
         problems={[
           {
             title: "Too much rest, too soon",
-            body: "Tendons need load to heal. Complete rest early in management is often the wrong call — it reduces tendon capacity without addressing the load that caused the injury.",
+            body: "Tendons need progressive activity to heal. Complete rest early in management is often the wrong call — it weakens the tendon without addressing what caused the injury.",
           },
           {
             title: "No progressive return-to-run protocol",
@@ -37,7 +37,7 @@ export default function AchillesRehabPage() {
           },
           {
             title: "Missing the underlying cause",
-            body: "Achilles injuries rarely happen in isolation. Calf strength deficits, ankle stiffness, hip weakness — the cause of the load spike matters as much as treating the tendon.",
+            body: "Achilles injuries rarely happen in isolation. Calf strength deficits, ankle stiffness, hip weakness — understanding what drove the injury matters as much as treating the tendon.",
           },
         ]}
         approach="We assess the full kinetic chain — not just the tendon. Calf strength and endurance are tested, ankle ROM assessed, and running/jumping mechanics screened. Your program is built around progressive tendon loading (heavy slow resistance, then plyometric loading, then sport-specific) with a structured return-to-run protocol."

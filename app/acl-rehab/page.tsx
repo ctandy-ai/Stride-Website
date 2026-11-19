@@ -320,10 +320,7 @@ export default function ACLRehabPage() {
                 marginBottom: 52,
               }}
             >
-              Our ACL pathway was developed by Chris Tandy, who spent 11 years
-              embedded at Melbourne Storm NRL — managing ACL surgeries at the
-              highest level in Australian rugby league. That methodology now
-              drives every ACL program we run.
+              Our ACL pathway was developed by Chris Tandy, who spent 7 years with Melbourne Storm (NRL) and 4 years with Essendon VFL — managing musculoskeletal injuries at the highest level in Australian football and rugby league. That methodology now drives every ACL program we run.
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               {phases.map((phase, i) => (

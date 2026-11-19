@@ -14,7 +14,7 @@ export default function ACLRehab() {
   const cards = [
     { n: "01", title: "Phase-by-phase milestones — no guessing", body: "Every phase has objective criteria. You don't move forward until you've cleared the gate. No calendar-based guesswork." },
     { n: "02", title: "Objective movement testing at each gate", body: "Single-leg hop testing, force plate data, movement symmetry scores. You see the numbers. You know where you stand." },
-    { n: "03", title: "Developed by our director", body: "Prepared to Play was developed by Chris Tandy — 11 years embedded at Melbourne Storm NRL. The same methodology that returned elite athletes now drives the program." },
+    { n: "03", title: "Developed by our director", body: "Prepared to Play was developed by Chris Tandy — 7 years with Melbourne Storm (NRL) and 4 years with Essendon VFL. The same methodology that returned elite athletes now drives the program." },
   ];
 
   return (
@@ -90,7 +90,7 @@ export default function ACLRehab() {
             Single-leg hop testing
           </div>
           <p style={{ color: "#4A6070", fontSize: "0.84rem", lineHeight: 1.6, margin: 0 }}>
-            Objective return-to-sport clearance. Distance, symmetry, and load measured against sport-specific benchmarks — not a calendar date.
+            Objective return-to-sport clearance. Distance, symmetry, and strength measured against sport-specific benchmarks — not a calendar date.
           </p>
         </div>
       </motion.div>

@@ -32,15 +32,15 @@ const testimonials = [
 const team = [
   {
     name: "Chris Tandy",
-    role: "Senior Athletic Physiotherapist · Coach",
-    bio: "Masters of Sports Physiotherapy. 11 years in elite and sub-elite sport with Melbourne Storm (NRL) and Essendon VFL. Passionate about understanding the core drivers behind behaviour change and performance optimisation to help injured athletes and those wanting to maximise their sporting performance.",
-    boldBio: "Melbourne Storm Rugby League Club and Essendon Football Club's VFL Program",
+    role: "Director & Senior Physiotherapist",
+    bio: "Masters of Sports Physiotherapy. 7 years with Melbourne Storm (NRL) and 4 years with Essendon Football Club’s VFL program. Passionate about understanding the core drivers behind behaviour change and performance optimisation to help injured athletes and those wanting to maximise their sporting performance.",
+    boldBio: "Melbourne Storm Rugby League Club and Essendon Football Club’s VFL Program",
     img: "/chris-tandy.jpg",
     imgPosition: "top center",
   },
   {
     name: "Tom Yeung",
-    role: "Senior Athletic Physiotherapist · Coach",
+    role: "Senior Physiotherapist",
     bio: "Bachelor of Physiotherapy, La Trobe University, with additional training in Sports & Exercise Rehabilitation. Avid gym-goer with a background in combat training — Tom brings genuine understanding of the demands combat athletes face. He knows why a 12-week full rest prescription doesn't work for a competitor.",
     boldBio: "Avid gym-goer with a background in combat training",
     img: "/tom-yeung.jpg",
@@ -48,7 +48,7 @@ const team = [
   },
   {
     name: "Conner Van Turnhout",
-    role: "Athletic Physiotherapist · Coach",
+    role: "Physiotherapist",
     bio: "Bachelor of Physiotherapy and Postgraduate Certificate in Sports Physiotherapy, University of Otago — currently completing a Master of Sports Physiotherapy at La Trobe. Keen CrossFitter with a background in Rugby Union, Conner understands the physical demands of sport and the importance of staying active. Evidence-based care tailored to help you achieve your goals.",
     boldBio: "Keen CrossFitter with a background in Rugby Union",
     img: "/conner-van-turnhout.jpg",

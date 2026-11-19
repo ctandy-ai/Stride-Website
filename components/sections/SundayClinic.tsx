@@ -14,8 +14,8 @@ export default function SundayClinic() {
 
   const cards = [
     { n: "01", title: "No GP referral needed", body: "Walk in, get assessed, leave with a diagnosis and a written plan. Same day answers — not an appointment in five days time." },
-    { n: "02", title: "$239 — ~95% back with insurance", body: "Most private health and sports insurance claims return close to the full fee on the spot. Bring your card, we handle it then and there." },
-    { n: "03", title: "Assessment designed for athletes", body: "Not a general practice model. Sport-specific assessment by physiotherapists who understand load, competition timelines, and what matters to an athlete." },
+    { n: "02", title: "$239 — insurance claimable", body: "Claimable on most private health and sports-club insurance policies — check yours." },
+    { n: "03", title: "Assessment designed for athletes", body: "Not a general practice model. Sport-specific assessment by physiotherapists who understand competition timelines and what matters to an athlete." },
   ];
 
   return (
@@ -53,7 +53,7 @@ export default function SundayClinic() {
         <div style={{ marginTop: 16, display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10 }}>
           {[
             { num: "$239", label: "Initial assessment" },
-            { num: "~95%", label: "Back with insurance" },
+            { num: "✓", label: "Insurance claimable" },
             { num: "Sun 9–2", label: "Moonee Ponds" },
           ].map((s, i) => (
             <div key={i} style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.09)", borderRadius: 10, padding: "14px 16px" }}>
@@ -81,7 +81,7 @@ export default function SundayClinic() {
             marginBottom: 24,
           }}
         >
-          Hurt on the weekend?<br /><span className="orange">Don&apos;t wait till Monday.</span>
+          Hurt on the weekend?<br /><span className="orange">Get seen Sunday.</span>
         </h1>
         <p className="bt-inv" style={{ marginBottom: 32 }}>
           Our Sunday Acute Sports Injury Clinic is built for athletes who got hurt over the weekend and can&apos;t afford to wait days for answers. Walk in, get assessed, get your plan.

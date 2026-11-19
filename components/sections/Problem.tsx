@@ -108,7 +108,7 @@ export default function Problem() {
               { label: "Ankle", sub: "Sprain & instability", icon: "🏃", href: "/ankle-rehab" },
               { label: "Hip & Groin", sub: "Strain & FAI", icon: "💪", href: "/hip-groin-rehab" },
               { label: "Shoulder", sub: "Rotator cuff & labrum", icon: "🤸", href: "/shoulder-rehab" },
-              { label: "Hamstring & Calf", sub: "Soft tissue", icon: "🏄", href: "/hamstring-rehab" },
+              { label: "Hamstring & Calf", sub: "Muscle injuries", icon: "🏄", href: "/hamstring-rehab" },
             ].map((injury) => (
               <a
                 key={injury.href}

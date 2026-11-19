@@ -7,7 +7,7 @@ import InjuryQuiz from "@/components/sections/InjuryQuiz";
 export const metadata: Metadata = {
   title: "Combat Sports Physio Melbourne — BJJ, MMA, Boxing | Stride",
   description:
-    "Specialist physio for BJJ, MMA, boxing and wrestling athletes, Moonee Ponds. Tom Yeung — Senior Physio, Combat Sports Consulting founder.",
+    "Physio for BJJ, MMA, boxing and wrestling athletes in Moonee Ponds. Keep training through rehab, with return cleared by testing. From $145.",
   alternates: {
     canonical: "/combat-sports-physio",
   },

@@ -32,7 +32,7 @@ export default function HipGroinRehabPage() {
         },
         {
           q: "I play AFL — is this a common injury?",
-          a: "Very common. The rotational and kicking demands of AFL place significant load on the groin and hip complex. We work with AFL athletes regularly and understand the sport's specific demands.",
+          a: "Very common. The rotational and kicking demands of AFL place significant stress on the groin and hip complex. We work with AFL athletes regularly and understand the sport's specific demands.",
         },
         {
           q: "Can I still train?",

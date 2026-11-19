@@ -36,7 +36,7 @@ export default function ScorePage() {
       icon: "🟡",
       title: "Some Gaps to Explore",
       desc: "Your rehab has good structure, but a few areas—like objective testing—are worth reviewing.",
-      action: "Work with a specialist to fill the gaps and confirm you're truly ready to return.",
+      action: "Work with a physio to fill the gaps and confirm you're truly ready to return.",
       color: "#F5C518",
     },
     green: {
@@ -258,7 +258,7 @@ export default function ScorePage() {
           Ready to Return Stronger?
         </h2>
         <p style={{ fontSize: "1.05rem", color: "rgba(255,255,255,0.85)", marginBottom: 32, lineHeight: 1.7 }}>
-          Book your Initial Athlete Assessment and get a personalized return-to-sport plan from one of our specialists.
+          Book your Initial Athlete Assessment and get a personalised return-to-sport plan from our team.
         </p>
         <button
           onClick={openModal}

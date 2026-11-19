@@ -36,7 +36,7 @@ const cards: Card[] = [
   {
     icon: "🏃",
     title: "Hamstring & Hip",
-    body: "Hamstring strains are the most common muscle injury in sport. We grade, load, and return you — without the guesswork or re-injury risk.",
+    body: "Hamstring strains are the most common muscle injury in sport. We assess, rehab, and return you — without the guesswork or re-injury risk.",
     href: "/hamstring-rehab",
   },
   // Row 2 — 3 cards

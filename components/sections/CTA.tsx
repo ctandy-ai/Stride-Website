@@ -70,7 +70,7 @@ export default function CTA() {
           </a>
         </div>
         <div style={{ color: "rgba(255,255,255,0.35)", fontSize: "0.82rem" }}>
-          13 Puckle St, Moonee Ponds · Mon–Fri 7:30am–7:30pm · Sat 7:30am–1pm
+          13 Puckle St, Moonee Ponds · Mon–Fri 7:30am–7:30pm · Sat 7:30am–1pm · Sun 9am–2pm (Acute Clinic)
         </div>
       </motion.div>
     </div>

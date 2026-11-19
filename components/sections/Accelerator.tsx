@@ -12,7 +12,7 @@ export default function Accelerator() {
   };
 
   const stats = [
-    { n: "500+", unit: "", label: "Athletes Returned to Sport" },
+    { n: "500+", unit: "", label: "Athletes guided back to sport across our team" },
     { n: "5k+", unit: "", label: "Coached Athlete Rehab Hours" },
     { n: "20+", unit: "", label: "Sporting Teams Worked With" },
   ];

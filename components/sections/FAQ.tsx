@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: "What if I have a combat sports injury (BJJ, MMA, boxing)?",
-    a: "Our Senior Physiotherapist Tom Yeung specialises in combat sport rehabilitation. He has a deep background in combat training and understands the unique demands, culture, and timelines of competitive grappling and striking sports. He's also the founder of Combat Sports Consulting.",
+    a: "Our Senior Physiotherapist Tom Yeung works primarily with combat sport athletes — BJJ, MMA, boxing and wrestling. He has a deep background in combat training and understands the unique demands, culture, and timelines of competitive grappling and striking sports. He's also the founder of Combat Sports Consulting.",
   },
 ];
 
