@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { fireGtag, CONV } from "@/lib/conversions";
 import Link from "next/link";
 
@@ -10,6 +11,27 @@ const stats = [
 ];
 
 export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoReady, setVideoReady] = useState(false);
+
+  useEffect(() => {
+    // On mobile, defer video load until after page load to protect LCP
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    if (!isMobile) {
+      // Desktop: load immediately
+      setVideoReady(true);
+      return;
+    }
+    // Mobile: load video after window load event
+    const load = () => setVideoReady(true);
+    if (document.readyState === "complete") {
+      load();
+    } else {
+      window.addEventListener("load", load, { once: true });
+    }
+    return () => window.removeEventListener("load", load);
+  }, []);
+
   const openModal = () => {
     if (typeof (window as any).openModal === "function") (window as any).openModal();
   };
@@ -28,13 +50,38 @@ export default function Hero() {
     >
       {/* ── Video background ── */}
       <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
-        <video
-          autoPlay muted loop playsInline
-          style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", filter: "blur(0.6px)" }}
-        >
-          <source src="/hero-loop.webm" type="video/webm" />
-          <source src="/hero-loop.mp4" type="video/mp4" />
-        </video>
+        {/* Poster image — always visible immediately, is the LCP element */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/hero-poster.webp"
+          alt=""
+          fetchPriority="high"
+          decoding="async"
+          style={{
+            position: "absolute", inset: 0,
+            width: "100%", height: "100%",
+            objectFit: "cover", objectPosition: "center",
+            filter: "blur(0.6px)",
+            zIndex: 0,
+          }}
+        />
+        {/* Video — desktop: loads immediately; mobile: loads after window.load */}
+        {videoReady && (
+          <video
+            ref={videoRef}
+            autoPlay muted loop playsInline
+            style={{
+              position: "absolute", inset: 0,
+              width: "100%", height: "100%",
+              objectFit: "cover", objectPosition: "center",
+              filter: "blur(0.6px)",
+              zIndex: 1,
+            }}
+          >
+            <source src="/hero-loop.webm" type="video/webm" />
+            <source src="/hero-loop.mp4" type="video/mp4" />
+          </video>
+        )}
         <div
           style={{
             position: "absolute", inset: 0,
@@ -123,7 +170,7 @@ export default function Hero() {
 
             {/* Microcopy — bumped to 14px + contrast */}
             <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "14px", margin: 0 }}>
-              No referral needed &nbsp;·&nbsp; Private health claimable &nbsp;·&nbsp; Same-week appointments
+              No referral needed &nbsp;·&nbsp; Private health claimable &nbsp;·&nbsp; Same-week appointments usually available
             </p>
           </div>
 

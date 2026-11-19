@@ -61,6 +61,13 @@ export default function RootLayout({
       className={`${inter.variable} ${bebasNeue.variable} ${dmMono.variable}`}
     >
       <head>
+        {/* Preload hero poster — LCP critical path */}
+        <link
+          rel="preload"
+          as="image"
+          href="/hero-poster.webp"
+          type="image/webp"
+        />
         {/* LocalBusiness / Physiotherapy structured data */}
         <script
           type="application/ld+json"
