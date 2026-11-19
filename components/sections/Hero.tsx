@@ -113,7 +113,7 @@ export default function Hero() {
               </button>
               <a
                 href="tel:+61483918427"
-                className="btn btn-white"
+                className="btn btn-white hero-call-desktop"
                 style={{ textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 8 }}
                 onClick={() => fireGtag(CONV.phoneCall)}
               >
@@ -290,27 +290,7 @@ export default function Hero() {
         </a>
       </div>
 
-      {/* ── Responsive CSS ── */}
-      <style>{`
-        /* Desktop: 2-col grid */
-        .hero-grid {
-          display: grid;
-          grid-template-columns: 1fr 400px;
-          gap: 48px;
-          align-items: flex-end;
-        }
-        .hero-proof-mobile { display: none; }
-
-        /* Mobile: single column */
-        @media (max-width: 768px) {
-          .hero-grid {
-            grid-template-columns: 1fr;
-          }
-          .hero-proof-card { display: none; }
-          .hero-proof-mobile { display: block; }
-          .hero-hours-strip { display: none; }
-        }
-      `}</style>
+      {/* Responsive CSS is in globals.css — .hero-grid, .hero-proof-mobile, .hero-call-desktop, .hero-hours-strip */}
     </section>
   );
 }

@@ -208,20 +208,7 @@ export default function WhereAreYouAt() {
         </div>
       </div>
 
-      {/* Grid + mobile ordering CSS */}
-      <style>{`
-        .wyaa-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr 1fr;
-          gap: 20px;
-          align-items: start;
-        }
-        @media (max-width: 900px) {
-          .wyaa-grid { grid-template-columns: 1fr; }
-          /* Self-check card first on mobile */
-          .wyaa-card-selfcheck { order: -1; }
-        }
-      `}</style>
+      {/* Responsive CSS is in globals.css — .wyaa-grid, .wyaa-card-selfcheck */}
     </div>
   );
 }
