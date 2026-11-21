@@ -310,7 +310,7 @@ export default function Accelerator() {
             </div>
           </div>
           <button className="btn btn-primary" onClick={openModal} style={{ whiteSpace: "nowrap" }}>
-            Book my assessment - $145 <span className="arr">→</span>
+            Book my assessment <span className="arr">→</span>
           </button>
         </motion.div>
 

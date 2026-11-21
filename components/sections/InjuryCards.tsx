@@ -249,7 +249,7 @@ export default function InjuryCards() {
           style={{ marginTop: 40, display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}
         >
           <button className="btn btn-primary" onClick={openModal}>
-            Book my assessment — $145 <span className="arr">→</span>
+            Book my assessment <span className="arr">→</span>
           </button>
           <span style={{ color: "var(--muted)", fontSize: "0.82rem" }}>
             Not sure where to start? Book an assessment — we'll work out the right program on the day.

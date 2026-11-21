@@ -412,7 +412,7 @@ export default function InjuryPageTemplate({
               all-inclusive).
             </p>
             <button className="btn btn-primary" onClick={openModal}>
-              Book my assessment — $145 →
+              Book my assessment →
             </button>
             <p style={{ marginTop: 10, fontSize: "0.78rem", color: "#4A6070" }}>
               No referral needed &nbsp;·&nbsp; Private health claimable &nbsp;·&nbsp; Same-week appointments usually available
@@ -504,7 +504,7 @@ export default function InjuryPageTemplate({
             {/* Bottom CTA */}
             <div style={{ marginTop: 48, textAlign: "center" }}>
               <button className="btn btn-primary" onClick={openModal}>
-                Book my assessment — $145 →
+                Book my assessment →
               </button>
               <p style={{ marginTop: 10, fontSize: "0.78rem", color: "rgba(255,255,255,0.4)" }}>
                 No referral needed &nbsp;·&nbsp; Private health claimable &nbsp;·&nbsp; Same-week appointments usually available

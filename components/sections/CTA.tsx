@@ -57,7 +57,7 @@ export default function CTA() {
         </p>
         <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", marginBottom: 10 }}>
           <button className="btn btn-primary" onClick={openModal}>
-            Book my assessment — $145 <span className="arr">→</span>
+            Book my assessment <span className="arr">→</span>
           </button>
           <a
             href="tel:+61483918427"

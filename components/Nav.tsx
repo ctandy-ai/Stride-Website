@@ -90,7 +90,7 @@ export default function Nav() {
             transition: "background .2s", whiteSpace: "nowrap", borderRadius: 2,
           }}
         >
-          Book my assessment — $145 →
+          Book my assessment →
         </button>
 
         {/* Mobile hamburger */}
@@ -186,7 +186,7 @@ export default function Nav() {
                 width: "100%",
               }}
             >
-              Book my assessment — $145 →
+              Book my assessment →
             </button>
           </motion.div>
         )}

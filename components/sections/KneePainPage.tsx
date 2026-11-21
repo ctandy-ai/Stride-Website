@@ -78,7 +78,7 @@ export default function KneePainPage({ faqs }: { faqs: FAQ[] }) {
           </p>
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 10 }}>
             <button className="btn btn-primary" onClick={openModal}>
-              Book my assessment — $145 <span className="arr">→</span>
+              Book my assessment <span className="arr">→</span>
             </button>
           </div>
           <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.78rem", marginTop: 10, marginBottom: 20 }}>

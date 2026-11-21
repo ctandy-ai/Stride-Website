@@ -670,7 +670,7 @@ export default function ACLRehabPage() {
                 all-inclusive).
               </p>
               <button className="btn btn-primary" onClick={openModal}>
-                Book my assessment — $145 →
+                Book my assessment →
               </button>
             </div>
           </div>

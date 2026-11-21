@@ -91,7 +91,7 @@ export default function Pricing() {
             </div>
             <div style={{ flex: "0 0 auto", alignSelf: "center" }}>
               <button className="btn btn-primary" onClick={openModal} style={{ whiteSpace: "nowrap" }}>
-                Book — $145 <span className="arr">→</span>
+                Book my assessment <span className="arr">→</span>
               </button>
             </div>
           </motion.div>
@@ -167,7 +167,7 @@ export default function Pricing() {
             Private health rebates depend on your fund and level of cover.
           </p>
           <button className="btn btn-primary" onClick={openModal}>
-            Book my assessment — $145 <span className="arr">→</span>
+            Book my assessment <span className="arr">→</span>
           </button>
           <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.78rem", marginTop: 10, marginBottom: 0 }}>
             No referral needed &nbsp;·&nbsp; Private health claimable &nbsp;·&nbsp; Same-week appointments usually available

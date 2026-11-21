@@ -125,7 +125,7 @@ export default function MooneePonds() {
                 rel="noopener"
                 className="btn btn-primary"
               >
-                Book my assessment — $145
+                Book my assessment
               </a>
               <a
                 href={PHONE}

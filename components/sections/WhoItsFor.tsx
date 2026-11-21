@@ -34,7 +34,7 @@ export default function WhoItsFor() {
             Stride is for athletes who&apos;d rather understand what&apos;s going on than be told to rest and see. From community footy to elite. You don&apos;t have to have done everything right; almost nobody has. All it takes is wanting a plan.
           </p>
           <button className="btn btn-primary" onClick={openModal}>
-            Book my assessment — $145 <span className="arr">→</span>
+            Book my assessment <span className="arr">→</span>
           </button>
           <p style={{ color: "var(--muted)", fontSize: "0.78rem", marginTop: 10, marginBottom: 0 }}>
             No referral needed &nbsp;·&nbsp; Private health claimable &nbsp;·&nbsp; Same-week appointments usually available

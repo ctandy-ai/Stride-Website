@@ -2,7 +2,7 @@
 
 /**
  * BookCTA — primary booking button + trust subline.
- * Used site-wide. G spec: "Book my assessment — $145" / one primary per section /
+ * Used site-wide. G spec: "Book my assessment →" / one primary per section /
  * subline: "No referral needed · Private health claimable · Same-week appointments usually available"
  */
 
@@ -21,7 +21,7 @@ interface BookCTAProps {
 }
 
 export default function BookCTA({
-  label = "Book my assessment — $145",
+  label = "Book my assessment →",
   withCall = false,
   align = "center",
   theme = "light",

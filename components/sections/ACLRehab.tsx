@@ -68,7 +68,7 @@ export default function ACLRehab() {
           ))}
         </div>
         <button className="btn btn-primary" onClick={openModal}>
-          Book my assessment — $145 <span className="arr">→</span>
+          Book my assessment <span className="arr">→</span>
         </button>
         <p style={{ marginTop: 10, fontSize: "0.78rem", color: "#4A6070" }}>
           No referral needed &nbsp;·&nbsp; Private health claimable &nbsp;·&nbsp; Same-week appointments usually available

@@ -87,7 +87,7 @@ export default function CombatSportsPage({ faqs }: { faqs: FAQ[] }) {
             Sparring, drilling, conditioning and making weight all land on the same body. We look at your whole camp, not just the sore elbow — and show you what you can keep doing, what to protect, and how long until you&apos;re back on the mats.
           </p>
           <button className="btn btn-primary" onClick={openModal}>
-            Book my assessment — $145 <span className="arr">→</span>
+            Book my assessment <span className="arr">→</span>
           </button>
           <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.78rem", marginTop: 10 }}>
             No referral needed &nbsp;·&nbsp; Private health claimable &nbsp;·&nbsp; Same-week appointments usually available
@@ -174,7 +174,7 @@ export default function CombatSportsPage({ faqs }: { faqs: FAQ[] }) {
               Tell us the date at your first session. We&apos;ll build the plan around it: what&apos;s realistic, what needs protecting, and what we&apos;ll test before you step in. If the timeline isn&apos;t realistic, we&apos;ll tell you straight.
             </p>
             <button className="btn btn-primary" onClick={openModal}>
-              Book my assessment — $145 <span className="arr">→</span>
+              Book my assessment <span className="arr">→</span>
             </button>
             <p style={{ color: "var(--muted)", fontSize: "0.78rem", marginTop: 10 }}>
               No referral needed &nbsp;·&nbsp; Private health claimable &nbsp;·&nbsp; Same-week appointments usually available

@@ -105,7 +105,7 @@ export default function CombatSports() {
 
         <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
           <button className="btn btn-primary" onClick={openModal}>
-            Book my assessment — $145 <span className="arr">→</span>
+            Book my assessment <span className="arr">→</span>
           </button>
           <Link
             href="/combat-sports-physio"

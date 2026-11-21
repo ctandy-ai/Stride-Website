@@ -83,7 +83,7 @@ export default function StickyBookBtn() {
           textAlign: "center",
         }}
       >
-        Book my assessment — $145 →
+        Book my assessment →
       </button>
     </div>
   );

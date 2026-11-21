@@ -89,7 +89,7 @@ export default function WhereAreYouAt() {
               onClick={openModal}
               style={{ alignSelf: "flex-start", padding: "14px 24px", fontSize: "0.88rem" }}
             >
-              Book my assessment — $145 →
+              Book my assessment →
             </button>
           </motion.div>
 
